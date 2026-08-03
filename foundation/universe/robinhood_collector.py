@@ -74,6 +74,7 @@ def classify_instrument(candidate: dict[str, Any], payload: dict[str, Any], *, r
         "content_sha256": raw_sha256,
         "broker_eligible": status == "ELIGIBLE",
         "analytics_eligible": False,
+        "collection_error": None,
     }
 
 
@@ -123,6 +124,7 @@ def collect_availability(
         for line in result_path.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 record = json.loads(line)
+                record.setdefault("collection_error", None)
                 completed[record["symbol"]] = record
 
     candidate_list = list(candidates)
@@ -155,11 +157,13 @@ def collect_availability(
                     "fractional_share_supported": False,
                     "recurring_investment_supported": False,
                     "dividend_reinvestment_supported": False,
+                    "robinhood_instrument_id": None,
                     "verified_at_utc": _utc_now(),
                     "verification_method": "BROKER_SEARCH_RESULT",
                     "verification_confidence": 0.0,
                     "source_id": "ROBINHOOD-PUBLIC-INSTRUMENT-LOOKUP",
                     "source_record_id": symbol,
+                    "source_url": None,
                     "content_sha256": "0" * 64,
                     "broker_eligible": False,
                     "analytics_eligible": False,
