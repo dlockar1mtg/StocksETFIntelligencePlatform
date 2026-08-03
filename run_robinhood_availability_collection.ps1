@@ -1,7 +1,8 @@
 param(
     [string]$OperatingDate = (Get-Date -Format "yyyy-MM-dd"),
     [int]$MaxRecords = 0,
-    [double]$DelaySeconds = 0.25
+    [double]$DelaySeconds = 0.25,
+    [switch]$RetryFailed
 )
 
 $ErrorActionPreference = "Stop"
@@ -28,11 +29,15 @@ $Arguments = @(
 if ($MaxRecords -gt 0) {
     $Arguments += @("--max-records", $MaxRecords)
 }
+if ($RetryFailed) {
+    $Arguments += "--retry-failed"
+}
 
 Write-Host "Collecting Robinhood availability evidence..."
 Write-Host "Operating date: $OperatingDate"
 Write-Host "Maximum records: $(if ($MaxRecords -gt 0) { $MaxRecords } else { 'ALL' })"
 Write-Host "Delay seconds: $DelaySeconds"
+Write-Host "Retry failed: $($RetryFailed.IsPresent)"
 
 & python @Arguments
 if ($LASTEXITCODE -ne 0) {
