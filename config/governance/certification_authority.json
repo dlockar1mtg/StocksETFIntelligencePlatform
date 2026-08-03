@@ -1,0 +1,29 @@
+{
+  "authority_version": "0.1.0",
+  "current_phase": "0.1",
+  "authorized": {
+    "repository_scaffolding": true,
+    "governance_validation": true,
+    "research_only_development": true,
+    "market_monitoring": false,
+    "asset_outlook": false,
+    "portfolio_action": false,
+    "contribution_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false
+  },
+  "required_certification_layers": [
+    "build",
+    "data",
+    "analytical",
+    "model_policy_validation",
+    "shadow_production",
+    "provisional_production",
+    "full_production",
+    "uip_integration",
+    "operational"
+  ],
+  "failure_severities": ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFORMATIONAL"],
+  "critical_failures_block_authority": true,
+  "owner_approval_cannot_override_critical_failure": true
+}

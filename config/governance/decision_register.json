@@ -1,0 +1,24 @@
+{
+  "register_version": "0.1.0",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "required_decision_count": 16,
+  "decisions": [
+    {"id": 1, "title": "Mission and final endpoint", "approved_option": "C", "standard": "ETF-first, stock-ready independent domain platform"},
+    {"id": 2, "title": "Investment universe", "approved_option": "C", "standard": "Governed layered universe"},
+    {"id": 3, "title": "Decision package", "approved_option": "C", "standard": "Asset outlook, portfolio action, and contribution allocation"},
+    {"id": 4, "title": "Operating cadence and horizons", "approved_option": "C", "standard": "Daily monitoring, weekly analytics, monthly certification, governed event reruns"},
+    {"id": 5, "title": "Core ETF analytical standard", "approved_option": "C", "standard": "Seven-pillar ETF evidence model"},
+    {"id": 6, "title": "Data-source and evidence authority", "approved_option": "C", "standard": "Field-governed evidence hierarchy"},
+    {"id": 7, "title": "Return, benchmark, and corporate actions", "approved_option": "C", "standard": "Raw, provider-adjusted, and reconstructed total-return reconciliation"},
+    {"id": 8, "title": "Risk, drawdown, and stress testing", "approved_option": "C", "standard": "Layered downside and stress framework"},
+    {"id": 9, "title": "Valuation, quality, momentum, and factors", "approved_option": "C", "standard": "Common factor core with strategy-aware extensions"},
+    {"id": 10, "title": "Forecasting and uncertainty", "approved_option": "C", "standard": "Governed horizon-specific ensemble with explicit uncertainty"},
+    {"id": 11, "title": "Ranking and recommendations", "approved_option": "C", "standard": "Eligibility gates, ranked evidence, and action bands"},
+    {"id": 12, "title": "Portfolio and contribution allocation", "approved_option": "C", "standard": "Constraint-aware contribution optimizer"},
+    {"id": 13, "title": "Backtesting and historical validation", "approved_option": "C", "standard": "Point-in-time walk-forward certification"},
+    {"id": 14, "title": "UIP integration and export contract", "approved_option": "C", "standard": "Versioned immutable export packages"},
+    {"id": 15, "title": "Certification and production acceptance", "approved_option": "C", "standard": "Layered certification gates with explicit authority"},
+    {"id": 16, "title": "Repository architecture", "approved_option": "C", "standard": "Layered domain architecture with governed boundaries"}
+  ]
+}
