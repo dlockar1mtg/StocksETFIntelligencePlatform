@@ -177,4 +177,13 @@ def write_full_snapshot(snapshot: dict[str, Any], output_path: Path) -> dict[str
     else:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_bytes(payload)
-    return {"snapshot_path": str(output_path), "snapshot_sha256": _sha256_bytes(payload), "record_count": len(snapshot["records"]), "counts": snapshot["counts"]}
+
+    records = snapshot.get("records", [])
+    result: dict[str, Any] = {
+        "snapshot_path": str(output_path),
+        "snapshot_sha256": _sha256_bytes(payload),
+        "record_count": len(records) if isinstance(records, list) else 0,
+    }
+    if "counts" in snapshot:
+        result["counts"] = snapshot["counts"]
+    return result
