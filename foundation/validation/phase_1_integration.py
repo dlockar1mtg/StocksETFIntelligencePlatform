@@ -44,22 +44,30 @@ def validate_phase_1(root: Path) -> dict[str, Any]:
     governed_ids = {item["security_id"] for item in security_master["securities"]}
     _require(governed_ids == set(completion["required_security_ids"]), "Security identity drift detected")
     _require(set(providers["governed_domains"]) == set(completion["required_governed_domains"]), "Governed data-domain drift detected")
+    _require(set(quality["governed_domains"]) == set(completion["required_governed_domains"]), "Quality-domain drift detected")
 
-    _require(governance.get("initial_universe_security_ids") == completion["required_security_ids"], "Governance universe drift detected")
-    _require(governance.get("missing_evidence_must_reduce_confidence") is True, "Missing evidence confidence penalty weakened")
-    _require(governance.get("silent_missing_data_imputation_forbidden") is True, "Silent imputation protection weakened")
-    _require(governance.get("look_ahead_information_forbidden") is True, "Look-ahead protection weakened")
+    behaviors = governance.get("required_behaviors", {})
+    _require(governance.get("initial_security_ids") == completion["required_security_ids"], "Governance universe drift detected")
+    _require(behaviors.get("missing_evidence_rewarded") is False, "Missing evidence cannot be rewarded")
+    _require(behaviors.get("missing_evidence_silently_imputed") is False, "Silent imputation protection weakened")
+    _require(behaviors.get("look_ahead_allowed") is False, "Look-ahead protection weakened")
+    _require(behaviors.get("source_conflicts_preserved") is True, "Source conflicts must be preserved")
+    _require(behaviors.get("conflicts_quarantined") is True, "Source conflicts must be quarantined")
+    _require(behaviors.get("direct_uip_database_writes_allowed") is False, "Direct UIP writes must remain prohibited")
 
     _require(providers.get("conflicting_observations_must_be_preserved") is True, "Provider conflicts must be preserved")
     _require(providers.get("critical_conflicts_must_be_quarantined") is True, "Provider critical conflicts must be quarantined")
-    _require(acquisition.get("immutable_raw_captures") is True, "Raw captures must be immutable")
+    _require(acquisition.get("raw_records_immutable") is True, "Raw captures must be immutable")
     _require(acquisition.get("raw_payloads_must_remain_outside_git") is True, "Raw payloads must remain outside Git")
-    _require(normalization.get("point_in_time_required") is True, "Point-in-time normalization is required")
-    _require(normalization.get("silent_imputation_forbidden") is True, "Normalization silent imputation protection weakened")
-    _require(normalization.get("critical_conflicts_require_quarantine") is True, "Normalization conflict quarantine weakened")
+    _require(acquisition.get("conflict_policy") == "QUARANTINE", "Acquisition conflicts must route to quarantine")
+    _require(normalization.get("required_point_in_time_fields") == ["as_of_date", "effective_at_utc", "available_at_utc"], "Point-in-time normalization weakened")
+    _require(normalization.get("silent_missing_value_imputation_forbidden") is True, "Normalization silent imputation protection weakened")
+    _require(normalization.get("critical_conflicts_quarantined") is True, "Normalization conflict quarantine weakened")
+    _require(normalization.get("provider_adjusted_reconciliation_required") is True, "Adjusted-price reconciliation weakened")
     _require(quality.get("missing_evidence_reduces_confidence") is True, "Quality confidence penalty weakened")
     _require(quality.get("blocked_evidence_cannot_be_promoted") is True, "Blocked evidence promotion protection weakened")
     _require(quality.get("unknown_freshness_requires_quarantine") is True, "Unknown freshness quarantine weakened")
+    _require(quality.get("critical_conflicts_require_quarantine") is True, "Quality conflict quarantine weakened")
 
     for key in (
         "certified_market_monitoring_authorized",
