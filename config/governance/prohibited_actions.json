@@ -1,0 +1,20 @@
+{
+  "control_version": "0.1.0",
+  "severity": "CRITICAL",
+  "prohibited_actions": [
+    "automatic_trade_execution",
+    "brokerage_order_submission",
+    "brokerage_transfer_initiation",
+    "direct_uip_production_database_write",
+    "bypass_uip_package_validation",
+    "in_place_edit_of_certified_package",
+    "research_output_claiming_certified_authority",
+    "certified_decision_from_stale_evidence",
+    "certified_decision_from_blocked_evidence",
+    "silent_decision_critical_source_conflict",
+    "look_ahead_information_in_historical_validation",
+    "ticker_as_sole_permanent_identifier",
+    "individual_stock_production_without_separate_approval",
+    "forecast_represented_as_guarantee"
+  ]
+}
