@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "unknown_sources_blocked": true,
+  "source_conflicts_preserved": true,
+  "silent_conflict_resolution_forbidden": true,
+  "restricted_data_must_remain_outside_git": true,
+  "tiers": [
+    {"tier": 1, "id": "OFFICIAL_PRIMARY", "allowed_uses": ["research", "validation", "certified_input"], "requires_license_review": false},
+    {"tier": 2, "id": "LICENSED_PRIMARY", "allowed_uses": ["research", "validation", "certified_input"], "requires_license_review": true},
+    {"tier": 3, "id": "PUBLIC_SECONDARY", "allowed_uses": ["research", "validation", "provisional_input"], "requires_license_review": false},
+    {"tier": 4, "id": "FALLBACK", "allowed_uses": ["research", "provisional_input"], "requires_license_review": false},
+    {"tier": 5, "id": "RESEARCH_ONLY", "allowed_uses": ["research"], "requires_license_review": false}
+  ]
+}
