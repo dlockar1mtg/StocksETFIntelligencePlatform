@@ -10,6 +10,7 @@ from foundation.validation.security_master import (
     load_json,
     validate_registries,
     validate_security_master,
+    validate_universe_policy,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -27,11 +28,9 @@ class Phase05SecurityMasterTests(unittest.TestCase):
         self.assertTrue(self.master["unknown_security_blocked"])
         self.assertTrue(self.master["ticker_only_identity_blocked"])
 
-    def test_exact_governed_security_ids(self) -> None:
-        self.assertEqual(
-            [item["security_id"] for item in self.master["securities"]],
-            ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
-        )
+    def test_required_seed_security_ids_are_present(self) -> None:
+        governed = {item["security_id"] for item in self.master["securities"]}
+        self.assertTrue(set(self.policy["seed_security_ids"]).issubset(governed))
 
     def test_every_security_has_complete_identity(self) -> None:
         validate_security_master(self.master)
@@ -56,22 +55,38 @@ class Phase05SecurityMasterTests(unittest.TestCase):
         with self.assertRaises(SecurityMasterValidationError):
             validate_security_master(broken)
 
-    def test_universe_eligibility_is_exact(self) -> None:
+    def test_universe_policy_is_dynamic_and_fail_closed(self) -> None:
+        validate_universe_policy(self.policy)
+        self.assertEqual(self.policy["universe_id"], "US-ETF-DYNAMIC")
+        self.assertTrue(self.policy["universe_expansion_requires_certification"])
+        self.assertTrue(self.policy["seed_securities_must_remain_present"])
+        self.assertFalse(self.policy["individual_stock_production_authorized"])
+
+    def test_current_seed_universe_is_eligible(self) -> None:
         self.assertEqual(
             eligible_security_ids(self.master, self.policy),
             ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
         )
-        self.assertFalse(self.policy["individual_stock_production_authorized"])
 
-    def test_inactive_or_unknown_security_is_ineligible(self) -> None:
+    def test_additional_valid_etf_can_become_eligible(self) -> None:
+        expanded = copy.deepcopy(self.master)
+        added = copy.deepcopy(expanded["securities"][0])
+        added["security_id"] = "SEC-US-TESTETF"
+        added["ticker"] = "TESTETF"
+        added["share_class_id"] = "SHARE-US-TESTETF"
+        expanded["securities"].append(added)
+        self.assertIn("SEC-US-TESTETF", eligible_security_ids(expanded, self.policy))
+
+    def test_missing_or_inactive_seed_is_rejected(self) -> None:
+        missing = copy.deepcopy(self.master)
+        missing["securities"] = missing["securities"][1:]
+        with self.assertRaises(SecurityMasterValidationError):
+            eligible_security_ids(missing, self.policy)
+
         inactive = copy.deepcopy(self.master)
         inactive["securities"][0]["lifecycle_status"] = "DELISTED"
         with self.assertRaises(SecurityMasterValidationError):
             eligible_security_ids(inactive, self.policy)
-        unknown_policy = copy.deepcopy(self.policy)
-        unknown_policy["security_ids"].append("SEC-US-UNKNOWN")
-        with self.assertRaises(SecurityMasterValidationError):
-            eligible_security_ids(self.master, unknown_policy)
 
 
 if __name__ == "__main__":
