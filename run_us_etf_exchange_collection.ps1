@@ -11,10 +11,14 @@ if ($CurrentBranch -ne $ExpectedBranch) {
     throw "Wrong branch. Expected '$ExpectedBranch' but found '$CurrentBranch'."
 }
 
+$RepositoryRoot = (Get-Location).Path
+$CollectorModule = "scripts.collect_us_etf_exchange_universe"
+
 Write-Host "Collecting authoritative US exchange-listed ETF candidates..."
 Write-Host "Operating date: $OperatingDate"
+Write-Host "Repository root: $RepositoryRoot"
 
-python .\scripts\collect_us_etf_exchange_universe.py `
+python -m $CollectorModule `
     --operating-date $OperatingDate `
     --output-root .\data
 
