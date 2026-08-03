@@ -32,6 +32,17 @@ class Phase166BRobinhoodCollectorTests(unittest.TestCase):
         self.assertTrue(record["broker_eligible"])
         self.assertTrue(record["whole_share_supported"])
 
+    def test_successful_record_has_explicit_null_collection_error(self) -> None:
+        record = classify_instrument(
+            self._candidate(),
+            {"results": [{"id": "abc", "symbol": "VOO", "tradeable": True, "tradability": "tradable"}]},
+            retrieved_at_utc="2026-08-03T21:00:00+00:00",
+            source_url="https://example.test",
+            raw_sha256="a" * 64,
+        )
+        self.assertIn("collection_error", record)
+        self.assertIsNone(record["collection_error"])
+
     def test_position_closing_only_is_sell_only(self) -> None:
         record = classify_instrument(
             self._candidate(),
