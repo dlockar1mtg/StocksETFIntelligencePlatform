@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "issuers": [
+    {"issuer_id": "ISS-VANGUARD", "name": "The Vanguard Group"},
+    {"issuer_id": "ISS-SCHWAB", "name": "Charles Schwab Investment Management"},
+    {"issuer_id": "ISS-INVESCO", "name": "Invesco"}
+  ],
+  "funds": [
+    {"fund_id": "FUND-VOO", "issuer_id": "ISS-VANGUARD", "fund_name": "Vanguard S&P 500 ETF", "structure": "OPEN_END_ETF"},
+    {"fund_id": "FUND-SCHD", "issuer_id": "ISS-SCHWAB", "fund_name": "Schwab U.S. Dividend Equity ETF", "structure": "OPEN_END_ETF"},
+    {"fund_id": "FUND-QQQM", "issuer_id": "ISS-INVESCO", "fund_name": "Invesco NASDAQ 100 ETF", "structure": "OPEN_END_ETF"}
+  ]
+}
