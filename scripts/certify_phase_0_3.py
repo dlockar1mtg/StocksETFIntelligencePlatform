@@ -14,7 +14,19 @@ MINIMUM_TESTS = 24
 
 def main() -> int:
     process = subprocess.run(
-        [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py", "-v"],
+        [
+            sys.executable,
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-t",
+            ".",
+            "-p",
+            "test_*.py",
+            "-v",
+        ],
         cwd=ROOT,
         text=True,
         capture_output=True,
@@ -27,6 +39,8 @@ def main() -> int:
         critical_failures.append("contract_configuration_regression_failure")
     if tests_run < MINIMUM_TESTS:
         critical_failures.append("insufficient_test_execution")
+    if "ModuleNotFoundError" in output or "_FailedTest" in output:
+        critical_failures.append("test_import_or_package_shadowing_failure")
     status = "PASS" if not critical_failures else "FAIL"
     report = {
         "phase": "0.3",
@@ -36,8 +50,20 @@ def main() -> int:
         "tests_run": tests_run,
         "minimum_tests_required": MINIMUM_TESTS,
         "critical_failures": critical_failures,
-        "authorized_uses": ["contract_development", "configuration_development", "schema_validation", "research_only_development"],
-        "unauthorized_uses": ["certified_market_monitoring", "certified_asset_outlook", "certified_portfolio_action", "certified_contribution_allocation", "certified_uip_export", "automatic_execution"],
+        "authorized_uses": [
+            "contract_development",
+            "configuration_development",
+            "schema_validation",
+            "research_only_development",
+        ],
+        "unauthorized_uses": [
+            "certified_market_monitoring",
+            "certified_asset_outlook",
+            "certified_portfolio_action",
+            "certified_contribution_allocation",
+            "certified_uip_export",
+            "automatic_execution",
+        ],
         "test_output": output,
     }
     REPORT.parent.mkdir(parents=True, exist_ok=True)
