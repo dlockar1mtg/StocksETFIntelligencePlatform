@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.etf_taxonomy_record",
+  "title": "ETF Taxonomy Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id",
+    "asset_class",
+    "strategy",
+    "geography",
+    "market_segment",
+    "income_profile",
+    "implementation",
+    "specialized_product_type",
+    "portfolio_treatment",
+    "classification_status",
+    "classified_at_utc",
+    "source_id",
+    "source_record_id",
+    "content_sha256"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "pattern": "^SEC-US-"},
+    "asset_class": {"type": "string"},
+    "strategy": {"type": "string"},
+    "geography": {"type": "string", "minLength": 1},
+    "market_segment": {"type": "string", "minLength": 1},
+    "income_profile": {"type": "string", "minLength": 1},
+    "implementation": {"type": "string", "minLength": 1},
+    "specialized_product_type": {"type": "string"},
+    "portfolio_treatment": {"type": "string"},
+    "classification_status": {"enum": ["CLASSIFIED", "CONFLICTED", "UNKNOWN", "QUARANTINED"]},
+    "classified_at_utc": {"type": "string", "format": "date-time"},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
