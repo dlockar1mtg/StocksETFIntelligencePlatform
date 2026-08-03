@@ -22,11 +22,29 @@ def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _boolean_capability(instrument: dict[str, Any], field: str) -> bool | None:
+    if field not in instrument:
+        return None
+    value = instrument.get(field)
+    return value if isinstance(value, bool) else None
+
+
+def _fractional_capability(instrument: dict[str, Any]) -> bool | None:
+    if "fractional_tradability" not in instrument:
+        return None
+    value = str(instrument.get("fractional_tradability", "")).lower()
+    if value in {"tradable", "tradeable"}:
+        return True
+    if value in {"unavailable", "not_tradable", "not_tradeable", "position_closing_only"}:
+        return False
+    return None
+
+
 def classify_instrument(candidate: dict[str, Any], payload: dict[str, Any], *, retrieved_at_utc: str, source_url: str, raw_sha256: str) -> dict[str, Any]:
     results = payload.get("results")
     if not isinstance(results, list):
         status = "UNKNOWN"
-        instrument = {}
+        instrument: dict[str, Any] = {}
     else:
         exact = [item for item in results if str(item.get("symbol", "")).upper() == str(candidate["symbol"]).upper()]
         if len(exact) > 1:
@@ -53,15 +71,22 @@ def classify_instrument(candidate: dict[str, Any], payload: dict[str, Any], *, r
             else:
                 status = "UNKNOWN"
 
+    fractional = _fractional_capability(instrument)
+    recurring = _boolean_capability(instrument, "recurring_investment_eligible")
+    drip = _boolean_capability(instrument, "drip_eligible")
+
     return {
         "security_id": candidate["security_candidate_id"],
         "symbol": candidate["symbol"],
         "broker_id": "ROBINHOOD-US",
         "broker_status": status,
         "whole_share_supported": status == "ELIGIBLE",
-        "fractional_share_supported": instrument.get("fractional_tradability") == "tradable",
-        "recurring_investment_supported": instrument.get("recurring_investment_eligible") is True,
-        "dividend_reinvestment_supported": instrument.get("drip_eligible") is True,
+        "fractional_share_supported": fractional,
+        "recurring_investment_supported": recurring,
+        "dividend_reinvestment_supported": drip,
+        "fractional_share_evidence_state": "KNOWN" if fractional is not None else "UNKNOWN",
+        "recurring_investment_evidence_state": "KNOWN" if recurring is not None else "UNKNOWN",
+        "dividend_reinvestment_evidence_state": "KNOWN" if drip is not None else "UNKNOWN",
         "robinhood_instrument_id": instrument.get("id"),
         "verified_at_utc": retrieved_at_utc,
         "effective_at_utc": retrieved_at_utc,
@@ -107,6 +132,7 @@ def collect_availability(
     checkpoint_every_records: int = 100,
     fetcher: Callable[..., tuple[dict[str, Any], bytes, str]] = fetch_symbol,
     max_records: int | None = None,
+    retry_failed: bool = False,
 ) -> dict[str, Any]:
     staged_root = output_root / "staged" / operating_date
     raw_root = output_root / "raw" / operating_date / "robinhood"
@@ -125,6 +151,8 @@ def collect_availability(
             if line.strip():
                 record = json.loads(line)
                 record.setdefault("collection_error", None)
+                if retry_failed and record.get("collection_error"):
+                    continue
                 completed[record["symbol"]] = record
 
     candidate_list = list(candidates)
@@ -132,7 +160,6 @@ def collect_availability(
         candidate_list = candidate_list[:max_records]
 
     processed_since_start = 0
-    failures: list[dict[str, Any]] = []
     with result_path.open("a", encoding="utf-8") as handle:
         for candidate in candidate_list:
             symbol = candidate["symbol"]
@@ -143,8 +170,6 @@ def collect_availability(
                 retrieved = _utc_now()
                 digest = sha256_bytes(raw)
                 raw_path = raw_root / f"{symbol}.json"
-                if raw_path.exists() and raw_path.read_bytes() != raw:
-                    raise RobinhoodCollectorError(f"Immutable Robinhood raw collision for {symbol}")
                 raw_path.write_bytes(raw)
                 record = classify_instrument(candidate, payload, retrieved_at_utc=retrieved, source_url=url, raw_sha256=digest)
             except Exception as exc:
@@ -154,9 +179,12 @@ def collect_availability(
                     "broker_id": "ROBINHOOD-US",
                     "broker_status": "UNKNOWN",
                     "whole_share_supported": False,
-                    "fractional_share_supported": False,
-                    "recurring_investment_supported": False,
-                    "dividend_reinvestment_supported": False,
+                    "fractional_share_supported": None,
+                    "recurring_investment_supported": None,
+                    "dividend_reinvestment_supported": None,
+                    "fractional_share_evidence_state": "UNKNOWN",
+                    "recurring_investment_evidence_state": "UNKNOWN",
+                    "dividend_reinvestment_evidence_state": "UNKNOWN",
                     "robinhood_instrument_id": None,
                     "verified_at_utc": _utc_now(),
                     "verification_method": "BROKER_SEARCH_RESULT",
@@ -169,7 +197,6 @@ def collect_availability(
                     "analytics_eligible": False,
                     "collection_error": str(exc),
                 }
-                failures.append(record)
             handle.write(json.dumps(record, sort_keys=True) + "\n")
             handle.flush()
             completed[symbol] = record
@@ -179,10 +206,13 @@ def collect_availability(
             if minimum_delay_seconds > 0:
                 time.sleep(minimum_delay_seconds)
 
-    records = list(completed.values())
+    records = [completed[candidate["symbol"]] for candidate in candidate_list if candidate["symbol"] in completed]
+    result_path.write_text("".join(json.dumps(record, sort_keys=True) + "\n" for record in records), encoding="utf-8")
+
     counts: dict[str, int] = {}
     for record in records:
         counts[record["broker_status"]] = counts.get(record["broker_status"], 0) + 1
+    failures = [record for record in records if record.get("collection_error")]
     failure_path = quarantine_root / "robinhood_availability_failures.json"
     failure_path.write_text(json.dumps(failures, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     manifest = {
@@ -195,6 +225,8 @@ def collect_availability(
         "broker_eligible_count": counts.get("ELIGIBLE", 0),
         "failed_lookup_count": len(failures),
         "resume_supported": True,
+        "retry_failed_supported": True,
+        "missing_capability_evidence_preserved_as_unknown": True,
         "availability_file": str(result_path),
         "availability_file_sha256": sha256_bytes(result_path.read_bytes()),
         "failure_file": str(failure_path),
