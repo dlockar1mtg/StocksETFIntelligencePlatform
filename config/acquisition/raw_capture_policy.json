@@ -1,0 +1,20 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "1.2",
+  "raw_zone": "data/raw",
+  "quarantine_zone": "data/quarantine",
+  "manifest_zone": "data/evidence/acquisition",
+  "raw_payloads_must_remain_outside_git": true,
+  "raw_records_immutable": true,
+  "content_sha256_required": true,
+  "duplicate_content_policy": "IDEMPOTENT_REJECT",
+  "conflict_policy": "QUARANTINE",
+  "unknown_provider_policy": "BLOCK",
+  "unknown_domain_policy": "BLOCK",
+  "future_observation_policy": "BLOCK",
+  "retrieved_before_observed_policy": "BLOCK",
+  "allowed_capture_states": ["CAPTURED", "DUPLICATE", "QUARANTINED", "BLOCKED"],
+  "certified_market_monitoring_authorized": false,
+  "certified_analytics_authorized": false,
+  "direct_uip_database_writes_authorized": false
+}
