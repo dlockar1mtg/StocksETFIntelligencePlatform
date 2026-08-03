@@ -10,6 +10,7 @@ artifacts/
 # Local data, databases, exports, and secrets
 data/raw/
 data/staged/
+data/quarantine/
 data/reconciled/
 data/certified/
 exports/
