@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated certification and analytical artifacts
+artifacts/
+
+# Local data, databases, exports, and secrets
+data/raw/
+data/staged/
+data/reconciled/
+data/certified/
+exports/
+*.duckdb
+*.db
+.env
+.env.*
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
