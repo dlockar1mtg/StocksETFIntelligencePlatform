@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "zones": [
+    {"id": "raw", "mutable": false, "purpose": "immutable source capture"},
+    {"id": "staged", "mutable": true, "purpose": "validated normalization"},
+    {"id": "curated", "mutable": true, "purpose": "governed analytical inputs"},
+    {"id": "evidence", "mutable": false, "purpose": "lineage and certification evidence"},
+    {"id": "quarantine", "mutable": true, "purpose": "failed or disputed observations"}
+  ],
+  "required_lineage_fields": [
+    "source_id",
+    "source_tier",
+    "observed_at_utc",
+    "ingested_at_utc",
+    "source_record_id",
+    "content_sha256"
+  ],
+  "freshness_states": ["CURRENT", "AGING", "STALE", "UNKNOWN"],
+  "conflicted_records_must_be_quarantined": true,
+  "raw_records_must_not_be_overwritten": true
+}
