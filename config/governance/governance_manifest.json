@@ -1,0 +1,48 @@
+﻿{
+  "platform_id": "stocks_etf_intelligence_platform",
+  "platform_name": "Stocks and ETF Intelligence Platform",
+  "domain": "stocks_etf",
+  "governance_version": "0.1.0",
+  "governance_status": "approved_for_phase_0_implementation",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "governing_issue_title": "Build Stocks & ETF Intelligence Platform repository",
+  "domain_repository": "dlockar1mtg/StocksETFIntelligencePlatform",
+  "initial_asset_scope": [
+    "VOO",
+    "SCHD",
+    "QQQM"
+  ],
+  "architecture_scope": [
+    "ETF",
+    "EQUITY"
+  ],
+  "initial_certification_scope": "ETF_ONLY",
+  "operating_timezone": "America/Chicago",
+  "primary_strategic_horizon": "3Y",
+  "automatic_execution_authorized": false,
+  "direct_uip_database_writes_authorized": false,
+  "certified_recommendations_authorized": false,
+  "certified_contribution_allocation_authorized": false,
+  "certified_uip_export_authorized": false,
+  "required_governance_decision_count": 16,
+  "approved_decision_options": {
+    "decision_01": "C",
+    "decision_02": "C",
+    "decision_03": "C",
+    "decision_04": "C",
+    "decision_05": "C",
+    "decision_06": "C",
+    "decision_07": "C",
+    "decision_08": "C",
+    "decision_09": "C",
+    "decision_10": "C",
+    "decision_11": "C",
+    "decision_12": "C",
+    "decision_13": "C",
+    "decision_14": "C",
+    "decision_15": "C",
+    "decision_16": "C"
+  }
+}
+
