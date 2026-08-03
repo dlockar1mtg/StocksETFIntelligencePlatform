@@ -40,6 +40,16 @@ class Phase166AExchangeCollectorTests(unittest.TestCase):
         self.assertIn('scripts.collect_us_etf_exchange_universe', runner)
         self.assertNotIn('python .\\scripts\\collect_us_etf_exchange_universe.py', runner)
 
+    def test_runner_enumerates_json_arrays_before_counting(self) -> None:
+        runner = Path("run_us_etf_exchange_collection.ps1").read_text(encoding="utf-8")
+        self.assertIn('ForEach-Object { $_ }', runner)
+        self.assertIn('Manifest candidate count does not match parsed candidate records', runner)
+        self.assertIn('Manifest quarantine count does not match parsed quarantine records', runner)
+
+    def test_quarantine_outputs_are_ignored_by_git(self) -> None:
+        gitignore = Path(".gitignore").read_text(encoding="utf-8")
+        self.assertIn("data/quarantine/", gitignore.splitlines())
+
     def test_nasdaq_etf_candidate_is_parsed(self) -> None:
         payload = self._payload(
             "NASDAQ-TRADER-NASDAQLISTED",
