@@ -1,0 +1,73 @@
+{
+  "lock_version": "1.0.0",
+  "phase": "1",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "initial_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "initial_tickers": ["VOO", "SCHD", "QQQM"],
+  "operating_timezone": "America/Chicago",
+  "required_etf_pillars": [
+    "Return and trend",
+    "Risk and drawdown",
+    "Valuation and underlying fundamentals",
+    "Income and distributions",
+    "Fund structure and implementation quality",
+    "Diversification, concentration, and overlap",
+    "Regime and portfolio fit"
+  ],
+  "phase_1_required_data_domains": [
+    "raw_prices",
+    "provider_adjusted_prices",
+    "distributions",
+    "splits_and_material_corporate_actions",
+    "etf_metadata",
+    "holdings",
+    "expense_ratios",
+    "assets_under_management",
+    "liquidity",
+    "strategy_benchmarks",
+    "common_equity_benchmark",
+    "cash_hurdle"
+  ],
+  "required_evidence_fields": [
+    "security_id",
+    "source_id",
+    "source_tier",
+    "source_record_id",
+    "observed_at_utc",
+    "ingested_at_utc",
+    "as_of_date",
+    "content_sha256",
+    "data_quality_status",
+    "freshness_status"
+  ],
+  "required_behaviors": {
+    "raw_evidence_preserved": true,
+    "source_lineage_preserved": true,
+    "observation_dates_preserved": true,
+    "missing_evidence_silently_imputed": false,
+    "missing_evidence_rewarded": false,
+    "provider_adjusted_and_reconstructed_total_returns_reconciled": true,
+    "source_conflicts_preserved": true,
+    "conflicts_quarantined": true,
+    "look_ahead_allowed": false,
+    "ticker_as_sole_permanent_identifier_allowed": false,
+    "direct_uip_database_writes_allowed": false,
+    "generated_packages_committed_to_git": false,
+    "raw_data_committed_to_git": false,
+    "secrets_committed_to_git": false
+  },
+  "phase_1_authority": {
+    "data_acquisition_development": true,
+    "normalization_development": true,
+    "quality_and_lineage_validation": true,
+    "certified_market_monitoring": false,
+    "certified_analytics": false,
+    "certified_forecasts": false,
+    "certified_recommendations": false,
+    "certified_contribution_allocation": false,
+    "certified_uip_export": false,
+    "automatic_execution": false
+  },
+  "fail_closed": true
+}

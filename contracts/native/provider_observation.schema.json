@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.provider_observation.1.0.0",
+  "title": "Provider Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provider_id",
+    "provider_version",
+    "source_tier",
+    "license_class",
+    "security_id",
+    "domain",
+    "source_record_id",
+    "observed_at_utc",
+    "retrieved_at_utc",
+    "as_of_date",
+    "content_sha256",
+    "quality_status",
+    "freshness_state",
+    "payload"
+  ],
+  "properties": {
+    "provider_id": {"type": "string", "minLength": 1},
+    "provider_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "source_tier": {"type": "integer", "minimum": 1, "maximum": 5},
+    "license_class": {"type": "string", "minLength": 1},
+    "security_id": {"type": "string", "pattern": "^SEC-[A-Z]{2}-[A-Z0-9.-]+$"},
+    "domain": {"type": "string", "enum": ["raw_price", "adjusted_price", "distribution", "corporate_action", "etf_metadata", "holdings", "expense_ratio", "assets_under_management", "liquidity", "benchmark"]},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "retrieved_at_utc": {"type": "string", "format": "date-time"},
+    "as_of_date": {"type": "string", "format": "date"},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "quality_status": {"type": "string", "enum": ["PASS", "PROVISIONAL", "QUARANTINED", "BLOCKED"]},
+    "freshness_state": {"type": "string", "enum": ["CURRENT", "AGING", "STALE", "UNKNOWN"]},
+    "payload": {"type": "object"}
+  }
+}

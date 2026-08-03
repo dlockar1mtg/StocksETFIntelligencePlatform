@@ -1,10 +1,15 @@
 {
-  "authority_version": "0.1.0",
-  "current_phase": "0.1",
+  "authority_version": "0.2.0",
+  "current_phase": "1",
+  "phase_0_certified": true,
   "authorized": {
     "repository_scaffolding": true,
     "governance_validation": true,
     "research_only_development": true,
+    "provider_contract_development": true,
+    "raw_data_acquisition_development": true,
+    "normalization_development": true,
+    "lineage_and_quality_validation": true,
     "market_monitoring": false,
     "asset_outlook": false,
     "portfolio_action": false,

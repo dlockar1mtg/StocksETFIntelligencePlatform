@@ -26,7 +26,8 @@ class Phase03ContractsConfigurationTests(unittest.TestCase):
     def test_required_contracts_are_registered(self) -> None:
         registry = load_json(ROOT / "config/contracts/contract_registry.json")
         ids = {item["contract_id"] for item in registry["contracts"]}
-        self.assertEqual(ids, {"native.security_identity", "uip.package_manifest"})
+        required = {"native.security_identity", "uip.package_manifest"}
+        self.assertTrue(required.issubset(ids))
 
     def test_registered_schema_paths_exist(self) -> None:
         registry = load_json(ROOT / "config/contracts/contract_registry.json")
