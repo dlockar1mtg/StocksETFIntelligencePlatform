@@ -1,10 +1,11 @@
 {
-  "registry_version": "0.3.0",
+  "registry_version": "0.4.0",
   "compatibility_policy": "major_version_must_match",
   "breaking_changes_require_migration": true,
   "unknown_contracts_blocked": true,
   "contracts": [
     {"contract_id": "native.security_identity", "version": "1.0.0", "schema": "contracts/native/security_identity.schema.json", "status": "ACTIVE"},
+    {"contract_id": "native.provider_observation", "version": "1.0.0", "schema": "contracts/native/provider_observation.schema.json", "status": "ACTIVE"},
     {"contract_id": "uip.package_manifest", "version": "1.0.0", "schema": "contracts/uip/package_manifest.schema.json", "status": "ACTIVE"}
   ]
 }
