@@ -1,0 +1,62 @@
+{
+  "lock_version": "1.0.0",
+  "phase": "2",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "initial_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "operating_timezone": "America/Chicago",
+  "required_analytics_domains": [
+    "total_return",
+    "dividend_return",
+    "volatility",
+    "drawdown",
+    "beta",
+    "correlation",
+    "momentum",
+    "trend",
+    "etf_factor_exposure",
+    "etf_holdings_exposure",
+    "dividend_quality",
+    "dividend_growth",
+    "dividend_yield",
+    "dividend_sustainability"
+  ],
+  "required_return_controls": {
+    "security_return_basis": "total_return",
+    "benchmark_return_basis": "total_return",
+    "provider_adjusted_and_reconstructed_returns_reconciled": true,
+    "corporate_action_evidence_required": true,
+    "non_trading_day_returns_forbidden": true
+  },
+  "required_point_in_time_controls": {
+    "look_ahead_allowed": false,
+    "observation_and_availability_dates_required": true,
+    "future_effective_records_allowed": false,
+    "latest_revised_history_used_without_as_of_control": false
+  },
+  "required_evidence_controls": {
+    "stable_security_identity_required": true,
+    "lineage_required": true,
+    "freshness_required": true,
+    "missing_evidence_silently_imputed": false,
+    "missing_evidence_rewarded": false,
+    "stale_evidence_supports_certified_analytics": false,
+    "critical_conflicts_quarantined": true
+  },
+  "phase_2_authority": {
+    "research_analytics_development": true,
+    "return_analytics_development": true,
+    "risk_analytics_development": true,
+    "trend_analytics_development": true,
+    "exposure_analytics_development": true,
+    "income_analytics_development": true,
+    "certified_market_monitoring": false,
+    "certified_forecasts": false,
+    "certified_recommendations": false,
+    "certified_contribution_allocation": false,
+    "certified_uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
