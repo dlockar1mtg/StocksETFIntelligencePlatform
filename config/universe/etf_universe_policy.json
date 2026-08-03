@@ -1,12 +1,39 @@
 {
-  "version": "1.0.0",
-  "universe_id": "ETF-TIER-1",
-  "security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "version": "1.1.0",
+  "universe_id": "US-ETF-DYNAMIC",
+  "broker_id": "ROBINHOOD-US",
+  "seed_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
   "required_asset_type": "ETF",
   "required_lifecycle_status": "ACTIVE",
+  "allowed_universe_states": [
+    "DISCOVERED",
+    "BROKER_ELIGIBLE",
+    "ANALYTICS_PROVISIONAL",
+    "ANALYTICS_ELIGIBLE",
+    "PORTFOLIO_CANDIDATE",
+    "SPECIALIZED",
+    "PORTFOLIO_RESTRICTED",
+    "BLOCKED"
+  ],
+  "admission_requirements": {
+    "stable_security_id": true,
+    "complete_identity": true,
+    "authoritative_listing_evidence": true,
+    "broker_eligibility_evidence": true,
+    "broker_verification_timestamp": true,
+    "broker_status_unknown_is_eligible": false,
+    "ticker_as_sole_identifier_allowed": false
+  },
+  "broker_eligibility_is_time_dependent": true,
   "unknown_security_blocked": true,
+  "unknown_broker_status_blocked": true,
   "individual_stock_production_authorized": false,
   "eligibility_requires_complete_identity": true,
   "symbol_change_requires_history": true,
-  "delisted_or_liquidated_ineligible": true
+  "delisted_or_liquidated_ineligible": true,
+  "purchase_restricted_ineligible": true,
+  "universe_expansion_requires_certification": true,
+  "seed_securities_must_remain_present": true,
+  "analytics_engine_must_not_hard_code_tickers": true,
+  "fail_closed": true
 }
