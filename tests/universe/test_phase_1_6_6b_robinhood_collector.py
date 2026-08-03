@@ -20,7 +20,6 @@ class Phase166BRobinhoodCollectorTests(unittest.TestCase):
         self.assertFalse(policy["automatic_execution_authorized"])
 
     def test_affirmative_tradable_result_is_eligible(self) -> None:
-        raw = b'{}'
         record = classify_instrument(
             self._candidate(),
             {"results": [{"id": "abc", "symbol": "VOO", "tradeable": True, "tradability": "tradable", "fractional_tradability": "tradable", "recurring_investment_eligible": True, "drip_eligible": True}]},
@@ -42,6 +41,19 @@ class Phase166BRobinhoodCollectorTests(unittest.TestCase):
         )
         self.assertIn("collection_error", record)
         self.assertIsNone(record["collection_error"])
+
+    def test_missing_capability_evidence_remains_unknown(self) -> None:
+        record = classify_instrument(
+            self._candidate(),
+            {"results": [{"id": "abc", "symbol": "VOO", "tradeable": True, "tradability": "tradable"}]},
+            retrieved_at_utc="2026-08-03T21:00:00+00:00",
+            source_url="https://example.test",
+            raw_sha256="a" * 64,
+        )
+        self.assertIsNone(record["fractional_share_supported"])
+        self.assertIsNone(record["recurring_investment_supported"])
+        self.assertIsNone(record["dividend_reinvestment_supported"])
+        self.assertEqual(record["recurring_investment_evidence_state"], "UNKNOWN")
 
     def test_position_closing_only_is_sell_only(self) -> None:
         record = classify_instrument(
@@ -108,6 +120,26 @@ class Phase166BRobinhoodCollectorTests(unittest.TestCase):
             manifest = collect_availability([self._candidate()], output_root=Path(tmp), operating_date="2026-08-03", url_template="x", minimum_delay_seconds=0, fetcher=broken_fetch)
             self.assertEqual(manifest["broker_eligible_count"], 0)
             self.assertEqual(manifest["failed_lookup_count"], 1)
+
+    def test_retry_failed_replaces_error_without_duplicate_record(self) -> None:
+        calls = {"count": 0}
+
+        def flaky_fetch(symbol: str, **_: object):
+            calls["count"] += 1
+            if calls["count"] == 1:
+                raise RuntimeError(symbol)
+            raw = json.dumps({"results": [{"id": "abc", "symbol": symbol, "tradeable": True, "tradability": "tradable"}]}).encode()
+            return json.loads(raw), raw, f"https://example.test/{symbol}"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            first = collect_availability([self._candidate()], output_root=root, operating_date="2026-08-03", url_template="x", minimum_delay_seconds=0, fetcher=flaky_fetch)
+            second = collect_availability([self._candidate()], output_root=root, operating_date="2026-08-03", url_template="x", minimum_delay_seconds=0, fetcher=flaky_fetch, retry_failed=True)
+            lines = (root / "staged" / "2026-08-03" / "robinhood_availability_records.jsonl").read_text().splitlines()
+            self.assertEqual(first["failed_lookup_count"], 1)
+            self.assertEqual(second["failed_lookup_count"], 0)
+            self.assertEqual(second["broker_eligible_count"], 1)
+            self.assertEqual(len(lines), 1)
 
     def test_collector_grants_no_analytics_or_execution_authority(self) -> None:
         policy = json.loads(Path("config/brokers/robinhood_availability_collector_policy.json").read_text())
