@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "phase": "1.6.2",
+  "registry_id": "US-ETF-DISCOVERY",
+  "jurisdiction": "US",
+  "required_instrument_type": "ETF",
+  "allowed_primary_exchanges": ["NYSE_ARCA", "NASDAQ", "CBOE_BZX"],
+  "accepted_listing_authority_classes": [
+    "SEC_REGISTRATION",
+    "PRIMARY_EXCHANGE_LISTING",
+    "ISSUER_OFFICIAL"
+  ],
+  "minimum_independent_authorities": 2,
+  "sec_or_exchange_authority_required": true,
+  "required_identity_fields": [
+    "security_id",
+    "ticker",
+    "legal_name",
+    "instrument_type",
+    "primary_exchange",
+    "issuer_name",
+    "listing_status",
+    "effective_at_utc",
+    "available_at_utc",
+    "source_ids",
+    "content_sha256"
+  ],
+  "listing_states": [
+    "PENDING",
+    "ACTIVE",
+    "HALTED",
+    "DELISTING_PENDING",
+    "DELISTED",
+    "LIQUIDATING",
+    "LIQUIDATED",
+    "UNKNOWN"
+  ],
+  "instrument_types_separate_from_etf": [
+    "ETN",
+    "CEF",
+    "COMMON_STOCK",
+    "PREFERRED_STOCK",
+    "UNIT",
+    "WARRANT",
+    "RIGHT",
+    "TRUST_OTHER"
+  ],
+  "identity_conflicts_preserved": true,
+  "instrument_type_conflicts_quarantined": true,
+  "ticker_reuse_requires_new_security_id": true,
+  "symbol_changes_require_history": true,
+  "future_available_records_blocked": true,
+  "unknown_listing_status_blocked": true,
+  "delisted_or_liquidated_not_active": true,
+  "snapshot_required": true,
+  "snapshot_immutable": true,
+  "broker_eligibility_inferred_from_listing": false,
+  "analytics_eligibility_inferred_from_listing": false,
+  "fail_closed": true
+}
