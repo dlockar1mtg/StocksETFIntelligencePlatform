@@ -14,6 +14,7 @@ def main() -> int:
     parser.add_argument("--output-root", default="data")
     parser.add_argument("--max-records", type=int)
     parser.add_argument("--delay-seconds", type=float, default=0.25)
+    parser.add_argument("--retry-failed", action="store_true")
     args = parser.parse_args()
 
     candidates = json.loads(Path(args.input_file).read_text(encoding="utf-8"))
@@ -26,6 +27,7 @@ def main() -> int:
         minimum_delay_seconds=args.delay_seconds,
         checkpoint_every_records=policy["checkpoint_every_records"],
         max_records=args.max_records,
+        retry_failed=args.retry_failed,
     )
     print(json.dumps(manifest, indent=2, sort_keys=True))
     return 0
