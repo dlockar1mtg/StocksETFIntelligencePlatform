@@ -52,7 +52,7 @@ def validate_cross_control_consistency(root: Path, control: dict[str, Any]) -> N
 
     expected_ids = set(control["tier_1_security_ids"])
     master_ids = {item["security_id"] for item in security_master["securities"]}
-    eligible_ids = set(universe["eligible_security_ids"])
+    eligible_ids = set(universe["security_ids"])
     if expected_ids != master_ids or expected_ids != eligible_ids:
         raise Phase0IntegrationError("Tier 1 security identity is inconsistent across controls")
 
