@@ -1,0 +1,10 @@
+{
+  "universe_version": "1.0.0",
+  "scope": "ETF_ONLY",
+  "securities": [
+    {"security_id": "SEC-US-VOO", "ticker": "VOO", "asset_type": "ETF", "role": "BROAD_CORE", "status": "APPROVED_CANDIDATE"},
+    {"security_id": "SEC-US-SCHD", "ticker": "SCHD", "asset_type": "ETF", "role": "DIVIDEND_QUALITY", "status": "APPROVED_CANDIDATE"},
+    {"security_id": "SEC-US-QQQM", "ticker": "QQQM", "asset_type": "ETF", "role": "GROWTH", "status": "APPROVED_CANDIDATE"}
+  ],
+  "individual_stock_production_authorized": false
+}
