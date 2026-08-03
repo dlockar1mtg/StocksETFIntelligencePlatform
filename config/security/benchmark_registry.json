@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "unknown_benchmark_blocked": true,
+  "benchmarks": [
+    {"benchmark_id": "IDX-SP500-TR", "name": "S&P 500 Total Return Index", "return_type": "TOTAL_RETURN", "currency": "USD"},
+    {"benchmark_id": "IDX-DJUSDIV100-TR", "name": "Dow Jones U.S. Dividend 100 Total Return Index", "return_type": "TOTAL_RETURN", "currency": "USD"},
+    {"benchmark_id": "IDX-NASDAQ100-TR", "name": "NASDAQ-100 Total Return Index", "return_type": "TOTAL_RETURN", "currency": "USD"}
+  ]
+}
