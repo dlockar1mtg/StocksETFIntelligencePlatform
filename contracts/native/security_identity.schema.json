@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.security_identity/1.0.0",
+  "title": "Security Identity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["security_id", "asset_type", "ticker", "exchange", "currency", "identity_status"],
+  "properties": {
+    "security_id": {"type": "string", "pattern": "^SEC-[A-Z0-9-]{6,64}$"},
+    "asset_type": {"enum": ["ETF", "EQUITY"]},
+    "ticker": {"type": "string", "minLength": 1, "maxLength": 20},
+    "exchange": {"type": "string", "minLength": 1},
+    "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+    "isin": {"type": ["string", "null"]},
+    "cusip": {"type": ["string", "null"]},
+    "figi": {"type": ["string", "null"]},
+    "identity_status": {"enum": ["PROVISIONAL", "CERTIFIED", "CONFLICTED", "RETIRED"]}
+  }
+}
