@@ -1,0 +1,30 @@
+{
+  "attestation_version": "1.0.0",
+  "snapshot_id": "robinhood-us-2026-08-03-full-broker-evidence",
+  "snapshot_status": "COMPLETE",
+  "operating_date": "2026-08-03",
+  "operating_timezone": "America/Chicago",
+  "snapshot_sha256": "28d3f083521cb2bbbdd8fe6acf92c5c99eadd52a1180505e8b4ca7c0cadf0e32",
+  "counts": {
+    "total_records": 5535,
+    "discovered": 5535,
+    "broker_eligible": 5530,
+    "blocked": 5,
+    "analytics_provisional": 0,
+    "analytics_eligible": 0,
+    "quarantined": 0,
+    "excluded": 0
+  },
+  "blocked_symbols": ["IPB", "JULP", "MARW", "NVIR", "SDEM"],
+  "required_seed_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "structural_baseline_replaced": true,
+  "taxonomy_pending": true,
+  "analytics_eligibility_implied": false,
+  "recommendation_authority": false,
+  "analytics_authority": false,
+  "portfolio_authority": false,
+  "execution_authority": false,
+  "direct_uip_database_write_authority": false,
+  "generated_snapshot_committed_to_git": false
+}
