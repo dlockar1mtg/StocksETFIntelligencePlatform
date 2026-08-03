@@ -34,6 +34,12 @@ class Phase166AExchangeCollectorTests(unittest.TestCase):
         self.assertFalse(policy["candidate_implies_robinhood_eligibility"])
         self.assertFalse(policy["automatic_execution_authorized"])
 
+    def test_runner_invokes_collector_as_repository_module(self) -> None:
+        runner = Path("run_us_etf_exchange_collection.ps1").read_text(encoding="utf-8")
+        self.assertIn('python -m $CollectorModule', runner)
+        self.assertIn('scripts.collect_us_etf_exchange_universe', runner)
+        self.assertNotIn('python .\\scripts\\collect_us_etf_exchange_universe.py', runner)
+
     def test_nasdaq_etf_candidate_is_parsed(self) -> None:
         payload = self._payload(
             "NASDAQ-TRADER-NASDAQLISTED",
