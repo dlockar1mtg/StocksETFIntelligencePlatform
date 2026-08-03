@@ -1,0 +1,35 @@
+{
+  "architecture_version": "0.2.0",
+  "required_top_level_paths": [
+    "config",
+    "contracts",
+    "data",
+    "docs",
+    "foundation",
+    "scripts",
+    "tests",
+    "artifacts",
+    "exports",
+    ".github"
+  ],
+  "foundation_layers": [
+    "domain",
+    "infrastructure",
+    "applications",
+    "validation",
+    "integration"
+  ],
+  "domain_forbidden_dependencies": [
+    "requests",
+    "urllib",
+    "boto3",
+    "sqlalchemy",
+    "duckdb",
+    "brokerage",
+    "uip_production"
+  ],
+  "scripts_must_be_thin_entry_points": true,
+  "research_may_authorize_production": false,
+  "direct_uip_database_writes_authorized": false,
+  "automatic_execution_authorized": false
+}

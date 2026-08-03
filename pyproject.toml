@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stocks-etf-intelligence-platform"
+version = "0.2.0"
+description = "Governed ETF-first, stock-ready investment intelligence platform"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["foundation*"]
+
+[tool.unittest]
+start-directory = "tests"
+pattern = "test_*.py"
