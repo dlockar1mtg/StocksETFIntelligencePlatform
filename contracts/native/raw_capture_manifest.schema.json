@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.raw_capture_manifest.1.0.0",
+  "title": "Raw Capture Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "capture_id",
+    "provider_id",
+    "data_domain",
+    "security_id",
+    "source_record_id",
+    "observed_at_utc",
+    "retrieved_at_utc",
+    "captured_at_utc",
+    "content_sha256",
+    "byte_count",
+    "storage_path",
+    "capture_state"
+  ],
+  "properties": {
+    "capture_id": {"type": "string", "pattern": "^CAP-[A-Z0-9-]+$"},
+    "provider_id": {"type": "string", "minLength": 1},
+    "data_domain": {"type": "string", "minLength": 1},
+    "security_id": {"type": "string", "pattern": "^SEC-[A-Z0-9-]+$"},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "retrieved_at_utc": {"type": "string", "format": "date-time"},
+    "captured_at_utc": {"type": "string", "format": "date-time"},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "byte_count": {"type": "integer", "minimum": 1},
+    "storage_path": {"type": "string", "pattern": "^data/(raw|quarantine)/"},
+    "capture_state": {"enum": ["CAPTURED", "DUPLICATE", "QUARANTINED", "BLOCKED"]}
+  }
+}
