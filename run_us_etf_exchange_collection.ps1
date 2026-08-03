@@ -26,12 +26,48 @@ if ($LASTEXITCODE -ne 0) {
     throw "US ETF exchange collection failed."
 }
 
-$Manifest = ".\data\staged\$OperatingDate\collection_manifest.json"
-if (-not (Test-Path $Manifest)) {
-    throw "Expected collection manifest was not created: $Manifest"
+$ManifestPath = ".\data\staged\$OperatingDate\collection_manifest.json"
+$CandidatePath = ".\data\staged\$OperatingDate\us_etf_discovery_candidates.json"
+$QuarantinePath = ".\data\quarantine\$OperatingDate\us_etf_discovery_quarantine.json"
+
+foreach ($RequiredPath in @($ManifestPath, $CandidatePath, $QuarantinePath)) {
+    if (-not (Test-Path $RequiredPath)) {
+        throw "Expected collection output was not created: $RequiredPath"
+    }
+}
+
+$Manifest = Get-Content $ManifestPath -Raw | ConvertFrom-Json
+$Candidates = @((Get-Content $CandidatePath -Raw | ConvertFrom-Json) | ForEach-Object { $_ })
+$Quarantine = @((Get-Content $QuarantinePath -Raw | ConvertFrom-Json) | ForEach-Object { $_ })
+
+if ([int]$Manifest.candidate_count -ne $Candidates.Count) {
+    throw "Manifest candidate count does not match parsed candidate records."
+}
+if ([int]$Manifest.quarantine_count -ne $Quarantine.Count) {
+    throw "Manifest quarantine count does not match parsed quarantine records."
+}
+
+Write-Host "`nCollection summary:"
+Write-Host "Sources collected:      $($Manifest.source_count)"
+Write-Host "ETF candidates:         $($Candidates.Count)"
+Write-Host "Quarantined records:    $($Quarantine.Count)"
+
+Write-Host "`nFirst 20 ETF candidates:"
+$Candidates |
+    Select-Object -First 20 symbol, security_name, primary_exchange, candidate_state |
+    Format-Table -AutoSize
+
+Write-Host "`nChecking seed ETFs:"
+foreach ($Symbol in @("VOO", "SCHD", "QQQM")) {
+    if ($Candidates | Where-Object { $_.symbol -eq $Symbol }) {
+        Write-Host "PASS: $Symbol found."
+    }
+    else {
+        Write-Warning "$Symbol was not found in the exchange candidate inventory."
+    }
 }
 
 Write-Host "`nCollection manifest:"
-Get-Content $Manifest
+Get-Content $ManifestPath
 
-Write-Host "`nGenerated files are intentionally ignored by Git."
+Write-Host "`nGenerated raw, staged, and quarantine files are intentionally ignored by Git."
