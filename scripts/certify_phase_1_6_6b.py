@@ -6,7 +6,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-MINIMUM_TESTS = 187
+MINIMUM_TESTS = 189
 REPORT_PATH = Path("artifacts/certification/phase_1_6_6b_certification.json")
 
 
@@ -32,11 +32,13 @@ def main() -> int:
         "minimum_tests_required": MINIMUM_TESTS,
         "critical_failures": failures,
         "resumable": True,
+        "retry_failed_supported": True,
         "rate_limited": True,
         "affirmative_buy_evidence_required": True,
         "unknown_or_failed_lookup_is_eligible": False,
         "position_closing_only_is_eligible": False,
         "capabilities_are_independent": True,
+        "missing_capability_evidence_preserved_as_unknown": True,
         "raw_response_hashes_required": True,
         "successful_records_have_explicit_null_collection_error": True,
         "analytics_eligibility_implied": False,
