@@ -63,11 +63,20 @@ def validate_cross_control_consistency(root: Path, control: dict[str, Any]) -> N
 
     if market_calendar.get("holiday_source_tier_required") != 1:
         raise Phase0IntegrationError("Market calendar must use Tier 1 authority")
-    if return_standard.get("comparison_basis") != "TOTAL_RETURN":
+    if (
+        return_standard.get("security_return_basis") != "total_return"
+        or return_standard.get("benchmark_return_basis") != "total_return"
+        or return_standard.get("price_return_allowed_for_certified_comparison") is not False
+        or return_standard.get("mixed_return_bases") != "BLOCK"
+    ):
         raise Phase0IntegrationError("Return comparison must use total return")
     if not source_authority.get("unknown_sources_blocked"):
         raise Phase0IntegrationError("Unknown sources must remain blocked")
-    if not data_zones.get("conflicts_preserved"):
+    if (
+        not source_authority.get("source_conflicts_preserved")
+        or not source_authority.get("silent_conflict_resolution_forbidden")
+        or not data_zones.get("conflicted_records_must_be_quarantined")
+    ):
         raise Phase0IntegrationError("Source conflicts must remain preserved")
 
 
