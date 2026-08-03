@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.analytics_eligibility_record.schema.json",
+  "title": "ETF Analytics Eligibility Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id", "as_of_date", "evaluated_at_utc", "eligibility_status",
+    "prior_states", "domain_coverage", "critical_conflict", "quality_status",
+    "evidence_lineage_complete", "point_in_time_complete", "content_sha256"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "pattern": "^SEC-US-"},
+    "as_of_date": {"type": "string", "format": "date"},
+    "evaluated_at_utc": {"type": "string", "format": "date-time"},
+    "eligibility_status": {"enum": ["ANALYTICS_ELIGIBLE", "ANALYTICS_PROVISIONAL", "BLOCKED", "QUARANTINED"]},
+    "prior_states": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "domain_coverage": {"type": "object", "additionalProperties": {"type": "object"}},
+    "price_history_trading_days": {"type": "integer", "minimum": 0},
+    "critical_conflict": {"type": "boolean"},
+    "quality_status": {"enum": ["PASS", "PROVISIONAL", "BLOCKED", "UNKNOWN", "CONFLICTED"]},
+    "evidence_lineage_complete": {"type": "boolean"},
+    "point_in_time_complete": {"type": "boolean"},
+    "specialized_product_type": {"type": "string"},
+    "strategy_specific_coverage_complete": {"type": "boolean"},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
