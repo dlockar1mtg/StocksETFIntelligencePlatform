@@ -50,11 +50,17 @@ def validate_cross_control_consistency(root: Path, control: dict[str, Any]) -> N
     source_authority = load_json(root / "config/sources/source_authority.json")
     data_zones = load_json(root / "config/data/data_zones.json")
 
-    expected_ids = set(control["tier_1_security_ids"])
+    expected_seed_ids = set(control["tier_1_security_ids"])
     master_ids = {item["security_id"] for item in security_master["securities"]}
-    eligible_ids = set(universe["security_ids"])
-    if expected_ids != master_ids or expected_ids != eligible_ids:
-        raise Phase0IntegrationError("Tier 1 security identity is inconsistent across controls")
+    policy_seed_ids = set(universe.get("seed_security_ids", []))
+    if expected_seed_ids != policy_seed_ids:
+        raise Phase0IntegrationError("Phase 0 seed security identity is inconsistent with universe policy")
+    if not expected_seed_ids.issubset(master_ids):
+        raise Phase0IntegrationError("Required Phase 0 seed securities are missing from security master")
+    if universe.get("seed_securities_must_remain_present") is not True:
+        raise Phase0IntegrationError("Seed securities must remain mandatory")
+    if universe.get("universe_expansion_requires_certification") is not True:
+        raise Phase0IntegrationError("Universe expansion must require certification")
 
     benchmark_ids = {item["benchmark_id"] for item in benchmark_registry["benchmarks"]}
     for security in security_master["securities"]:
