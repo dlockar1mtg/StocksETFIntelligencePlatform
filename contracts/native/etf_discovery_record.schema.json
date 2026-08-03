@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.etf_discovery_record/1.0.0",
+  "title": "Governed ETF Discovery Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id",
+    "ticker",
+    "legal_name",
+    "instrument_type",
+    "primary_exchange",
+    "issuer_name",
+    "listing_status",
+    "effective_at_utc",
+    "available_at_utc",
+    "source_ids",
+    "content_sha256"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "pattern": "^SEC-US-[A-Z0-9-]+$"},
+    "ticker": {"type": "string", "minLength": 1},
+    "legal_name": {"type": "string", "minLength": 1},
+    "instrument_type": {"type": "string", "const": "ETF"},
+    "primary_exchange": {"type": "string", "enum": ["NYSE_ARCA", "NASDAQ", "CBOE_BZX"]},
+    "issuer_name": {"type": "string", "minLength": 1},
+    "listing_status": {"type": "string", "enum": ["PENDING", "ACTIVE", "HALTED", "DELISTING_PENDING", "DELISTED", "LIQUIDATING", "LIQUIDATED", "UNKNOWN"]},
+    "effective_at_utc": {"type": "string", "format": "date-time"},
+    "available_at_utc": {"type": "string", "format": "date-time"},
+    "source_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "prior_tickers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "quarantine_reasons": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}
