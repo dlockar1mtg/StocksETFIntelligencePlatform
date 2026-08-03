@@ -61,7 +61,7 @@ def validate_cross_control_consistency(root: Path, control: dict[str, Any]) -> N
         if security["benchmark_id"] not in benchmark_ids:
             raise Phase0IntegrationError("Security references an unknown benchmark")
 
-    if market_calendar.get("source_tier") != "TIER_1_OFFICIAL":
+    if market_calendar.get("holiday_source_tier_required") != 1:
         raise Phase0IntegrationError("Market calendar must use Tier 1 authority")
     if return_standard.get("comparison_basis") != "TOTAL_RETURN":
         raise Phase0IntegrationError("Return comparison must use total return")
