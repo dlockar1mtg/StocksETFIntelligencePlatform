@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "universe_id": "ETF-TIER-1",
+  "security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "required_asset_type": "ETF",
+  "required_lifecycle_status": "ACTIVE",
+  "unknown_security_blocked": true,
+  "individual_stock_production_authorized": false,
+  "eligibility_requires_complete_identity": true,
+  "symbol_change_requires_history": true,
+  "delisted_or_liquidated_ineligible": true
+}
