@@ -7,9 +7,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from foundation.validation.phase_0_integration import Phase0IntegrationError, validate_phase_0
 
-ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "artifacts" / "certification" / "phase_0_completion_certification.json"
 MINIMUM_TESTS = 56
 
