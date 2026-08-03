@@ -1,0 +1,13 @@
+{
+  "return_standard_id": "ETF_TOTAL_RETURN_V1",
+  "security_return_basis": "total_return",
+  "benchmark_return_basis": "total_return",
+  "price_return_allowed_for_certified_comparison": false,
+  "distribution_reinvestment": "ex_date_close",
+  "split_adjustment_required": true,
+  "currency": "USD",
+  "annualization_day_count": 252,
+  "missing_return_observations": "BLOCK",
+  "mixed_return_bases": "BLOCK",
+  "look_ahead_data": "BLOCK"
+}
