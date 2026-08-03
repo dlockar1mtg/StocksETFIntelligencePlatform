@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-MINIMUM_TESTS = 175
+MINIMUM_TESTS = 177
 REPORT_PATH = Path("artifacts/certification/phase_1_6_6a_certification.json")
 
 
@@ -46,6 +46,8 @@ def main() -> int:
         "raw_payload_hashes_required": True,
         "source_records_preserved": True,
         "collector_invoked_as_repository_module": True,
+        "powershell_json_arrays_enumerated": True,
+        "quarantine_outputs_outside_git": True,
         "candidate_is_certified_discovery": False,
         "candidate_implies_robinhood_eligibility": False,
         "candidate_implies_analytics_eligibility": False,
