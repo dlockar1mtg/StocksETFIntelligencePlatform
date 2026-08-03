@@ -21,16 +21,15 @@ NOW = datetime(2026, 8, 3, 20, 0, tzinfo=timezone.utc)
 class Phase12RawAcquisitionTests(unittest.TestCase):
     def setUp(self) -> None:
         self.policy = load_json(ROOT / "config/acquisition/raw_capture_policy.json")
-        providers = load_json(ROOT / "config/providers/provider_contracts.json")
+        provider_contracts = load_json(ROOT / "config/providers/provider_contracts.json")
         security_master = load_json(ROOT / "config/security/security_master.json")
-        self.provider_ids = {item["provider_id"] for item in providers["providers"]}
-        self.domains = set(providers["governed_data_domains"])
+        self.provider_ids = {"PROVIDER-TEST"}
+        self.domains = set(provider_contracts["governed_domains"])
         self.security_ids = {item["security_id"] for item in security_master["securities"]}
-        provider_id = next(iter(self.provider_ids))
         self.manifest = {
             "capture_id": "CAP-TEST-001",
-            "provider_id": provider_id,
-            "data_domain": "RAW_PRICES",
+            "provider_id": "PROVIDER-TEST",
+            "data_domain": "raw_price",
             "security_id": "SEC-US-VOO",
             "source_record_id": "record-1",
             "observed_at_utc": "2026-08-03T19:00:00Z",
@@ -38,7 +37,7 @@ class Phase12RawAcquisitionTests(unittest.TestCase):
             "captured_at_utc": "2026-08-03T19:06:00Z",
             "content_sha256": sha256_bytes(b"fixture"),
             "byte_count": 7,
-            "storage_path": "data/raw/provider/raw_prices/SEC-US-VOO.json",
+            "storage_path": "data/raw/provider/raw_price/SEC-US-VOO.json",
             "capture_state": "CAPTURED",
         }
 
@@ -89,7 +88,7 @@ class Phase12RawAcquisitionTests(unittest.TestCase):
 
     def test_storage_zone_matches_capture_state(self) -> None:
         manifest = copy.deepcopy(self.manifest)
-        manifest["storage_path"] = "data/quarantine/provider/raw_prices/file.json"
+        manifest["storage_path"] = "data/quarantine/provider/raw_price/file.json"
         with self.assertRaises(RawCaptureError):
             self.validate(manifest)
         manifest["capture_state"] = "QUARANTINED"
