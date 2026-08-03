@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
 from foundation.validation.phase_1_6_7_integration import Phase167IntegrationError, validate_phase_1_6_7
 
 
-MINIMUM_TESTS = 207
+MINIMUM_TESTS = 209
 REPORT_PATH = ROOT / "artifacts/certification/phase_1_6_7_certification.json"
 
 
@@ -53,6 +53,9 @@ def main() -> int:
         "integration_result": integration_result,
         "structural_baseline_replaced": True,
         "snapshot_hash_locked": True,
+        "ci_attestation_supported": True,
+        "local_snapshot_if_present_verified": True,
+        "generated_snapshot_remains_outside_git": True,
         "taxonomy_pending": True,
         "analytics_eligibility_implied": False,
         "recommendation_authority": False,
