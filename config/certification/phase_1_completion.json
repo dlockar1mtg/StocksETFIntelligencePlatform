@@ -1,0 +1,42 @@
+{
+  "certification_id": "stocks_etf_phase_1_data_foundation",
+  "version": "1.0.0",
+  "phase": "1.5",
+  "required_subphases": ["1.1", "1.2", "1.3", "1.4", "1.5"],
+  "minimum_tests_required": 106,
+  "required_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "required_governed_domains": [
+    "raw_price",
+    "adjusted_price",
+    "distribution",
+    "corporate_action",
+    "etf_metadata",
+    "holdings",
+    "expense_ratio",
+    "assets_under_management",
+    "liquidity",
+    "benchmark"
+  ],
+  "required_control_files": [
+    "config/governance/phase_1_governance_lock.json",
+    "config/providers/provider_contracts.json",
+    "config/acquisition/raw_capture_policy.json",
+    "config/normalization/normalization_policy.json",
+    "config/quality/evidence_quality_policy.json",
+    "config/security/security_master.json",
+    "config/contracts/contract_registry.json"
+  ],
+  "fail_closed": true,
+  "critical_failures_block_certification": true,
+  "missing_evidence_reduces_confidence": true,
+  "silent_imputation_forbidden": true,
+  "critical_conflicts_require_quarantine": true,
+  "look_ahead_forbidden": true,
+  "raw_payloads_must_remain_outside_git": true,
+  "certified_market_monitoring_authorized": false,
+  "certified_analytics_authorized": false,
+  "certified_recommendations_authorized": false,
+  "certified_uip_export_authorized": false,
+  "automatic_execution_authorized": false,
+  "direct_uip_database_writes_authorized": false
+}
