@@ -10,7 +10,10 @@
   "individual_stock_production_authorized": false,
   "tier_1_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
   "required_control_files": [
-    "config/governance/phase_0_governance.json",
+    "config/governance/governance_manifest.json",
+    "config/governance/decision_register.json",
+    "config/governance/prohibited_actions.json",
+    "config/governance/certification_authority.json",
     "config/architecture/repository_layers.json",
     "config/contracts/contract_registry.json",
     "config/sources/source_authority.json",
