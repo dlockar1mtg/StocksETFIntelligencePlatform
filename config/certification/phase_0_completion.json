@@ -1,0 +1,46 @@
+{
+  "phase": "0",
+  "certification_id": "stocks_etf_phase_0_foundation",
+  "required_subphases": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"],
+  "minimum_regression_tests": 56,
+  "fail_closed": true,
+  "production_authority_granted": false,
+  "automatic_execution_authorized": false,
+  "direct_uip_database_writes_authorized": false,
+  "individual_stock_production_authorized": false,
+  "tier_1_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "required_control_files": [
+    "config/governance/governance_manifest.json",
+    "config/governance/decision_register.json",
+    "config/governance/prohibited_actions.json",
+    "config/governance/certification_authority.json",
+    "config/architecture/repository_layers.json",
+    "config/contracts/contract_registry.json",
+    "config/sources/source_authority.json",
+    "config/data/data_zones.json",
+    "config/security/security_master.json",
+    "config/security/issuer_fund_registry.json",
+    "config/security/benchmark_registry.json",
+    "config/universe/etf_universe_policy.json",
+    "config/market/market_calendar.json",
+    "config/market/return_standard.json",
+    "config/market/corporate_action_policy.json"
+  ],
+  "authorized_uses": [
+    "foundation_development",
+    "governance_validation",
+    "contract_validation",
+    "source_governance_validation",
+    "security_master_validation",
+    "market_standard_validation",
+    "research_only_development"
+  ],
+  "unauthorized_uses": [
+    "certified_market_monitoring",
+    "certified_asset_outlook",
+    "certified_portfolio_action",
+    "certified_contribution_allocation",
+    "certified_uip_export",
+    "automatic_execution"
+  ]
+}

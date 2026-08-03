@@ -1,0 +1,11 @@
+{
+  "calendar_id": "XNYS_XNAS_US_MARKET_V1",
+  "timezone": "America/New_York",
+  "session_definition": "regular_trading_session",
+  "weekmask": ["MON", "TUE", "WED", "THU", "FRI"],
+  "holiday_source_tier_required": 1,
+  "unknown_calendar_dates_blocked": true,
+  "early_close_requires_explicit_record": true,
+  "non_trading_days_generate_returns": false,
+  "as_of_date_required": true
+}

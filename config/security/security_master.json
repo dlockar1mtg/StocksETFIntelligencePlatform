@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "unknown_security_blocked": true,
+  "ticker_only_identity_blocked": true,
+  "lifecycle_states": ["ACTIVE", "PENDING", "SUSPENDED", "DELISTED", "LIQUIDATED", "MERGED"],
+  "securities": [
+    {"security_id": "SEC-US-VOO", "ticker": "VOO", "asset_type": "ETF", "issuer_id": "ISS-VANGUARD", "fund_id": "FUND-VOO", "exchange": "ARCX", "currency": "USD", "benchmark_id": "IDX-SP500-TR", "share_class_id": "SC-VOO", "lifecycle_status": "ACTIVE", "eligible_for_research": true},
+    {"security_id": "SEC-US-SCHD", "ticker": "SCHD", "asset_type": "ETF", "issuer_id": "ISS-SCHWAB", "fund_id": "FUND-SCHD", "exchange": "ARCX", "currency": "USD", "benchmark_id": "IDX-DJUSDIV100-TR", "share_class_id": "SC-SCHD", "lifecycle_status": "ACTIVE", "eligible_for_research": true},
+    {"security_id": "SEC-US-QQQM", "ticker": "QQQM", "asset_type": "ETF", "issuer_id": "ISS-INVESCO", "fund_id": "FUND-QQQM", "exchange": "XNAS", "currency": "USD", "benchmark_id": "IDX-NASDAQ100-TR", "share_class_id": "SC-QQQM", "lifecycle_status": "ACTIVE", "eligible_for_research": true}
+  ]
+}

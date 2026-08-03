@@ -7,6 +7,7 @@ on:
       - phase-0.2-repository-foundation
       - phase-0.3-contracts-configuration
       - phase-0.4-source-authority-data-zones
+      - phase-0-completion
   pull_request:
     branches:
       - main
@@ -28,5 +29,5 @@ jobs:
         run: python scripts/validate_environment.py
       - name: Run all regression tests
         run: python -m unittest discover -s tests -t . -p "test_*.py" -v
-      - name: Run Phase 0.4 certification
-        run: python scripts/certify_phase_0_4.py
+      - name: Run complete Phase 0 certification
+        run: python scripts/certify_phase_0_7.py

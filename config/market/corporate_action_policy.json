@@ -1,0 +1,12 @@
+{
+  "policy_id": "ETF_CORPORATE_ACTIONS_V1",
+  "supported_actions": ["CASH_DISTRIBUTION", "SPLIT", "REVERSE_SPLIT", "SYMBOL_CHANGE", "FUND_MERGER", "LIQUIDATION"],
+  "effective_date_required": true,
+  "announcement_date_required": true,
+  "source_tier_maximum": 2,
+  "point_in_time_enforcement": true,
+  "unknown_actions_blocked": true,
+  "conflicting_actions_quarantined": true,
+  "manual_override_requires_evidence": true,
+  "retroactive_silent_rewrite": false
+}
