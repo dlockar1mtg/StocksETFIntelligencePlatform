@@ -132,15 +132,24 @@ def parse_fund_ticker_payload(payload: bytes) -> list[dict[str, Any]]:
     if not isinstance(rows, list) or not isinstance(fields, list):
         raise SECFundTickerAcquisitionError("Unexpected SEC mutual-fund ticker payload shape")
     normalized_fields = [str(field).strip().lower() for field in fields]
-    required = {"cik", "seriesid", "classid", "ticker"}
-    if not required.issubset(set(normalized_fields)):
-        raise SECFundTickerAcquisitionError(f"SEC payload missing required fields: {sorted(required - set(normalized_fields))}")
+    available = set(normalized_fields)
+    required_identity = {"cik", "seriesid", "classid"}
+    missing_identity = required_identity - available
+    if missing_identity:
+        raise SECFundTickerAcquisitionError(
+            f"SEC payload missing required fields: {sorted(missing_identity)}"
+        )
+    ticker_field = "ticker" if "ticker" in available else "symbol" if "symbol" in available else None
+    if ticker_field is None:
+        raise SECFundTickerAcquisitionError(
+            "SEC payload missing required ticker field; expected ticker or governed alias symbol"
+        )
     output: list[dict[str, Any]] = []
     for row in rows:
         if not isinstance(row, list) or len(row) != len(normalized_fields):
             raise SECFundTickerAcquisitionError("Malformed SEC ticker row")
         item = dict(zip(normalized_fields, row))
-        ticker = str(item.get("ticker") or "").strip().upper()
+        ticker = str(item.get(ticker_field) or "").strip().upper()
         if not ticker:
             continue
         output.append({
@@ -149,6 +158,7 @@ def parse_fund_ticker_payload(payload: bytes) -> list[dict[str, Any]]:
             "series_id": item.get("seriesid"),
             "class_contract_id": item.get("classid"),
             "fund_name": item.get("name") or item.get("seriesname") or item.get("classname"),
+            "sec_ticker_field": ticker_field,
         })
     return output
 
