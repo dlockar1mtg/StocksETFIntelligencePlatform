@@ -1,0 +1,112 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "2",
+  "subphase": "2A",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "operating_timezone": "America/Chicago",
+  "objective": "Reduce downstream data and analytics cost through evidence-based structural triage without imposing a target universe size.",
+  "target_universe_size": null,
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "preserve_full_discovery_universe": true,
+  "destructive_deletion_allowed": false,
+  "required_input_states": [
+    "BROKER_ELIGIBLE",
+    "BLOCKED"
+  ],
+  "required_dimensions": [
+    "identity_integrity",
+    "instrument_structure",
+    "specialized_product_flags",
+    "fund_status",
+    "inception_and_history_depth",
+    "liquidity_and_tradability",
+    "assets_and_viability",
+    "expense_and_structural_cost",
+    "benchmark_and_strategy_identity",
+    "holdings_transparency",
+    "source_authority_and_lineage",
+    "conflict_and_revision_status"
+  ],
+  "triage_states": [
+    "STRUCTURAL_CANDIDATE",
+    "DATA_COLLECTION_CANDIDATE",
+    "ANALYTICS_PROVISIONAL",
+    "SPECIALIZED",
+    "PORTFOLIO_RESTRICTED",
+    "RESEARCH_ONLY",
+    "QUARANTINED",
+    "BLOCKED"
+  ],
+  "specialized_flags": [
+    "LEVERAGED",
+    "INVERSE",
+    "SINGLE_STOCK",
+    "VOLATILITY_LINKED",
+    "BUFFER_OR_DEFINED_OUTCOME",
+    "COVERED_CALL_OR_OPTIONS_INCOME",
+    "DERIVATIVE_HEAVY",
+    "COMMODITY_OR_FUTURES",
+    "CRYPTO_LINKED",
+    "ACTIVE_MANAGEMENT",
+    "NEW_OR_INSUFFICIENT_HISTORY",
+    "ILLIQUID_OR_STALE",
+    "CLOSING_OR_LIQUIDATING"
+  ],
+  "decision_rules": {
+    "broker_ineligible_is_blocked": true,
+    "unresolved_identity_is_quarantined": true,
+    "delisted_or_liquidating_is_blocked": true,
+    "etn_or_closed_end_fund_is_blocked_unless_separately_approved": true,
+    "leveraged_inverse_and_single_stock_are_specialized_or_restricted": true,
+    "insufficient_history_cannot_be_analytics_eligible": true,
+    "stale_or_decision_critical_conflict_blocks_promotion": true,
+    "missing_evidence_is_not_imputed": true,
+    "expense_ratio_alone_cannot_block": true,
+    "aum_alone_cannot_block": true,
+    "peer_redundancy_alone_cannot_delete": true,
+    "unique_strategy_can_be_preserved_for_research": true,
+    "explicit_owner_approval_required_for_approved_candidate_promotion": true
+  },
+  "cost_tiers": [
+    {
+      "tier": "TIER_0_REFERENCE",
+      "scope": "All discovered securities",
+      "authorized_collection": ["identity", "listing_status", "broker_status"]
+    },
+    {
+      "tier": "TIER_1_STRUCTURAL",
+      "scope": "Broker-eligible and unresolved structural candidates",
+      "authorized_collection": ["official_metadata", "structure", "inception", "benchmark", "expense", "aum", "specialized_flags"]
+    },
+    {
+      "tier": "TIER_2_MARKET_SCREEN",
+      "scope": "Structurally admissible candidates",
+      "authorized_collection": ["recent_price_volume", "spread", "staleness", "history_start", "corporate_action_anomalies"]
+    },
+    {
+      "tier": "TIER_3_COMPARATIVE_ANALYTICS",
+      "scope": "Data-qualified peer representatives and unique strategies",
+      "authorized_collection": ["full_return_history", "distributions", "benchmark_history", "holdings", "fundamentals", "overlap"]
+    },
+    {
+      "tier": "TIER_4_APPROVED",
+      "scope": "Portfolio and explicitly approved candidate securities",
+      "authorized_collection": ["highest_frequency_monitoring", "forecasts", "recommendation_inputs"]
+    }
+  ],
+  "authority": {
+    "structural_triage_development": true,
+    "metadata_collection_development": true,
+    "market_screen_development": true,
+    "analytics_production": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
