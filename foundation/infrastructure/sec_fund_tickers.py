@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
 import time
 import urllib.error
 import urllib.request
+import zlib
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -53,7 +55,31 @@ def _require_user_agent(policy: dict[str, Any], explicit: str | None = None) -> 
     return value.strip()
 
 
-def fetch_sec_payload(user_agent: str | None = None, opener=urllib.request.urlopen, sleep=time.sleep) -> tuple[bytes, dict[str, Any]]:
+def decode_http_payload(payload: bytes, content_encoding: str | None) -> bytes:
+    """Decode an HTTP representation without discarding the original transport bytes."""
+    encoding = (content_encoding or "").strip().lower()
+    try:
+        if encoding in {"", "identity"}:
+            return payload
+        if encoding == "gzip":
+            return gzip.decompress(payload)
+        if encoding == "deflate":
+            try:
+                return zlib.decompress(payload)
+            except zlib.error:
+                return zlib.decompress(payload, -zlib.MAX_WBITS)
+    except (OSError, EOFError, zlib.error) as exc:
+        raise SECFundTickerAcquisitionError(
+            f"Unable to decode SEC HTTP payload encoded as {encoding}"
+        ) from exc
+    raise SECFundTickerAcquisitionError(f"Unsupported SEC content encoding: {encoding}")
+
+
+def fetch_sec_payload(
+    user_agent: str | None = None,
+    opener=urllib.request.urlopen,
+    sleep=time.sleep,
+) -> tuple[bytes, bytes, dict[str, Any]]:
     policy = load_policy()
     agent = _require_user_agent(policy, user_agent)
     request = urllib.request.Request(
@@ -66,22 +92,33 @@ def fetch_sec_payload(user_agent: str | None = None, opener=urllib.request.urlop
     for attempt in range(attempts):
         try:
             with opener(request, timeout=int(policy["timeout_seconds"])) as response:
-                payload = response.read()
-                if not payload:
+                transport_payload = response.read()
+                if not transport_payload:
                     raise SECFundTickerAcquisitionError("SEC returned an empty payload")
-                json.loads(payload.decode("utf-8"))
+                content_encoding = response.headers.get("Content-Encoding")
+                decoded_payload = decode_http_payload(transport_payload, content_encoding)
+                json.loads(decoded_payload.decode("utf-8"))
                 retrieved = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-                return payload, {
+                return decoded_payload, transport_payload, {
                     "source_id": policy["source_id"],
                     "source_url": policy["source_url"],
                     "retrieved_at_utc": retrieved,
                     "authority_level": policy["authority_level"],
                     "source_status": policy["source_status"],
                     "license_class": policy["license_class"],
-                    "content_sha256": sha256_bytes(payload),
+                    "content_encoding": content_encoding or "identity",
+                    "transport_content_sha256": sha256_bytes(transport_payload),
+                    "decoded_content_sha256": sha256_bytes(decoded_payload),
+                    "raw_transport_bytes_preserved": True,
                     "user_agent_declared": True,
                 }
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError, SECFundTickerAcquisitionError) as exc:
+        except (
+            urllib.error.URLError,
+            TimeoutError,
+            json.JSONDecodeError,
+            UnicodeDecodeError,
+            SECFundTickerAcquisitionError,
+        ) as exc:
             last_error = exc
             if attempt + 1 < attempts:
                 sleep(backoffs[min(attempt, len(backoffs) - 1)])
