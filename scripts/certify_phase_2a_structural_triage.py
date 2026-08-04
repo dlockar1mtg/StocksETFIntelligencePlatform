@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 from foundation.universe.structural_triage import load_policy
 
 REPORT_PATH = ROOT / "artifacts" / "certification" / "phase_2a_structural_triage_certification.json"
-MINIMUM_TESTS = 225
+MINIMUM_TESTS = 226
 
 
 def run_tests() -> tuple[int, str]:
