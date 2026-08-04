@@ -12,6 +12,15 @@ class IssuerSourceCaptureError(ValueError):
     """Raised when the Phase 3.6b.3a pilot fails closed."""
 
 
+def _hostname_matches_official_domain(hostname: str | None, official_domain: str) -> bool:
+    """Allow the official apex domain and its subdomains, but not lookalike domains."""
+    if not hostname or not official_domain:
+        return False
+    host = hostname.rstrip(".").lower()
+    domain = official_domain.rstrip(".").lower()
+    return host == domain or host.endswith(f".{domain}")
+
+
 def validate_registry_entry(security_id: str, entry: dict[str, Any], policy: dict[str, Any]) -> None:
     if not security_id:
         raise IssuerSourceCaptureError("STABLE_SECURITY_ID_MISSING")
@@ -22,7 +31,7 @@ def validate_registry_entry(security_id: str, entry: dict[str, Any], policy: dic
     if not url or not domain:
         raise IssuerSourceCaptureError("SOURCE_IDENTITY_MISSING")
     parsed = urllib.parse.urlparse(url)
-    if parsed.scheme != "https" or parsed.hostname != domain:
+    if parsed.scheme.lower() != "https" or not _hostname_matches_official_domain(parsed.hostname, domain):
         raise IssuerSourceCaptureError("UNOFFICIAL_ISSUER_DOMAIN")
     if not entry.get("issuer_key") or not entry.get("symbol"):
         raise IssuerSourceCaptureError("ISSUER_OR_SYMBOL_MISSING")
