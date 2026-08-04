@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 from foundation.infrastructure.structural_metadata import load_policy
 
 REPORT_PATH = ROOT / "artifacts" / "certification" / "phase_2a_2_structural_metadata_certification.json"
-MINIMUM_TESTS = 240
+MINIMUM_TESTS = 241
 
 
 def run_tests() -> int:
