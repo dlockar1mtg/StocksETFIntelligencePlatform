@@ -1,21 +1,21 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "1.0.1",
   "records": {
-    "US-ETF-VOO": {
+    "SEC-US-VOO": {
       "symbol": "VOO",
       "issuer_key": "VANGUARD",
       "official_domain": "investor.vanguard.com",
       "source_tier": "ISSUER_PRODUCT_PAGE",
       "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo"
     },
-    "US-ETF-SCHD": {
+    "SEC-US-SCHD": {
       "symbol": "SCHD",
       "issuer_key": "CHARLES_SCHWAB",
       "official_domain": "schwabassetmanagement.com",
       "source_tier": "ISSUER_PRODUCT_PAGE",
       "source_url": "https://www.schwabassetmanagement.com/products/schd"
     },
-    "US-ETF-QQQM": {
+    "SEC-US-QQQM": {
       "symbol": "QQQM",
       "issuer_key": "INVESCO",
       "official_domain": "invesco.com",
