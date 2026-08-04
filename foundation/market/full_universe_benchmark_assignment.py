@@ -4,7 +4,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from foundation.market.benchmark_assignment_registry import assign_benchmark
 
@@ -72,7 +72,7 @@ def build_full_universe_assignment(
     for security_id in sorted(taxonomy_by_id):
         taxonomy = taxonomy_by_id[security_id]
         returns = returns_by_id[security_id]
-        assignment = assign_benchmark(taxonomy, registry_policy, rules)
+        assignment = assign_benchmark(taxonomy, rules, registry_policy)
         state = assignment["assignment_state"]
         reasons = list(assignment.get("assignment_reasons") or [])
         return_state = returns.get("calculation_state")
