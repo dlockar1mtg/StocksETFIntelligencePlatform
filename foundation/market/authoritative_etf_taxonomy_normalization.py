@@ -34,6 +34,7 @@ def _lineage_valid(entry: dict[str, Any], policy: dict[str, Any]) -> bool:
         entry.get("source_tier") in set(policy["authoritative_source_tiers"])
         and bool(entry.get("source_id"))
         and bool(entry.get("source_record_id"))
+        and bool(entry.get("classified_at_utc"))
         and _valid_hash(entry.get("content_sha256"))
     )
 
@@ -110,7 +111,7 @@ def normalize_taxonomy_record(
         base[field] = entry[field]
     base.update({
         "classification_status": "CLASSIFIED",
-        "classified_at_utc": entry.get("classified_at_utc"),
+        "classified_at_utc": entry["classified_at_utc"],
         "source_id": entry["source_id"],
         "source_record_id": entry["source_record_id"],
         "content_sha256": entry["content_sha256"],
