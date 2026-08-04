@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import gzip
 import json
 import tempfile
 import unittest
@@ -7,6 +8,7 @@ from pathlib import Path
 
 from foundation.infrastructure.sec_fund_tickers import (
     SECFundTickerAcquisitionError,
+    decode_http_payload,
     load_policy,
     parse_fund_ticker_payload,
     reconcile_to_universe,
@@ -50,6 +52,15 @@ class Phase2A3SECFundTickerTests(unittest.TestCase):
         self.assertEqual(rows[0]["cik"], "0000036405")
         self.assertEqual(rows[0]["series_id"], "S000002839")
         self.assertEqual(rows[0]["class_contract_id"], "C000092055")
+
+    def test_gzip_payload_decodes_to_original_json(self) -> None:
+        payload = self.sample_payload()
+        compressed = gzip.compress(payload)
+        self.assertEqual(decode_http_payload(compressed, "gzip"), payload)
+
+    def test_unsupported_content_encoding_fails_closed(self) -> None:
+        with self.assertRaises(SECFundTickerAcquisitionError):
+            decode_http_payload(self.sample_payload(), "br")
 
     def test_malformed_payload_fails_closed(self) -> None:
         with self.assertRaises(SECFundTickerAcquisitionError):
