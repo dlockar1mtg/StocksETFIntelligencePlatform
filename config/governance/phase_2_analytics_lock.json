@@ -1,0 +1,50 @@
+{
+  "lock_version": "1.0.0",
+  "phase": "2",
+  "subphase": "2.1",
+  "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
+  "governing_issue_number": 32,
+  "operating_timezone": "America/Chicago",
+  "universe_requirement": "ANALYTICS_ELIGIBLE_OR_EXPLICITLY_PROVISIONAL",
+  "required_etf_pillars": [
+    "RETURN_TREND",
+    "RISK_DRAWDOWN",
+    "VALUATION_FUNDAMENTALS",
+    "INCOME_DISTRIBUTIONS",
+    "FUND_STRUCTURE",
+    "DIVERSIFICATION_OVERLAP",
+    "REGIME_PORTFOLIO_FIT"
+  ],
+  "required_horizons": ["1M", "3M", "1Y", "3Y", "5Y"],
+  "primary_strategic_horizon": "3Y",
+  "required_metric_states": ["AVAILABLE", "INSUFFICIENT_HISTORY", "MISSING_EVIDENCE", "STALE", "CONFLICTED", "BLOCKED"],
+  "required_calculation_controls": {
+    "point_in_time_only": true,
+    "total_return_primary": true,
+    "provider_adjusted_and_reconstructed_returns_reconciled": true,
+    "look_ahead_allowed": false,
+    "survivorship_bias_allowed": false,
+    "silent_imputation_allowed": false,
+    "missing_evidence_rewarded": false,
+    "conflicted_evidence_quarantined": true,
+    "metric_formula_version_required": true,
+    "input_lineage_required": true,
+    "observation_cutoff_required": true,
+    "benchmark_identity_required_when_applicable": true
+  },
+  "phase_2_1_authority": {
+    "metric_contract_definition": true,
+    "analytics_architecture_definition": true,
+    "production_metric_calculation": false,
+    "scoring": false,
+    "ranking": false,
+    "forecasting": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true,
+  "critical_failures_block_certification": true
+}
