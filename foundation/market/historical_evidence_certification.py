@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -78,7 +78,7 @@ def certify_record(
 
     valid_indices = [i for i, ts in enumerate(timestamps) if ts is not None and i < len(closes) and closes[i] is not None]
     valid_timestamps = [int(timestamps[i]) for i in valid_indices]
-    observation_dates = [datetime.utcfromtimestamp(ts).date().isoformat() for ts in valid_timestamps]
+    observation_dates = [datetime.fromtimestamp(ts, tz=timezone.utc).date().isoformat() for ts in valid_timestamps]
 
     if valid_timestamps != sorted(valid_timestamps):
         reasons.append("OBSERVATIONS_NOT_CHRONOLOGICAL")
