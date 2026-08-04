@@ -1,0 +1,77 @@
+{
+  "phase": "3",
+  "subphase": "3.1",
+  "policy_version": "1.0.0",
+  "name": "Historical Data Authority and Collection Contract",
+  "objective": "Authorize governed historical market-data collection for the certified Phase 3 candidate universe without yet authorizing computed returns, risk analytics, rankings, forecasts, recommendations, or execution.",
+  "required_candidate_count": 3462,
+  "required_candidate_state": "MARKET_DATA_ELIGIBLE",
+  "provisional_candidates_allowed": false,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "selection_principle": "CERTIFIED_PHASE_2B_CANDIDATES_ONLY",
+  "provider_authority": {
+    "primary_provider_id": "YAHOO_FINANCE_CHART",
+    "fallback_provider_ids": [],
+    "fallback_requires_separate_governance_approval": true,
+    "provider_symbol_mismatch_blocks": true,
+    "unknown_provider_blocks": true
+  },
+  "collection": {
+    "interval": "1d",
+    "range": "max",
+    "include_adjusted_close": true,
+    "include_dividends": true,
+    "include_splits": true,
+    "raw_payloads_immutable": true,
+    "normalized_outputs_versioned": true,
+    "resumable": true,
+    "retryable": true,
+    "checkpoint_required": true,
+    "operating_timezone": "America/Chicago"
+  },
+  "return_basis": {
+    "primary_basis": "TOTAL_RETURN",
+    "price_return_only_comparisons_blocked": true,
+    "mixed_return_basis_comparisons_blocked": true,
+    "adjusted_close_must_reconcile_with_distributions_and_splits": true,
+    "corporate_action_conflicts_quarantine": true
+  },
+  "point_in_time_controls": {
+    "observation_date_required": true,
+    "availability_timestamp_required": true,
+    "future_dated_observations_blocked": true,
+    "look_ahead_blocked": true,
+    "survivorship_bias_controls_required": true,
+    "historical_constituent_state_must_not_be_inferred": true,
+    "missing_values_must_not_be_imputed_silently": true
+  },
+  "benchmark_controls": {
+    "benchmark_assignment_required_before_relative_metrics": true,
+    "benchmark_identity_must_be_stable": true,
+    "benchmark_effective_date_required": true,
+    "unknown_benchmark_blocks_relative_metrics": true,
+    "benchmark_changes_must_be_versioned": true
+  },
+  "minimum_history_observations": {
+    "1m": 21,
+    "3m": 63,
+    "1y": 252,
+    "3y": 756,
+    "5y": 1260
+  },
+  "authority": {
+    "historical_data_collection": true,
+    "historical_data_normalization": true,
+    "benchmark_contract_development": true,
+    "return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
