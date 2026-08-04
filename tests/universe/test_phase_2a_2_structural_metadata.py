@@ -16,6 +16,8 @@ from foundation.infrastructure.structural_metadata import (
 )
 
 NOW = datetime(2026, 8, 4, 4, 0, tzinfo=timezone.utc)
+OBSERVED_AT = "2026-08-04T03:00:00Z"
+EFFECTIVE_DATE = "2026-08-03"
 
 
 def lineage(source_id: str = "ISSUER", digest: str = "a" * 64) -> list[dict]:
@@ -48,6 +50,16 @@ def raw_record() -> dict:
     }
 
 
+def normalized(raw: dict | None = None, source_id: str = "ISSUER") -> dict:
+    return normalize_record(
+        raw or raw_record(),
+        lineage(source_id),
+        OBSERVED_AT,
+        EFFECTIVE_DATE,
+        NOW,
+    )
+
+
 class Phase2A2StructuralMetadataTests(unittest.TestCase):
     def test_policy_is_evidence_sized_and_fail_closed(self) -> None:
         policy = load_policy()
@@ -73,13 +85,13 @@ class Phase2A2StructuralMetadataTests(unittest.TestCase):
             validate_policy(policy)
 
     def test_standard_etf_normalizes_complete(self) -> None:
-        record = normalize_record(raw_record(), lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        record = normalized()
         self.assertEqual(record["record_status"], "COMPLETE")
         self.assertEqual(record["specialized_flags"], [])
         validate_record(record, NOW)
 
     def test_empty_specialized_flags_are_valid(self) -> None:
-        record = normalize_record(raw_record(), lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        record = normalized()
         self.assertEqual(record["specialized_flags"], [])
 
     def test_specialized_structure_is_detected_from_text(self) -> None:
@@ -93,35 +105,53 @@ class Phase2A2StructuralMetadataTests(unittest.TestCase):
         raw = raw_record()
         raw["issuer_name"] = None
         raw["inception_date"] = None
-        record = normalize_record(raw, lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        record = normalized(raw)
         self.assertEqual(record["record_status"], "PARTIAL")
         self.assertIsNone(record["issuer_name"])
         self.assertIsNone(record["inception_date"])
 
     def test_future_evidence_is_rejected(self) -> None:
-        record = normalize_record(raw_record(), lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        record = normalized()
         record["observed_at_utc"] = "2026-08-05T00:00:00Z"
         with self.assertRaises(StructuralMetadataError):
             validate_record(record, NOW)
 
+    def test_normalization_clock_is_deterministic(self) -> None:
+        record = normalize_record(
+            raw_record(), lineage(), OBSERVED_AT, EFFECTIVE_DATE, NOW
+        )
+        self.assertEqual(record["observed_at_utc"], OBSERVED_AT)
+        with self.assertRaises(StructuralMetadataError):
+            normalize_record(
+                raw_record(), lineage(), OBSERVED_AT, EFFECTIVE_DATE,
+                datetime(2026, 8, 4, 2, 0, tzinfo=timezone.utc),
+            )
+
     def test_invalid_lineage_hash_is_rejected(self) -> None:
         with self.assertRaises(StructuralMetadataError):
-            normalize_record(raw_record(), lineage(digest="bad"), "2026-08-04T03:00:00Z", "2026-08-03")
+            normalize_record(
+                raw_record(), lineage(digest="bad"), OBSERVED_AT, EFFECTIVE_DATE, NOW
+            )
 
     def test_closing_fund_must_be_blocked(self) -> None:
         raw = raw_record()
         raw["fund_status"] = "CLOSING"
-        record = normalize_record(raw, lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
         with self.assertRaises(StructuralMetadataError):
-            validate_record(record, NOW)
-        record["record_status"] = "BLOCKED"
+            normalized(raw)
+        record = {
+            **normalize_record(
+                {**raw, "fund_status": "ACTIVE"}, lineage(), OBSERVED_AT, EFFECTIVE_DATE, NOW
+            ),
+            "fund_status": "CLOSING",
+            "record_status": "BLOCKED",
+        }
         validate_record(record, NOW)
 
     def test_conflicts_are_preserved_not_averaged(self) -> None:
-        first = normalize_record(raw_record(), lineage("ISSUER"), "2026-08-04T03:00:00Z", "2026-08-03")
+        first = normalized(source_id="ISSUER")
         second_raw = raw_record()
         second_raw["expense_ratio"] = 0.0004
-        second = normalize_record(second_raw, lineage("STRUCTURED"), "2026-08-04T03:00:00Z", "2026-08-03")
+        second = normalized(second_raw, source_id="STRUCTURED")
         result = reconcile_records([first, second])
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0]["record_status"], "CONFLICTED")
@@ -129,26 +159,26 @@ class Phase2A2StructuralMetadataTests(unittest.TestCase):
         self.assertEqual(result[0]["expense_ratio"], 0.0003)
 
     def test_duplicate_identical_sources_reconcile_lineage(self) -> None:
-        first = normalize_record(raw_record(), lineage("ISSUER"), "2026-08-04T03:00:00Z", "2026-08-03")
-        second = normalize_record(raw_record(), lineage("SEC"), "2026-08-04T03:00:00Z", "2026-08-03")
+        first = normalized(source_id="ISSUER")
+        second = normalized(source_id="SEC")
         result = reconcile_records([first, second])
         self.assertEqual(len(result), 1)
         self.assertEqual(len(result[0]["source_lineage"]), 2)
         self.assertEqual(result[0]["conflict_fields"], [])
 
     def test_record_cannot_grant_analytics_authority(self) -> None:
-        record = normalize_record(raw_record(), lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        record = normalized()
         record["authority"]["analytics_authorized"] = True
         with self.assertRaises(StructuralMetadataError):
             validate_record(record, NOW)
 
     def test_coverage_summary_reports_evidence_not_target(self) -> None:
-        complete = normalize_record(raw_record(), lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        complete = normalized()
         partial_raw = raw_record()
         partial_raw["security_id"] = "SEC-US-XYZ"
         partial_raw["symbol"] = "XYZ"
         partial_raw["issuer_name"] = None
-        partial = normalize_record(partial_raw, lineage(), "2026-08-04T03:00:00Z", "2026-08-03")
+        partial = normalized(partial_raw)
         summary = summarize_coverage([complete, partial])
         self.assertEqual(summary["total_records"], 2)
         self.assertEqual(summary["record_status_counts"]["COMPLETE"], 1)
