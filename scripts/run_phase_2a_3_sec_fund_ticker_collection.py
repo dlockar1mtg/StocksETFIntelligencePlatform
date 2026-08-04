@@ -30,21 +30,30 @@ def main() -> int:
     if not isinstance(universe, list):
         raise RuntimeError("Universe input must be a list or contain records")
 
-    payload, lineage = fetch_sec_payload()
-    raw_path = ROOT / "data" / "raw" / "sec" / args.operating_date / "company_tickers_mf.json"
-    write_immutable(raw_path, payload)
-    sec_rows = parse_fund_ticker_payload(payload)
+    decoded_payload, transport_payload, lineage = fetch_sec_payload()
+    raw_dir = ROOT / "data" / "raw" / "sec" / args.operating_date
+    encoding = lineage["content_encoding"]
+    suffix = ".json.gz" if encoding == "gzip" else ".json.deflate" if encoding == "deflate" else ".json"
+    raw_path = raw_dir / f"company_tickers_mf{suffix}"
+    decoded_path = raw_dir / "company_tickers_mf.decoded.json"
+    write_immutable(raw_path, transport_payload)
+    write_immutable(decoded_path, decoded_payload)
+
+    sec_rows = parse_fund_ticker_payload(decoded_payload)
     result = reconcile_to_universe(sec_rows, universe)
     result.update({
         "operating_date": args.operating_date,
         "generated_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "source_lineage": lineage,
-        "raw_path": str(raw_path.relative_to(ROOT)).replace("\\", "/"),
+        "raw_transport_path": str(raw_path.relative_to(ROOT)).replace("\\", "/"),
+        "decoded_payload_path": str(decoded_path.relative_to(ROOT)).replace("\\", "/"),
     })
     output = ROOT / "data" / "staged" / "structural_metadata" / args.operating_date / "sec_fund_ticker_reconciliation.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: result[key] for key in ("total_universe_records", "matched", "conflicted", "unmatched")}, indent=2))
+    print(f"Raw transport: {raw_path}")
+    print(f"Decoded payload: {decoded_path}")
     print(f"Output: {output}")
     return 0
 
