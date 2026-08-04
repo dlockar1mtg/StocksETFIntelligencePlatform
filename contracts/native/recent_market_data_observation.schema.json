@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.recent_market_data_observation/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id", "symbol", "provider_id", "provider_symbol",
+    "collection_status", "retrieved_at_utc", "payload_sha256",
+    "observation_count", "latest_observation_date",
+    "adjusted_price_available", "volume_observation_count",
+    "median_daily_dollar_volume", "zero_volume_ratio",
+    "source_lineage", "authority"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "minLength": 1},
+    "symbol": {"type": "string", "pattern": "^[A-Z0-9.-]+$"},
+    "provider_id": {"const": "YAHOO_FINANCE_CHART"},
+    "provider_symbol": {"type": "string", "minLength": 1},
+    "collection_status": {"enum": ["COLLECTED", "NOT_FOUND", "ERROR", "SYMBOL_MISMATCH", "EMPTY"]},
+    "retrieved_at_utc": {"type": "string", "format": "date-time"},
+    "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "observation_count": {"type": "integer", "minimum": 0},
+    "latest_observation_date": {"type": ["string", "null"], "format": "date"},
+    "adjusted_price_available": {"type": "boolean"},
+    "volume_observation_count": {"type": "integer", "minimum": 0},
+    "median_daily_dollar_volume": {"type": ["number", "null"], "minimum": 0},
+    "zero_volume_ratio": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "source_lineage": {
+      "type": "object",
+      "required": ["source_url", "raw_path", "payload_sha256"],
+      "properties": {
+        "source_url": {"type": "string", "format": "uri"},
+        "raw_path": {"type": "string", "minLength": 1},
+        "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    },
+    "authority": {
+      "type": "object",
+      "required": ["market_screen", "analytics", "forecasting", "recommendations", "automatic_execution"],
+      "properties": {
+        "market_screen": {"const": true},
+        "analytics": {"const": false},
+        "forecasting": {"const": false},
+        "recommendations": {"const": false},
+        "automatic_execution": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  }
+}
