@@ -1,0 +1,47 @@
+{
+  "phase": "3",
+  "subphase": "3.5",
+  "policy_version": "1.0.0",
+  "name": "Total-Return Calculation Authority and Engine",
+  "objective": "Authorize and calculate adjusted-price total returns only for horizons certified by Phase 3.4, with exact source-date and price lineage and no decision authority.",
+  "required_record_count": 3462,
+  "required_evidence_states": ["EVIDENCE_CERTIFIED", "HORIZON_LIMITED"],
+  "quarantined_records_authorized": false,
+  "return_basis": "ADJUSTED_CLOSE_TOTAL_RETURN",
+  "horizon_minimum_observations": {
+    "1m": 21,
+    "3m": 63,
+    "1y": 252,
+    "3y": 756,
+    "5y": 1260
+  },
+  "annualized_horizons": ["3y", "5y"],
+  "annualization_day_basis": 365.2425,
+  "window_selection": {
+    "method": "LAST_N_VALID_ADJUSTED_PRICE_OBSERVATIONS",
+    "end_observation": "LATEST_CERTIFIED_OBSERVATION",
+    "interpolation_allowed": false,
+    "silent_imputation_allowed": false,
+    "non_trading_day_synthesis_allowed": false
+  },
+  "evidence_controls": {
+    "raw_payload_hash_reconciliation_required": true,
+    "phase_3_4_horizon_authorization_required": true,
+    "positive_finite_prices_required": true,
+    "chronological_dates_required": true,
+    "exact_start_end_lineage_required": true
+  },
+  "authority": {
+    "return_calculation": true,
+    "risk_analytics": false,
+    "benchmark_comparison": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
