@@ -15,9 +15,9 @@ class Phase32HistoricalCollectionTests(unittest.TestCase):
     def setUp(self) -> None:
         self.policy = json.loads(POLICY_PATH.read_text(encoding="utf-8"))
 
-    def payload(self, provider_symbol: str = "VOO") -> bytes:
+    def payload(self, provider_symbol: str = "VOO", granularity: str = "1d") -> bytes:
         return json.dumps({"chart": {"error": None, "result": [{
-            "meta": {"symbol": provider_symbol},
+            "meta": {"symbol": provider_symbol, "dataGranularity": granularity},
             "timestamp": [1609459200, 1609545600],
             "indicators": {"quote": [{"close": [100.0, 101.0]}], "adjclose": [{"adjclose": [99.0, 100.0]}]},
             "events": {"dividends": {"1": {"amount": 1.0}}, "splits": {}}
@@ -38,14 +38,17 @@ class Phase32HistoricalCollectionTests(unittest.TestCase):
 
     def test_build_url_uses_full_history_parameters(self):
         url = build_url("VOO", self.policy)
-        self.assertIn("range=max", url)
+        self.assertIn("period1=0", url)
+        self.assertIn("period2=2147483647", url)
         self.assertIn("interval=1d", url)
         self.assertIn("includeAdjustedClose=true", url)
+        self.assertNotIn("range=", url)
 
     def test_valid_payload_is_normalized(self):
         payload = self.payload()
         record = parse_historical_payload(payload, security_id="sec-1", requested_symbol="VOO", source_url="u", raw_path="r", retrieved_at_utc="2026-08-04T00:00:00Z")
         self.assertEqual(record["collection_status"], "COLLECTED")
+        self.assertEqual(record["provider_data_granularity"], "1d")
         self.assertEqual(record["observation_count"], 2)
         self.assertEqual(record["adjusted_price_observation_count"], 2)
         self.assertEqual(record["dividend_event_count"], 1)
@@ -79,6 +82,8 @@ class Phase32HistoricalCollectionTests(unittest.TestCase):
         self.assertTrue(self.policy["checkpoint_required"])
         self.assertTrue(self.policy["resumable"])
         self.assertTrue(self.policy["raw_payloads_immutable"])
+        mismatch = parse_historical_payload(self.payload(granularity="1mo"), security_id="sec-1", requested_symbol="VOO", source_url="u", raw_path="r", retrieved_at_utc="2026-08-04T00:00:00Z")
+        self.assertEqual(mismatch["collection_status"], "GRANULARITY_MISMATCH")
 
 
 if __name__ == "__main__":
