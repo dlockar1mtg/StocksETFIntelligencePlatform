@@ -1,0 +1,51 @@
+{
+  "registry_version": "1.0.0",
+  "status": "CONTROL_BASELINE_REQUIRES_FULL_POPULATION",
+  "records": {
+    "US-ETF-VOO": {
+      "symbol": "VOO",
+      "asset_class": "EQUITY",
+      "strategy": "BROAD_MARKET",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP",
+      "income_profile": "DISTRIBUTING",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "NONE",
+      "portfolio_treatment": "STANDARD_CANDIDATE",
+      "source_tier": "ISSUER_PRODUCT_PAGE",
+      "source_id": "VANGUARD",
+      "source_record_id": "VOO",
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "US-ETF-SCHD": {
+      "symbol": "SCHD",
+      "asset_class": "EQUITY",
+      "strategy": "DIVIDEND",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP",
+      "income_profile": "DISTRIBUTING",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "NONE",
+      "portfolio_treatment": "STANDARD_CANDIDATE",
+      "source_tier": "ISSUER_PRODUCT_PAGE",
+      "source_id": "CHARLES_SCHWAB",
+      "source_record_id": "SCHD",
+      "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "US-ETF-QQQM": {
+      "symbol": "QQQM",
+      "asset_class": "EQUITY",
+      "strategy": "INDEX",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP",
+      "income_profile": "DISTRIBUTING",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "NONE",
+      "portfolio_treatment": "STANDARD_CANDIDATE",
+      "source_tier": "ISSUER_PRODUCT_PAGE",
+      "source_id": "INVESCO",
+      "source_record_id": "QQQM",
+      "content_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  }
+}
