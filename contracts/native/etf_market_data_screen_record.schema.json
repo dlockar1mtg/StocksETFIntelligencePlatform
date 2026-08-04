@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.etf_market_data_screen_record.schema.json",
+  "title": "ETF Market Data Screen Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id",
+    "symbol",
+    "processing_state",
+    "observation_start_date",
+    "observation_end_date",
+    "price_observation_count",
+    "expected_trading_session_count",
+    "expected_session_coverage_ratio",
+    "latest_observation_age_calendar_days",
+    "adjusted_price_available",
+    "median_daily_dollar_volume_usd",
+    "zero_volume_session_ratio",
+    "corporate_action_conflict_state",
+    "screen_state",
+    "screen_reasons",
+    "source_lineage",
+    "analytics_authorized",
+    "forecasting_authorized",
+    "recommendations_authorized",
+    "automatic_execution_authorized"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "minLength": 1},
+    "symbol": {"type": "string", "pattern": "^[A-Z0-9.-]+$"},
+    "processing_state": {"const": "ACTIVE_STRUCTURAL_UNIVERSE"},
+    "observation_start_date": {"type": "string", "format": "date"},
+    "observation_end_date": {"type": "string", "format": "date"},
+    "price_observation_count": {"type": "integer", "minimum": 0},
+    "expected_trading_session_count": {"type": "integer", "minimum": 1},
+    "expected_session_coverage_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+    "latest_observation_age_calendar_days": {"type": "integer", "minimum": 0},
+    "adjusted_price_available": {"type": "boolean"},
+    "median_daily_dollar_volume_usd": {"type": ["number", "null"], "minimum": 0},
+    "zero_volume_session_ratio": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "corporate_action_conflict_state": {"enum": ["CLEAR", "UNKNOWN", "CONFLICTED", "CRITICAL"]},
+    "screen_state": {"enum": ["MARKET_DATA_ELIGIBLE", "MARKET_DATA_PROVISIONAL", "RESEARCH_ONLY", "QUARANTINED", "BLOCKED"]},
+    "screen_reasons": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_lineage": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["source_id", "retrieved_at_utc", "content_sha256"],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "retrieved_at_utc": {"type": "string", "format": "date-time"},
+        "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "analytics_authorized": {"const": false},
+    "forecasting_authorized": {"const": false},
+    "recommendations_authorized": {"const": false},
+    "automatic_execution_authorized": {"const": false}
+  }
+}
