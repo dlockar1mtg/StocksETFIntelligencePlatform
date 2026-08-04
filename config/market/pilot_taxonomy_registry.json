@@ -1,0 +1,54 @@
+{
+  "registry_version": "1.0.0",
+  "status": "PILOT_REVIEW_ONLY",
+  "records": {
+    "SEC-US-VOO": {
+      "symbol": "VOO",
+      "issuer_key": "VANGUARD",
+      "source_tier": "ISSUER_PRODUCT_PAGE",
+      "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+      "source_record_id": "VANGUARD-VOO-PROFILE",
+      "required_content_terms": ["VOO", "Vanguard", "S&P 500"],
+      "asset_class": "EQUITY",
+      "strategy": "PASSIVE_INDEX",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP",
+      "income_profile": "CORE",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "STANDARD_ETF",
+      "portfolio_treatment": "CORE_HOLDING"
+    },
+    "SEC-US-SCHD": {
+      "symbol": "SCHD",
+      "issuer_key": "CHARLES_SCHWAB",
+      "source_tier": "SEC_FILING",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1454889/000110465925123312/tm2526338-14_497k.htm",
+      "source_record_id": "SEC-0001104659-25-123312",
+      "required_content_terms": ["SCHD", "Schwab U.S. Dividend Equity ETF", "Dow Jones U.S. Dividend 100"],
+      "asset_class": "EQUITY",
+      "strategy": "PASSIVE_INDEX",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP",
+      "income_profile": "DIVIDEND_INCOME",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "STANDARD_ETF",
+      "portfolio_treatment": "INCOME_CORE"
+    },
+    "SEC-US-QQQM": {
+      "symbol": "QQQM",
+      "issuer_key": "INVESCO",
+      "source_tier": "ISSUER_PRODUCT_PAGE",
+      "source_url": "https://www.invesco.com/us/en/solutions/invesco-etfs.html",
+      "source_record_id": "INVESCO-QQQM-PROFILE",
+      "required_content_terms": ["QQQM", "Invesco", "Nasdaq 100"],
+      "asset_class": "EQUITY",
+      "strategy": "PASSIVE_INDEX",
+      "geography": "UNITED_STATES",
+      "market_segment": "LARGE_CAP_GROWTH",
+      "income_profile": "GROWTH",
+      "implementation": "PHYSICAL_REPLICATION",
+      "specialized_product_type": "STANDARD_ETF",
+      "portfolio_treatment": "GROWTH_SATELLITE"
+    }
+  }
+}
