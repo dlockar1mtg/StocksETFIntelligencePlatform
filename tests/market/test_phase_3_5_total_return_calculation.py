@@ -82,7 +82,7 @@ class Phase35TotalReturnTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 calculate_record(record, raw_root=root, policy=self.policy)
 
-    def test_nonpositive_adjusted_price_fails_closed(self):
+    def test_nonpositive_adjusted_price_is_preserved_and_blocked(self):
         document = json.loads(self.payload().decode("utf-8"))
         document["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"][-1] = 0
         payload = json.dumps(document).encode("utf-8")
@@ -90,8 +90,11 @@ class Phase35TotalReturnTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "sec-VOO.json").write_bytes(payload)
-            with self.assertRaises(ValueError):
-                calculate_record(record, raw_root=root, policy=self.policy)
+            result = calculate_record(record, raw_root=root, policy=self.policy)
+        self.assertEqual(result["calculation_state"], "CALCULATION_BLOCKED")
+        self.assertIn("NONPOSITIVE_OR_NONFINITE_ADJUSTED_PRICE", result["calculation_reasons"])
+        self.assertTrue(all(item["calculation_state"] == "CALCULATION_BLOCKED" for item in result["horizons"].values()))
+        self.assertFalse(result["authority"]["return_calculation"])
 
     def test_universe_rejects_duplicate_identity(self):
         document = {"records": [{"security_id": "x"}] * 3462}
