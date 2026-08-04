@@ -1,0 +1,47 @@
+{
+  "phase": "2",
+  "subphase": "2B.4",
+  "policy_version": "1.0.0",
+  "name": "ETF Market Data Eligibility Classification",
+  "objective": "Classify every certified active-universe ETF from recent market-data evidence before returns analytics, full-history collection, or forecasting.",
+  "required_input_record_count": 4419,
+  "required_collection_status": "COLLECTED",
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "preserve_all_input_records": true,
+  "destructive_deletion_allowed": false,
+  "classification_states": [
+    "MARKET_DATA_ELIGIBLE",
+    "MARKET_DATA_PROVISIONAL",
+    "RESEARCH_ONLY",
+    "QUARANTINED",
+    "BLOCKED"
+  ],
+  "collection_status_mapping": {
+    "NOT_FOUND": "BLOCKED",
+    "INVALID_SYMBOL": "BLOCKED",
+    "SYMBOL_MISMATCH": "QUARANTINED",
+    "PROVIDER_ERROR": "QUARANTINED",
+    "ERROR": "QUARANTINED"
+  },
+  "raw_payload_required_for_collected_records": true,
+  "expected_session_basis": "PROVIDER_TIMESTAMP_ROWS",
+  "price_observation_basis": "NON_NULL_CLOSE_ROWS",
+  "corporate_action_evidence_basis": "INTERNAL_PROVIDER_PAYLOAD_CONSISTENCY",
+  "missing_values_are_not_imputed": true,
+  "seed_symbols_do_not_bypass_evidence_gates": true,
+  "authority": {
+    "market_data_classification": true,
+    "full_history_collection": false,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
