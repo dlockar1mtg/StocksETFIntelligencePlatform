@@ -1,0 +1,17 @@
+{
+  "catalog_version": "1.0.0",
+  "phase": "2.1",
+  "primary_strategic_horizon": "3Y",
+  "metrics": [
+    {"metric_id":"total_return","pillar":"RETURN_TREND","value_type":"DECIMAL","direction":"HIGHER_IS_BETTER","required_domains":["raw_prices","provider_adjusted_prices","distributions","splits_and_material_corporate_actions"],"supported_horizons":["1M","3M","1Y","3Y","5Y"],"minimum_observations":2,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"annualized_volatility","pillar":"RISK_DRAWDOWN","value_type":"DECIMAL","direction":"LOWER_IS_BETTER","required_domains":["provider_adjusted_prices"],"supported_horizons":["3M","1Y","3Y","5Y"],"minimum_observations":60,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"maximum_drawdown","pillar":"RISK_DRAWDOWN","value_type":"DECIMAL","direction":"LOWER_IS_BETTER","required_domains":["provider_adjusted_prices"],"supported_horizons":["3M","1Y","3Y","5Y"],"minimum_observations":60,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"underlying_earnings_yield","pillar":"VALUATION_FUNDAMENTALS","value_type":"DECIMAL","direction":"HIGHER_IS_BETTER","required_domains":["holdings","etf_metadata"],"supported_horizons":["POINT_IN_TIME"],"minimum_observations":1,"formula_version":"1.0.0","benchmark_required":true},
+    {"metric_id":"distribution_yield","pillar":"INCOME_DISTRIBUTIONS","value_type":"DECIMAL","direction":"HIGHER_IS_BETTER","required_domains":["distributions","provider_adjusted_prices"],"supported_horizons":["1Y","3Y","5Y"],"minimum_observations":1,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"expense_ratio","pillar":"FUND_STRUCTURE","value_type":"DECIMAL","direction":"LOWER_IS_BETTER","required_domains":["expense_ratios"],"supported_horizons":["POINT_IN_TIME"],"minimum_observations":1,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"median_dollar_volume","pillar":"FUND_STRUCTURE","value_type":"CURRENCY","direction":"HIGHER_IS_BETTER","required_domains":["liquidity"],"supported_horizons":["1M","3M"],"minimum_observations":20,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"top_ten_concentration","pillar":"DIVERSIFICATION_OVERLAP","value_type":"DECIMAL","direction":"LOWER_IS_BETTER","required_domains":["holdings"],"supported_horizons":["POINT_IN_TIME"],"minimum_observations":10,"formula_version":"1.0.0","benchmark_required":false},
+    {"metric_id":"benchmark_overlap","pillar":"DIVERSIFICATION_OVERLAP","value_type":"DECIMAL","direction":"CONTEXT_DEPENDENT","required_domains":["holdings","strategy_benchmarks"],"supported_horizons":["POINT_IN_TIME"],"minimum_observations":1,"formula_version":"1.0.0","benchmark_required":true},
+    {"metric_id":"regime_relative_return","pillar":"REGIME_PORTFOLIO_FIT","value_type":"DECIMAL","direction":"CONTEXT_DEPENDENT","required_domains":["provider_adjusted_prices","strategy_benchmarks","cash_hurdle"],"supported_horizons":["1Y","3Y","5Y"],"minimum_observations":252,"formula_version":"1.0.0","benchmark_required":true}
+  ]
+}
