@@ -34,9 +34,12 @@ def _safe_symbol(symbol: str) -> str:
 def build_url(symbol: str, policy: dict[str, Any]) -> str:
     safe = _safe_symbol(symbol)
     base = policy["endpoint_template"].format(symbol=urllib.parse.quote(safe))
+    if policy.get("range_parameter_prohibited") is not True:
+        raise ValueError("Historical collection must prohibit range-based requests")
     query = urllib.parse.urlencode({
         "interval": policy["interval"],
-        "range": policy["range"],
+        "period1": int(policy["period1"]),
+        "period2": int(policy["period2"]),
         "events": ",".join(policy["events"]),
         "includeAdjustedClose": "true",
     })
@@ -59,6 +62,7 @@ def _base_record(
         "symbol": symbol.upper(),
         "provider_id": PROVIDER_ID,
         "provider_symbol": provider_symbol.upper(),
+        "provider_data_granularity": None,
         "collection_status": status,
         "collection_error": error,
         "retrieved_at_utc": retrieved_at_utc,
@@ -95,6 +99,7 @@ def parse_historical_payload(
     source_url: str,
     raw_path: str,
     retrieved_at_utc: str,
+    required_granularity: str = "1d",
 ) -> dict[str, Any]:
     digest = hashlib.sha256(payload).hexdigest()
     document = json.loads(payload.decode("utf-8"))
@@ -109,7 +114,14 @@ def parse_historical_payload(
     result = results[0]
     meta = result.get("meta") or {}
     provider_symbol = str(meta.get("symbol") or requested_symbol).upper()
-    status = "COLLECTED" if provider_symbol == requested_symbol.upper() else "SYMBOL_MISMATCH"
+    granularity = str(meta.get("dataGranularity") or "").lower() or None
+    if provider_symbol != requested_symbol.upper():
+        status = "SYMBOL_MISMATCH"
+    elif granularity != required_granularity.lower():
+        status = "GRANULARITY_MISMATCH"
+    else:
+        status = "COLLECTED"
+
     timestamps = result.get("timestamp") or []
     indicators = result.get("indicators") or {}
     quote_rows = indicators.get("quote") or []
@@ -126,6 +138,7 @@ def parse_historical_payload(
 
     record = _base_record(security_id, requested_symbol, provider_symbol, status, retrieved_at_utc, digest, source_url, raw_path)
     record.update({
+        "provider_data_granularity": granularity,
         "observation_count": len(valid_indices),
         "first_observation_date": dates[0] if dates else None,
         "latest_observation_date": dates[-1] if dates else None,
@@ -133,6 +146,8 @@ def parse_historical_payload(
         "dividend_event_count": len(dividends),
         "split_event_count": len(splits),
     })
+    if status == "GRANULARITY_MISMATCH":
+        record["collection_error"] = f"Expected {required_granularity} but provider returned {granularity or 'UNKNOWN'}"
     return record
 
 
@@ -177,5 +192,6 @@ def collect_symbol(
         source_url=url,
         raw_path=str(raw_path),
         retrieved_at_utc=retrieved,
+        required_granularity=str(policy["required_provider_data_granularity"]),
     )
     return HistoricalCollectionResult(record=record, raw_payload=payload)
