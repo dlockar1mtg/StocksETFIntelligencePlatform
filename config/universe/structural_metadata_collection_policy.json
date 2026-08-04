@@ -1,0 +1,71 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "2",
+  "subphase": "2A.2",
+  "name": "Official Structural Metadata Collection",
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "preserve_full_discovery_universe": true,
+  "raw_evidence_immutable": true,
+  "fail_closed": true,
+  "required_source_priority": [
+    "PRIMARY_OFFICIAL",
+    "APPROVED_STRUCTURED",
+    "DERIVED_PLATFORM"
+  ],
+  "required_fields": [
+    "security_id",
+    "symbol",
+    "fund_name",
+    "issuer_name",
+    "instrument_structure",
+    "fund_status",
+    "inception_date",
+    "strategy_description",
+    "benchmark_name",
+    "expense_ratio",
+    "aum_usd",
+    "specialized_flags",
+    "observed_at_utc",
+    "effective_date",
+    "source_lineage"
+  ],
+  "specialized_flags": [
+    "LEVERAGED",
+    "INVERSE",
+    "SINGLE_STOCK",
+    "VOLATILITY_LINKED",
+    "BUFFER_OR_DEFINED_OUTCOME",
+    "COVERED_CALL_OR_OPTIONS_INCOME",
+    "DERIVATIVE_HEAVY",
+    "COMMODITY_OR_FUTURES",
+    "CRYPTO_LINKED",
+    "ACTIVE_MANAGEMENT",
+    "NEW_OR_INSUFFICIENT_HISTORY",
+    "ILLIQUID_OR_STALE",
+    "CLOSING_OR_LIQUIDATING"
+  ],
+  "allowed_instrument_structures": ["ETF", "ETN", "CEF", "TRUST", "PARTNERSHIP", "OTHER"],
+  "allowed_fund_statuses": ["ACTIVE", "CLOSING", "LIQUIDATING", "DELISTED", "UNKNOWN"],
+  "collection_outputs": {
+    "raw_capture_manifest": true,
+    "normalized_records": true,
+    "conflict_ledger": true,
+    "coverage_report": true,
+    "triage_snapshot": true
+  },
+  "authority": {
+    "structural_metadata_collection_development": true,
+    "structural_metadata_reconciliation_development": true,
+    "triage_snapshot_development": true,
+    "production_data_certification": false,
+    "analytics_production": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}
