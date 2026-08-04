@@ -4,6 +4,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 
 from foundation.market.historical_evidence_certification import certify_record, certify_universe
@@ -31,6 +32,10 @@ class Phase34HistoricalEvidenceCertificationTests(unittest.TestCase):
 
     def record(self, payload: bytes, count: int = 1260, symbol: str = "VOO") -> dict:
         digest = hashlib.sha256(payload).hexdigest()
+        document = json.loads(payload.decode("utf-8"))
+        timestamps = document["chart"]["result"][0]["timestamp"]
+        first_date = datetime.fromtimestamp(timestamps[0], tz=timezone.utc).date().isoformat()
+        latest_date = datetime.fromtimestamp(timestamps[-1], tz=timezone.utc).date().isoformat()
         return {
             "security_id": f"sec-{symbol}",
             "symbol": symbol,
@@ -41,8 +46,8 @@ class Phase34HistoricalEvidenceCertificationTests(unittest.TestCase):
             "payload_sha256": digest,
             "observation_count": count,
             "adjusted_price_observation_count": count,
-            "first_observation_date": "2021-01-01",
-            "latest_observation_date": "2024-06-13",
+            "first_observation_date": first_date,
+            "latest_observation_date": latest_date,
             "source_lineage": {"raw_path": f"sec-{symbol}.json", "payload_sha256": digest},
         }
 
@@ -118,7 +123,6 @@ class Phase34HistoricalEvidenceCertificationTests(unittest.TestCase):
     def test_future_observation_quarantines(self):
         payload = self.payload(count=2)
         record = self.record(payload, count=2)
-        record["latest_observation_date"] = "2021-01-02"
         result = self.certify(payload, record, operating_date="2020-12-31")
         self.assertIn("FUTURE_OBSERVATION_DATE", result["certification_reasons"])
 
