@@ -3,6 +3,7 @@ from __future__ import annotations
 import unittest
 from copy import deepcopy
 from datetime import datetime, timezone
+from pathlib import Path
 
 from foundation.universe.structural_triage import (
     StructuralTriageError,
@@ -13,6 +14,7 @@ from foundation.universe.structural_triage import (
 )
 
 NOW = datetime(2026, 8, 4, 3, 0, tzinfo=timezone.utc)
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def valid_record() -> dict:
@@ -86,6 +88,23 @@ class Phase2AStructuralTriageTests(unittest.TestCase):
 
     def test_valid_standard_etf_passes(self) -> None:
         validate_record(valid_record(), NOW)
+
+    def test_empty_specialized_flags_are_valid_evidence(self) -> None:
+        record = valid_record()
+        self.assertEqual(record["specialized_flags"], [])
+        validate_record(record, NOW)
+
+    def test_missing_specialized_flags_fail_closed(self) -> None:
+        record = valid_record()
+        del record["specialized_flags"]
+        with self.assertRaises(StructuralTriageError):
+            validate_record(record, NOW)
+
+    def test_certification_script_bootstraps_repository_imports(self) -> None:
+        script = (ROOT / "scripts" / "certify_phase_2a_structural_triage.py").read_text(encoding="utf-8")
+        path_insert = script.index("sys.path.insert")
+        foundation_import = script.index("from foundation.universe.structural_triage import load_policy")
+        self.assertLess(path_insert, foundation_import)
 
     def test_broker_ineligible_record_is_blocked(self) -> None:
         record = valid_record()
