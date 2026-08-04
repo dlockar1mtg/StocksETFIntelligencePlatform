@@ -1,0 +1,59 @@
+{
+  "phase": "3.6b.3h",
+  "policy_version": "1.0.0",
+  "required_route_population": 347,
+  "pilot_sample_count": 5,
+  "selected_priority_rank": 1,
+  "selected_issuer_key": "SEC-CIK-0001100663",
+  "selected_issuer_name": "iSHARES TRUST",
+  "selection_method": "DETERMINISTIC_STRATIFIED_SECURITY_ID_QUANTILES",
+  "required_route_state": "ROUTE_CANDIDATE_READY",
+  "pilot_states": [
+    "DISCOVERY_PENDING",
+    "DISCOVERY_RESOLVED",
+    "DISCOVERY_UNRESOLVED",
+    "DISCOVERY_CONFLICTED",
+    "DISCOVERY_QUARANTINED"
+  ],
+  "allowed_route_types": [
+    "SEC_SERIES_CLASS_FILING_DISCOVERY",
+    "ISHARES_SYMBOL_PRODUCT_DISCOVERY"
+  ],
+  "controls": {
+    "full_route_population_validated": true,
+    "deterministic_sample_required": true,
+    "sample_must_span_sorted_population": true,
+    "stable_security_id_required": true,
+    "confirmed_sec_identity_markers_required": true,
+    "exactly_two_governed_routes_required": true,
+    "official_domain_allowlist_required": true,
+    "discovery_requests_are_not_captured_evidence": true,
+    "generic_landing_page_is_not_product_evidence": true,
+    "redirect_chain_must_be_preserved": true,
+    "raw_discovery_response_required_on_execution": true,
+    "payload_sha256_required_on_execution": true,
+    "source_capture_not_executed": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "failed_records_preserved": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "route_discovery_pilot_manifest_build": true,
+    "route_discovery_pilot_execution": false,
+    "priority_batch_source_capture": false,
+    "authoritative_source_capture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}
