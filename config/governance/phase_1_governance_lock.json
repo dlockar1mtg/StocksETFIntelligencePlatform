@@ -1,10 +1,22 @@
 {
-  "lock_version": "1.0.0",
+  "lock_version": "1.1.0",
   "phase": "1",
   "governing_repository": "dlockar1mtg/UniversalInvestmentPlatform",
   "governing_issue_number": 32,
-  "initial_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
-  "initial_tickers": ["VOO", "SCHD", "QQQM"],
+  "seed_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "seed_tickers": ["VOO", "SCHD", "QQQM"],
+  "universe_model": "LAYERED_DYNAMIC_ETF_UNIVERSE",
+  "required_universe_layers": [
+    "DISCOVERY",
+    "BROKER_ELIGIBLE",
+    "ANALYTICS_ELIGIBLE",
+    "PORTFOLIO_CANDIDATE",
+    "SPECIALIZED_OR_RESTRICTED"
+  ],
+  "universe_expansion_requires_governed_identity": true,
+  "universe_expansion_requires_listing_evidence": true,
+  "universe_expansion_requires_broker_evidence": true,
+  "unknown_broker_status_is_eligible": false,
   "operating_timezone": "America/Chicago",
   "required_etf_pillars": [
     "Return and trend",
@@ -61,6 +73,7 @@
     "data_acquisition_development": true,
     "normalization_development": true,
     "quality_and_lineage_validation": true,
+    "universe_expansion_development": true,
     "certified_market_monitoring": false,
     "certified_analytics": false,
     "certified_forecasts": false,

@@ -1,0 +1,44 @@
+{
+  "policy_version": "1.0.0",
+  "collector_id": "US-ETF-EXCHANGE-DISCOVERY",
+  "purpose": "Build a broker-independent candidate inventory of active US exchange-listed ETFs from authoritative symbol directories.",
+  "authoritative_sources": [
+    {
+      "source_id": "NASDAQ-TRADER-NASDAQLISTED",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "exchange_scope": "NASDAQ"
+    },
+    {
+      "source_id": "NASDAQ-TRADER-OTHERLISTED",
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
+      "exchange_scope": "NYSE_ARCA_NYSE_AMERICAN_CBOE_AND_OTHER_US_LISTINGS"
+    }
+  ],
+  "raw_payloads_must_remain_outside_git": true,
+  "raw_payloads_immutable": true,
+  "content_sha256_required": true,
+  "retrieval_timestamp_required": true,
+  "source_record_preservation_required": true,
+  "candidate_filter": {
+    "requires_etf_flag": true,
+    "requires_test_issue_false": true,
+    "requires_nonblank_symbol": true,
+    "excludes_footer_rows": true,
+    "excludes_etn_by_name_pattern": true,
+    "excludes_closed_end_fund_by_name_pattern": true,
+    "unknown_instrument_type_is_quarantined": true
+  },
+  "output_zones": {
+    "raw": "data/raw/universe/exchange",
+    "staged": "data/staged/universe/exchange",
+    "quarantine": "data/quarantine/universe/exchange"
+  },
+  "candidate_state": "DISCOVERY_CANDIDATE",
+  "candidate_is_certified_discovery": false,
+  "candidate_implies_robinhood_eligibility": false,
+  "candidate_implies_analytics_eligibility": false,
+  "candidate_implies_portfolio_suitability": false,
+  "direct_uip_database_writes_authorized": false,
+  "automatic_execution_authorized": false,
+  "fail_closed": true
+}

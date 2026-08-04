@@ -26,7 +26,11 @@ def validate_security_master(master: dict) -> None:
     records = master.get("securities")
     if not isinstance(records, list) or not records:
         raise SecurityMasterValidationError("Security records are required")
-    required = {"security_id", "ticker", "asset_type", "issuer_id", "fund_id", "exchange", "currency", "benchmark_id", "share_class_id", "lifecycle_status", "eligible_for_research"}
+    required = {
+        "security_id", "ticker", "asset_type", "issuer_id", "fund_id",
+        "exchange", "currency", "benchmark_id", "share_class_id",
+        "lifecycle_status", "eligible_for_research",
+    }
     ids: set[str] = set()
     tickers: set[str] = set()
     for record in records:
@@ -58,21 +62,56 @@ def validate_registries(master: dict, issuer_funds: dict, benchmarks: dict) -> N
             raise SecurityMasterValidationError("Unknown benchmark")
 
 
-def eligible_security_ids(master: dict, policy: dict) -> list[str]:
-    required = policy.get("security_ids")
-    if policy.get("unknown_security_blocked") is not True or not isinstance(required, list):
+def validate_universe_policy(policy: dict) -> None:
+    if policy.get("fail_closed") is not True:
         raise SecurityMasterValidationError("Universe policy must fail closed")
+    if policy.get("unknown_security_blocked") is not True:
+        raise SecurityMasterValidationError("Unknown securities must be blocked")
+    seeds = policy.get("seed_security_ids")
+    if not isinstance(seeds, list) or not seeds:
+        raise SecurityMasterValidationError("Seed securities are required")
+    if len(seeds) != len(set(seeds)):
+        raise SecurityMasterValidationError("Duplicate seed security detected")
+    requirements = policy.get("admission_requirements")
+    if not isinstance(requirements, dict):
+        raise SecurityMasterValidationError("Admission requirements are required")
+    required_true = {
+        "stable_security_id",
+        "complete_identity",
+        "authoritative_listing_evidence",
+        "broker_eligibility_evidence",
+        "broker_verification_timestamp",
+    }
+    for key in required_true:
+        if requirements.get(key) is not True:
+            raise SecurityMasterValidationError(f"Admission requirement weakened: {key}")
+    if requirements.get("broker_status_unknown_is_eligible") is not False:
+        raise SecurityMasterValidationError("Unknown broker status cannot be eligible")
+    if requirements.get("ticker_as_sole_identifier_allowed") is not False:
+        raise SecurityMasterValidationError("Ticker-only identity cannot be allowed")
+
+
+def eligible_security_ids(master: dict, policy: dict) -> list[str]:
+    validate_universe_policy(policy)
     by_id = {item["security_id"]: item for item in master["securities"]}
+    seeds = policy["seed_security_ids"]
+    for security_id in seeds:
+        if security_id not in by_id:
+            raise SecurityMasterValidationError(f"Missing seed security: {security_id}")
+
     eligible: list[str] = []
-    for security_id in required:
-        security = by_id.get(security_id)
-        if security is None:
-            raise SecurityMasterValidationError(f"Unknown security: {security_id}")
+    for security in master["securities"]:
         if security["asset_type"] != policy["required_asset_type"]:
-            raise SecurityMasterValidationError("Asset type is ineligible")
+            continue
         if security["lifecycle_status"] != policy["required_lifecycle_status"]:
-            raise SecurityMasterValidationError("Lifecycle status is ineligible")
+            continue
         if not security["eligible_for_research"]:
-            raise SecurityMasterValidationError("Security is not research eligible")
-        eligible.append(security_id)
+            continue
+        eligible.append(security["security_id"])
+
+    missing_seeds = sorted(set(seeds) - set(eligible))
+    if missing_seeds:
+        raise SecurityMasterValidationError(
+            f"Seed securities are not eligible: {missing_seeds}"
+        )
     return eligible

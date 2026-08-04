@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GOVERNANCE = ROOT / "config" / "governance"
 STANDARD = ROOT / "docs" / "standards" / "ETF_ANALYTICAL_STANDARD.md"
+UNIVERSE = ROOT / "config" / "universe" / "etf_universe_policy.json"
 
 
 def load_json(name: str):
@@ -17,6 +18,7 @@ class Phase1GovernanceLockTests(unittest.TestCase):
         self.manifest = load_json("governance_manifest.json")
         self.authority = load_json("certification_authority.json")
         self.prohibited = load_json("prohibited_actions.json")
+        self.universe = json.loads(UNIVERSE.read_text(encoding="utf-8-sig"))
         self.standard = STANDARD.read_text(encoding="utf-8-sig")
 
     def test_phase_and_governing_authority_are_exact(self):
@@ -26,10 +28,25 @@ class Phase1GovernanceLockTests(unittest.TestCase):
         self.assertEqual(self.lock["governing_repository"], "dlockar1mtg/UniversalInvestmentPlatform")
         self.assertEqual(self.lock["governing_issue_number"], 32)
 
-    def test_initial_universe_is_exact_and_stable(self):
-        self.assertEqual(self.lock["initial_tickers"], ["VOO", "SCHD", "QQQM"])
-        self.assertEqual(self.lock["initial_security_ids"], ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"])
-        self.assertEqual(self.manifest["initial_asset_scope"], ["VOO", "SCHD", "QQQM"])
+    def test_seed_universe_is_required_but_not_a_fixed_ceiling(self):
+        expected_tickers = ["VOO", "SCHD", "QQQM"]
+        expected_ids = ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"]
+        self.assertEqual(self.lock["seed_tickers"], expected_tickers)
+        self.assertEqual(self.lock["seed_security_ids"], expected_ids)
+        self.assertEqual(self.universe["seed_security_ids"], expected_ids)
+        self.assertEqual(self.manifest["initial_asset_scope"], expected_tickers)
+        self.assertEqual(self.lock["universe_model"], "LAYERED_DYNAMIC_ETF_UNIVERSE")
+        self.assertTrue(self.lock["universe_expansion_requires_governed_identity"])
+
+    def test_all_universe_layers_are_governed(self):
+        required = {
+            "DISCOVERY", "BROKER_ELIGIBLE", "ANALYTICS_ELIGIBLE",
+            "PORTFOLIO_CANDIDATE", "SPECIALIZED_OR_RESTRICTED",
+        }
+        self.assertEqual(set(self.lock["required_universe_layers"]), required)
+        self.assertFalse(self.lock["unknown_broker_status_is_eligible"])
+        self.assertTrue(self.lock["universe_expansion_requires_listing_evidence"])
+        self.assertTrue(self.lock["universe_expansion_requires_broker_evidence"])
 
     def test_all_seven_etf_pillars_remain_locked(self):
         pillars = self.lock["required_etf_pillars"]
@@ -74,6 +91,7 @@ class Phase1GovernanceLockTests(unittest.TestCase):
 
     def test_phase_1_does_not_expand_decision_or_execution_authority(self):
         authority = self.lock["phase_1_authority"]
+        self.assertTrue(authority["universe_expansion_development"])
         for key in (
             "certified_market_monitoring", "certified_analytics", "certified_forecasts",
             "certified_recommendations", "certified_contribution_allocation",

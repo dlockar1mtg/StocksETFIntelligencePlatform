@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.robinhood_universe_snapshot/1.0.0",
+  "title": "Robinhood Universe Snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["snapshot_id", "operating_date", "operating_timezone", "generated_at_utc", "broker_id", "snapshot_status", "lineage", "counts", "records"],
+  "properties": {
+    "snapshot_id": {"type": "string", "minLength": 1},
+    "operating_date": {"type": "string", "format": "date"},
+    "operating_timezone": {"const": "America/Chicago"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "broker_id": {"const": "ROBINHOOD-US"},
+    "snapshot_status": {"enum": ["STRUCTURAL_BASELINE", "EVIDENCE_COMPLETE", "FAILED"]},
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_bundle_id", "source_bundle_sha256", "policy_version"],
+      "properties": {
+        "source_bundle_id": {"type": "string", "minLength": 1},
+        "source_bundle_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "policy_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_records", "discovered", "broker_eligible", "analytics_provisional", "analytics_eligible", "blocked", "quarantined", "excluded"],
+      "properties": {
+        "total_records": {"type": "integer", "minimum": 0},
+        "discovered": {"type": "integer", "minimum": 0},
+        "broker_eligible": {"type": "integer", "minimum": 0},
+        "analytics_provisional": {"type": "integer", "minimum": 0},
+        "analytics_eligible": {"type": "integer", "minimum": 0},
+        "blocked": {"type": "integer", "minimum": 0},
+        "quarantined": {"type": "integer", "minimum": 0},
+        "excluded": {"type": "integer", "minimum": 0}
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["security_id", "ticker", "discovery_status", "broker_status", "taxonomy_status", "analytics_status", "final_state", "evidence_state", "reason_codes"],
+        "properties": {
+          "security_id": {"type": "string", "pattern": "^SEC-US-[A-Z0-9.-]+$"},
+          "ticker": {"type": "string", "minLength": 1},
+          "discovery_status": {"enum": ["DISCOVERED", "QUARANTINED", "EXCLUDED"]},
+          "broker_status": {"enum": ["ELIGIBLE", "PURCHASE_RESTRICTED", "SELL_ONLY", "TEMPORARILY_UNAVAILABLE", "DELISTED", "UNKNOWN", "CONFLICTED"]},
+          "taxonomy_status": {"enum": ["CLASSIFIED", "PENDING", "CONFLICTED"]},
+          "analytics_status": {"enum": ["ANALYTICS_ELIGIBLE", "ANALYTICS_PROVISIONAL", "BLOCKED", "QUARANTINED"]},
+          "final_state": {"enum": ["DISCOVERED", "BROKER_ELIGIBLE", "ANALYTICS_PROVISIONAL", "ANALYTICS_ELIGIBLE", "SPECIALIZED", "PORTFOLIO_RESTRICTED", "BLOCKED", "QUARANTINED", "EXCLUDED"]},
+          "evidence_state": {"enum": ["COMPLETE", "PARTIAL", "PENDING", "CONFLICTED"]},
+          "reason_codes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    }
+  }
+}

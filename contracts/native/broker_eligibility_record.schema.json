@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.broker_eligibility_record",
+  "title": "Broker Eligibility Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id",
+    "broker_id",
+    "broker_status",
+    "whole_share_supported",
+    "fractional_share_supported",
+    "recurring_investment_supported",
+    "dividend_reinvestment_supported",
+    "verified_at_utc",
+    "effective_at_utc",
+    "available_at_utc",
+    "verification_method",
+    "verification_confidence",
+    "source_id",
+    "source_record_id",
+    "content_sha256"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "pattern": "^SEC-US-[A-Z0-9.-]+$"},
+    "broker_id": {"const": "ROBINHOOD-US"},
+    "broker_status": {"enum": ["ELIGIBLE", "PURCHASE_RESTRICTED", "SELL_ONLY", "TEMPORARILY_UNAVAILABLE", "DELISTED", "UNKNOWN", "CONFLICTED"]},
+    "whole_share_supported": {"type": "boolean"},
+    "fractional_share_supported": {"type": "boolean"},
+    "recurring_investment_supported": {"type": "boolean"},
+    "dividend_reinvestment_supported": {"type": "boolean"},
+    "verified_at_utc": {"type": "string", "format": "date-time"},
+    "effective_at_utc": {"type": "string", "format": "date-time"},
+    "available_at_utc": {"type": "string", "format": "date-time"},
+    "verification_method": {"type": "string"},
+    "verification_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

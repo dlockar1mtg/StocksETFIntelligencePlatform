@@ -1,0 +1,58 @@
+{
+  "snapshot_id": "robinhood-us-2026-08-03-structural-baseline",
+  "operating_date": "2026-08-03",
+  "operating_timezone": "America/Chicago",
+  "generated_at_utc": "2026-08-03T21:17:00Z",
+  "broker_id": "ROBINHOOD-US",
+  "snapshot_status": "STRUCTURAL_BASELINE",
+  "lineage": {
+    "source_bundle_id": "phase-1.6.6-structural-baseline-no-external-source",
+    "source_bundle_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "policy_version": "1.0.0"
+  },
+  "counts": {
+    "total_records": 3,
+    "discovered": 3,
+    "broker_eligible": 0,
+    "analytics_provisional": 0,
+    "analytics_eligible": 0,
+    "blocked": 3,
+    "quarantined": 0,
+    "excluded": 0
+  },
+  "records": [
+    {
+      "security_id": "SEC-US-VOO",
+      "ticker": "VOO",
+      "discovery_status": "DISCOVERED",
+      "broker_status": "UNKNOWN",
+      "taxonomy_status": "PENDING",
+      "analytics_status": "BLOCKED",
+      "final_state": "BLOCKED",
+      "evidence_state": "PENDING",
+      "reason_codes": ["BROKER_EVIDENCE_PENDING", "TAXONOMY_EVIDENCE_PENDING", "ANALYTICS_COVERAGE_PENDING"]
+    },
+    {
+      "security_id": "SEC-US-SCHD",
+      "ticker": "SCHD",
+      "discovery_status": "DISCOVERED",
+      "broker_status": "UNKNOWN",
+      "taxonomy_status": "PENDING",
+      "analytics_status": "BLOCKED",
+      "final_state": "BLOCKED",
+      "evidence_state": "PENDING",
+      "reason_codes": ["BROKER_EVIDENCE_PENDING", "TAXONOMY_EVIDENCE_PENDING", "ANALYTICS_COVERAGE_PENDING"]
+    },
+    {
+      "security_id": "SEC-US-QQQM",
+      "ticker": "QQQM",
+      "discovery_status": "DISCOVERED",
+      "broker_status": "UNKNOWN",
+      "taxonomy_status": "PENDING",
+      "analytics_status": "BLOCKED",
+      "final_state": "BLOCKED",
+      "evidence_state": "PENDING",
+      "reason_codes": ["BROKER_EVIDENCE_PENDING", "TAXONOMY_EVIDENCE_PENDING", "ANALYTICS_COVERAGE_PENDING"]
+    }
+  ]
+}

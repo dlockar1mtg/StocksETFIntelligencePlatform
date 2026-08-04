@@ -40,14 +40,22 @@ def validate_phase_1(root: Path) -> dict[str, Any]:
     normalization = load_json(root / "config/normalization/normalization_policy.json")
     quality = load_json(root / "config/quality/evidence_quality_policy.json")
     security_master = load_json(root / "config/security/security_master.json")
+    universe = load_json(root / "config/universe/etf_universe_policy.json")
 
     governed_ids = {item["security_id"] for item in security_master["securities"]}
-    _require(governed_ids == set(completion["required_security_ids"]), "Security identity drift detected")
+    required_seed_ids = set(completion["required_security_ids"])
+    governance_seed_ids = set(governance.get("seed_security_ids", []))
+    policy_seed_ids = set(universe.get("seed_security_ids", []))
+
+    _require(required_seed_ids == governance_seed_ids == policy_seed_ids, "Seed security identity drift detected")
+    _require(required_seed_ids.issubset(governed_ids), "Required seed securities are missing from security master")
+    _require(universe.get("seed_securities_must_remain_present") is True, "Seed securities must remain mandatory")
+    _require(universe.get("universe_expansion_requires_certification") is True, "Universe expansion certification weakened")
+    _require(universe.get("analytics_engine_must_not_hard_code_tickers") is True, "Ticker hard-coding protection weakened")
     _require(set(providers["governed_domains"]) == set(completion["required_governed_domains"]), "Governed data-domain drift detected")
     _require(set(quality["governed_domains"]) == set(completion["required_governed_domains"]), "Quality-domain drift detected")
 
     behaviors = governance.get("required_behaviors", {})
-    _require(governance.get("initial_security_ids") == completion["required_security_ids"], "Governance universe drift detected")
     _require(behaviors.get("missing_evidence_rewarded") is False, "Missing evidence cannot be rewarded")
     _require(behaviors.get("missing_evidence_silently_imputed") is False, "Silent imputation protection weakened")
     _require(behaviors.get("look_ahead_allowed") is False, "Look-ahead protection weakened")
@@ -84,6 +92,7 @@ def validate_phase_1(root: Path) -> dict[str, Any]:
         "status": "PASS",
         "required_subphases": completion["required_subphases"],
         "minimum_tests_required": completion["minimum_tests_required"],
+        "seed_security_ids": sorted(required_seed_ids),
         "security_ids": sorted(governed_ids),
         "governed_domains": sorted(providers["governed_domains"]),
     }
