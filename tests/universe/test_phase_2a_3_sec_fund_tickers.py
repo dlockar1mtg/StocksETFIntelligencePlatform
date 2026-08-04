@@ -17,9 +17,9 @@ from foundation.infrastructure.sec_fund_tickers import (
 
 
 class Phase2A3SECFundTickerTests(unittest.TestCase):
-    def sample_payload(self) -> bytes:
+    def sample_payload(self, ticker_field: str = "ticker") -> bytes:
         return json.dumps({
-            "fields": ["cik", "seriesId", "classId", "ticker", "name"],
+            "fields": ["cik", "seriesId", "classId", ticker_field, "name"],
             "data": [
                 [36405, "S000002839", "C000092055", "VOO", "Vanguard 500 Index Fund"],
                 [11111, "S000000001", "C000000001", "DUP", "Duplicate A"],
@@ -52,6 +52,20 @@ class Phase2A3SECFundTickerTests(unittest.TestCase):
         self.assertEqual(rows[0]["cik"], "0000036405")
         self.assertEqual(rows[0]["series_id"], "S000002839")
         self.assertEqual(rows[0]["class_contract_id"], "C000092055")
+        self.assertEqual(rows[0]["sec_ticker_field"], "ticker")
+
+    def test_current_sec_symbol_field_alias_is_governed(self) -> None:
+        rows = parse_fund_ticker_payload(self.sample_payload("symbol"))
+        self.assertEqual(rows[0]["ticker"], "VOO")
+        self.assertEqual(rows[0]["sec_ticker_field"], "symbol")
+
+    def test_missing_ticker_and_symbol_fails_closed(self) -> None:
+        payload = json.dumps({
+            "fields": ["cik", "seriesId", "classId", "name"],
+            "data": [[36405, "S000002839", "C000092055", "Vanguard 500 Index Fund"]],
+        }).encode("utf-8")
+        with self.assertRaises(SECFundTickerAcquisitionError):
+            parse_fund_ticker_payload(payload)
 
     def test_gzip_payload_decodes_to_original_json(self) -> None:
         payload = self.sample_payload()
