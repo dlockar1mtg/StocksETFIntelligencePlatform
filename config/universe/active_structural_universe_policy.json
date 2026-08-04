@@ -1,0 +1,26 @@
+{
+  "phase": "2",
+  "subphase": "2A.5",
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "required_active_resolution_state": "SEC_IDENTITY_CONFIRMED",
+  "deferred_resolution_state": "UNRESOLVED",
+  "deferred_processing_state": "RESEARCH_ONLY",
+  "deferred_reason": "INSUFFICIENT_OFFICIAL_IDENTITY_EVIDENCE",
+  "preserve_full_discovery_universe": true,
+  "destructive_deletion_allowed": false,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "authority": {
+    "active_market_data_collection": true,
+    "deferred_market_data_collection": false,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
