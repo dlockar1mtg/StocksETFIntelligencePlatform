@@ -1,7 +1,7 @@
 {
   "phase": "3",
   "subphase": "3.5",
-  "policy_version": "1.0.0",
+  "policy_version": "1.0.1",
   "name": "Total-Return Calculation Authority and Engine",
   "objective": "Authorize and calculate adjusted-price total returns only for horizons certified by Phase 3.4, with exact source-date and price lineage and no decision authority.",
   "required_record_count": 3462,
@@ -29,7 +29,10 @@
     "phase_3_4_horizon_authorization_required": true,
     "positive_finite_prices_required": true,
     "chronological_dates_required": true,
-    "exact_start_end_lineage_required": true
+    "exact_start_end_lineage_required": true,
+    "invalid_price_record_preserved": true,
+    "invalid_price_record_calculation_blocked": true,
+    "invalid_price_observation_dropped_silently": false
   },
   "authority": {
     "return_calculation": true,
