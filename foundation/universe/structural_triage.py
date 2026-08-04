@@ -109,20 +109,25 @@ def _parse_utc(value: str, field_name: str) -> datetime:
     return parsed.astimezone(timezone.utc)
 
 
+def _require_present(record: dict[str, Any], field: str) -> None:
+    if field not in record or record[field] is None:
+        raise StructuralTriageError(f"Missing required triage field: {field}")
+
+
 def _require_nonempty(record: dict[str, Any], field: str) -> None:
-    value = record.get(field)
-    if value is None or value == "" or value == []:
+    _require_present(record, field)
+    value = record[field]
+    if value == "" or value == []:
         raise StructuralTriageError(f"Missing required triage field: {field}")
 
 
 def validate_record(record: dict[str, Any], now_utc: datetime | None = None) -> None:
     now = (now_utc or datetime.now(timezone.utc)).astimezone(timezone.utc)
-    required = [
+    nonempty_required = [
         "security_id",
         "symbol",
         "broker_status",
         "instrument_structure",
-        "specialized_flags",
         "fund_status",
         "liquidity_status",
         "identity_quality_status",
@@ -136,8 +141,12 @@ def validate_record(record: dict[str, Any], now_utc: datetime | None = None) -> 
         "source_lineage",
         "authority",
     ]
-    for field in required:
+    for field in nonempty_required:
         _require_nonempty(record, field)
+
+    _require_present(record, "specialized_flags")
+    if not isinstance(record["specialized_flags"], list):
+        raise StructuralTriageError("specialized_flags must be a list")
 
     state = record["triage_state"]
     if state not in ALLOWED_STATES:
