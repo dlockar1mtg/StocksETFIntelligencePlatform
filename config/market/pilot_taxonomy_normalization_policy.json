@@ -1,0 +1,38 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3b",
+  "required_record_count": 3,
+  "required_security_ids": ["SEC-US-VOO", "SEC-US-SCHD", "SEC-US-QQQM"],
+  "classification_states": ["CLASSIFIED", "UNRESOLVED", "QUARANTINED", "CONFLICTED"],
+  "required_dimensions": ["asset_class", "strategy", "geography", "market_segment", "income_profile", "implementation", "specialized_product_type", "portfolio_treatment"],
+  "authoritative_source_tiers": ["ISSUER_PRODUCT_PAGE", "SEC_FILING", "ISSUER_PROSPECTUS"],
+  "controls": {
+    "certified_security_identity_required": true,
+    "captured_content_hash_required": true,
+    "source_url_required": true,
+    "source_identity_must_match_security": true,
+    "all_dimensions_required_for_classified_state": true,
+    "unresolved_dimensions_not_imputed": true,
+    "failed_source_remediation_preserved": true,
+    "pilot_only_no_full_universe_promotion": true,
+    "taxonomy_authority_provenance_explicit": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "pilot_source_remediation": true,
+    "pilot_taxonomy_normalization": true,
+    "pilot_taxonomy_classification": true,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}
