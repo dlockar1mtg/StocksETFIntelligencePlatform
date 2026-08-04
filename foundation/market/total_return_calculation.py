@@ -75,6 +75,42 @@ def calculate_horizon(
     }
 
 
+def _blocked_record(
+    certification_record: dict[str, Any],
+    *,
+    digest: str | None,
+    policy: dict[str, Any],
+    reason: str,
+) -> dict[str, Any]:
+    horizons = {
+        horizon: {
+            "horizon": horizon,
+            "calculation_state": "CALCULATION_BLOCKED",
+            "reason": reason,
+        }
+        for horizon in policy["horizon_minimum_observations"]
+    }
+    return {
+        "security_id": str(certification_record.get("security_id") or ""),
+        "symbol": str(certification_record.get("symbol") or "").upper(),
+        "evidence_state": certification_record.get("evidence_state"),
+        "calculation_state": "CALCULATION_BLOCKED",
+        "calculation_reasons": [reason],
+        "source_payload_sha256": digest or certification_record.get("source_payload_sha256"),
+        "latest_adjusted_price_date": None,
+        "available_adjusted_observations": 0,
+        "horizons": horizons,
+        "authority": {
+            "return_calculation": False,
+            "risk_analytics": False,
+            "benchmark_comparison": False,
+            "forecasting": False,
+            "ranking": False,
+            "recommendations": False,
+        },
+    }
+
+
 def calculate_record(
     certification_record: dict[str, Any],
     *,
@@ -89,9 +125,27 @@ def calculate_record(
     raw_path = raw_root / f"{security_id}.json"
     if not raw_path.exists():
         raise ValueError("RAW_PAYLOAD_MISSING")
-    digest, series = _load_adjusted_series(raw_path)
-    if digest != certification_record.get("source_payload_sha256"):
+
+    raw_digest = hashlib.sha256(raw_path.read_bytes()).hexdigest()
+    if raw_digest != certification_record.get("source_payload_sha256"):
         raise ValueError("CERTIFICATION_SOURCE_HASH_MISMATCH")
+
+    try:
+        digest, series = _load_adjusted_series(raw_path)
+    except ValueError as exc:
+        reason = str(exc)
+        if reason in {
+            "NONPOSITIVE_OR_NONFINITE_ADJUSTED_PRICE",
+            "NO_VALID_ADJUSTED_PRICE_OBSERVATIONS",
+            "ADJUSTED_SERIES_NOT_STRICTLY_CHRONOLOGICAL",
+        }:
+            return _blocked_record(
+                certification_record,
+                digest=raw_digest,
+                policy=policy,
+                reason=reason,
+            )
+        raise
 
     eligible = certification_record.get("eligible_horizons") or {}
     horizons: dict[str, Any] = {}
@@ -115,6 +169,8 @@ def calculate_record(
         "security_id": security_id,
         "symbol": symbol,
         "evidence_state": evidence_state,
+        "calculation_state": "CALCULATED",
+        "calculation_reasons": [],
         "source_payload_sha256": digest,
         "latest_adjusted_price_date": series[-1][0],
         "available_adjusted_observations": len(series),
@@ -145,7 +201,13 @@ def calculate_universe(
         raise ValueError("DUPLICATE_OR_MISSING_SECURITY_ID")
     outputs = [calculate_record(record, raw_root=raw_root, policy=policy) for record in records]
     horizon_counts = {name: 0 for name in policy["horizon_minimum_observations"]}
+    state_counts: dict[str, int] = {}
+    reason_counts: dict[str, int] = {}
     for record in outputs:
+        state = record["calculation_state"]
+        state_counts[state] = state_counts.get(state, 0) + 1
+        for reason in record.get("calculation_reasons") or []:
+            reason_counts[reason] = reason_counts.get(reason, 0) + 1
         for horizon, result in record["horizons"].items():
             if result["calculation_state"] == "CALCULATED":
                 horizon_counts[horizon] += 1
@@ -154,6 +216,8 @@ def calculate_universe(
         "record_count": len(outputs),
         "records": outputs,
         "horizon_calculated_counts": horizon_counts,
+        "calculation_state_counts": dict(sorted(state_counts.items())),
+        "calculation_reason_counts": dict(sorted(reason_counts.items())),
         "return_basis": policy["return_basis"],
         "authority": policy["authority"],
     }
