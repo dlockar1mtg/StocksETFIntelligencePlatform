@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "native.historical_market_data_observation/1.0.0",
+  "title": "Historical Market Data Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "security_id",
+    "symbol",
+    "provider_id",
+    "provider_symbol",
+    "observation_date",
+    "available_at_utc",
+    "raw_close",
+    "adjusted_close",
+    "volume",
+    "dividend_amount",
+    "split_ratio",
+    "return_basis",
+    "source_lineage",
+    "authority"
+  ],
+  "properties": {
+    "security_id": {"type": "string", "minLength": 1},
+    "symbol": {"type": "string", "pattern": "^[A-Z0-9.-]+$"},
+    "provider_id": {"const": "YAHOO_FINANCE_CHART"},
+    "provider_symbol": {"type": "string", "pattern": "^[A-Z0-9.-]+$"},
+    "observation_date": {"type": "string", "format": "date"},
+    "available_at_utc": {"type": "string", "format": "date-time"},
+    "raw_close": {"type": ["number", "null"], "minimum": 0},
+    "adjusted_close": {"type": ["number", "null"], "minimum": 0},
+    "volume": {"type": ["number", "null"], "minimum": 0},
+    "dividend_amount": {"type": "number", "minimum": 0},
+    "split_ratio": {"type": "number", "exclusiveMinimum": 0},
+    "return_basis": {"const": "TOTAL_RETURN"},
+    "benchmark_security_id": {"type": ["string", "null"]},
+    "benchmark_effective_date": {"type": ["string", "null"], "format": "date"},
+    "corporate_action_state": {"enum": ["CLEAR", "CONFLICTED", "CRITICAL", "UNKNOWN"]},
+    "source_lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "raw_path", "content_sha256", "retrieved_at_utc"],
+      "properties": {
+        "source_url": {"type": "string", "minLength": 1},
+        "raw_path": {"type": "string", "minLength": 1},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "retrieved_at_utc": {"type": "string", "format": "date-time"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalization", "return_calculation", "risk_analytics", "forecasting", "recommendations", "automatic_execution"],
+      "properties": {
+        "normalization": {"const": true},
+        "return_calculation": {"const": false},
+        "risk_analytics": {"const": false},
+        "forecasting": {"const": false},
+        "recommendations": {"const": false},
+        "automatic_execution": {"const": false}
+      }
+    }
+  }
+}
