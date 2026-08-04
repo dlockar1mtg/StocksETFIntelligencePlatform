@@ -1,0 +1,28 @@
+{
+  "registry_version": "1.0.0",
+  "status": "CONTROL_BASELINE",
+  "description": "Governed taxonomy-to-benchmark rules. This baseline proves the assignment contract and does not claim full-universe production coverage.",
+  "assignments": {
+    "EQUITY|BROAD_MARKET|UNITED_STATES|LARGE_CAP": [
+      {
+        "benchmark_class": "US_LARGE_CAP_EQUITY",
+        "benchmark_security_id": "US-ETF-SPY",
+        "benchmark_symbol": "SPY"
+      }
+    ],
+    "EQUITY|DIVIDEND|UNITED_STATES|LARGE_CAP": [
+      {
+        "benchmark_class": "US_DIVIDEND_EQUITY",
+        "benchmark_security_id": "US-ETF-VIG",
+        "benchmark_symbol": "VIG"
+      }
+    ],
+    "EQUITY|GROWTH|UNITED_STATES|LARGE_CAP": [
+      {
+        "benchmark_class": "US_GROWTH_EQUITY",
+        "benchmark_security_id": "US-ETF-VUG",
+        "benchmark_symbol": "VUG"
+      }
+    ]
+  }
+}
