@@ -1,0 +1,44 @@
+{
+  "phase": "2",
+  "subphase": "2A.4",
+  "policy_version": "1.0.0",
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "preserve_full_discovery_universe": true,
+  "destructive_deletion_allowed": false,
+  "fail_closed": true,
+  "matched_state": "SEC_IDENTITY_CONFIRMED",
+  "unmatched_reason_states": [
+    "NON_1940_ACT_STRUCTURE",
+    "SPECIALIZED_TRUST",
+    "ETN_OR_DEBT_SECURITY",
+    "RECENT_OR_PENDING_SEC_RECORD",
+    "SYMBOL_NORMALIZATION_REQUIRED",
+    "ISSUER_EVIDENCE_REQUIRED",
+    "DELISTED_OR_RENAMED",
+    "IDENTITY_CONFLICT",
+    "UNRESOLVED"
+  ],
+  "resolution_states": [
+    "SEC_IDENTITY_CONFIRMED",
+    "ALTERNATE_STRUCTURE_CONFIRMED",
+    "SPECIALIZED",
+    "REQUIRES_ADDITIONAL_SOURCE",
+    "QUARANTINED",
+    "BLOCKED",
+    "UNRESOLVED"
+  ],
+  "authority": {
+    "identity_resolution_development": true,
+    "attribution_development": true,
+    "production_data_certification": false,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}
