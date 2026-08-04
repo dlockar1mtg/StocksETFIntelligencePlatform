@@ -1,0 +1,55 @@
+{
+  "phase": "3",
+  "subphase": "3.3",
+  "policy_version": "1.0.0",
+  "name": "Full Historical Collection Authorization and Orchestration",
+  "objective": "Authorize resumable full-history collection for the 3462 certified Phase 3 ETF candidates after successful pilot review, without authorizing return calculations or risk analytics.",
+  "required_candidate_count": 3462,
+  "required_candidate_state": "MARKET_DATA_ELIGIBLE",
+  "provisional_candidates_allowed": false,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "pilot_review": {
+    "required": true,
+    "required_status": "PASS",
+    "required_provider_granularity": "1d",
+    "required_seed_status": "COLLECTED",
+    "minimum_seed_observations": 252,
+    "adjusted_price_coverage_must_be_complete": true
+  },
+  "full_collection": {
+    "authorized": true,
+    "expected_record_count": 3462,
+    "checkpoint_required": true,
+    "resumable": true,
+    "retry_failed_supported": true,
+    "retryable_statuses": ["PROVIDER_ERROR"],
+    "terminal_statuses": ["COLLECTED", "NOT_FOUND", "SYMBOL_MISMATCH", "GRANULARITY_MISMATCH", "PROVIDER_ERROR", "INVALID_SYMBOL"],
+    "raw_payloads_immutable": true,
+    "provider_data_granularity_required": "1d",
+    "progress_interval_records": 100,
+    "completion_requires_all_records": true,
+    "completion_requires_unique_security_ids": true,
+    "completion_requires_seed_presence": true,
+    "completion_attestation_required": true,
+    "destructive_deletion_allowed": false
+  },
+  "completion_states": {
+    "complete": "COMPLETE",
+    "partial": "PARTIAL",
+    "failed": "FAILED"
+  },
+  "authority": {
+    "historical_data_collection": true,
+    "historical_data_normalization": true,
+    "return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
