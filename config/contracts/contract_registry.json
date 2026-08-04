@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.14.0",
+  "registry_version": "0.15.0",
   "compatibility_policy": "major_version_must_match",
   "breaking_changes_require_migration": true,
   "unknown_contracts_blocked": true,
@@ -16,6 +16,7 @@
     {"contract_id": "native.etf_structural_metadata_record", "version": "1.0.0", "schema": "contracts/native/etf_structural_metadata_record.schema.json", "status": "ACTIVE"},
     {"contract_id": "native.etf_market_data_screen_record", "version": "1.0.0", "schema": "contracts/native/etf_market_data_screen_record.schema.json", "status": "ACTIVE"},
     {"contract_id": "native.recent_market_data_observation", "version": "1.0.0", "schema": "contracts/native/recent_market_data_observation.schema.json", "status": "ACTIVE"},
+    {"contract_id": "native.historical_market_data_observation", "version": "1.0.0", "schema": "contracts/native/historical_market_data_observation.schema.json", "status": "ACTIVE"},
     {"contract_id": "uip.package_manifest", "version": "1.0.0", "schema": "contracts/uip/package_manifest.schema.json", "status": "ACTIVE"}
   ]
 }
