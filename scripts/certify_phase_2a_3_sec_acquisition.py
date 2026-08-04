@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 from foundation.infrastructure.sec_fund_tickers import load_policy
 
 REPORT = ROOT / "artifacts" / "certification" / "phase_2a_3_sec_acquisition_certification.json"
-MINIMUM_TESTS = 252
+MINIMUM_TESTS = 254
 
 
 def run_tests() -> int:
