@@ -1,20 +1,31 @@
 {
   "phase": "3",
-  "subphase": "3.5",
-  "policy_version": "1.0.1",
-  "name": "Total-Return Calculation Authority and Engine",
-  "objective": "Authorize and calculate adjusted-price total returns only for horizons certified by Phase 3.4, with exact source-date and price lineage and no decision authority.",
+  "subphase": "3.5a",
+  "policy_version": "1.1.0",
+  "name": "UIP Horizon Contract Alignment",
+  "objective": "Calculate adjusted-close total returns using the universal UIP and MTG horizon contract while preserving ETF trading-session semantics.",
   "required_record_count": 3462,
   "required_evidence_states": ["EVIDENCE_CERTIFIED", "HORIZON_LIMITED"],
   "quarantined_records_authorized": false,
   "return_basis": "ADJUSTED_CLOSE_TOTAL_RETURN",
+  "uip_horizon_contract": ["30d", "90d", "180d", "1y", "3y", "5y"],
   "horizon_minimum_observations": {
-    "1m": 21,
-    "3m": 63,
+    "30d": 21,
+    "90d": 63,
+    "180d": 126,
     "1y": 252,
     "3y": 756,
     "5y": 1260
   },
+  "horizon_semantics": {
+    "30d": {"calendar_horizon_days": 30, "required_trading_observations": 21},
+    "90d": {"calendar_horizon_days": 90, "required_trading_observations": 63},
+    "180d": {"calendar_horizon_days": 180, "required_trading_observations": 126},
+    "1y": {"calendar_horizon_days": 365, "required_trading_observations": 252},
+    "3y": {"calendar_horizon_days": 1095, "required_trading_observations": 756},
+    "5y": {"calendar_horizon_days": 1826, "required_trading_observations": 1260}
+  },
+  "legacy_horizon_aliases": {"1m": "30d", "3m": "90d"},
   "annualized_horizons": ["3y", "5y"],
   "annualization_day_basis": 365.2425,
   "window_selection": {
