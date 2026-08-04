@@ -6,11 +6,14 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from foundation.universe.structural_triage import load_policy
 
-ROOT = Path(__file__).resolve().parents[1]
 REPORT_PATH = ROOT / "artifacts" / "certification" / "phase_2a_structural_triage_certification.json"
-MINIMUM_TESTS = 223
+MINIMUM_TESTS = 225
 
 
 def run_tests() -> tuple[int, str]:
@@ -60,7 +63,7 @@ def main() -> int:
         if schema.get("additionalProperties") is not False:
             raise RuntimeError("ETF structural triage contract must fail closed on unknown fields")
         tests_run, _ = run_tests()
-    except Exception as exc:  # certification must capture and fail closed
+    except Exception as exc:
         critical_failures.append(str(exc))
         policy = None
 
