@@ -150,7 +150,14 @@ def validate_record(record: dict[str, Any], now_utc: datetime | None = None) -> 
             raise StructuralMetadataError("Structural metadata records cannot grant downstream authority")
 
 
-def normalize_record(raw: dict[str, Any], lineage: list[dict[str, Any]], observed_at_utc: str, effective_date: str) -> dict[str, Any]:
+def normalize_record(
+    raw: dict[str, Any],
+    lineage: list[dict[str, Any]],
+    observed_at_utc: str,
+    effective_date: str,
+    now_utc: datetime | None = None,
+) -> dict[str, Any]:
+    """Normalize one source record and validate it against an injectable UTC clock."""
     name = raw.get("fund_name") or raw.get("name")
     strategy = raw.get("strategy_description") or raw.get("description")
     benchmark = raw.get("benchmark_name") or raw.get("benchmark")
@@ -183,7 +190,7 @@ def normalize_record(raw: dict[str, Any], lineage: list[dict[str, Any]], observe
     complete_fields = ("fund_name", "issuer_name", "inception_date", "strategy_description")
     if all(record[field] not in (None, "") for field in complete_fields) and record["fund_status"] != "UNKNOWN":
         record["record_status"] = "COMPLETE"
-    validate_record(record)
+    validate_record(record, now_utc)
     return record
 
 
