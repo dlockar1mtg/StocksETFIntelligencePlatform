@@ -17,8 +17,22 @@ def canonical_json_bytes(value: Any) -> bytes:
     return (json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
 
 
+def review_ledger_contract_bytes(value: Any) -> bytes:
+    """Reproduce the Phase 3.6b.3n governed review-ledger digest bytes.
+
+    Phase 3.6b.3n hashes the logical pretty-printed JSON payload before Windows
+    text-mode newline translation. Re-serializing the parsed object here avoids
+    treating CRLF/LF storage differences as evidence drift.
+    """
+    return (json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode("utf-8")
+
+
 def sha256_bytes(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
+
+
+def review_ledger_contract_sha256(value: Any) -> str:
+    return sha256_bytes(review_ledger_contract_bytes(value))
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
@@ -28,6 +42,9 @@ def load_json(path: str | Path) -> dict[str, Any]:
 def validate_inputs(review: dict[str, Any], capture: dict[str, Any], policy: dict[str, Any]) -> list[dict[str, Any]]:
     if review.get("phase") != policy["required_input_phase"]:
         raise ValueError("review phase mismatch")
+    expected_review_hash = str(policy.get("required_review_ledger_sha256") or "")
+    if expected_review_hash and review_ledger_contract_sha256(review) != expected_review_hash:
+        raise ValueError("review ledger contract hash mismatch")
     records = list(review.get("records", []))
     if len(records) != int(policy["required_record_count"]):
         raise ValueError("review population mismatch")
