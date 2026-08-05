@@ -1,0 +1,51 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3q",
+  "required_input_phase": "3.6b.3p",
+  "required_resolution_ledger_sha256": "ecf4781cbbefe364f16b7a1d7e165fddd2e23fb6100b213c1590cbe53ef9bca8",
+  "required_pilot_record_count": 5,
+  "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
+  "required_resolved_symbols": ["IAI", "IHI", "IYZ", "XVV"],
+  "required_unresolved_symbols": ["AAXJ"],
+  "required_identity_markers": ["sec_cik", "sec_series_id", "sec_class_contract_id", "symbol"],
+  "review": {
+    "recompute_raw_document_sha256": true,
+    "require_raw_document_presence": true,
+    "require_exact_series_id": true,
+    "require_exact_class_contract_id": true,
+    "require_symbol": true,
+    "require_cik": true,
+    "validate_accession_reuse": true,
+    "preserve_candidate_evidence": true,
+    "aaxj_candidate_floor": 322
+  },
+  "aaxj_gap_analysis": {
+    "evaluate_older_submission_history_files": true,
+    "evaluate_larger_filing_history_window": true,
+    "evaluate_additional_eligible_forms": true,
+    "evaluate_complete_submission_text": true,
+    "evaluate_historical_accession_lookup": true,
+    "evaluate_alternate_sec_authoritative_route": true
+  },
+  "authority": {
+    "reliability_review_execution": true,
+    "reliability_review_certification": true,
+    "series_class_route_reliability_certification": false,
+    "targeted_aaxj_remediation": true,
+    "expanded_pilot": false,
+    "route_correction": false,
+    "full_priority_batch_recapture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "benchmark_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}
