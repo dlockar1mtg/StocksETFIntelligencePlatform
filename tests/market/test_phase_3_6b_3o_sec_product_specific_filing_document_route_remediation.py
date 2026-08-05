@@ -5,6 +5,7 @@ import unittest
 from foundation.market.sec_product_specific_filing_document_route_remediation import (
     build_summary,
     evaluate_document,
+    review_ledger_contract_sha256,
     select_recent_filing,
     validate_inputs,
 )
@@ -12,19 +13,20 @@ from foundation.market.sec_product_specific_filing_document_route_remediation im
 
 class Phase36B3OTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.policy = {
-            "required_input_phase": "3.6b.3n",
-            "required_record_count": 347,
-            "required_failed_review_state": "GENERIC_SHARED_PAYLOAD",
-            "required_failed_record_count": 347,
-            "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
-        }
         self.review = {
             "phase": "3.6b.3n",
             "records": [
                 {"security_id": f"ID-{i}", "review_state": "GENERIC_SHARED_PAYLOAD"}
                 for i in range(347)
             ],
+        }
+        self.policy = {
+            "required_input_phase": "3.6b.3n",
+            "required_record_count": 347,
+            "required_failed_review_state": "GENERIC_SHARED_PAYLOAD",
+            "required_failed_record_count": 347,
+            "required_review_ledger_sha256": review_ledger_contract_sha256(self.review),
+            "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
         }
         self.capture = {
             "records": [
@@ -45,6 +47,15 @@ class Phase36B3OTests(unittest.TestCase):
 
     def test_population_drift_fails_closed(self) -> None:
         self.review["records"].pop()
+        with self.assertRaises(ValueError):
+            validate_inputs(self.review, self.capture, self.policy)
+
+    def test_review_contract_hash_ignores_storage_newline_style(self) -> None:
+        logical_hash = review_ledger_contract_sha256(self.review)
+        self.assertEqual(logical_hash, self.policy["required_review_ledger_sha256"])
+
+    def test_review_contract_hash_drift_fails_closed(self) -> None:
+        self.review["records"][0]["review_state"] = "PRODUCT_SPECIFIC_EVIDENCE"
         with self.assertRaises(ValueError):
             validate_inputs(self.review, self.capture, self.policy)
 
