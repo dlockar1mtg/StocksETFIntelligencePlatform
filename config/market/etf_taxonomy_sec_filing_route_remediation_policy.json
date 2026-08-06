@@ -1,0 +1,44 @@
+﻿{
+  "policy_id": "ETF_TAXONOMY_SEC_FILING_ROUTE_REMEDIATION_POLICY_V1",
+  "phase": "PHASE_3_MODEL_TAXONOMY_PRODUCTION",
+  "operating_date": "2026-08-06",
+  "operating_timezone": "America/Chicago",
+  "governed_priority_population_count": 215,
+  "expected_queue_counts": {
+    "existing_product_specific_filing_route": 4,
+    "product_specific_filing_route_discovery_required": 211,
+    "reference_only_blocked": 1
+  },
+  "invalid_evidence_controls": {
+    "edgar_company_search_result_is_product_specific_evidence": false,
+    "shared_payload_hash_is_product_specific_evidence": false,
+    "issuer_level_browse_page_is_taxonomy_authority": false,
+    "http_200_alone_is_capture_success": false
+  },
+  "route_requirements": {
+    "required_route_target": "SEC_ARCHIVES_FILING_DOCUMENT",
+    "issuer_browse_page_prohibited": true,
+    "product_identity_validation_required": true,
+    "series_identity_validation_required": true,
+    "class_identity_validation_required_when_available": true,
+    "payload_hash_validation_required": true,
+    "cross_product_duplicate_payload_review_required": true
+  },
+  "scope_controls": {
+    "model_priority_records_authorized": true,
+    "reference_only_records_authorized": false,
+    "silent_reference_reentry_prohibited": true,
+    "prior_evidence_preservation_required": true
+  },
+  "downstream_authority": {
+    "taxonomy_normalization_authorized": false,
+    "taxonomy_classification_authorized": false,
+    "benchmark_assignment_authorized": false,
+    "ranking_authorized": false,
+    "forecasting_authorized": false,
+    "recommendations_authorized": false,
+    "allocation_authorized": false,
+    "automatic_execution_authorized": false,
+    "uip_database_write_authorized": false
+  }
+}
