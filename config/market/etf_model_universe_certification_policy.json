@@ -1,0 +1,62 @@
+﻿{
+  "policy_id": "ETF_MODEL_UNIVERSE_CERTIFICATION_POLICY_V1",
+  "phase": "PHASE_3_MODEL_UNIVERSE_CERTIFICATION",
+  "operating_date": "2026-08-06",
+  "operating_timezone": "America/Chicago",
+  "reference_population": {
+    "required_count": 3462,
+    "preservation_required": true,
+    "destructive_deletion_authorized": false,
+    "reference_records_remain_discoverable": true
+  },
+  "model_population": {
+    "required_count": 1077,
+    "exclusive_deep_development_universe": true,
+    "required_seed_symbols": [
+      "VOO",
+      "SCHD",
+      "QQQM"
+    ]
+  },
+  "inclusion_requirements": {
+    "market_screen_state": "MARKET_DATA_ELIGIBLE",
+    "historical_five_year_eligibility_required": true,
+    "minimum_median_daily_dollar_volume_usd": 1000000,
+    "return_calculation_state": "CALCULATED",
+    "allowed_issuer_identity_states": [
+      "ISSUER_CONFIRMED",
+      "PILOT_COMPLETE"
+    ]
+  },
+  "excluded_population_treatment": {
+    "downstream_model_authorized": false,
+    "taxonomy_expansion_authorized": false,
+    "benchmark_assignment_authorized": false,
+    "risk_model_authorized": false,
+    "ranking_authorized": false,
+    "forecasting_authorized": false,
+    "recommendations_authorized": false,
+    "allocation_authorized": false,
+    "uip_model_export_authorized": false,
+    "reference_preservation_required": true
+  },
+  "included_population_authority": {
+    "taxonomy_development_authorized": true,
+    "benchmark_development_authorized": false,
+    "risk_model_authorized": false,
+    "ranking_authorized": false,
+    "forecasting_authorized": false,
+    "recommendations_authorized": false,
+    "automatic_execution_authorized": false,
+    "uip_database_write_authorized": false
+  },
+  "governance_controls": {
+    "deterministic_rebuild_required": true,
+    "source_hashes_required": true,
+    "decision_ledger_required": true,
+    "silent_imputation_prohibited": true,
+    "silent_reentry_prohibited": true,
+    "silent_removal_prohibited": true,
+    "unresolved_state_preservation_required": true
+  }
+}
