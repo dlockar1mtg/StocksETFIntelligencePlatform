@@ -64,11 +64,74 @@ def main() -> int:
     root = Path(args.repository_root)
     request_cache: dict[str, tuple[int | None, str, bytes, str | None]] = {}
 
-    def governed_fetch(url: str) -> tuple[int | None, str, bytes, str | None]:
+    maximum_total_sec_requests = int(
+        execution[
+            "maximum_total_sec_requests"
+        ]
+    )
+
+    maximum_requests_per_second = int(
+        execution[
+            "maximum_requests_per_second"
+        ]
+    )
+
+    maximum_retry_attempts = int(
+        execution[
+            "maximum_retry_attempts"
+        ]
+    )
+
+    if maximum_total_sec_requests <= 0:
+        raise ValueError(
+            "maximum_total_sec_requests must be positive"
+        )
+
+    if maximum_requests_per_second <= 0:
+        raise ValueError(
+            "maximum_requests_per_second must be positive"
+        )
+
+    if maximum_retry_attempts != 0:
+        raise ValueError(
+            "series/class pilot retries must equal zero"
+        )
+
+    def governed_fetch(
+        url: str,
+    ) -> tuple[
+        int | None,
+        str,
+        bytes,
+        str | None,
+    ]:
         if url not in request_cache:
+            if (
+                len(request_cache)
+                >= maximum_total_sec_requests
+            ):
+                raise RuntimeError(
+                    "absolute SEC request ceiling exhausted "
+                    "before next physical request"
+                )
+
             if request_cache:
-                time.sleep(1 / int(execution["maximum_requests_per_second"]))
-            request_cache[url] = fetch(url, args.user_agent, int(execution["request_timeout_seconds"]), int(execution["maximum_retry_attempts"]))
+                time.sleep(
+                    1
+                    / maximum_requests_per_second
+                )
+
+            request_cache[url] = fetch(
+                url,
+                args.user_agent,
+                int(
+                    execution[
+                        "request_timeout_seconds"
+                    ]
+                ),
+                maximum_retry_attempts,
+            )
+
         return request_cache[url]
 
     records = []

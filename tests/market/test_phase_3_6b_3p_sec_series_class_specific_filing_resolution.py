@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
 
 from foundation.market.sec_series_class_specific_filing_resolution import (
     build_summary,
@@ -19,7 +20,7 @@ class Phase36B3PTests(unittest.TestCase):
             "required_input_phase": "3.6b.3o",
             "required_pilot_record_count": 5,
             "required_input_review_state": "DOCUMENT_CANDIDATE_UNRESOLVED",
-            "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
+            "pilot_symbols": ["AAXJ", "ACWI", "IBTJ", "IWN", "VLUE"],
         }
         self.records = [
             {
@@ -172,6 +173,60 @@ class Phase36B3PTests(unittest.TestCase):
         self.assertTrue(summary["pilot_complete"])
         self.assertFalse(summary["full_priority_batch_recapture_authorized"])
         self.assertFalse(summary["taxonomy_evidence_normalization_authorized"])
+
+    def test_current_pilot_symbols_match_governed_scope(self) -> None:
+        self.assertEqual(
+            self.policy["pilot_symbols"],
+            [
+                "AAXJ",
+                "ACWI",
+                "IBTJ",
+                "IWN",
+                "VLUE",
+            ],
+        )
+
+    def test_series_class_runner_contract_has_absolute_request_ceiling(self) -> None:
+        runner = (
+            Path(
+                "scripts/"
+                "run_phase_3_6b_3p_sec_series_class_specific_filing_resolution.py"
+            )
+            .read_text(
+                encoding="utf-8"
+            )
+        )
+
+        self.assertIn(
+            '"maximum_total_sec_requests"',
+            runner,
+        )
+
+        self.assertIn(
+            '"absolute SEC request ceiling exhausted "',
+            runner,
+        )
+
+        self.assertIn(
+            '"before next physical request"',
+            runner,
+        )
+
+    def test_series_class_runner_contract_requires_zero_retries(self) -> None:
+        runner = (
+            Path(
+                "scripts/"
+                "run_phase_3_6b_3p_sec_series_class_specific_filing_resolution.py"
+            )
+            .read_text(
+                encoding="utf-8"
+            )
+        )
+
+        self.assertIn(
+            "series/class pilot retries must equal zero",
+            runner,
+        )
 
     def test_contract_hash_is_deterministic(self) -> None:
         self.assertEqual(remediation_contract_sha256(self.remediation), remediation_contract_sha256(dict(self.remediation)))

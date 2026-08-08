@@ -2,30 +2,49 @@
   "policy_version": "1.0.0",
   "phase": "3.6b.3p",
   "required_input_phase": "3.6b.3o",
-  "required_remediation_ledger_sha256": "973c6292c0d29efb832a70d2382efa1ffe1a3f94349139d0db80092f0ed30d6f",
+  "required_remediation_ledger_sha256": "5311e079e64dda290268296fe99653b94335bfe89f97eca77808210c018a82ad",
   "required_pilot_record_count": 5,
   "required_input_review_state": "DOCUMENT_CANDIDATE_UNRESOLVED",
-  "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
+  "pilot_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN",
+    "VLUE"
+  ],
   "route": {
     "route_type": "SEC_RECENT_FILINGS_DOCUMENT_SCAN_BY_SERIES_CLASS_IDENTITY",
-    "allowed_forms": ["497", "497K", "497J", "485APOS", "485BPOS"],
-    "maximum_recent_filings_scanned": 80,
+    "allowed_forms": [
+      "497",
+      "497K",
+      "497J",
+      "485APOS",
+      "485BPOS"
+    ],
+    "maximum_recent_filings_scanned": 5,
     "maximum_documents_per_filing": 12,
     "submissions_template": "https://data.sec.gov/submissions/CIK{cik10}.json",
     "archive_index_template": "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dashes}/index.json",
     "archive_document_template": "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dashes}/{document_name}",
-    "required_identity_markers": ["sec_series_id", "sec_class_contract_id"],
-    "supporting_identity_markers": ["symbol", "sec_cik"],
+    "required_identity_markers": [
+      "sec_series_id",
+      "sec_class_contract_id"
+    ],
+    "supporting_identity_markers": [
+      "symbol",
+      "sec_cik"
+    ],
     "same_accession_reuse_requires_explicit_identity_match": true
   },
   "execution": {
     "maximum_requests_per_second": 1,
-    "maximum_retry_attempts": 2,
+    "maximum_retry_attempts": 0,
     "request_timeout_seconds": 45,
     "pilot_only": true,
     "immutable_raw_storage": true,
     "declared_sec_user_agent_required": true,
-    "cache_identical_requests": true
+    "cache_identical_requests": true,
+    "maximum_total_sec_requests": 66
   },
   "authority": {
     "series_class_resolution_pilot": true,
