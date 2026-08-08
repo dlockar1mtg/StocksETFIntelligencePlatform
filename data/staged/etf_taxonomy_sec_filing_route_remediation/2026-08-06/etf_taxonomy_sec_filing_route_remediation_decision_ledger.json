@@ -18,7 +18,7 @@
       },
       "inside_model_priority_scope": true,
       "reference_only_blocked": false,
-      "remediation_queue": "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED",
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
       "security_id": "US-ETF-AAXJ",
       "symbol": "AAXJ"
     },
@@ -1044,7 +1044,7 @@
       },
       "inside_model_priority_scope": true,
       "reference_only_blocked": false,
-      "remediation_queue": "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED",
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
       "security_id": "US-ETF-IAI",
       "symbol": "IAI"
     },
@@ -1937,7 +1937,7 @@
       },
       "inside_model_priority_scope": true,
       "reference_only_blocked": false,
-      "remediation_queue": "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED",
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
       "security_id": "US-ETF-IHI",
       "symbol": "IHI"
     },
@@ -3229,7 +3229,7 @@
       },
       "inside_model_priority_scope": true,
       "reference_only_blocked": false,
-      "remediation_queue": "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED",
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
       "security_id": "US-ETF-IYZ",
       "symbol": "IYZ"
     },
@@ -4113,9 +4113,10 @@
   ],
   "reference_only_blocked_count": 1,
   "source_hashes": {
+    "active_structural_universe_sha256": "64ddd22eb1d28a992a96122f13b4336e4d5c516dac66e7b6e40f50077fbc6de3",
     "capture_execution_sha256": "74ab09e42fb9df180b3d6aa6b90f0aa9f0a9eae6a8d6c09d4b8f1aa7a07d85c7",
     "capture_review_sha256": "ceaa954202f3a0235f2e81c894b1012079c0468ab9f31811a300e538b5caa02a",
-    "policy_sha256": "168868c0e57d0c69eba3e7412c7b4a92734c344290214829e29fb0bba73e1ea6",
+    "policy_sha256": "73f450b76a15807d4c33b2bc2d5eabe73ad11ea8a5723199d5c28d37eec1dec9",
     "product_remediation_sha256": "973c6292c0d29efb832a70d2382efa1ffe1a3f94349139d0db80092f0ed30d6f",
     "series_resolution_sha256": "ecf4781cbbefe364f16b7a1d7e165fddd2e23fb6100b213c1590cbe53ef9bca8",
     "taxonomy_scope_sha256": "5c7899c32480af113b173afba7750ffd4a5e6b88cfd20744a353a39accd2e87a"

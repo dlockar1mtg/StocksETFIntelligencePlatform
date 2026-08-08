@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import hashlib
 import json
@@ -12,8 +12,9 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 OPERATING_DATE = "2026-08-06"
 
 PRIORITY_COUNT = 215
-EXISTING_ROUTE_COUNT = 4
-DISCOVERY_REQUIRED_COUNT = 211
+EXISTING_ROUTE_COUNT = 0
+DISCOVERY_REQUIRED_COUNT = 215
+DISPROVEN_ROUTE_COUNT = 4
 REFERENCE_ONLY_COUNT = 1
 
 INVALID_SHARED_PAYLOAD_SHA256 = (
@@ -35,6 +36,16 @@ TAXONOMY_SCOPE_PATH = (
     / "etf_model_taxonomy_scope"
     / OPERATING_DATE
     / "phase_3_etf_model_taxonomy_scope.json"
+)
+
+
+ACTIVE_STRUCTURAL_UNIVERSE_PATH = (
+    REPOSITORY_ROOT
+    / "data"
+    / "staged"
+    / "active_universe"
+    / "2026-08-03"
+    / "active_structural_universe.json"
 )
 
 EXECUTION_PATH = (
@@ -207,6 +218,9 @@ def is_archives_filing_document_url(value: Any) -> bool:
 def main() -> None:
     policy = load_json(POLICY_PATH)
     scope = load_json(TAXONOMY_SCOPE_PATH)
+    active_structural_universe = load_json(
+        ACTIVE_STRUCTURAL_UNIVERSE_PATH
+    )
     execution = load_json(EXECUTION_PATH)
     review = load_json(REVIEW_PATH)
     product_remediation = load_json(PRODUCT_REMEDIATION_PATH)
@@ -239,6 +253,11 @@ def main() -> None:
         "Priority taxonomy scope",
     )
 
+    structural_index = index_records(
+        active_structural_universe,
+        "Active structural universe",
+    )
+
     execution_index = index_records(
         execution,
         "Capture execution ledger",
@@ -267,9 +286,37 @@ def main() -> None:
         remediation_common_ids - priority_ids
     )
 
-    if len(priority_remediation_ids) != EXISTING_ROUTE_COUNT:
+    disproven_symbols = set(
+        policy["disproven_route_controls"][
+            "disproven_existing_route_symbols"
+        ]
+    )
+
+    disproven_priority_ids = {
+        security_id
+        for security_id in priority_remediation_ids
+        if priority_index[security_id].get("symbol")
+        in disproven_symbols
+    }
+
+    if len(disproven_priority_ids) != DISPROVEN_ROUTE_COUNT:
         raise RemediationError(
-            "Existing model-priority filing-route count mismatch."
+            "Disproven model-priority route count mismatch."
+        )
+
+    unexpected_priority_remediation_ids = (
+        priority_remediation_ids
+        - disproven_priority_ids
+    )
+
+    if unexpected_priority_remediation_ids:
+        raise RemediationError(
+            "Unexpected model-priority remediation routes exist: "
+            + ", ".join(
+                sorted(
+                    unexpected_priority_remediation_ids
+                )
+            )
         )
 
     if len(reference_only_remediation_ids) != REFERENCE_ONLY_COUNT:
@@ -281,6 +328,9 @@ def main() -> None:
         "policy_sha256": sha256_file(POLICY_PATH),
         "taxonomy_scope_sha256": sha256_file(
             TAXONOMY_SCOPE_PATH
+        ),
+        "active_structural_universe_sha256": sha256_file(
+            ACTIVE_STRUCTURAL_UNIVERSE_PATH
         ),
         "capture_execution_sha256": sha256_file(
             EXECUTION_PATH
@@ -301,10 +351,16 @@ def main() -> None:
 
     for security_id in sorted(priority_ids):
         scope_record = priority_index[security_id]
+        structural_record = structural_index.get(security_id)
         execution_record = execution_index.get(security_id)
         review_record = review_index.get(security_id)
         product_record = product_index.get(security_id)
         series_record = series_index.get(security_id)
+
+        if structural_record is None:
+            raise RemediationError(
+                f"Missing structural identity record: {security_id}"
+            )
 
         if execution_record is None:
             raise RemediationError(
@@ -363,46 +419,68 @@ def main() -> None:
             ),
         )
 
-        series_id = first_value(
-            series_record,
+        sec_cik = first_value(
+            structural_record,
             (
-                "series_id",
+                "sec_cik",
+                "cik",
+            ),
+        )
+
+        series_id = first_value(
+            structural_record,
+            (
                 "sec_series_id",
+                "series_id",
             ),
         )
 
         class_id = first_value(
-            series_record,
+            structural_record,
             (
-                "class_id",
+                "sec_class_contract_id",
                 "class_contract_id",
-                "sec_class_id",
+                "class_id",
             ),
         )
 
-        existing_route_valid_shape = (
-            security_id in priority_remediation_ids
-            and is_archives_filing_document_url(product_url)
-            and isinstance(series_id, str)
-            and bool(series_id)
+        if (
+            not isinstance(sec_cik, str)
+            or not sec_cik
+            or not isinstance(series_id, str)
+            or not series_id
+            or not isinstance(class_id, str)
+            or not class_id
+        ):
+            raise RemediationError(
+                f"{security_id}: structural SEC identity incomplete."
+            )
+
+        is_disproven_route = (
+            security_id in disproven_priority_ids
         )
 
-        if security_id in priority_remediation_ids:
-            queue = "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED"
+        if (
+            is_disproven_route
+            and not is_archives_filing_document_url(
+                product_url
+            )
+        ):
+            raise RemediationError(
+                f"{security_id}: disproven route evidence "
+                "is not preserved as an SEC Archives document."
+            )
 
-            if not existing_route_valid_shape:
-                raise RemediationError(
-                    f"{security_id}: existing remediation route "
-                    "does not meet minimum shape requirements."
-                )
-        else:
-            queue = "FILING_ROUTE_DISCOVERY_REQUIRED"
+        if (
+            not is_disproven_route
+            and product_url is not None
+        ):
+            raise RemediationError(
+                f"{security_id}: unexpected product-specific "
+                "route outside the disproven route set."
+            )
 
-            if product_url is not None:
-                raise RemediationError(
-                    f"{security_id}: unexpected product-specific "
-                    "route outside the established remediation set."
-                )
+        queue = "FILING_ROUTE_DISCOVERY_REQUIRED"
 
         authority = {
             "network_capture_authorized": False,
@@ -429,18 +507,25 @@ def main() -> None:
                 "prior_review_state": review_state,
                 "prior_payload_sha256": payload_sha256,
                 "prior_capture_usable": False,
-                "candidate_product_specific_filing_url": (
+                "candidate_product_specific_filing_url": None,
+                "disproven_product_specific_filing_url": (
                     product_url
-                    if existing_route_valid_shape
+                    if is_disproven_route
                     else None
                 ),
+                "prior_route_disposition": (
+                    "MISRESOLVED_FILING_ROUTE_REJECTED"
+                    if is_disproven_route
+                    else "NO_PRIOR_PRODUCT_SPECIFIC_ROUTE"
+                ),
+                "sec_cik": sec_cik,
                 "sec_series_id": series_id,
                 "sec_class_contract_id": class_id,
+                "identity_source": (
+                    "ACTIVE_STRUCTURAL_UNIVERSE"
+                ),
                 "required_next_action": (
-                    "VALIDATE_EXISTING_FILING_DOCUMENT"
-                    if queue
-                    == "EXISTING_FILING_ROUTE_VALIDATION_REQUIRED"
-                    else "RESOLVE_PRODUCT_SPECIFIC_FILING_DOCUMENT"
+                    "RESOLVE_PRODUCT_SPECIFIC_FILING_DOCUMENT"
                 ),
                 "authority": authority,
             }
@@ -528,6 +613,12 @@ def main() -> None:
             "Existing filing-route queue count mismatch."
         )
 
+    if existing_route_records:
+        raise RemediationError(
+            "No disproven filing route may remain "
+            "in the existing-route validation queue."
+        )
+
     if len(discovery_records) != DISCOVERY_REQUIRED_COUNT:
         raise RemediationError(
             "Filing-route discovery queue count mismatch."
@@ -545,6 +636,9 @@ def main() -> None:
         ),
         "filing_route_discovery_required_count": (
             len(discovery_records)
+        ),
+        "disproven_existing_route_count": (
+            len(disproven_priority_ids)
         ),
         "invalid_shared_payload_sha256": (
             INVALID_SHARED_PAYLOAD_SHA256
@@ -587,6 +681,9 @@ def main() -> None:
         "filing_route_discovery_required_count": (
             len(discovery_records)
         ),
+        "disproven_existing_route_count": (
+            len(disproven_priority_ids)
+        ),
         "reference_only_blocked_count": (
             len(reference_only_remediation_ids)
         ),
@@ -625,6 +722,10 @@ def main() -> None:
     print(
         "Existing filing routes:           "
         f"{len(existing_route_records)}"
+    )
+    print(
+        "Disproven routes rejected:        "
+        f"{len(disproven_priority_ids)}"
     )
     print(
         "Filing-route discovery required:  "
