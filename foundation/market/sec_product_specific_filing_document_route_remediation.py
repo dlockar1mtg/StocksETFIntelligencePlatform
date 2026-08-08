@@ -62,35 +62,206 @@ def validate_inputs(review: dict[str, Any], capture: dict[str, Any], policy: dic
     return pilot
 
 
-def select_recent_filing(submissions: dict[str, Any], allowed_forms: Iterable[str], maximum: int) -> dict[str, str] | None:
-    recent = submissions.get("filings", {}).get("recent", {})
-    forms = list(recent.get("form", []))
-    accessions = list(recent.get("accessionNumber", []))
-    primary_docs = list(recent.get("primaryDocument", []))
-    filing_dates = list(recent.get("filingDate", []))
+
+def iter_recent_filings(
+    submissions: dict[str, Any],
+    allowed_forms: Iterable[str],
+    maximum: int,
+) -> list[dict[str, str]]:
+    """Return allowed issuer filings as candidates only.
+
+    Recency and form type establish scan order. They do not establish
+    product identity because one registrant can contain many ETF series.
+    """
+    recent = submissions.get(
+        "filings",
+        {},
+    ).get(
+        "recent",
+        {},
+    )
+
+    forms = list(
+        recent.get("form", [])
+    )
+    accessions = list(
+        recent.get("accessionNumber", [])
+    )
+    primary_docs = list(
+        recent.get("primaryDocument", [])
+    )
+    filing_dates = list(
+        recent.get("filingDate", [])
+    )
+
     allowed = set(allowed_forms)
-    for index, form in enumerate(forms[:maximum]):
-        if form in allowed and index < len(accessions) and index < len(primary_docs):
-            return {
-                "form": form,
-                "accession_number": accessions[index],
-                "primary_document": primary_docs[index],
-                "filing_date": filing_dates[index] if index < len(filing_dates) else "",
+    candidates: list[dict[str, str]] = []
+
+    for index, form in enumerate(forms):
+        if len(candidates) >= maximum:
+            break
+
+        if form not in allowed:
+            continue
+
+        if (
+            index >= len(accessions)
+            or index >= len(primary_docs)
+        ):
+            continue
+
+        accession_number = str(
+            accessions[index] or ""
+        ).strip()
+
+        primary_document = str(
+            primary_docs[index] or ""
+        ).strip()
+
+        if (
+            not accession_number
+            or not primary_document
+        ):
+            continue
+
+        candidates.append(
+            {
+                "form": str(form),
+                "accession_number": accession_number,
+                "primary_document": primary_document,
+                "filing_date": (
+                    str(
+                        filing_dates[index]
+                        or ""
+                    )
+                    if index < len(filing_dates)
+                    else ""
+                ),
             }
-    return None
+        )
+
+    return candidates
 
 
-def evaluate_document(record: dict[str, Any], payload: bytes, accession_number: str | None, primary_document: str | None) -> dict[str, Any]:
-    text = payload.decode("utf-8", errors="ignore").lower()
-    markers = {
-        "cik": str(record.get("sec_cik", "")).lstrip("0").lower() in text or str(record.get("sec_cik", "")).lower() in text,
-        "series_id": str(record.get("sec_series_id", "")).lower() in text,
-        "class_contract_id": str(record.get("sec_class_contract_id", "")).lower() in text,
-        "symbol": str(record.get("symbol", "")).lower() in text,
+def select_recent_filing(
+    submissions: dict[str, Any],
+    allowed_forms: Iterable[str],
+    maximum: int,
+) -> dict[str, str] | None:
+    """Compatibility helper.
+
+    This returns only the first candidate. Its return value must never be
+    treated as product-specific evidence without document identity review.
+    """
+    candidates = iter_recent_filings(
+        submissions,
+        allowed_forms,
+        maximum,
+    )
+
+    return candidates[0] if candidates else None
+
+
+
+def _marker_present(
+    value: Any,
+    text: str,
+) -> bool:
+    """Prevent blank identifiers from matching every document."""
+    normalized = str(
+        value or ""
+    ).strip().lower()
+
+    return (
+        bool(normalized)
+        and normalized in text
+    )
+
+
+def _cik_marker_present(
+    value: Any,
+    text: str,
+) -> bool:
+    normalized = str(
+        value or ""
+    ).strip().lower()
+
+    if not normalized:
+        return False
+
+    without_prefix = normalized.replace(
+        "sec-cik-",
+        "",
+    )
+
+    candidates = {
+        normalized,
+        without_prefix,
     }
-    identity_count = sum(markers.values())
-    resolved = bool(accession_number and primary_document and markers["series_id"] and markers["class_contract_id"] and (markers["symbol"] or markers["cik"]))
-    state = "PRODUCT_SPECIFIC_DOCUMENT_RESOLVED" if resolved else "DOCUMENT_CANDIDATE_UNRESOLVED"
+
+    digits = without_prefix.lstrip("0")
+
+    if digits:
+        candidates.add(digits)
+
+    return any(
+        candidate
+        and candidate in text
+        for candidate in candidates
+    )
+
+
+def evaluate_document(
+    record: dict[str, Any],
+    payload: bytes,
+    accession_number: str | None,
+    primary_document: str | None,
+) -> dict[str, Any]:
+    text = payload.decode(
+        "utf-8",
+        errors="ignore",
+    ).lower()
+
+    markers = {
+        "cik": _cik_marker_present(
+            record.get("sec_cik"),
+            text,
+        ),
+        "series_id": _marker_present(
+            record.get("sec_series_id"),
+            text,
+        ),
+        "class_contract_id": _marker_present(
+            record.get("sec_class_contract_id"),
+            text,
+        ),
+        "symbol": _marker_present(
+            record.get("symbol"),
+            text,
+        ),
+    }
+
+    identity_count = sum(
+        markers.values()
+    )
+
+    resolved = bool(
+        accession_number
+        and primary_document
+        and markers["series_id"]
+        and markers["class_contract_id"]
+        and (
+            markers["symbol"]
+            or markers["cik"]
+        )
+    )
+
+    state = (
+        "PRODUCT_SPECIFIC_DOCUMENT_RESOLVED"
+        if resolved
+        else "DOCUMENT_CANDIDATE_UNRESOLVED"
+    )
+
     return {
         "review_state": state,
         "identity_markers": markers,

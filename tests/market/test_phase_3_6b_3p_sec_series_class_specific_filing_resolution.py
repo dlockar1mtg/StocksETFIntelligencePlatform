@@ -70,6 +70,95 @@ class Phase36B3PTests(unittest.TestCase):
         record = self.records[0]
         self.assertFalse(evaluate_candidate(record, record["symbol"].encode())["product_specific"])
 
+
+    def test_blank_identifiers_never_match(self) -> None:
+        record = {
+            "security_id": "US-ETF-TEST",
+            "symbol": "",
+            "sec_cik": "",
+            "sec_series_id": "",
+            "sec_class_contract_id": "",
+        }
+
+        result = evaluate_candidate(
+            record,
+            b"generic filing text",
+        )
+
+        self.assertEqual(
+            result["identity_marker_count"],
+            0,
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
+
+    def test_same_issuer_without_series_and_class_fails_closed(self) -> None:
+        record = self.records[0]
+
+        payload = (
+            f"{record['sec_cik']} "
+            "unrelated series prospectus"
+        ).encode()
+
+        result = evaluate_candidate(
+            record,
+            payload,
+        )
+
+        self.assertTrue(
+            result["identity_markers"][
+                "sec_cik"
+            ]
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "sec_series_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "sec_class_contract_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
+
+    def test_missing_class_contract_id_fails_closed(self) -> None:
+        record = dict(
+            self.records[0]
+        )
+
+        record[
+            "sec_class_contract_id"
+        ] = ""
+
+        payload = (
+            f"{record['sec_series_id']} "
+            f"{record['symbol']} "
+            f"{record['sec_cik']}"
+        ).encode()
+
+        result = evaluate_candidate(
+            record,
+            payload,
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "sec_class_contract_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
+
     def test_single_matching_document_resolves(self) -> None:
         result = choose_resolution(self.records[0], [{"product_specific": True, "document_name": "a.htm"}])
         self.assertEqual(result["review_state"], "SERIES_CLASS_DOCUMENT_RESOLVED")

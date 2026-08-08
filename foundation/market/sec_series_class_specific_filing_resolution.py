@@ -89,20 +89,107 @@ def document_names_from_index(index_json: dict[str, Any], maximum: int) -> list[
     return names
 
 
-def evaluate_candidate(record: dict[str, Any], payload: bytes) -> dict[str, Any]:
-    text = payload.decode("utf-8", errors="ignore").lower()
-    markers = {
-        "sec_series_id": str(record.get("sec_series_id") or "").lower() in text,
-        "sec_class_contract_id": str(record.get("sec_class_contract_id") or "").lower() in text,
-        "symbol": str(record.get("symbol") or "").lower() in text,
-        "sec_cik": str(record.get("sec_cik") or "").lstrip("0").lower() in text,
+
+def _marker_present(
+    value: Any,
+    text: str,
+) -> bool:
+    normalized = str(
+        value or ""
+    ).strip().lower()
+
+    return (
+        bool(normalized)
+        and normalized in text
+    )
+
+
+def _cik_marker_present(
+    value: Any,
+    text: str,
+) -> bool:
+    normalized = str(
+        value or ""
+    ).strip().lower()
+
+    if not normalized:
+        return False
+
+    without_prefix = normalized.replace(
+        "sec-cik-",
+        "",
+    )
+
+    candidates = {
+        normalized,
+        without_prefix,
     }
-    required = markers["sec_series_id"] and markers["sec_class_contract_id"]
-    supporting = markers["symbol"] or markers["sec_cik"]
+
+    digits = without_prefix.lstrip("0")
+
+    if digits:
+        candidates.add(digits)
+
+    return any(
+        candidate
+        and candidate in text
+        for candidate in candidates
+    )
+
+
+def evaluate_candidate(
+    record: dict[str, Any],
+    payload: bytes,
+) -> dict[str, Any]:
+    text = payload.decode(
+        "utf-8",
+        errors="ignore",
+    ).lower()
+
+    markers = {
+        "sec_series_id": _marker_present(
+            record.get("sec_series_id"),
+            text,
+        ),
+        "sec_class_contract_id": (
+            _marker_present(
+                record.get(
+                    "sec_class_contract_id"
+                ),
+                text,
+            )
+        ),
+        "symbol": _marker_present(
+            record.get("symbol"),
+            text,
+        ),
+        "sec_cik": _cik_marker_present(
+            record.get("sec_cik"),
+            text,
+        ),
+    }
+
+    required = (
+        markers["sec_series_id"]
+        and markers[
+            "sec_class_contract_id"
+        ]
+    )
+
+    supporting = (
+        markers["symbol"]
+        or markers["sec_cik"]
+    )
+
     return {
         "identity_markers": markers,
-        "identity_marker_count": sum(markers.values()),
-        "product_specific": bool(required and supporting),
+        "identity_marker_count": sum(
+            markers.values()
+        ),
+        "product_specific": bool(
+            required
+            and supporting
+        ),
     }
 
 

@@ -5,6 +5,7 @@ import unittest
 from foundation.market.sec_product_specific_filing_document_route_remediation import (
     build_summary,
     evaluate_document,
+    iter_recent_filings,
     review_ledger_contract_sha256,
     select_recent_filing,
     validate_inputs,
@@ -76,6 +77,146 @@ class Phase36B3OTests(unittest.TestCase):
 
     def test_missing_allowed_filing_is_unresolved(self) -> None:
         self.assertIsNone(select_recent_filing({"filings": {"recent": {}}}, ["497"], 10))
+
+
+    def test_recent_filings_are_candidates_only(self) -> None:
+        submissions = {
+            "filings": {
+                "recent": {
+                    "form": [
+                        "497",
+                        "497K",
+                        "10-K",
+                    ],
+                    "accessionNumber": [
+                        "a",
+                        "b",
+                        "c",
+                    ],
+                    "primaryDocument": [
+                        "a.htm",
+                        "b.htm",
+                        "c.htm",
+                    ],
+                    "filingDate": [
+                        "2026-08-03",
+                        "2026-08-02",
+                        "2026-08-01",
+                    ],
+                }
+            }
+        }
+
+        candidates = iter_recent_filings(
+            submissions,
+            ["497", "497K"],
+            10,
+        )
+
+        self.assertEqual(
+            [
+                value["accession_number"]
+                for value in candidates
+            ],
+            ["a", "b"],
+        )
+
+    def test_blank_identifiers_never_match(self) -> None:
+        record = {
+            "security_id": "US-ETF-TEST",
+            "symbol": "",
+            "sec_cik": "",
+            "sec_series_id": "",
+            "sec_class_contract_id": "",
+        }
+
+        result = evaluate_document(
+            record,
+            b"generic filing text",
+            "0001",
+            "document.htm",
+        )
+
+        self.assertEqual(
+            result["identity_marker_count"],
+            0,
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
+
+    def test_same_issuer_unrelated_filing_fails_closed(self) -> None:
+        record = self.capture["records"][0]
+
+        payload = (
+            f"{record['sec_cik']} "
+            "unrelated BlackRock fund prospectus"
+        ).encode()
+
+        result = evaluate_document(
+            record,
+            payload,
+            "0001193125-26-330968",
+            "d55058d497.htm",
+        )
+
+        self.assertTrue(
+            result["identity_markers"]["cik"]
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "series_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "class_contract_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
+
+        self.assertEqual(
+            result["review_state"],
+            "DOCUMENT_CANDIDATE_UNRESOLVED",
+        )
+
+    def test_missing_class_contract_id_fails_closed(self) -> None:
+        record = dict(
+            self.capture["records"][0]
+        )
+
+        record[
+            "sec_class_contract_id"
+        ] = ""
+
+        payload = (
+            f"{record['sec_cik']} "
+            f"{record['sec_series_id']} "
+            f"{record['symbol']}"
+        ).encode()
+
+        result = evaluate_document(
+            record,
+            payload,
+            "0001",
+            "document.htm",
+        )
+
+        self.assertFalse(
+            result["identity_markers"][
+                "class_contract_id"
+            ]
+        )
+
+        self.assertFalse(
+            result["product_specific"]
+        )
 
     def test_product_specific_document_requires_series_and_class(self) -> None:
         record = self.capture["records"][0]

@@ -11,7 +11,7 @@ from foundation.market.sec_product_specific_filing_document_route_remediation im
     build_summary,
     evaluate_document,
     load_json,
-    select_recent_filing,
+    iter_recent_filings,
     sha256_bytes,
     validate_inputs,
     write_outputs,
@@ -76,17 +76,28 @@ def main() -> int:
         absolute_submissions.parent.mkdir(parents=True, exist_ok=True)
         absolute_submissions.write_bytes(submissions_payload)
 
-        filing = None
+
+        filing_candidates = []
+
         if status == 200:
             try:
-                filing = select_recent_filing(
-                    json.loads(submissions_payload.decode("utf-8")),
+                filing_candidates = iter_recent_filings(
+                    json.loads(
+                        submissions_payload.decode(
+                            "utf-8"
+                        )
+                    ),
                     route["allowed_forms"],
-                    int(route["maximum_recent_filings_scanned"]),
+                    int(
+                        route[
+                            "maximum_recent_filings_scanned"
+                        ]
+                    ),
                 )
             except Exception:  # noqa: BLE001
                 failure = "SUBMISSIONS_PARSE_FAILED"
 
+        filing = None
         document_payload = b""
         document_status = None
         document_url = None
@@ -94,36 +105,196 @@ def main() -> int:
         document_redirects: list[str] = []
         document_failure = None
         document_raw = None
-        if filing:
-            accession_no = filing["accession_number"]
-            accession_flat = accession_no.replace("-", "")
-            document_url = route["archive_document_template"].format(
-                cik_int=int(cik_digits),
-                accession_no_dashes=accession_flat,
-                primary_document=filing["primary_document"],
-            )
-            time.sleep(1 / int(execution["maximum_requests_per_second"]))
-            document_status, document_final_url, document_payload, document_redirects, document_failure = fetch(
-                document_url,
-                args.user_agent,
-                int(execution["request_timeout_seconds"]),
-                int(execution["maximum_retry_attempts"]),
-            )
-            document_raw = Path(f"data/raw/sec_filing_route_remediation/{args.operating_date}/{source['security_id']}/{accession_flat}/{filing['primary_document']}")
-            absolute_document = root / document_raw
-            absolute_document.parent.mkdir(parents=True, exist_ok=True)
-            absolute_document.write_bytes(document_payload)
+
+        candidate_attempts = []
 
         evaluation = evaluate_document(
             source,
-            document_payload,
-            filing["accession_number"] if filing else None,
-            filing["primary_document"] if filing else None,
+            b"",
+            None,
+            None,
         )
-        if not filing:
-            evaluation["review_state"] = "DOCUMENT_CANDIDATE_UNRESOLVED"
-        if document_status not in {None, 200}:
-            evaluation["review_state"] = "DOCUMENT_QUARANTINED"
+
+        for candidate in filing_candidates:
+            accession_no = candidate[
+                "accession_number"
+            ]
+
+            accession_flat = (
+                accession_no.replace(
+                    "-",
+                    "",
+                )
+            )
+
+            candidate_url = route[
+                "archive_document_template"
+            ].format(
+                cik_int=int(cik_digits),
+                accession_no_dashes=(
+                    accession_flat
+                ),
+                primary_document=candidate[
+                    "primary_document"
+                ],
+            )
+
+            time.sleep(
+                1
+                / int(
+                    execution[
+                        "maximum_requests_per_second"
+                    ]
+                )
+            )
+
+            (
+                candidate_status,
+                candidate_final_url,
+                candidate_payload,
+                candidate_redirects,
+                candidate_failure,
+            ) = fetch(
+                candidate_url,
+                args.user_agent,
+                int(
+                    execution[
+                        "request_timeout_seconds"
+                    ]
+                ),
+                int(
+                    execution[
+                        "maximum_retry_attempts"
+                    ]
+                ),
+            )
+
+            candidate_raw = Path(
+                "data/raw/"
+                "sec_filing_route_remediation/"
+                f"{args.operating_date}/"
+                f"{source['security_id']}/"
+                f"{accession_flat}/"
+                f"{candidate['primary_document']}"
+            )
+
+            absolute_document = (
+                root / candidate_raw
+            )
+
+            absolute_document.parent.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
+
+            absolute_document.write_bytes(
+                candidate_payload
+            )
+
+            candidate_evaluation = (
+                evaluate_document(
+                    source,
+                    candidate_payload,
+                    candidate[
+                        "accession_number"
+                    ],
+                    candidate[
+                        "primary_document"
+                    ],
+                )
+            )
+
+            if candidate_status != 200:
+                candidate_evaluation[
+                    "review_state"
+                ] = "DOCUMENT_QUARANTINED"
+
+            candidate_attempts.append(
+                {
+                    "form": candidate["form"],
+                    "filing_date": candidate[
+                        "filing_date"
+                    ],
+                    "accession_number": candidate[
+                        "accession_number"
+                    ],
+                    "primary_document": candidate[
+                        "primary_document"
+                    ],
+                    "document_url": (
+                        candidate_url
+                    ),
+                    "document_http_status": (
+                        candidate_status
+                    ),
+                    "document_final_url": (
+                        candidate_final_url
+                    ),
+                    "document_redirect_chain": (
+                        candidate_redirects
+                    ),
+                    "document_failure": (
+                        candidate_failure
+                    ),
+                    "document_payload_sha256": (
+                        sha256_bytes(
+                            candidate_payload
+                        )
+                    ),
+                    "document_raw_path": str(
+                        candidate_raw
+                    ).replace(
+                        "\\",
+                        "/",
+                    ),
+                    **candidate_evaluation,
+                }
+            )
+
+            if (
+                candidate_status == 200
+                and candidate_evaluation[
+                    "product_specific"
+                ]
+                is True
+            ):
+                filing = candidate
+                document_payload = (
+                    candidate_payload
+                )
+                document_status = (
+                    candidate_status
+                )
+                document_url = candidate_url
+                document_final_url = (
+                    candidate_final_url
+                )
+                document_redirects = (
+                    candidate_redirects
+                )
+                document_failure = (
+                    candidate_failure
+                )
+                document_raw = (
+                    candidate_raw
+                )
+                evaluation = (
+                    candidate_evaluation
+                )
+                break
+
+        if filing is None:
+            evaluation = evaluate_document(
+                source,
+                b"",
+                None,
+                None,
+            )
+
+            evaluation[
+                "review_state"
+            ] = "DOCUMENT_CANDIDATE_UNRESOLVED"
+
 
         records.append({
             "sequence": sequence,
@@ -151,6 +322,8 @@ def main() -> int:
             "document_payload_sha256": sha256_bytes(document_payload),
             "document_raw_path": str(document_raw).replace("\\", "/") if document_raw else None,
             "document_failure": document_failure,
+            "candidate_document_attempts": candidate_attempts,
+            "candidate_document_attempt_count": len(candidate_attempts),
             **evaluation,
             "taxonomy_dimensions_assigned": False,
             "taxonomy_classification_authorized": False,
