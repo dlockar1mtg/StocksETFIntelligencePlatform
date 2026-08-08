@@ -169,6 +169,67 @@ class Phase36B3OTests(unittest.TestCase):
             )
 
 
+    def test_corrected_manifest_execution_has_absolute_request_ceiling(self) -> None:
+        from pathlib import Path
+
+        repository_root = (
+            Path(__file__).resolve().parents[2]
+        )
+
+        runner_source = (
+            repository_root
+            / "scripts"
+            / "run_phase_3_6b_3o_sec_product_specific_filing_document_route_remediation.py"
+        ).read_text(
+            encoding="utf-8-sig"
+        )
+
+        self.assertIn(
+            "corrected_pilot_mode = bool(",
+            runner_source,
+        )
+
+        self.assertIn(
+            "effective_retry_attempts = (",
+            runner_source,
+        )
+
+        self.assertIn(
+            "0\n        if corrected_pilot_mode",
+            runner_source,
+        )
+
+        self.assertIn(
+            "request_interval_seconds = (",
+            runner_source,
+        )
+
+        self.assertIn(
+            "time.sleep(\n                request_interval_seconds",
+            runner_source,
+        )
+
+    def test_legacy_execution_retains_policy_retry_contract(self) -> None:
+        from pathlib import Path
+
+        repository_root = (
+            Path(__file__).resolve().parents[2]
+        )
+
+        runner_source = (
+            repository_root
+            / "scripts"
+            / "run_phase_3_6b_3o_sec_product_specific_filing_document_route_remediation.py"
+        ).read_text(
+            encoding="utf-8-sig"
+        )
+
+        self.assertIn(
+            'execution[\n                "maximum_retry_attempts"\n            ]',
+            runner_source,
+        )
+
+
     def test_runner_contract_contains_candidate_document_ceiling(self) -> None:
         from pathlib import Path
 

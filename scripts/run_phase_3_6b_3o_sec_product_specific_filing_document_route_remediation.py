@@ -104,6 +104,30 @@ def main() -> int:
         )
     route = policy["route"]
     execution = policy["execution"]
+
+    corrected_pilot_mode = bool(
+        args.pilot_manifest
+    )
+
+    effective_retry_attempts = (
+        0
+        if corrected_pilot_mode
+        else int(
+            execution[
+                "maximum_retry_attempts"
+            ]
+        )
+    )
+
+    request_interval_seconds = (
+        1
+        / int(
+            execution[
+                "maximum_requests_per_second"
+            ]
+        )
+    )
+
     root = Path(args.repository_root)
     records = []
 
@@ -111,11 +135,16 @@ def main() -> int:
         cik_digits = str(source["sec_cik"]).replace("SEC-CIK-", "").lstrip("0") or "0"
         cik10 = cik_digits.zfill(10)
         submissions_url = route["submissions_template"].format(cik10=cik10)
+        if corrected_pilot_mode:
+            time.sleep(
+                request_interval_seconds
+            )
+
         status, final_url, submissions_payload, redirects, failure = fetch(
             submissions_url,
             args.user_agent,
             int(execution["request_timeout_seconds"]),
-            int(execution["maximum_retry_attempts"]),
+            effective_retry_attempts,
         )
         submissions_raw = Path(f"data/raw/sec_filing_route_remediation/{args.operating_date}/{source['security_id']}/submissions.json")
         absolute_submissions = root / submissions_raw
@@ -193,12 +222,7 @@ def main() -> int:
             )
 
             time.sleep(
-                1
-                / int(
-                    execution[
-                        "maximum_requests_per_second"
-                    ]
-                )
+                request_interval_seconds
             )
 
             (
@@ -215,11 +239,7 @@ def main() -> int:
                         "request_timeout_seconds"
                     ]
                 ),
-                int(
-                    execution[
-                        "maximum_retry_attempts"
-                    ]
-                ),
+                effective_retry_attempts,
             )
 
             candidate_raw = Path(
