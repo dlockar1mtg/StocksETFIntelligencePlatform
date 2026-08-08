@@ -14,6 +14,7 @@ from foundation.market.sec_product_specific_filing_document_route_remediation im
     iter_recent_filings,
     sha256_bytes,
     validate_inputs,
+    validate_corrected_pilot_manifest,
     write_outputs,
 )
 
@@ -39,8 +40,9 @@ def fetch(url: str, user_agent: str, timeout: int, retries: int) -> tuple[int | 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--capture-ledger", required=True)
-    parser.add_argument("--review-ledger", required=True)
+    parser.add_argument("--capture-ledger")
+    parser.add_argument("--review-ledger")
+    parser.add_argument("--pilot-manifest")
     parser.add_argument("--policy", required=True)
     parser.add_argument("--repository-root", default=".")
     parser.add_argument("--operating-date", required=True)
@@ -52,10 +54,54 @@ def main() -> int:
     if "@" not in args.user_agent:
         raise ValueError("declared SEC user agent containing email is required")
 
-    capture = load_json(args.capture_ledger)
-    review = load_json(args.review_ledger)
     policy = load_json(args.policy)
-    pilot = validate_inputs(review, capture, policy)
+
+    using_manifest = bool(
+        args.pilot_manifest
+    )
+
+    using_legacy = bool(
+        args.capture_ledger
+        or args.review_ledger
+    )
+
+    if using_manifest and using_legacy:
+        raise ValueError(
+            "pilot manifest and legacy ledgers are mutually exclusive"
+        )
+
+    if using_manifest:
+        manifest = load_json(
+            args.pilot_manifest
+        )
+
+        pilot = (
+            validate_corrected_pilot_manifest(
+                manifest
+            )
+        )
+    else:
+        if (
+            not args.capture_ledger
+            or not args.review_ledger
+        ):
+            raise ValueError(
+                "either --pilot-manifest or both legacy ledgers are required"
+            )
+
+        capture = load_json(
+            args.capture_ledger
+        )
+
+        review = load_json(
+            args.review_ledger
+        )
+
+        pilot = validate_inputs(
+            review,
+            capture,
+            policy,
+        )
     route = policy["route"]
     execution = policy["execution"]
     root = Path(args.repository_root)

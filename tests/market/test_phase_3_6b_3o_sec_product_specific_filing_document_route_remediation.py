@@ -5,6 +5,7 @@ import unittest
 from foundation.market.sec_product_specific_filing_document_route_remediation import (
     build_summary,
     evaluate_document,
+    validate_corrected_pilot_manifest,
     iter_recent_filings,
     review_ledger_contract_sha256,
     select_recent_filing,
@@ -77,6 +78,95 @@ class Phase36B3OTests(unittest.TestCase):
 
     def test_missing_allowed_filing_is_unresolved(self) -> None:
         self.assertIsNone(select_recent_filing({"filings": {"recent": {}}}, ["497"], 10))
+
+
+    def test_corrected_manifest_contract_accepts_five_distinct_products(self) -> None:
+        records = []
+
+        for index in range(5):
+            records.append(
+                {
+                    "security_id": f"US-ETF-T{index}",
+                    "symbol": f"T{index}",
+                    "sec_cik": "0001100663",
+                    "sec_series_id": f"S00000000{index}",
+                    "sec_class_contract_id": f"C00000000{index}",
+                    "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+                    "maximum_candidate_documents": 5,
+                    "prior_candidate_route_reuse_authorized": False,
+                    "network_execution_authorized": False,
+                }
+            )
+
+        manifest = {
+            "artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST",
+            "pilot_record_count": 5,
+            "maximum_candidate_documents_per_security": 5,
+            "maximum_total_sec_requests": 30,
+            "maximum_requests_per_second": 1,
+            "network_execution_authorized": False,
+            "records": records,
+        }
+
+        validated = (
+            validate_corrected_pilot_manifest(
+                manifest
+            )
+        )
+
+        self.assertEqual(
+            len(validated),
+            5,
+        )
+
+    def test_corrected_manifest_does_not_self_authorize_network(self) -> None:
+        manifest = {
+            "artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST",
+            "pilot_record_count": 5,
+            "maximum_candidate_documents_per_security": 5,
+            "maximum_total_sec_requests": 30,
+            "maximum_requests_per_second": 1,
+            "network_execution_authorized": True,
+            "records": [],
+        }
+
+        with self.assertRaises(ValueError):
+            validate_corrected_pilot_manifest(
+                manifest
+            )
+
+    def test_corrected_manifest_requires_unique_series_and_class_identity(self) -> None:
+        records = []
+
+        for index in range(5):
+            records.append(
+                {
+                    "security_id": f"US-ETF-T{index}",
+                    "symbol": f"T{index}",
+                    "sec_cik": "0001100663",
+                    "sec_series_id": "SAME-SERIES",
+                    "sec_class_contract_id": f"C00000000{index}",
+                    "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+                    "maximum_candidate_documents": 5,
+                    "prior_candidate_route_reuse_authorized": False,
+                    "network_execution_authorized": False,
+                }
+            )
+
+        manifest = {
+            "artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST",
+            "pilot_record_count": 5,
+            "maximum_candidate_documents_per_security": 5,
+            "maximum_total_sec_requests": 30,
+            "maximum_requests_per_second": 1,
+            "network_execution_authorized": False,
+            "records": records,
+        }
+
+        with self.assertRaises(ValueError):
+            validate_corrected_pilot_manifest(
+                manifest
+            )
 
 
     def test_runner_contract_contains_candidate_document_ceiling(self) -> None:

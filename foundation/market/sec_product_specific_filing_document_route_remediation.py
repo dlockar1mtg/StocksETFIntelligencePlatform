@@ -63,6 +63,175 @@ def validate_inputs(review: dict[str, Any], capture: dict[str, Any], policy: dic
 
 
 
+
+def validate_corrected_pilot_manifest(
+    manifest: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Validate the governed five-security corrected discovery manifest.
+
+    This path is intentionally independent from the historical 347-record
+    generic-capture review contract.
+    """
+    if (
+        manifest.get("artifact_id")
+        != "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST"
+    ):
+        raise ValueError(
+            "corrected pilot manifest artifact mismatch"
+        )
+
+    if manifest.get("network_execution_authorized") is not False:
+        raise ValueError(
+            "pilot manifest itself may not authorize execution"
+        )
+
+    if int(manifest.get("pilot_record_count", 0)) != 5:
+        raise ValueError(
+            "corrected pilot record count mismatch"
+        )
+
+    if (
+        int(
+            manifest.get(
+                "maximum_candidate_documents_per_security",
+                0,
+            )
+        )
+        != 5
+    ):
+        raise ValueError(
+            "candidate-document ceiling mismatch"
+        )
+
+    if (
+        int(
+            manifest.get(
+                "maximum_total_sec_requests",
+                0,
+            )
+        )
+        != 30
+    ):
+        raise ValueError(
+            "total SEC request ceiling mismatch"
+        )
+
+    if (
+        int(
+            manifest.get(
+                "maximum_requests_per_second",
+                0,
+            )
+        )
+        != 1
+    ):
+        raise ValueError(
+            "SEC request-rate ceiling mismatch"
+        )
+
+    records = list(
+        manifest.get("records", [])
+    )
+
+    if len(records) != 5:
+        raise ValueError(
+            "corrected pilot manifest must contain five records"
+        )
+
+    security_ids = [
+        record.get("security_id")
+        for record in records
+    ]
+
+    if (
+        None in security_ids
+        or len(set(security_ids)) != 5
+    ):
+        raise ValueError(
+            "duplicate or missing corrected pilot security identity"
+        )
+
+    series_ids: list[str] = []
+    class_ids: list[str] = []
+
+    for record in records:
+        for field in (
+            "security_id",
+            "symbol",
+            "sec_cik",
+            "sec_series_id",
+            "sec_class_contract_id",
+        ):
+            if not record.get(field):
+                raise ValueError(
+                    f"missing corrected pilot field: {field}"
+                )
+
+        if (
+            record.get("remediation_queue")
+            != "FILING_ROUTE_DISCOVERY_REQUIRED"
+        ):
+            raise ValueError(
+                "corrected pilot record is outside discovery queue"
+            )
+
+        if (
+            int(
+                record.get(
+                    "maximum_candidate_documents",
+                    0,
+                )
+            )
+            != 5
+        ):
+            raise ValueError(
+                "record candidate-document ceiling mismatch"
+            )
+
+        if (
+            record.get(
+                "prior_candidate_route_reuse_authorized"
+            )
+            is not False
+        ):
+            raise ValueError(
+                "prior candidate-route reuse unexpectedly authorized"
+            )
+
+        if (
+            record.get(
+                "network_execution_authorized"
+            )
+            is not False
+        ):
+            raise ValueError(
+                "record-level network execution unexpectedly authorized"
+            )
+
+        series_ids.append(
+            str(record["sec_series_id"])
+        )
+
+        class_ids.append(
+            str(
+                record[
+                    "sec_class_contract_id"
+                ]
+            )
+        )
+
+    if len(set(series_ids)) != 5:
+        raise ValueError(
+            "corrected pilot series identities are not unique"
+        )
+
+    if len(set(class_ids)) != 5:
+        raise ValueError(
+            "corrected pilot class identities are not unique"
+        )
+
+    return records
+
 def iter_recent_filings(
     submissions: dict[str, Any],
     allowed_forms: Iterable[str],
