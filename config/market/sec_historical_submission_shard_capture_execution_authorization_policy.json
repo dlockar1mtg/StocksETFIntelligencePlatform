@@ -1,0 +1,46 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3r",
+  "operating_date": "2026-08-08",
+  "operating_timezone": "America/Chicago",
+  "required_governed_head": "95a61dbd81b3e1a35f82d279168083d0a15da37a",
+  "required_manifest_sha256": "c15ebafd5fc16d9833a64295eb43fca8c348da0e01d61dfcbe1c2018db007f15",
+  "required_target_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN"
+  ],
+  "required_shard_count": 12,
+  "execution_contract": {
+    "maximum_unique_sec_requests": 12,
+    "maximum_requests_per_second": 1,
+    "maximum_retry_attempts": 0,
+    "request_timeout_seconds": 45,
+    "cache_identical_requests": true,
+    "immutable_raw_storage": true
+  },
+  "scope_controls": {
+    "historical_submission_shards_only": true,
+    "exact_manifest_urls_only": true,
+    "filing_header_capture": false,
+    "filing_document_capture": false,
+    "expanded_recent_scan": false,
+    "full_215_execution": false,
+    "taxonomy_normalization": false
+  },
+  "authority": {
+    "network_capture": true,
+    "automatic_execution": false,
+    "filing_header_capture": false,
+    "filing_document_capture": false,
+    "expanded_recent_filing_scan": false,
+    "full_215_execution": false,
+    "taxonomy_normalization": false,
+    "production_taxonomy_classification": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_database_write": false
+  }
+}
