@@ -36,7 +36,11 @@ def review_ledger_contract_sha256(value: Any) -> str:
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return json.loads(
+        Path(path).read_text(
+            encoding="utf-8-sig"
+        )
+    )
 
 
 def validate_inputs(review: dict[str, Any], capture: dict[str, Any], policy: dict[str, Any]) -> list[dict[str, Any]]:

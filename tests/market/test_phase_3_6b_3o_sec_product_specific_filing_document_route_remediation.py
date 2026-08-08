@@ -1,12 +1,16 @@
 from __future__ import annotations
 
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from foundation.market.sec_product_specific_filing_document_route_remediation import (
     build_summary,
     evaluate_document,
     validate_corrected_pilot_manifest,
     iter_recent_filings,
+    load_json,
     review_ledger_contract_sha256,
     select_recent_filing,
     validate_inputs,
@@ -42,6 +46,48 @@ class Phase36B3OTests(unittest.TestCase):
                 for i, symbol in enumerate(["AAXJ", "IAI", "IHI", "IYZ", "XVV"], 1)
             ]
         }
+
+    def test_load_json_accepts_utf8_bom(self) -> None:
+        payload = {
+            "artifact_id": "BOM_TEST",
+            "record_count": 1,
+        }
+
+        encoded = (
+            b"\xef\xbb\xbf"
+            + json.dumps(payload).encode("utf-8")
+        )
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "bom.json"
+            path.write_bytes(encoded)
+
+            loaded = load_json(path)
+
+        self.assertEqual(
+            loaded,
+            payload,
+        )
+
+    def test_load_json_accepts_plain_utf8(self) -> None:
+        payload = {
+            "artifact_id": "PLAIN_UTF8_TEST",
+            "record_count": 1,
+        }
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "plain.json"
+            path.write_text(
+                json.dumps(payload),
+                encoding="utf-8",
+            )
+
+            loaded = load_json(path)
+
+        self.assertEqual(
+            loaded,
+            payload,
+        )
 
     def test_valid_inputs_select_exact_pilot(self) -> None:
         pilot = validate_inputs(self.review, self.capture, self.policy)
