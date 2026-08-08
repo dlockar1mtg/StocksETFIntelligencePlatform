@@ -31,7 +31,7 @@ POLICY_PATH = (
 )
 
 GOVERNED_HEAD = (
-    "cd7b96cd3b48508cbad783e0d7f2f425bfe11289"
+    "9b1697b5776fa766939ef6e04e5d20162bc9052f"
 )
 
 

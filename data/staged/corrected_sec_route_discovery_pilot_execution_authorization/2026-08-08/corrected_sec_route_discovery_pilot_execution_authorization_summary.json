@@ -1,7 +1,7 @@
 {
   "artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_EXECUTION_AUTHORIZATION_SUMMARY",
   "authorization_complete": true,
-  "authorization_sha256": "ad074002df9d72c5bbf657a13661872e88cb3e29ce03f6d726b550c5a301c471",
+  "authorization_sha256": "87e97a113f2c8d9242be8dca4abc8a76d382e359337ff4d206349bba672b5474",
   "authorized_record_count": 5,
   "authorized_symbols": [
     "AAXJ",

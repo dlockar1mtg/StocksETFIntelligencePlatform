@@ -40,7 +40,7 @@
   "operating_timezone": "America/Chicago",
   "phase": "PHASE_3_MODEL_TAXONOMY_PRODUCTION",
   "policy_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_EXECUTION_AUTHORIZATION_POLICY_V1",
-  "required_governed_head": "cd7b96cd3b48508cbad783e0d7f2f425bfe11289",
+  "required_governed_head": "9b1697b5776fa766939ef6e04e5d20162bc9052f",
   "required_manifest_artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST",
   "required_manifest_sha256": "ee4e0880b2d3e0b42bc64d686fe30d8659d04b3919dae9c608232e2adfb94fa9",
   "required_record_count": 5,
