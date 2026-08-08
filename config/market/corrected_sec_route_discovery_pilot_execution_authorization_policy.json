@@ -1,0 +1,62 @@
+{
+  "authority": {
+    "allocation_authorized": false,
+    "automatic_execution_authorized": false,
+    "benchmark_assignment_authorized": false,
+    "five_security_sec_route_discovery_execution": true,
+    "forecasting_authorized": false,
+    "full_priority_population_execution_authorized": false,
+    "network_capture_authorized": true,
+    "ranking_authorized": false,
+    "recommendations_authorized": false,
+    "taxonomy_classification_authorized": false,
+    "taxonomy_evidence_normalization_authorized": false,
+    "uip_database_write_authorized": false
+  },
+  "execution_contract": {
+    "checkpoint_after_each_security": true,
+    "declared_sec_user_agent_required": true,
+    "immutable_raw_storage": true,
+    "maximum_candidate_document_requests": 25,
+    "maximum_candidate_documents_per_security": 5,
+    "maximum_requests_per_second": 1,
+    "maximum_retry_attempts": 2,
+    "maximum_submissions_requests": 5,
+    "maximum_total_sec_requests": 30,
+    "pilot_only": true,
+    "request_timeout_seconds": 45
+  },
+  "identity_contract": {
+    "http_200_is_not_product_identity": true,
+    "prior_disproven_route_reuse_authorized": false,
+    "recent_filing_is_candidate_only": true,
+    "same_registrant_is_not_product_identity": true,
+    "sec_cik_required": true,
+    "sec_class_contract_id_required": true,
+    "sec_series_id_required": true,
+    "series_and_class_both_required_for_resolution": true
+  },
+  "operating_date": "2026-08-08",
+  "operating_timezone": "America/Chicago",
+  "phase": "PHASE_3_MODEL_TAXONOMY_PRODUCTION",
+  "policy_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_EXECUTION_AUTHORIZATION_POLICY_V1",
+  "required_governed_head": "406ce05b1960fd0bc46168b0fbc43d59c64a35da",
+  "required_manifest_artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_MANIFEST",
+  "required_manifest_sha256": "ee4e0880b2d3e0b42bc64d686fe30d8659d04b3919dae9c608232e2adfb94fa9",
+  "required_record_count": 5,
+  "required_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN",
+    "VLUE"
+  ],
+  "scope_controls": {
+    "authorized_priority_records": 5,
+    "full_215_execution_authorized": false,
+    "reference_only_execution_authorized": false,
+    "remaining_priority_records_authorized": false,
+    "silent_scope_expansion_prohibited": true,
+    "xvv_execution_authorized": false
+  }
+}

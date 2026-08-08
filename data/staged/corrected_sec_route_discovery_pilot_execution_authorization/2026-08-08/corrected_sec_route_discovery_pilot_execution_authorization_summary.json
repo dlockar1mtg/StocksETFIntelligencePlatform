@@ -1,0 +1,22 @@
+{
+  "artifact_id": "CORRECTED_SEC_ROUTE_DISCOVERY_PILOT_EXECUTION_AUTHORIZATION_SUMMARY",
+  "authorization_complete": true,
+  "authorization_sha256": "9494695cc276a1e60be2e0a1725306982844bece14b395f75fcf354782a9e9ff",
+  "authorized_record_count": 5,
+  "authorized_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN",
+    "VLUE"
+  ],
+  "automatic_execution_authorized": false,
+  "full_215_execution_authorized": false,
+  "maximum_candidate_documents_per_security": 5,
+  "maximum_requests_per_second": 1,
+  "maximum_total_sec_requests": 30,
+  "network_capture_authorized": true,
+  "next_required_step": "EXECUTE_CORRECTED_FIVE_SECURITY_SEC_ROUTE_DISCOVERY_PILOT",
+  "pilot_manifest_sha256": "ee4e0880b2d3e0b42bc64d686fe30d8659d04b3919dae9c608232e2adfb94fa9",
+  "taxonomy_normalization_authorized": false
+}
