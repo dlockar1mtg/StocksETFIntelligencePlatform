@@ -88,10 +88,17 @@ def main() -> int:
                         )
                     ),
                     route["allowed_forms"],
-                    int(
-                        route[
-                            "maximum_recent_filings_scanned"
-                        ]
+                    min(
+                        int(
+                            route[
+                                "maximum_recent_filings_scanned"
+                            ]
+                        ),
+                        int(
+                            route[
+                                "maximum_candidate_documents_per_security"
+                            ]
+                        ),
                     ),
                 )
             except Exception:  # noqa: BLE001

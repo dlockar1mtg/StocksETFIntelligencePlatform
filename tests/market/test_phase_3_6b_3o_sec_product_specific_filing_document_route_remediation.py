@@ -79,6 +79,37 @@ class Phase36B3OTests(unittest.TestCase):
         self.assertIsNone(select_recent_filing({"filings": {"recent": {}}}, ["497"], 10))
 
 
+    def test_runner_contract_contains_candidate_document_ceiling(self) -> None:
+        from pathlib import Path
+
+        repository_root = (
+            Path(__file__).resolve().parents[2]
+        )
+
+        runner_source = (
+            repository_root
+            / "scripts"
+            / "run_phase_3_6b_3o_sec_product_specific_filing_document_route_remediation.py"
+        ).read_text(
+            encoding="utf-8-sig"
+        )
+
+        self.assertIn(
+            "maximum_candidate_documents_per_security",
+            runner_source,
+        )
+
+        self.assertIn(
+            '"maximum_recent_filings_scanned"',
+            runner_source,
+        )
+
+        self.assertIn(
+            "min(",
+            runner_source,
+        )
+
+
     def test_recent_filings_are_candidates_only(self) -> None:
         submissions = {
             "filings": {
