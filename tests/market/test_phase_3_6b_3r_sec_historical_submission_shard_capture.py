@@ -230,6 +230,7 @@ class Phase36B3RTests(
                     manifest,
                     shards,
                     authorization,
+                    sha256_bytes(payload),
                     directory,
                     "Test test@example.com",
                 )
@@ -252,9 +253,14 @@ class Phase36B3RTests(
     ):
         manifest = self.manifest()
 
-        payload = canonical_json_bytes(
-            manifest
-        )
+        payload = (
+            json.dumps(
+                manifest,
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n"
+        ).encode()
 
         manifest_sha = sha256_bytes(
             payload
@@ -291,6 +297,7 @@ class Phase36B3RTests(
                 manifest,
                 shards,
                 authorization,
+                    sha256_bytes(payload),
                 directory,
                 "Test test@example.com",
             )

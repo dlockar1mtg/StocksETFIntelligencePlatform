@@ -202,6 +202,7 @@ def capture_historical_shards(
     manifest: dict[str, Any],
     shards: list[dict[str, Any]],
     authorization: dict[str, Any],
+    manifest_sha256: str,
     raw_root: str | Path,
     user_agent: str,
 ) -> dict[str, Any]:
@@ -247,10 +248,8 @@ def capture_historical_shards(
         or ""
     )
 
-    actual_manifest_sha = sha256_bytes(
-        canonical_json_bytes(
-            manifest
-        )
+    actual_manifest_sha = str(
+        manifest_sha256
     )
 
     if actual_manifest_sha != expected_manifest_sha:

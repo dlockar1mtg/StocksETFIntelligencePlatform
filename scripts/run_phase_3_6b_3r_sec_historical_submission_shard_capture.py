@@ -90,6 +90,9 @@ def main() -> int:
         manifest,
         shards,
         authorization,
+        sha256_bytes(
+            manifest_bytes
+        ),
         args.raw_root,
         args.user_agent,
     )
