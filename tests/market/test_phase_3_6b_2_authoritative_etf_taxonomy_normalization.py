@@ -21,6 +21,7 @@ class Phase36B2AuthoritativeTaxonomyTests(unittest.TestCase):
             .read_text(encoding="utf-8")
         )
         self.assertEqual(policy["required_record_count"], 1077)
+        self.assertEqual(policy["policy_version"], "1.1.0")
 
     def setUp(self) -> None:
         self.policy = json.loads((ROOT / "config/market/authoritative_etf_taxonomy_normalization_policy.json").read_text(encoding="utf-8"))

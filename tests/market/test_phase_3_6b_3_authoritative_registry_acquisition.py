@@ -24,6 +24,7 @@ def gaps(count: int = 1077):
 class Phase36B3RegistryAcquisitionTests(unittest.TestCase):
     def test_required_population_is_locked(self):
         self.assertEqual(POLICY["required_record_count"], 1077)
+        self.assertEqual(POLICY["policy_version"], "1.1.0")
 
     def test_all_new_records_are_preserved_pending(self):
         result = build_acquisition_manifest(gaps(), POLICY)
