@@ -1,0 +1,43 @@
+﻿{
+    "artifact_id":  "SEC_HISTORICAL_SERIES_CLASS_HEADER_CAPTURE_EXECUTION_AUTHORIZATION_POLICY",
+    "phase":  "3.6b.3s",
+    "operating_date":  "2026-08-09",
+    "route_type":  "EXACT_HISTORICAL_ACCESSION_FILING_INDEX_PILOT",
+    "required_executable_commit_sha":  "21db89cab46211da11c9a4873faf9fa4c16a8988",
+    "required_manifest_sha256":  "1bba533b1c7bb59ac0dadf74bef49f23070d09961123e1a8cb3d4f6cbedf1ec0",
+    "required_target_symbols":  [
+                                    "IWN",
+                                    "ACWI",
+                                    "AAXJ",
+                                    "IBTJ"
+                                ],
+    "required_target_count":  4,
+    "required_accession_count":  8,
+    "execution_contract":  {
+                               "maximum_unique_sec_requests":  8,
+                               "maximum_requests_per_second":  1,
+                               "maximum_retry_attempts":  0,
+                               "request_timeout_seconds":  45,
+                               "cache_identical_requests":  true,
+                               "immutable_raw_storage":  true,
+                               "exact_manifest_urls_only":  true,
+                               "declared_sec_user_agent_required":  true
+                           },
+    "authorization_boundary":  {
+                                   "network_capture_may_be_authorized":  true,
+                                   "historical_filing_index_capture_may_be_authorized":  true,
+                                   "historical_filing_document_capture_must_remain_false":  true,
+                                   "additional_accession_discovery_must_remain_false":  true,
+                                   "expanded_pilot_must_remain_false":  true,
+                                   "full_215_execution_must_remain_false":  true,
+                                   "taxonomy_normalization_must_remain_false":  true,
+                                   "production_taxonomy_classification_must_remain_false":  true,
+                                   "ranking_must_remain_false":  true,
+                                   "forecasting_must_remain_false":  true,
+                                   "recommendations_must_remain_false":  true,
+                                   "portfolio_allocation_must_remain_false":  true,
+                                   "automatic_execution_must_remain_false":  true,
+                                   "uip_database_write_must_remain_false":  true
+                               },
+    "required_post_capture_state":  "OFFLINE_HISTORICAL_INDEX_IDENTITY_REVIEW"
+}
