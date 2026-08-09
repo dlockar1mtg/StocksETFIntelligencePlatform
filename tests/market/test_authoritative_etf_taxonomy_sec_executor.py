@@ -192,6 +192,49 @@ class AuthoritativeTaxonomySECExecutorTests(
             1077,
         )
 
+    def test_executor_accepts_policy_1_2_contract(
+        self,
+    ) -> None:
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy["policy_version"] = "1.2.0"
+
+        policy["authority"][
+            "authoritative_source_capture"
+        ] = True
+
+        # This validates the executor policy contract only.
+        # No fetcher is called here.
+        from foundation.market.authoritative_etf_taxonomy_sec_executor import (
+            validate_policy,
+        )
+
+        validate_policy(
+            policy
+        )
+
+    def test_executor_rejects_unknown_policy_version(
+        self,
+    ) -> None:
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy["policy_version"] = "9.9.9"
+
+        from foundation.market.authoritative_etf_taxonomy_sec_executor import (
+            validate_policy,
+        )
+
+        with self.assertRaises(
+            AuthoritativeTaxonomySECExecutorError
+        ):
+            validate_policy(
+                policy
+            )
+
     def test_request_plan_has_102_network_groups_and_one_delegated_group(
         self,
     ) -> None:

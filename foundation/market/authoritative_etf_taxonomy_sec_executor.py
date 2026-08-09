@@ -139,9 +139,12 @@ def filing_document_url(
 def validate_policy(
     policy: dict[str, Any],
 ) -> None:
-    if policy.get("policy_version") != "1.1.0":
+    if policy.get("policy_version") not in {
+        "1.1.0",
+        "1.2.0",
+    }:
         raise AuthoritativeTaxonomySECExecutorError(
-            "Acquisition policy version must equal 1.1.0."
+            "Acquisition policy version must equal 1.1.0 or 1.2.0."
         )
 
     if (
