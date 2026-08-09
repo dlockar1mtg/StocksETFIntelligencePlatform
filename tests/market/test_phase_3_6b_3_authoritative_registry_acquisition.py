@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 POLICY = json.loads((ROOT / "config/market/authoritative_etf_taxonomy_registry_acquisition_policy.json").read_text(encoding="utf-8"))
 
 
-def gaps(count: int = 3462):
+def gaps(count: int = 1077):
     return {"records": [
         {"security_id": f"US-ETF-{i}", "symbol": f"ETF{i}", "classification_status": "UNKNOWN"}
         for i in range(count)
@@ -23,12 +23,12 @@ def gaps(count: int = 3462):
 
 class Phase36B3RegistryAcquisitionTests(unittest.TestCase):
     def test_required_population_is_locked(self):
-        self.assertEqual(POLICY["required_record_count"], 3462)
+        self.assertEqual(POLICY["required_record_count"], 1077)
 
     def test_all_new_records_are_preserved_pending(self):
         result = build_acquisition_manifest(gaps(), POLICY)
-        self.assertEqual(result["record_count"], 3462)
-        self.assertEqual(result["acquisition_state_counts"], {"PENDING": 3462})
+        self.assertEqual(result["record_count"], 1077)
+        self.assertEqual(result["acquisition_state_counts"], {"PENDING": 1077})
 
     def test_count_drift_fails_closed(self):
         with self.assertRaises(RegistryAcquisitionError):

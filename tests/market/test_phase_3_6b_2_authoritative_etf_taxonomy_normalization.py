@@ -15,6 +15,13 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class Phase36B2AuthoritativeTaxonomyTests(unittest.TestCase):
+    def test_production_population_is_locked_to_certified_model_scope(self) -> None:
+        policy = json.loads(
+            (ROOT / "config/market/authoritative_etf_taxonomy_normalization_policy.json")
+            .read_text(encoding="utf-8")
+        )
+        self.assertEqual(policy["required_record_count"], 1077)
+
     def setUp(self) -> None:
         self.policy = json.loads((ROOT / "config/market/authoritative_etf_taxonomy_normalization_policy.json").read_text(encoding="utf-8"))
         self.policy["required_record_count"] = 2

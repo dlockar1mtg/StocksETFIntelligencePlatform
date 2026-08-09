@@ -1,7 +1,7 @@
 {
   "policy_version": "1.0.0",
   "phase": "3.6b.3",
-  "required_record_count": 3462,
+  "required_record_count": 1077,
   "acquisition_states": [
     "PENDING",
     "AUTHORITY_CAPTURED",
