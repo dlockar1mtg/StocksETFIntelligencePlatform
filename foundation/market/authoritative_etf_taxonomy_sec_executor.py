@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any, Callable
 
 from foundation.infrastructure.sec_fund_tickers import write_immutable
-
 from foundation.market.sec_series_class_specific_filing_resolution import (
     choose_resolution,
     evaluate_candidate,
@@ -19,13 +18,24 @@ from foundation.market.sec_series_class_specific_filing_resolution import (
 
 EXPECTED_POPULATION = 1077
 EXPECTED_GROUP_COUNT = 103
+
 EXPECTED_STANDARD_GROUPS = 102
 EXPECTED_STANDARD_ETFS = 862
+
 EXPECTED_REMEDIATION_GROUPS = 1
 EXPECTED_REMEDIATION_ETFS = 215
 
 STANDARD_LANE = "STANDARD_REGISTRANT_AUTHORITY_ACQUISITION"
 REMEDIATION_LANE = "GOVERNED_EXISTING_REMEDIATION_ROUTE"
+
+ALLOWED_FORMS = (
+    "N-1A",
+    "N-1A/A",
+    "497",
+    "497K",
+    "485APOS",
+    "485BPOS",
+)
 
 
 class AuthoritativeTaxonomySECExecutorError(RuntimeError):
@@ -65,8 +75,20 @@ def _normalize_cik(value: Any) -> str:
 
 
 def _cik_unpadded(value: Any) -> str:
-    normalized = _normalize_cik(value)
-    return normalized.lstrip("0") or "0"
+    value = _normalize_cik(value)
+    return value.lstrip("0") or "0"
+
+
+def issuer_key_for_cik(cik: Any) -> str:
+    """
+    Evidence-backed legal registrant routing identity.
+
+    This must not be interpreted as a commercial fund-family identity.
+    """
+    return (
+        "SEC-REGISTRANT-CIK-"
+        + _normalize_cik(cik)
+    )
 
 
 def submissions_url(cik: Any) -> str:
@@ -81,8 +103,13 @@ def filing_document_url(
     accession_number: str,
     primary_document: str,
 ) -> str:
-    accession = str(accession_number or "").strip()
-    document = str(primary_document or "").strip()
+    accession = str(
+        accession_number or ""
+    ).strip()
+
+    document = str(
+        primary_document or ""
+    ).strip()
 
     if not accession or not document:
         raise AuthoritativeTaxonomySECExecutorError(
@@ -98,7 +125,7 @@ def filing_document_url(
 
     if "/" in document or "\\" in document:
         raise AuthoritativeTaxonomySECExecutorError(
-            "Primary document must be a filename, not a path."
+            "Primary document must be a filename."
         )
 
     return (
@@ -114,11 +141,16 @@ def validate_policy(
 ) -> None:
     if policy.get("policy_version") != "1.1.0":
         raise AuthoritativeTaxonomySECExecutorError(
-            "Acquisition policy version must be 1.1.0."
+            "Acquisition policy version must equal 1.1.0."
         )
 
     if (
-        int(policy.get("required_record_count", -1))
+        int(
+            policy.get(
+                "required_record_count",
+                -1,
+            )
+        )
         != EXPECTED_POPULATION
     ):
         raise AuthoritativeTaxonomySECExecutorError(
@@ -150,6 +182,10 @@ def validate_policy(
         "forecasting",
         "ranking",
         "recommendations",
+        "portfolio_allocation",
+        "uip_export",
+        "automatic_execution",
+        "direct_uip_database_writes",
     ):
         if authority.get(prohibited) is not False:
             raise AuthoritativeTaxonomySECExecutorError(
@@ -203,7 +239,9 @@ def validate_identity_contract(
                 f"Identity contract summary drift: {field}"
             )
 
-    if summary.get("live_capture_authorized") is not False:
+    if summary.get(
+        "live_capture_authorized"
+    ) is not False:
         raise AuthoritativeTaxonomySECExecutorError(
             "Identity contract may not self-authorize capture."
         )
@@ -221,7 +259,8 @@ def validate_identity_contract(
 
     for group in groups:
         group_id = str(
-            group.get("capture_group_id") or ""
+            group.get("capture_group_id")
+            or ""
         ).strip()
 
         cik = _normalize_cik(
@@ -229,7 +268,8 @@ def validate_identity_contract(
         )
 
         lane = str(
-            group.get("lane") or ""
+            group.get("lane")
+            or ""
         ).strip()
 
         identities = group.get(
@@ -257,20 +297,28 @@ def validate_identity_contract(
             )
 
         if (
-            group.get("identity_binding_complete")
+            group.get(
+                "identity_binding_complete"
+            )
             is not True
         ):
             raise AuthoritativeTaxonomySECExecutorError(
                 f"Identity binding incomplete: {group_id}"
             )
 
-        if not isinstance(identities, list):
+        if not isinstance(
+            identities,
+            list,
+        ):
             raise AuthoritativeTaxonomySECExecutorError(
                 f"Security identities missing: {group_id}"
             )
 
         if len(identities) != int(
-            group.get("etf_count", -1)
+            group.get(
+                "etf_count",
+                -1,
+            )
         ):
             raise AuthoritativeTaxonomySECExecutorError(
                 f"ETF count mismatch: {group_id}"
@@ -278,11 +326,15 @@ def validate_identity_contract(
 
         for identity in identities:
             security_id = str(
-                identity.get("security_id") or ""
+                identity.get(
+                    "security_id"
+                )
+                or ""
             ).strip()
 
             symbol = str(
-                identity.get("symbol") or ""
+                identity.get("symbol")
+                or ""
             ).strip()
 
             member_cik = _normalize_cik(
@@ -290,7 +342,10 @@ def validate_identity_contract(
             )
 
             series = str(
-                identity.get("sec_series_id") or ""
+                identity.get(
+                    "sec_series_id"
+                )
+                or ""
             ).strip()
 
             class_id = str(
@@ -322,7 +377,9 @@ def validate_identity_contract(
                     f"Duplicate ETF identity: {security_id}"
                 )
 
-            security_ids.add(security_id)
+            security_ids.add(
+                security_id
+            )
 
             priority = (
                 identity.get(
@@ -348,29 +405,43 @@ def validate_identity_contract(
                 )
 
         lane_groups[lane] += 1
-        lane_etfs[lane] += len(identities)
+        lane_etfs[lane] += len(
+            identities
+        )
 
     if len(security_ids) != EXPECTED_POPULATION:
         raise AuthoritativeTaxonomySECExecutorError(
             "Identity contract does not preserve all 1,077 ETFs."
         )
 
-    if lane_groups[STANDARD_LANE] != EXPECTED_STANDARD_GROUPS:
+    if (
+        lane_groups[STANDARD_LANE]
+        != EXPECTED_STANDARD_GROUPS
+    ):
         raise AuthoritativeTaxonomySECExecutorError(
             "Standard registrant count drift."
         )
 
-    if lane_etfs[STANDARD_LANE] != EXPECTED_STANDARD_ETFS:
+    if (
+        lane_etfs[STANDARD_LANE]
+        != EXPECTED_STANDARD_ETFS
+    ):
         raise AuthoritativeTaxonomySECExecutorError(
             "Standard ETF count drift."
         )
 
-    if lane_groups[REMEDIATION_LANE] != EXPECTED_REMEDIATION_GROUPS:
+    if (
+        lane_groups[REMEDIATION_LANE]
+        != EXPECTED_REMEDIATION_GROUPS
+    ):
         raise AuthoritativeTaxonomySECExecutorError(
             "Remediation registrant count drift."
         )
 
-    if lane_etfs[REMEDIATION_LANE] != EXPECTED_REMEDIATION_ETFS:
+    if (
+        lane_etfs[REMEDIATION_LANE]
+        != EXPECTED_REMEDIATION_ETFS
+    ):
         raise AuthoritativeTaxonomySECExecutorError(
             "Remediation ETF count drift."
         )
@@ -381,11 +452,19 @@ def validate_identity_contract(
 def build_request_plan(
     contract: dict[str, Any],
 ) -> dict[str, Any]:
+    """
+    Produce the production route plan.
+
+    Only the 102 standard registrants receive generic submissions
+    requests. The one 215-ETF remediation registrant is delegated
+    to the existing governed remediation architecture.
+    """
     groups = validate_identity_contract(
         contract
     )
 
-    requests = []
+    network_requests = []
+    delegated_groups = []
 
     for group in sorted(
         groups,
@@ -393,52 +472,108 @@ def build_request_plan(
             value["execution_order"]
         ),
     ):
-        requests.append(
+        if (
+            group["lane"]
+            == REMEDIATION_LANE
+        ):
+            delegated_groups.append(
+                {
+                    "capture_group_id":
+                        group[
+                            "capture_group_id"
+                        ],
+                    "execution_order":
+                        group[
+                            "execution_order"
+                        ],
+                    "sec_cik":
+                        _normalize_cik(
+                            group["sec_cik"]
+                        ),
+                    "lane":
+                        REMEDIATION_LANE,
+                    "member_count":
+                        len(
+                            group[
+                                "security_identities"
+                            ]
+                        ),
+                    "executor":
+                        "EXISTING_SERIES_CLASS_REMEDIATION_ARCHITECTURE",
+                    "network_request_required":
+                        False,
+                }
+            )
+
+            continue
+
+        network_requests.append(
             {
                 "capture_group_id":
-                    group["capture_group_id"],
-
+                    group[
+                        "capture_group_id"
+                    ],
                 "execution_order":
-                    group["execution_order"],
-
+                    group[
+                        "execution_order"
+                    ],
                 "sec_cik":
                     _normalize_cik(
                         group["sec_cik"]
                     ),
-
                 "lane":
-                    group["lane"],
-
+                    STANDARD_LANE,
                 "submission_url":
                     submissions_url(
                         group["sec_cik"]
                     ),
-
                 "member_count":
                     len(
                         group[
                             "security_identities"
                         ]
                     ),
-
-                "security_ids": [
-                    member["security_id"]
-                    for member
-                    in group[
-                        "security_identities"
-                    ]
-                ],
+                "network_request_required":
+                    True,
             }
         )
 
-    unique_urls = {
-        item["submission_url"]
-        for item in requests
-    }
-
-    if len(unique_urls) != EXPECTED_GROUP_COUNT:
+    if len(
+        network_requests
+    ) != EXPECTED_STANDARD_GROUPS:
         raise AuthoritativeTaxonomySECExecutorError(
-            "Expected exactly 103 unique SEC submissions requests."
+            "Expected exactly 102 standard submissions requests."
+        )
+
+    if len(
+        delegated_groups
+    ) != EXPECTED_REMEDIATION_GROUPS:
+        raise AuthoritativeTaxonomySECExecutorError(
+            "Expected exactly one delegated remediation group."
+        )
+
+    if (
+        sum(
+            item["member_count"]
+            for item
+            in network_requests
+        )
+        != EXPECTED_STANDARD_ETFS
+    ):
+        raise AuthoritativeTaxonomySECExecutorError(
+            "Standard request population drift."
+        )
+
+    if (
+        sum(
+            item["member_count"]
+            for item
+            in delegated_groups
+        )
+        != EXPECTED_REMEDIATION_ETFS
+    ):
+        raise AuthoritativeTaxonomySECExecutorError(
+            "Delegated remediation population drift."
         )
 
     return {
@@ -451,11 +586,28 @@ def build_request_plan(
         "registrant_group_count":
             EXPECTED_GROUP_COUNT,
 
-        "unique_submission_request_count":
-            len(unique_urls),
+        "standard_registrant_count":
+            EXPECTED_STANDARD_GROUPS,
 
-        "requests":
-            requests,
+        "standard_etf_count":
+            EXPECTED_STANDARD_ETFS,
+
+        "remediation_registrant_count":
+            EXPECTED_REMEDIATION_GROUPS,
+
+        "remediation_etf_count":
+            EXPECTED_REMEDIATION_ETFS,
+
+        "unique_submission_request_count":
+            len(
+                network_requests
+            ),
+
+        "network_requests":
+            network_requests,
+
+        "delegated_remediation_groups":
+            delegated_groups,
 
         "network_requests_performed":
             0,
@@ -510,10 +662,10 @@ def _validate_authorization(
                 0,
             )
         )
-        < EXPECTED_GROUP_COUNT
+        < EXPECTED_STANDARD_GROUPS
     ):
         raise AuthoritativeTaxonomySECExecutorError(
-            "Request ceiling cannot cover 103 registrants."
+            "Request ceiling cannot cover standard registrants."
         )
 
     rate = float(
@@ -580,6 +732,80 @@ def _validate_authorization(
         )
 
 
+def _base_record(
+    *,
+    member: dict[str, Any],
+    group: dict[str, Any],
+    cik: str,
+) -> dict[str, Any]:
+    return {
+        "security_id":
+            member["security_id"],
+
+        "symbol":
+            member["symbol"],
+
+        "acquisition_state":
+            "UNRESOLVED",
+
+        "issuer_key":
+            issuer_key_for_cik(
+                cik
+            ),
+
+        "source_tier":
+            None,
+
+        "source_id":
+            None,
+
+        "source_record_id":
+            None,
+
+        "source_url":
+            None,
+
+        "content_sha256":
+            None,
+
+        "captured_at_utc":
+            utc_now(),
+
+        "acquisition_reasons":
+            [],
+
+        "taxonomy_dimensions_assigned":
+            False,
+
+        "sec_cik":
+            cik,
+
+        "sec_series_id":
+            member[
+                "sec_series_id"
+            ],
+
+        "sec_class_contract_id":
+            member[
+                "sec_class_contract_id"
+            ],
+
+        "lane":
+            group["lane"],
+
+        "capture_group_id":
+            group[
+                "capture_group_id"
+            ],
+
+        "production_taxonomy_classification_authorized":
+            False,
+
+        "taxonomy_normalization_authorized":
+            False,
+    }
+
+
 def execute_authorized_capture(
     contract: dict[str, Any],
     policy: dict[str, Any],
@@ -592,19 +818,23 @@ def execute_authorized_capture(
     sleeper: Callable[[float], None] = time.sleep,
 ) -> dict[str, Any]:
     """
-    Execute governed SEC source capture.
+    Execute governed STANDARD SEC source capture.
 
-    Transport is dependency-injected. During offline certification,
-    no real SEC/network implementation is supplied.
+    The remediation registrant is explicitly delegated and never
+    traverses the standard generic submissions/document route.
     """
-    validate_policy(policy)
+    validate_policy(
+        policy
+    )
 
     groups = validate_identity_contract(
         contract
     )
 
     if (
-        policy["authority"].get(
+        policy[
+            "authority"
+        ].get(
             "authoritative_source_capture"
         )
         is not True
@@ -615,13 +845,18 @@ def execute_authorized_capture(
 
     _validate_authorization(
         authorization,
-        manifest_sha256=manifest_sha256,
+        manifest_sha256=
+            manifest_sha256,
     )
 
     if (
         not user_agent
-        or "@" not in user_agent
-        or len(user_agent.strip()) < 12
+        or "@"
+        not in user_agent
+        or len(
+            user_agent.strip()
+        )
+        < 12
     ):
         raise AuthoritativeTaxonomySECExecutorError(
             "Identifying SEC User-Agent with email is required."
@@ -651,7 +886,9 @@ def execute_authorized_capture(
         ]
     )
 
-    root = Path(raw_root)
+    root = Path(
+        raw_root
+    )
 
     request_cache: dict[
         str,
@@ -662,11 +899,17 @@ def execute_authorized_capture(
 
     def governed_fetch(
         url: str,
-    ) -> tuple[int, str, bytes]:
+    ) -> tuple[
+        int,
+        str,
+        bytes,
+    ]:
         nonlocal request_count
 
         if url in request_cache:
-            return request_cache[url]
+            return request_cache[
+                url
+            ]
 
         if request_count >= maximum_requests:
             raise AuthoritativeTaxonomySECExecutorError(
@@ -678,7 +921,11 @@ def execute_authorized_capture(
                 1.0 / rate
             )
 
-        status, final_url, payload = fetcher(
+        (
+            status,
+            final_url,
+            payload,
+        ) = fetcher(
             url,
             user_agent.strip(),
             timeout,
@@ -686,7 +933,9 @@ def execute_authorized_capture(
 
         request_count += 1
 
-        if int(status) != 200:
+        if int(
+            status
+        ) != 200:
             raise AuthoritativeTaxonomySECExecutorError(
                 f"SEC returned HTTP {status}: {url}"
             )
@@ -702,7 +951,9 @@ def execute_authorized_capture(
             payload,
         )
 
-        request_cache[url] = result
+        request_cache[
+            url
+        ] = result
 
         return result
 
@@ -711,12 +962,79 @@ def execute_authorized_capture(
     for group in sorted(
         groups,
         key=lambda value: int(
-            value["execution_order"]
+            value[
+                "execution_order"
+            ]
         ),
     ):
         cik = _normalize_cik(
             group["sec_cik"]
         )
+
+        # --------------------------------------------------------
+        # REMEDIATION LANE
+        #
+        # Do NOT send this group through standard SEC submissions
+        # or recent-document routing.
+        # --------------------------------------------------------
+
+        if (
+            group["lane"]
+            == REMEDIATION_LANE
+        ):
+            for member in group[
+                "security_identities"
+            ]:
+                record = _base_record(
+                    member=member,
+                    group=group,
+                    cik=cik,
+                )
+
+                record.update(
+                    {
+                        "review_state":
+                            "GOVERNED_REMEDIATION_ROUTE_PRESERVED",
+
+                        "acquisition_state":
+                            "UNRESOLVED",
+
+                        "acquisition_reasons": [
+                            "GOVERNED_EXISTING_REMEDIATION_ROUTE_REQUIRED"
+                        ],
+
+                        "submissions_url":
+                            None,
+
+                        "submission_http_status":
+                            None,
+
+                        "submission_final_url":
+                            None,
+
+                        "submission_content_sha256":
+                            None,
+
+                        "candidate_filing_count":
+                            0,
+
+                        "evaluated_candidate_count":
+                            0,
+
+                        "delegated_executor":
+                            "EXISTING_SERIES_CLASS_REMEDIATION_ARCHITECTURE",
+                    }
+                )
+
+                output_records.append(
+                    record
+                )
+
+            continue
+
+        # --------------------------------------------------------
+        # STANDARD REGISTRANT LANE
+        # --------------------------------------------------------
 
         submission_url = submissions_url(
             cik
@@ -736,6 +1054,7 @@ def execute_authorized_capture(
                     "utf-8-sig"
                 )
             )
+
         except (
             UnicodeDecodeError,
             json.JSONDecodeError,
@@ -744,11 +1063,18 @@ def execute_authorized_capture(
                 f"Invalid SEC submissions JSON for CIK {cik}."
             ) from exc
 
+        submission_sha = sha256_bytes(
+            submission_payload
+        )
+
+        # Content-addressed storage makes repeated production runs
+        # resume-safe when the SEC submissions document changes.
         submission_path = (
             root
             / "sec_taxonomy"
             / "submissions"
-            / f"CIK{cik}.json"
+            / f"CIK{cik}"
+            / f"{submission_sha}.json"
         )
 
         write_immutable(
@@ -759,18 +1085,24 @@ def execute_authorized_capture(
         for member in group[
             "security_identities"
         ]:
-            record = {
+            identity = {
                 "security_id":
-                    member["security_id"],
+                    member[
+                        "security_id"
+                    ],
 
                 "symbol":
-                    member["symbol"],
+                    member[
+                        "symbol"
+                    ],
 
                 "sec_cik":
                     cik,
 
                 "sec_series_id":
-                    member["sec_series_id"],
+                    member[
+                        "sec_series_id"
+                    ],
 
                 "sec_class_contract_id":
                     member[
@@ -781,14 +1113,7 @@ def execute_authorized_capture(
             candidate_filings = (
                 iter_candidate_filings(
                     submissions,
-                    (
-                        "N-1A",
-                        "N-1A/A",
-                        "497",
-                        "497K",
-                        "485APOS",
-                        "485BPOS",
-                    ),
+                    ALLOWED_FORMS,
                     maximum_candidates,
                 )
             )
@@ -824,11 +1149,9 @@ def execute_authorized_capture(
                     url
                 )
 
-                accession_flat = (
-                    accession.replace(
-                        "-",
-                        "",
-                    )
+                accession_flat = accession.replace(
+                    "-",
+                    "",
                 )
 
                 document_path = (
@@ -846,7 +1169,7 @@ def execute_authorized_capture(
                 )
 
                 evaluation = evaluate_candidate(
-                    record,
+                    identity,
                     document_payload,
                 )
 
@@ -882,7 +1205,7 @@ def execute_authorized_capture(
                 )
 
             resolution = choose_resolution(
-                record,
+                identity,
                 evaluated_candidates,
             )
 
@@ -890,74 +1213,14 @@ def execute_authorized_capture(
                 "review_state"
             ]
 
-            if (
-                review_state
-                == "SERIES_CLASS_DOCUMENT_RESOLVED"
-            ):
-                acquisition_state = (
-                    "AUTHORITY_CAPTURED"
-                )
+            record = _base_record(
+                member=member,
+                group=group,
+                cik=cik,
+            )
 
-                source_url = resolution[
-                    "source_url"
-                ]
-
-                content_sha = resolution[
-                    "content_sha256"
-                ]
-
-                source_record_id = resolution[
-                    "accession_number"
-                ]
-
-            elif (
-                review_state
-                == "SERIES_CLASS_DOCUMENT_CONFLICTED"
-            ):
-                acquisition_state = (
-                    "CONFLICTED"
-                )
-
-                source_url = None
-                content_sha = None
-                source_record_id = None
-
-            else:
-                acquisition_state = (
-                    "UNRESOLVED"
-                )
-
-                source_url = None
-                content_sha = None
-                source_record_id = None
-
-            output_records.append(
+            record.update(
                 {
-                    "security_id":
-                        member["security_id"],
-
-                    "symbol":
-                        member["symbol"],
-
-                    "sec_cik":
-                        cik,
-
-                    "sec_series_id":
-                        member["sec_series_id"],
-
-                    "sec_class_contract_id":
-                        member[
-                            "sec_class_contract_id"
-                        ],
-
-                    "lane":
-                        group["lane"],
-
-                    "capture_group_id":
-                        group[
-                            "capture_group_id"
-                        ],
-
                     "submissions_url":
                         submission_url,
 
@@ -968,8 +1231,11 @@ def execute_authorized_capture(
                         submission_final_url,
 
                     "submission_content_sha256":
-                        sha256_bytes(
-                            submission_payload
+                        submission_sha,
+
+                    "submission_raw_path":
+                        str(
+                            submission_path
                         ),
 
                     "candidate_filing_count":
@@ -984,57 +1250,99 @@ def execute_authorized_capture(
 
                     "review_state":
                         review_state,
-
-                    "acquisition_state":
-                        acquisition_state,
-
-                    "source_tier":
-                        (
-                            "SEC_FILING"
-                            if acquisition_state
-                            == "AUTHORITY_CAPTURED"
-                            else None
-                        ),
-
-                    "source_id":
-                        (
-                            "SEC_EDGAR"
-                            if acquisition_state
-                            == "AUTHORITY_CAPTURED"
-                            else None
-                        ),
-
-                    "source_record_id":
-                        source_record_id,
-
-                    "source_url":
-                        source_url,
-
-                    "content_sha256":
-                        content_sha,
-
-                    "captured_at_utc":
-                        utc_now(),
-
-                    "taxonomy_dimensions_assigned":
-                        False,
-
-                    "production_taxonomy_classification_authorized":
-                        False,
-
-                    "taxonomy_normalization_authorized":
-                        False,
                 }
             )
 
-    if len(output_records) != EXPECTED_POPULATION:
+            if (
+                review_state
+                == "SERIES_CLASS_DOCUMENT_RESOLVED"
+            ):
+                record.update(
+                    {
+                        "acquisition_state":
+                            "AUTHORITY_CAPTURED",
+
+                        "source_tier":
+                            "SEC_FILING",
+
+                        "source_id":
+                            "SEC_EDGAR",
+
+                        "source_record_id":
+                            resolution[
+                                "accession_number"
+                            ],
+
+                        "source_url":
+                            resolution[
+                                "source_url"
+                            ],
+
+                        "content_sha256":
+                            resolution[
+                                "content_sha256"
+                            ],
+
+                        "acquisition_reasons": [
+                            "PRODUCT_SPECIFIC_SEC_FILING_CAPTURED"
+                        ],
+                    }
+                )
+
+            elif (
+                review_state
+                == "SERIES_CLASS_DOCUMENT_CONFLICTED"
+            ):
+                record.update(
+                    {
+                        "acquisition_state":
+                            "CONFLICTED",
+
+                        "acquisition_reasons": [
+                            "MULTIPLE_PRODUCT_SPECIFIC_SEC_FILINGS_MATCHED"
+                        ],
+                    }
+                )
+
+            else:
+                record.update(
+                    {
+                        "acquisition_state":
+                            "UNRESOLVED",
+
+                        "acquisition_reasons": [
+                            "PRODUCT_SPECIFIC_SEC_FILING_NOT_RESOLVED"
+                        ],
+                    }
+                )
+
+            output_records.append(
+                record
+            )
+
+    if len(
+        output_records
+    ) != EXPECTED_POPULATION:
         raise AuthoritativeTaxonomySECExecutorError(
             "Executor output does not account for all 1,077 ETFs."
         )
 
     acquisition_counts = Counter(
-        record["acquisition_state"]
-        for record in output_records
+        record[
+            "acquisition_state"
+        ]
+        for record
+        in output_records
+    )
+
+    reason_counts = Counter(
+        reason
+        for record
+        in output_records
+        for reason
+        in record[
+            "acquisition_reasons"
+        ]
     )
 
     return {
@@ -1047,8 +1355,22 @@ def execute_authorized_capture(
         "registrant_group_count":
             EXPECTED_GROUP_COUNT,
 
+        "standard_registrant_count":
+            EXPECTED_STANDARD_GROUPS,
+
+        "standard_etf_count":
+            EXPECTED_STANDARD_ETFS,
+
+        "remediation_registrant_count":
+            EXPECTED_REMEDIATION_GROUPS,
+
+        "remediation_etf_count":
+            EXPECTED_REMEDIATION_ETFS,
+
         "record_count":
-            len(output_records),
+            len(
+                output_records
+            ),
 
         "unique_sec_requests_performed":
             request_count,
@@ -1057,6 +1379,13 @@ def execute_authorized_capture(
             dict(
                 sorted(
                     acquisition_counts.items()
+                )
+            ),
+
+        "acquisition_reason_counts":
+            dict(
+                sorted(
+                    reason_counts.items()
                 )
             ),
 

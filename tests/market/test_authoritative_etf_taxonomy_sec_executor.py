@@ -9,9 +9,12 @@ from pathlib import Path
 
 from foundation.market.authoritative_etf_taxonomy_sec_executor import (
     AuthoritativeTaxonomySECExecutorError,
+    REMEDIATION_LANE,
+    STANDARD_LANE,
     build_request_plan,
     execute_authorized_capture,
     filing_document_url,
+    issuer_key_for_cik,
     submissions_url,
     validate_identity_contract,
 )
@@ -59,15 +62,106 @@ class AuthoritativeTaxonomySECExecutorTests(
             )
         )
 
+        cls.empty_submissions = json.dumps(
+            {
+                "filings": {
+                    "recent": {
+                        "form": [],
+                        "accessionNumber": [],
+                        "primaryDocument": [],
+                        "filingDate": [],
+                    }
+                }
+            }
+        ).encode("utf-8")
+
+    def enabled_policy(self):
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy["authority"][
+            "authoritative_source_capture"
+        ] = True
+
+        return policy
+
+    def authorization(self):
+        return {
+            "network_capture_authorized":
+                True,
+
+            "authoritative_source_capture_authorized":
+                True,
+
+            "identity_bound_manifest_sha256":
+                EXPECTED_CONTRACT_SHA,
+
+            "maximum_unique_sec_requests":
+                5000,
+
+            "maximum_requests_per_second":
+                1,
+
+            "maximum_candidate_filings_per_security":
+                5,
+
+            "request_timeout_seconds":
+                30,
+
+            "production_taxonomy_classification_authorized":
+                False,
+
+            "taxonomy_normalization_authorized":
+                False,
+        }
+
+    def fake_full_run(self):
+        calls = []
+
+        def fake_fetcher(
+            url: str,
+            user_agent: str,
+            timeout: int,
+        ):
+            calls.append(
+                url
+            )
+
+            return (
+                200,
+                url,
+                self.empty_submissions,
+            )
+
+        temp = tempfile.TemporaryDirectory()
+
+        result = execute_authorized_capture(
+            self.contract,
+            self.enabled_policy(),
+            self.authorization(),
+            manifest_sha256=
+                EXPECTED_CONTRACT_SHA,
+            user_agent=
+                "UIP research contact@example.com",
+            raw_root=temp.name,
+            fetcher=fake_fetcher,
+            sleeper=lambda _: None,
+        )
+
+        return (
+            temp,
+            result,
+            calls,
+        )
+
     def test_identity_contract_sha_is_frozen(
         self,
     ) -> None:
-        digest = hashlib.sha256(
-            CONTRACT_PATH.read_bytes()
-        ).hexdigest()
-
         self.assertEqual(
-            digest,
+            hashlib.sha256(
+                CONTRACT_PATH.read_bytes()
+            ).hexdigest(),
             EXPECTED_CONTRACT_SHA,
         )
 
@@ -85,9 +179,12 @@ class AuthoritativeTaxonomySECExecutorTests(
 
         members = [
             member
-            for group in groups
+            for group
+            in groups
             for member
-            in group["security_identities"]
+            in group[
+                "security_identities"
+            ]
         ]
 
         self.assertEqual(
@@ -95,17 +192,7 @@ class AuthoritativeTaxonomySECExecutorTests(
             1077,
         )
 
-        self.assertEqual(
-            len(
-                {
-                    member["security_id"]
-                    for member in members
-                }
-            ),
-            1077,
-        )
-
-    def test_request_plan_is_103_registrants(
+    def test_request_plan_has_102_network_groups_and_one_delegated_group(
         self,
     ) -> None:
         plan = build_request_plan(
@@ -114,23 +201,56 @@ class AuthoritativeTaxonomySECExecutorTests(
 
         self.assertEqual(
             plan[
-                "unique_submission_request_count"
+                "registrant_group_count"
             ],
             103,
         )
 
         self.assertEqual(
-            len(plan["requests"]),
-            103,
+            plan[
+                "unique_submission_request_count"
+            ],
+            102,
+        )
+
+        self.assertEqual(
+            len(
+                plan[
+                    "network_requests"
+                ]
+            ),
+            102,
         )
 
         self.assertEqual(
             sum(
-                item["member_count"]
+                item[
+                    "member_count"
+                ]
                 for item
-                in plan["requests"]
+                in plan[
+                    "network_requests"
+                ]
             ),
-            1077,
+            862,
+        )
+
+        self.assertEqual(
+            len(
+                plan[
+                    "delegated_remediation_groups"
+                ]
+            ),
+            1,
+        )
+
+        self.assertEqual(
+            plan[
+                "delegated_remediation_groups"
+            ][0][
+                "member_count"
+            ],
+            215,
         )
 
     def test_current_governance_blocks_before_fetcher(
@@ -143,24 +263,13 @@ class AuthoritativeTaxonomySECExecutorTests(
             user_agent: str,
             timeout: int,
         ):
-            calls.append(url)
+            calls.append(
+                url
+            )
 
             raise AssertionError(
                 "Fetcher must not be reached."
             )
-
-        authorization = {
-            "network_capture_authorized": True,
-            "authoritative_source_capture_authorized": True,
-            "identity_bound_manifest_sha256":
-                EXPECTED_CONTRACT_SHA,
-            "maximum_unique_sec_requests": 10000,
-            "maximum_requests_per_second": 1,
-            "maximum_candidate_filings_per_security": 5,
-            "request_timeout_seconds": 30,
-            "production_taxonomy_classification_authorized": False,
-            "taxonomy_normalization_authorized": False,
-        }
 
         with tempfile.TemporaryDirectory() as temp:
             with self.assertRaises(
@@ -169,7 +278,7 @@ class AuthoritativeTaxonomySECExecutorTests(
                 execute_authorized_capture(
                     self.contract,
                     self.policy,
-                    authorization,
+                    self.authorization(),
                     manifest_sha256=
                         EXPECTED_CONTRACT_SHA,
                     user_agent=
@@ -184,20 +293,19 @@ class AuthoritativeTaxonomySECExecutorTests(
             [],
         )
 
-    def test_submissions_url_is_cik_bound(
+    def test_urls_are_structurally_bound(
         self,
     ) -> None:
         self.assertEqual(
-            submissions_url("1100663"),
+            submissions_url(
+                "1100663"
+            ),
             (
                 "https://data.sec.gov/submissions/"
                 "CIK0001100663.json"
             ),
         )
 
-    def test_document_url_is_accession_bound(
-        self,
-    ) -> None:
         self.assertEqual(
             filing_document_url(
                 "0001100663",
@@ -212,129 +320,303 @@ class AuthoritativeTaxonomySECExecutorTests(
             ),
         )
 
-    def test_fake_transport_executes_all_1077(
-        self,
-    ) -> None:
-        policy = copy.deepcopy(
-            self.policy
+        self.assertEqual(
+            issuer_key_for_cik(
+                "1100663"
+            ),
+            "SEC-REGISTRANT-CIK-0001100663",
         )
 
-        policy["authority"][
-            "authoritative_source_capture"
-        ] = True
+    def test_full_fake_execution_preserves_all_1077(
+        self,
+    ) -> None:
+        temp, result, calls = (
+            self.fake_full_run()
+        )
 
-        empty_submissions = json.dumps(
-            {
-                "filings": {
-                    "recent": {
-                        "form": [],
-                        "accessionNumber": [],
-                        "primaryDocument": [],
-                        "filingDate": [],
-                    }
-                }
-            }
-        ).encode("utf-8")
-
-        calls = []
-
-        def fake_fetcher(
-            url: str,
-            user_agent: str,
-            timeout: int,
-        ):
-            calls.append(url)
-
-            return (
-                200,
-                url,
-                empty_submissions,
-            )
-
-        authorization = {
-            "network_capture_authorized": True,
-            "authoritative_source_capture_authorized": True,
-            "identity_bound_manifest_sha256":
-                EXPECTED_CONTRACT_SHA,
-            "maximum_unique_sec_requests": 103,
-            "maximum_requests_per_second": 1,
-            "maximum_candidate_filings_per_security": 5,
-            "request_timeout_seconds": 30,
-            "production_taxonomy_classification_authorized": False,
-            "taxonomy_normalization_authorized": False,
-        }
-
-        with tempfile.TemporaryDirectory() as temp:
-            result = execute_authorized_capture(
-                self.contract,
-                policy,
-                authorization,
-                manifest_sha256=
-                    EXPECTED_CONTRACT_SHA,
-                user_agent=
-                    "UIP research contact@example.com",
-                raw_root=temp,
-                fetcher=fake_fetcher,
-                sleeper=lambda _: None,
-            )
-
-            raw_files = list(
-                (
-                    Path(temp)
-                    / "sec_taxonomy"
-                    / "submissions"
-                ).glob("*.json")
+        try:
+            self.assertEqual(
+                result[
+                    "record_count"
+                ],
+                1077,
             )
 
             self.assertEqual(
-                len(raw_files),
-                103,
+                result[
+                    "standard_etf_count"
+                ],
+                862,
             )
 
-        self.assertEqual(
-            result["record_count"],
-            1077,
+            self.assertEqual(
+                result[
+                    "remediation_etf_count"
+                ],
+                215,
+            )
+
+            self.assertEqual(
+                result[
+                    "unique_sec_requests_performed"
+                ],
+                102,
+            )
+
+            self.assertEqual(
+                len(
+                    calls
+                ),
+                102,
+            )
+
+            self.assertEqual(
+                len(
+                    set(
+                        calls
+                    )
+                ),
+                102,
+            )
+
+        finally:
+            temp.cleanup()
+
+    def test_remediation_lane_performs_zero_standard_route_requests(
+        self,
+    ) -> None:
+        temp, result, calls = (
+            self.fake_full_run()
         )
 
-        self.assertEqual(
-            result[
-                "unique_sec_requests_performed"
-            ],
-            103,
+        try:
+            remediation_group = next(
+                group
+                for group
+                in self.contract[
+                    "execution_groups"
+                ]
+                if group[
+                    "lane"
+                ]
+                == REMEDIATION_LANE
+            )
+
+            prohibited_url = submissions_url(
+                remediation_group[
+                    "sec_cik"
+                ]
+            )
+
+            self.assertNotIn(
+                prohibited_url,
+                calls,
+            )
+
+            remediation_records = [
+                record
+                for record
+                in result[
+                    "records"
+                ]
+                if record[
+                    "lane"
+                ]
+                == REMEDIATION_LANE
+            ]
+
+            self.assertEqual(
+                len(
+                    remediation_records
+                ),
+                215,
+            )
+
+            self.assertTrue(
+                all(
+                    record[
+                        "review_state"
+                    ]
+                    == "GOVERNED_REMEDIATION_ROUTE_PRESERVED"
+                    for record
+                    in remediation_records
+                )
+            )
+
+            self.assertTrue(
+                all(
+                    record[
+                        "evaluated_candidate_count"
+                    ]
+                    == 0
+                    for record
+                    in remediation_records
+                )
+            )
+
+            self.assertTrue(
+                all(
+                    record[
+                        "acquisition_reasons"
+                    ]
+                    == [
+                        "GOVERNED_EXISTING_REMEDIATION_ROUTE_REQUIRED"
+                    ]
+                    for record
+                    in remediation_records
+                )
+            )
+
+        finally:
+            temp.cleanup()
+
+    def test_standard_lane_is_exactly_862_records(
+        self,
+    ) -> None:
+        temp, result, calls = (
+            self.fake_full_run()
         )
 
-        self.assertEqual(
-            len(calls),
-            103,
+        try:
+            standard = [
+                record
+                for record
+                in result[
+                    "records"
+                ]
+                if record[
+                    "lane"
+                ]
+                == STANDARD_LANE
+            ]
+
+            self.assertEqual(
+                len(
+                    standard
+                ),
+                862,
+            )
+
+            self.assertEqual(
+                result[
+                    "acquisition_reason_counts"
+                ][
+                    "PRODUCT_SPECIFIC_SEC_FILING_NOT_RESOLVED"
+                ],
+                862,
+            )
+
+            self.assertEqual(
+                result[
+                    "acquisition_reason_counts"
+                ][
+                    "GOVERNED_EXISTING_REMEDIATION_ROUTE_REQUIRED"
+                ],
+                215,
+            )
+
+        finally:
+            temp.cleanup()
+
+    def test_phase_3_acquisition_required_fields_are_present(
+        self,
+    ) -> None:
+        temp, result, calls = (
+            self.fake_full_run()
         )
 
-        self.assertEqual(
-            len(set(calls)),
-            103,
+        try:
+            required_fields = set(
+                self.policy[
+                    "required_manifest_fields"
+                ]
+            )
+
+            for record in result[
+                "records"
+            ]:
+                self.assertTrue(
+                    required_fields.issubset(
+                        record.keys()
+                    )
+                )
+
+                self.assertTrue(
+                    record[
+                        "issuer_key"
+                    ]
+                )
+
+                self.assertTrue(
+                    record[
+                        "acquisition_reasons"
+                    ]
+                )
+
+                self.assertFalse(
+                    record[
+                        "taxonomy_dimensions_assigned"
+                    ]
+                )
+
+        finally:
+            temp.cleanup()
+
+    def test_submissions_storage_is_content_addressed(
+        self,
+    ) -> None:
+        temp, result, calls = (
+            self.fake_full_run()
         )
 
-        self.assertEqual(
-            result[
-                "acquisition_state_counts"
-            ],
-            {
-                "UNRESOLVED": 1077
-            },
-        )
+        try:
+            expected_sha = hashlib.sha256(
+                self.empty_submissions
+            ).hexdigest()
 
-        self.assertEqual(
-            result[
-                "taxonomy_classification_performed"
-            ],
-            0,
-        )
+            root = (
+                Path(
+                    temp.name
+                )
+                / "sec_taxonomy"
+                / "submissions"
+            )
 
-        self.assertEqual(
-            result[
-                "taxonomy_normalization_performed"
-            ],
-            0,
-        )
+            raw_files = list(
+                root.rglob(
+                    "*.json"
+                )
+            )
+
+            self.assertEqual(
+                len(
+                    raw_files
+                ),
+                102,
+            )
+
+            self.assertTrue(
+                all(
+                    file.stem
+                    == expected_sha
+                    for file
+                    in raw_files
+                )
+            )
+
+            self.assertEqual(
+                len(
+                    {
+                        file.parent.name
+                        for file
+                        in raw_files
+                    }
+                ),
+                102,
+            )
+
+        finally:
+            temp.cleanup()
 
     def test_duplicate_identity_fails_closed(
         self,
@@ -359,9 +641,11 @@ class AuthoritativeTaxonomySECExecutorTests(
             ][0]
         )
 
-        second["security_id"] = (
-            first["security_id"]
-        )
+        second[
+            "security_id"
+        ] = first[
+            "security_id"
+        ]
 
         with self.assertRaises(
             AuthoritativeTaxonomySECExecutorError
