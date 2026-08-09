@@ -66,6 +66,21 @@ class ProductionSECCaptureLaunchTests(
             AUTHORIZATION_PATH
         )
 
+        cls.empty_submissions = json.dumps(
+            {
+                "filings": {
+                    "recent": {
+                        "form": [],
+                        "accessionNumber": [],
+                        "primaryDocument": [],
+                        "filingDate": [],
+                    }
+                }
+            }
+        ).encode(
+            "utf-8"
+        )
+
     def test_frozen_identity_sha(self):
         digest = hashlib.sha256(
             CONTRACT_PATH.read_bytes()
@@ -76,7 +91,60 @@ class ProductionSECCaptureLaunchTests(
             EXPECTED_MANIFEST_SHA,
         )
 
-    def test_offline_launch_plan_is_full_population(self):
+    def test_current_policy_is_authorized_1_2(self):
+        self.assertEqual(
+            self.policy[
+                "policy_version"
+            ],
+            "1.2.0",
+        )
+
+        self.assertTrue(
+            self.policy[
+                "authority"
+            ][
+                "authoritative_source_capture"
+            ]
+        )
+
+    def test_current_authorization_is_production_1_1(self):
+        self.assertEqual(
+            self.authorization[
+                "authorization_version"
+            ],
+            "1.1.0",
+        )
+
+        self.assertEqual(
+            self.authorization[
+                "execution_state"
+            ],
+            "AUTHORIZED_FOR_PRODUCTION_CAPTURE",
+        )
+
+        self.assertTrue(
+            self.authorization[
+                "production_execution_authorized"
+            ]
+        )
+
+        self.assertTrue(
+            self.authorization[
+                "standard_route"
+            ][
+                "network_capture_authorized"
+            ]
+        )
+
+        self.assertTrue(
+            self.authorization[
+                "standard_route"
+            ][
+                "authoritative_source_capture_authorized"
+            ]
+        )
+
+    def test_authorized_launch_plan_is_full_population(self):
         result = build_launch_plan(
             self.contract,
             self.policy,
@@ -108,6 +176,13 @@ class ProductionSECCaptureLaunchTests(
 
         self.assertEqual(
             result[
+                "remediation_registrant_count"
+            ],
+            1,
+        )
+
+        self.assertEqual(
+            result[
                 "remediation_etf_count"
             ],
             215,
@@ -127,7 +202,7 @@ class ProductionSECCaptureLaunchTests(
             4412,
         )
 
-        self.assertFalse(
+        self.assertTrue(
             result[
                 "production_execution_authorized"
             ]
@@ -140,7 +215,286 @@ class ProductionSECCaptureLaunchTests(
             0,
         )
 
-    def test_runner_direct_file_invocation_builds_offline_plan(self):
+    def test_current_authorized_contract_executes_with_injected_transport(
+        self,
+    ):
+        calls = []
+
+        def fake_fetcher(
+            url,
+            user_agent,
+            timeout,
+        ):
+            calls.append(
+                url
+            )
+
+            return (
+                200,
+                url,
+                self.empty_submissions,
+            )
+
+        with tempfile.TemporaryDirectory() as temp:
+            result = execute_live(
+                self.contract,
+                self.policy,
+                self.authorization,
+                identity_manifest_sha256=
+                    EXPECTED_MANIFEST_SHA,
+                user_agent=
+                    "UIP research contact@example.com",
+                raw_root=
+                    temp,
+                fetcher=
+                    fake_fetcher,
+            )
+
+        self.assertEqual(
+            len(calls),
+            102,
+        )
+
+        self.assertEqual(
+            len(
+                set(
+                    calls
+                )
+            ),
+            102,
+        )
+
+        self.assertEqual(
+            result[
+                "record_count"
+            ],
+            1077,
+        )
+
+        self.assertEqual(
+            result[
+                "standard_etf_count"
+            ],
+            862,
+        )
+
+        self.assertEqual(
+            result[
+                "remediation_etf_count"
+            ],
+            215,
+        )
+
+        self.assertEqual(
+            result[
+                "unique_sec_requests_performed"
+            ],
+            102,
+        )
+
+        self.assertEqual(
+            result[
+                "taxonomy_classification_performed"
+            ],
+            0,
+        )
+
+        self.assertEqual(
+            result[
+                "taxonomy_normalization_performed"
+            ],
+            0,
+        )
+
+    def test_policy_downgrade_blocks_before_fetcher(self):
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy[
+            "policy_version"
+        ] = "1.1.0"
+
+        policy[
+            "authority"
+        ][
+            "authoritative_source_capture"
+        ] = False
+
+        calls = []
+
+        def forbidden_fetcher(
+            url,
+            user_agent,
+            timeout,
+        ):
+            calls.append(
+                url
+            )
+
+            raise AssertionError(
+                "Fetcher must remain unreachable."
+            )
+
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaises(
+                ProductionSECCaptureLaunchError
+            ):
+                execute_live(
+                    self.contract,
+                    policy,
+                    self.authorization,
+                    identity_manifest_sha256=
+                        EXPECTED_MANIFEST_SHA,
+                    user_agent=
+                        "UIP research contact@example.com",
+                    raw_root=
+                        temp,
+                    fetcher=
+                        forbidden_fetcher,
+                )
+
+        self.assertEqual(
+            calls,
+            [],
+        )
+
+    def test_authorization_downgrade_blocks_before_fetcher(self):
+        authorization = copy.deepcopy(
+            self.authorization
+        )
+
+        authorization[
+            "authorization_version"
+        ] = "1.0.0"
+
+        authorization[
+            "execution_state"
+        ] = "FROZEN_PENDING_POLICY_AUTHORIZATION"
+
+        authorization[
+            "production_execution_authorized"
+        ] = False
+
+        authorization[
+            "standard_route"
+        ][
+            "network_capture_authorized"
+        ] = False
+
+        authorization[
+            "standard_route"
+        ][
+            "authoritative_source_capture_authorized"
+        ] = False
+
+        calls = []
+
+        def forbidden_fetcher(
+            url,
+            user_agent,
+            timeout,
+        ):
+            calls.append(
+                url
+            )
+
+            raise AssertionError(
+                "Fetcher must remain unreachable."
+            )
+
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaises(
+                ProductionSECCaptureLaunchError
+            ):
+                execute_live(
+                    self.contract,
+                    self.policy,
+                    authorization,
+                    identity_manifest_sha256=
+                        EXPECTED_MANIFEST_SHA,
+                    user_agent=
+                        "UIP research contact@example.com",
+                    raw_root=
+                        temp,
+                    fetcher=
+                        forbidden_fetcher,
+                )
+
+        self.assertEqual(
+            calls,
+            [],
+        )
+
+    def test_remediation_route_remains_standard_route_prohibited(self):
+        remediation = (
+            self.authorization[
+                "remediation_route"
+            ]
+        )
+
+        self.assertFalse(
+            remediation[
+                "standard_route_execution_authorized"
+            ]
+        )
+
+        self.assertEqual(
+            remediation[
+                "member_count"
+            ],
+            215,
+        )
+
+        self.assertEqual(
+            remediation[
+                "delegated_executor"
+            ],
+            "EXISTING_SERIES_CLASS_REMEDIATION_ARCHITECTURE",
+        )
+
+    def test_downstream_authorities_all_remain_closed(self):
+        downstream = (
+            self.authorization[
+                "downstream_authority"
+            ]
+        )
+
+        self.assertTrue(
+            all(
+                value is False
+                for value
+                in downstream.values()
+            )
+        )
+
+        policy_authority = (
+            self.policy[
+                "authority"
+            ]
+        )
+
+        for field in (
+            "production_taxonomy_classification",
+            "production_taxonomy_certification",
+            "benchmark_qualified_universe_publication",
+            "relative_return_calculation",
+            "risk_analytics",
+            "forecasting",
+            "ranking",
+            "recommendations",
+            "portfolio_allocation",
+            "uip_export",
+            "automatic_execution",
+            "direct_uip_database_writes",
+        ):
+            self.assertFalse(
+                policy_authority[
+                    field
+                ]
+            )
+
+    def test_runner_direct_file_invocation_builds_authorized_plan(self):
         runner = (
             ROOT
             / "scripts"
@@ -195,6 +549,12 @@ class ProductionSECCaptureLaunchTests(
                 completed.stdout
             )
 
+            self.assertTrue(
+                plan[
+                    "production_execution_authorized"
+                ]
+            )
+
             self.assertEqual(
                 plan[
                     "governed_population"
@@ -215,272 +575,6 @@ class ProductionSECCaptureLaunchTests(
                 ],
                 0,
             )
-
-    def test_current_policy_blocks_live_before_fetcher(self):
-        calls = []
-
-        def forbidden_fetcher(
-            url,
-            user_agent,
-            timeout,
-        ):
-            calls.append(
-                url
-            )
-
-            raise AssertionError(
-                "Real/fake fetcher must not be reached."
-            )
-
-        with tempfile.TemporaryDirectory() as temp:
-            with self.assertRaises(
-                ProductionSECCaptureLaunchError
-            ):
-                execute_live(
-                    self.contract,
-                    self.policy,
-                    self.authorization,
-                    identity_manifest_sha256=
-                        EXPECTED_MANIFEST_SHA,
-                    user_agent=
-                        "UIP research contact@example.com",
-                    raw_root=
-                        temp,
-                    fetcher=
-                        forbidden_fetcher,
-                )
-
-        self.assertEqual(
-            calls,
-            [],
-        )
-
-    def test_authorization_alone_cannot_open_live_capture(self):
-        authorization = copy.deepcopy(
-            self.authorization
-        )
-
-        authorization[
-            "production_execution_authorized"
-        ] = True
-
-        authorization[
-            "standard_route"
-        ][
-            "network_capture_authorized"
-        ] = True
-
-        authorization[
-            "standard_route"
-        ][
-            "authoritative_source_capture_authorized"
-        ] = True
-
-        calls = []
-
-        def forbidden_fetcher(
-            url,
-            user_agent,
-            timeout,
-        ):
-            calls.append(
-                url
-            )
-
-            raise AssertionError(
-                "Fetcher must remain unreachable."
-            )
-
-        with tempfile.TemporaryDirectory() as temp:
-            with self.assertRaises(
-                ProductionSECCaptureLaunchError
-            ):
-                execute_live(
-                    self.contract,
-                    self.policy,
-                    authorization,
-                    identity_manifest_sha256=
-                        EXPECTED_MANIFEST_SHA,
-                    user_agent=
-                        "UIP research contact@example.com",
-                    raw_root=
-                        temp,
-                    fetcher=
-                        forbidden_fetcher,
-                )
-
-        self.assertEqual(
-            calls,
-            [],
-        )
-
-    def test_future_authorized_contract_can_use_injected_transport(self):
-        policy = copy.deepcopy(
-            self.policy
-        )
-
-        policy[
-            "policy_version"
-        ] = "1.2.0"
-
-        policy[
-            "authority"
-        ][
-            "authoritative_source_capture"
-        ] = True
-
-        authorization = copy.deepcopy(
-            self.authorization
-        )
-
-        authorization[
-            "production_execution_authorized"
-        ] = True
-
-        authorization[
-            "execution_state"
-        ] = "AUTHORIZED_FOR_PRODUCTION_CAPTURE"
-
-        authorization[
-            "standard_route"
-        ][
-            "network_capture_authorized"
-        ] = True
-
-        authorization[
-            "standard_route"
-        ][
-            "authoritative_source_capture_authorized"
-        ] = True
-
-        empty_submissions = json.dumps(
-            {
-                "filings": {
-                    "recent": {
-                        "form": [],
-                        "accessionNumber": [],
-                        "primaryDocument": [],
-                        "filingDate": [],
-                    }
-                }
-            }
-        ).encode(
-            "utf-8"
-        )
-
-        calls = []
-
-        def fake_fetcher(
-            url,
-            user_agent,
-            timeout,
-        ):
-            calls.append(
-                url
-            )
-
-            return (
-                200,
-                url,
-                empty_submissions,
-            )
-
-        with tempfile.TemporaryDirectory() as temp:
-            result = execute_live(
-                self.contract,
-                policy,
-                authorization,
-                identity_manifest_sha256=
-                    EXPECTED_MANIFEST_SHA,
-                user_agent=
-                    "UIP research contact@example.com",
-                raw_root=
-                    temp,
-                fetcher=
-                    fake_fetcher,
-            )
-
-        self.assertEqual(
-            len(calls),
-            102,
-        )
-
-        self.assertEqual(
-            result[
-                "record_count"
-            ],
-            1077,
-        )
-
-        self.assertEqual(
-            result[
-                "standard_etf_count"
-            ],
-            862,
-        )
-
-        self.assertEqual(
-            result[
-                "remediation_etf_count"
-            ],
-            215,
-        )
-
-        self.assertEqual(
-            result[
-                "unique_sec_requests_performed"
-            ],
-            102,
-        )
-
-        self.assertEqual(
-            result[
-                "taxonomy_classification_performed"
-            ],
-            0,
-        )
-
-        self.assertEqual(
-            result[
-                "taxonomy_normalization_performed"
-            ],
-            0,
-        )
-
-    def test_remediation_route_never_self_authorizes_standard_route(self):
-        remediation = (
-            self.authorization[
-                "remediation_route"
-            ]
-        )
-
-        self.assertFalse(
-            remediation[
-                "standard_route_execution_authorized"
-            ]
-        )
-
-        self.assertEqual(
-            remediation[
-                "member_count"
-            ],
-            215,
-        )
-
-    def test_downstream_authorities_all_closed(self):
-        downstream = (
-            self.authorization[
-                "downstream_authority"
-            ]
-        )
-
-        self.assertTrue(
-            all(
-                value is False
-                for value
-                in downstream.values()
-            )
-        )
 
 
 if __name__ == "__main__":

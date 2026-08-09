@@ -85,12 +85,14 @@ def validate_authorization(
             "Authorization ID mismatch."
         )
 
-    if (
-        authorization.get(
-            "authorization_version"
-        )
-        != "1.0.0"
-    ):
+    version = authorization.get(
+        "authorization_version"
+    )
+
+    if version not in {
+        "1.0.0",
+        "1.1.0",
+    }:
         raise ProductionSECCaptureLaunchError(
             "Authorization version mismatch."
         )
@@ -336,36 +338,62 @@ def validate_authorization(
                 f"Downstream authority unexpectedly open: {prohibited}"
             )
 
-    if require_live_execution:
+    production_authorized = (
+        authorization.get(
+            "production_execution_authorized"
+        )
+        is True
+    )
+
+    network_authorized = (
+        standard.get(
+            "network_capture_authorized"
+        )
+        is True
+    )
+
+    source_authorized = (
+        standard.get(
+            "authoritative_source_capture_authorized"
+        )
+        is True
+    )
+
+    execution_state = authorization.get(
+        "execution_state"
+    )
+
+    if version == "1.0.0":
         if (
-            authorization.get(
-                "production_execution_authorized"
-            )
-            is not True
+            production_authorized
+            or network_authorized
+            or source_authorized
+            or execution_state
+            != "FROZEN_PENDING_POLICY_AUTHORIZATION"
         ):
             raise ProductionSECCaptureLaunchError(
-                "Production execution is not authorized."
+                "Frozen authorization state is internally inconsistent."
             )
 
+    elif version == "1.1.0":
         if (
-            standard.get(
-                "network_capture_authorized"
-            )
-            is not True
+            not production_authorized
+            or not network_authorized
+            or not source_authorized
+            or execution_state
+            != "AUTHORIZED_FOR_PRODUCTION_CAPTURE"
         ):
             raise ProductionSECCaptureLaunchError(
-                "Network capture is not authorized."
+                "Production authorization state is internally inconsistent."
             )
 
-        if (
-            standard.get(
-                "authoritative_source_capture_authorized"
-            )
-            is not True
-        ):
-            raise ProductionSECCaptureLaunchError(
-                "Source capture is not authorized."
-            )
+    if (
+        require_live_execution
+        and version != "1.1.0"
+    ):
+        raise ProductionSECCaptureLaunchError(
+            "Live production requires authorization version 1.1.0."
+        )
 
     return standard
 
@@ -425,47 +453,38 @@ def validate_policy_for_launch(
                 f"Policy downstream authority unexpectedly open: {prohibited}"
             )
 
-    if require_live_execution:
-        if (
-            policy.get(
-                "policy_version"
-            )
-            != "1.2.0"
-        ):
+    version = policy.get(
+        "policy_version"
+    )
+
+    source_capture = authority.get(
+        "authoritative_source_capture"
+    )
+
+    if version == "1.1.0":
+        if source_capture is not False:
             raise ProductionSECCaptureLaunchError(
-                "Live production requires acquisition policy 1.2.0."
+                "Policy 1.1.0 requires source capture closed."
             )
 
-        if (
-            authority.get(
-                "authoritative_source_capture"
-            )
-            is not True
-        ):
+    elif version == "1.2.0":
+        if source_capture is not True:
             raise ProductionSECCaptureLaunchError(
-                "Acquisition policy has not authorized source capture."
+                "Policy 1.2.0 requires source capture authorized."
             )
 
     else:
-        if (
-            policy.get(
-                "policy_version"
-            )
-            != "1.1.0"
-        ):
-            raise ProductionSECCaptureLaunchError(
-                "Offline certification expects current policy 1.1.0."
-            )
+        raise ProductionSECCaptureLaunchError(
+            "Unsupported acquisition policy version."
+        )
 
-        if (
-            authority.get(
-                "authoritative_source_capture"
-            )
-            is not False
-        ):
-            raise ProductionSECCaptureLaunchError(
-                "Offline certification requires source capture closed."
-            )
+    if (
+        require_live_execution
+        and version != "1.2.0"
+    ):
+        raise ProductionSECCaptureLaunchError(
+            "Live production requires acquisition policy 1.2.0."
+        )
 
 
 def build_launch_plan(
@@ -541,7 +560,12 @@ def build_launch_plan(
             ),
 
         "production_execution_authorized":
-            False,
+            (
+                authorization.get(
+                    "production_execution_authorized"
+                )
+                is True
+            ),
 
         "network_requests_performed":
             0,

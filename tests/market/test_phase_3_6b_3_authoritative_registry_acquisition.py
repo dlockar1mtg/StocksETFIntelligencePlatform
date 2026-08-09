@@ -24,7 +24,7 @@ def gaps(count: int = 1077):
 class Phase36B3RegistryAcquisitionTests(unittest.TestCase):
     def test_required_population_is_locked(self):
         self.assertEqual(POLICY["required_record_count"], 1077)
-        self.assertEqual(POLICY["policy_version"], "1.1.0")
+        self.assertEqual(POLICY["policy_version"], "1.2.0")
 
     def test_all_new_records_are_preserved_pending(self):
         result = build_acquisition_manifest(gaps(), POLICY)
@@ -93,18 +93,30 @@ class Phase36B3RegistryAcquisitionTests(unittest.TestCase):
         with self.assertRaises(RegistryAcquisitionError):
             build_acquisition_manifest(gaps(), POLICY, existing)
 
-    def test_downstream_authorities_remain_false(self):
+    def test_source_capture_is_authorized_and_downstream_remains_false(self):
+        self.assertTrue(
+            POLICY["authority"][
+                "authoritative_source_capture"
+            ]
+        )
+
         for key in (
-            "authoritative_source_capture",
             "production_taxonomy_classification",
             "production_taxonomy_certification",
+            "benchmark_qualified_universe_publication",
             "relative_return_calculation",
             "risk_analytics",
             "forecasting",
             "ranking",
             "recommendations",
+            "portfolio_allocation",
+            "uip_export",
+            "automatic_execution",
+            "direct_uip_database_writes",
         ):
-            self.assertFalse(POLICY["authority"][key])
+            self.assertFalse(
+                POLICY["authority"][key]
+            )
 
     def test_manifest_is_not_complete_without_all_authorities(self):
         result = build_acquisition_manifest(gaps(), POLICY)

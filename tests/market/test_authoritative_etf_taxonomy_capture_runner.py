@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import copy
 import json
 import unittest
 from pathlib import Path
@@ -104,13 +105,78 @@ class AuthoritativeTaxonomyCaptureRunnerTests(unittest.TestCase):
             215,
         )
 
-    def test_current_policy_prohibits_live_capture(self) -> None:
+    def test_current_policy_authorizes_live_execution_manifest(self) -> None:
+        result = build_execution_manifest(
+            self.plan,
+            self.policy,
+            live_network_requested=True,
+        )
+
+        summary = result[
+            "summary"
+        ]
+
+        self.assertTrue(
+            summary[
+                "live_network_requested"
+            ]
+        )
+
+        self.assertTrue(
+            summary[
+                "live_capture_authorized"
+            ]
+        )
+
+        self.assertEqual(
+            summary[
+                "network_requests_performed"
+            ],
+            0,
+        )
+
+        self.assertEqual(
+            summary[
+                "sec_requests_performed"
+            ],
+            0,
+        )
+
+        self.assertEqual(
+            summary[
+                "taxonomy_classification_performed"
+            ],
+            0,
+        )
+
+        self.assertEqual(
+            summary[
+                "taxonomy_normalization_performed"
+            ],
+            0,
+        )
+
+    def test_downgraded_closed_policy_prohibits_live_capture(self) -> None:
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy[
+            "policy_version"
+        ] = "1.1.0"
+
+        policy[
+            "authority"
+        ][
+            "authoritative_source_capture"
+        ] = False
+
         with self.assertRaises(
             AuthoritativeTaxonomyCaptureRunnerError
         ):
             build_execution_manifest(
                 self.plan,
-                self.policy,
+                policy,
                 live_network_requested=True,
             )
 

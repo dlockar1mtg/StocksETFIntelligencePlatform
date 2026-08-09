@@ -1,5 +1,5 @@
 {
-  "policy_version": "1.1.0",
+  "policy_version": "1.2.0",
   "phase": "3.6b.3",
   "required_record_count": 1077,
   "acquisition_states": [
@@ -47,7 +47,7 @@
   "authority": {
     "authoritative_registry_acquisition_planning": true,
     "authoritative_evidence_manifest_build": true,
-    "authoritative_source_capture": false,
+    "authoritative_source_capture": true,
     "production_taxonomy_classification": false,
     "production_taxonomy_certification": false,
     "benchmark_qualified_universe_publication": false,

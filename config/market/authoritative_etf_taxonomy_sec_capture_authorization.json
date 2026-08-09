@@ -1,6 +1,6 @@
 {
   "authorization_id": "ETF_1077_AUTHORITATIVE_SEC_CAPTURE_AUTHORIZATION_V1",
-  "authorization_version": "1.0.0",
+  "authorization_version": "1.1.0",
   "phase": "3.6b.3",
   "governed_population": 1077,
   "identity_bound_manifest_sha256": "9ed50f6e8ac414d347cb563a65106732631ec5a4c1c092142411900e19d03520",
@@ -9,8 +9,8 @@
   "remediation_registrant_count": 1,
   "remediation_etf_count": 215,
   "standard_route": {
-    "network_capture_authorized": false,
-    "authoritative_source_capture_authorized": false,
+    "network_capture_authorized": true,
+    "authoritative_source_capture_authorized": true,
     "maximum_submission_requests": 102,
     "maximum_candidate_filings_per_security": 5,
     "maximum_candidate_document_requests": 4310,
@@ -35,6 +35,6 @@
     "portfolio_allocation_authorized": false,
     "automatic_execution_authorized": false
   },
-  "execution_state": "FROZEN_PENDING_POLICY_AUTHORIZATION",
-  "production_execution_authorized": false
+  "execution_state": "AUTHORIZED_FOR_PRODUCTION_CAPTURE",
+  "production_execution_authorized": true
 }

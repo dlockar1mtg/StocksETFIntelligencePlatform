@@ -296,9 +296,23 @@ class AuthoritativeTaxonomySECExecutorTests(
             215,
         )
 
-    def test_current_governance_blocks_before_fetcher(
+    def test_closed_policy_blocks_before_fetcher(
         self,
     ) -> None:
+        policy = copy.deepcopy(
+            self.policy
+        )
+
+        policy[
+            "policy_version"
+        ] = "1.1.0"
+
+        policy[
+            "authority"
+        ][
+            "authoritative_source_capture"
+        ] = False
+
         calls = []
 
         def forbidden_fetcher(
@@ -320,7 +334,7 @@ class AuthoritativeTaxonomySECExecutorTests(
             ):
                 execute_authorized_capture(
                     self.contract,
-                    self.policy,
+                    policy,
                     self.authorization(),
                     manifest_sha256=
                         EXPECTED_CONTRACT_SHA,
