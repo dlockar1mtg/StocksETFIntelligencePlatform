@@ -35,7 +35,7 @@
   "filing_document_capture_authorized": false,
   "filing_header_capture_authorized": false,
   "full_215_execution_authorized": false,
-  "governed_head": "95a61dbd81b3e1a35f82d279168083d0a15da37a",
+  "governed_head": "c4464c9d78b88d6f599f3f2153038f054a05d492",
   "manifest_sha256": "c15ebafd5fc16d9833a64295eb43fca8c348da0e01d61dfcbe1c2018db007f15",
   "network_capture_authorized": true,
   "network_requests_performed": 0,

@@ -1,7 +1,7 @@
 {
   "artifact_id": "SEC_HISTORICAL_SUBMISSION_SHARD_CAPTURE_EXECUTION_AUTHORIZATION_SUMMARY",
   "authorization_complete": true,
-  "authorization_sha256": "4e6b6aef97f78a1cac6e7148861a08815ad5bf1112477b464b116c83e9b31c53",
+  "authorization_sha256": "5596c2baefc848d1ec9a4c957d1abaf0ba6e87814c90f5d6220bf43889efd973",
   "authorized_shard_count": 12,
   "authorized_symbols": [
     "AAXJ",
@@ -13,7 +13,7 @@
   "filing_document_capture_authorized": false,
   "filing_header_capture_authorized": false,
   "full_215_execution_authorized": false,
-  "governed_head": "95a61dbd81b3e1a35f82d279168083d0a15da37a",
+  "governed_head": "c4464c9d78b88d6f599f3f2153038f054a05d492",
   "manifest_sha256": "c15ebafd5fc16d9833a64295eb43fca8c348da0e01d61dfcbe1c2018db007f15",
   "maximum_requests_per_second": 1,
   "maximum_retry_attempts": 0,
