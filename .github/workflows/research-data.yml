@@ -1,0 +1,22 @@
+name: Research data snapshot (temporary branch)
+on:
+  push:
+    branches: [research/etf-data]
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    if: ${{ !contains(github.event.head_commit.message, 'snapshot') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python scripts/collect_etf_market_data.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/curated/etf
+          git commit -m "Research data snapshot $(date -u +%F)"
+          git push
