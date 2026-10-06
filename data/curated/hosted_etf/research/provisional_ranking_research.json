@@ -1,50 +1,50 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-06T22:47:41+00:00",
- "panel_rows": 182859,
+ "generated_at_utc": "2026-10-06T23:03:43+00:00",
+ "panel_rows": 187882,
  "funds": 1077,
  "walk_forward": {
   "12m": {
    "results": {},
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": 0.0044,
-     "t_yearly": 0.15,
+     "mean_ic": 0.0049,
+     "t_yearly": 0.16,
      "years": 23
     },
     "mom_6": {
-     "mean_ic": 0.0247,
-     "t_yearly": 0.81,
+     "mean_ic": 0.0249,
+     "t_yearly": 0.82,
      "years": 23
     },
     "trend_200": {
-     "mean_ic": 0.0336,
-     "t_yearly": 1.02,
+     "mean_ic": 0.0342,
+     "t_yearly": 1.04,
      "years": 23
     },
     "stretch_60m": {
-     "mean_ic": -0.0238,
-     "t_yearly": -0.44,
+     "mean_ic": -0.0244,
+     "t_yearly": -0.45,
      "years": 22
     },
     "vol_1y": {
-     "mean_ic": 0.059,
-     "t_yearly": 1.63,
+     "mean_ic": 0.0579,
+     "t_yearly": 1.6,
      "years": 23
     },
     "maxdd_3y": {
-     "mean_ic": -0.052,
-     "t_yearly": -1.4,
+     "mean_ic": -0.0509,
+     "t_yearly": -1.37,
      "years": 23
     },
     "dd_now": {
-     "mean_ic": 0.0217,
-     "t_yearly": 0.74,
+     "mean_ic": 0.0225,
+     "t_yearly": 0.77,
      "years": 23
     },
     "yield_12m": {
-     "mean_ic": -0.0036,
-     "t_yearly": -0.12,
+     "mean_ic": -0.0021,
+     "t_yearly": -0.07,
      "years": 23
     }
    },
@@ -72,22 +72,22 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": 0.0019,
-     "bottom_quintile_mean_excess": -0.0036,
+     "top_quintile_mean_excess": 0.0055,
+     "bottom_quintile_mean_excess": -0.0014,
      "share_years_top_beats_median": 0.333,
      "share_years_top_beats_bottom": 0.667,
      "by_year": {
       "2021": {
-       "top": -0.0136,
-       "bottom": 0.0003
+       "top": -0.013,
+       "bottom": -0.0034
       },
       "2022": {
-       "top": -0.0006,
-       "bottom": -0.0037
+       "top": -0.0,
+       "bottom": -0.0001
       },
       "2023": {
-       "top": 0.02,
-       "bottom": -0.0073
+       "top": 0.0296,
+       "bottom": -0.0008
       }
      }
     },
@@ -118,18 +118,18 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": 0.0022,
-     "bottom_quintile_mean_excess": 0.0048,
+     "top_quintile_mean_excess": 0.0028,
+     "bottom_quintile_mean_excess": -0.0088,
      "share_years_top_beats_median": 0.333,
-     "share_years_top_beats_bottom": 0.333,
+     "share_years_top_beats_bottom": 0.667,
      "by_year": {
       "2021": {
-       "top": -0.0101,
-       "bottom": 0.024
+       "top": -0.0092,
+       "bottom": -0.002
       },
       "2022": {
-       "top": -0.0082,
-       "bottom": 0.0005
+       "top": -0.0073,
+       "bottom": -0.0143
       },
       "2023": {
        "top": 0.0249,
@@ -164,65 +164,65 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": 0.0042,
-     "bottom_quintile_mean_excess": -0.0023,
+     "top_quintile_mean_excess": 0.0107,
+     "bottom_quintile_mean_excess": 0.0038,
      "share_years_top_beats_median": 0.667,
      "share_years_top_beats_bottom": 0.333,
      "by_year": {
       "2021": {
-       "top": -0.0173,
-       "bottom": -0.0056
+       "top": -0.0164,
+       "bottom": -0.0079
       },
       "2022": {
-       "top": 0.0005,
-       "bottom": 0.0029
+       "top": 0.0015,
+       "bottom": 0.0117
       },
       "2023": {
-       "top": 0.0294,
-       "bottom": -0.0042
+       "top": 0.0469,
+       "bottom": 0.0076
       }
      }
     }
    },
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": 0.0334,
-     "t_yearly": 1.07,
+     "mean_ic": 0.0344,
+     "t_yearly": 1.11,
      "years": 21
     },
     "mom_6": {
-     "mean_ic": 0.0432,
-     "t_yearly": 1.13,
+     "mean_ic": 0.0441,
+     "t_yearly": 1.15,
      "years": 21
     },
     "trend_200": {
-     "mean_ic": 0.0542,
-     "t_yearly": 1.37,
+     "mean_ic": 0.0554,
+     "t_yearly": 1.4,
      "years": 21
     },
     "stretch_60m": {
-     "mean_ic": 0.0552,
-     "t_yearly": 1.53,
+     "mean_ic": 0.0572,
+     "t_yearly": 1.6,
      "years": 20
     },
     "vol_1y": {
-     "mean_ic": 0.0262,
-     "t_yearly": 0.92,
+     "mean_ic": 0.0223,
+     "t_yearly": 0.8,
      "years": 21
     },
     "maxdd_3y": {
-     "mean_ic": -0.0104,
-     "t_yearly": -0.4,
+     "mean_ic": -0.0072,
+     "t_yearly": -0.28,
      "years": 21
     },
     "dd_now": {
-     "mean_ic": 0.0379,
-     "t_yearly": 1.29,
+     "mean_ic": 0.0416,
+     "t_yearly": 1.41,
      "years": 21
     },
     "yield_12m": {
-     "mean_ic": -0.0433,
-     "t_yearly": -1.13,
+     "mean_ic": -0.0411,
+     "t_yearly": -1.08,
      "years": 21
     }
    },
@@ -268,63 +268,63 @@
     "starts": 129,
     "share_beating": 0.0,
     "median_edge": -0.0065,
-    "worst_edge": -0.0139,
+    "worst_edge": -0.0141,
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
     "parameter_now": 1.5,
     "starts": 129,
-    "share_beating": 0.295,
+    "share_beating": 0.31,
     "median_edge": 0.0,
-    "worst_edge": -0.0473,
+    "worst_edge": -0.048,
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
     "parameter_now": 0.2,
     "starts": 129,
-    "share_beating": 0.186,
+    "share_beating": 0.171,
     "median_edge": -0.0333,
-    "worst_edge": -0.097,
+    "worst_edge": -0.0978,
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
     "parameter_now": 0.0,
     "starts": 129,
     "share_beating": 0.008,
-    "median_edge": -0.0095,
-    "worst_edge": -0.0228,
+    "median_edge": -0.0096,
+    "worst_edge": -0.023,
     "passes_gate": false
    },
    "_now": {
     "month": "2026-09",
-    "trend": 1.0436,
-    "stretch": 1.4144,
-    "dd": -0.0246,
-    "mom": 0.1613
+    "trend": 1.0451,
+    "stretch": 1.4202,
+    "dd": -0.0244,
+    "mom": 0.1646
    }
   },
   "INTL_EQUITY": {
    "TREND_PAUSE": {
-    "parameter_now": 0.02,
+    "parameter_now": 0.05,
     "starts": 129,
     "share_beating": 0.023,
-    "median_edge": -0.0102,
-    "worst_edge": -0.0222,
+    "median_edge": -0.0083,
+    "worst_edge": -0.0225,
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
     "parameter_now": 1.4,
     "starts": 129,
     "share_beating": 0.589,
-    "median_edge": 0.0011,
+    "median_edge": 0.0012,
     "worst_edge": -0.0233,
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
     "parameter_now": 0.2,
     "starts": 129,
-    "share_beating": 0.488,
-    "median_edge": -0.0023,
+    "share_beating": 0.504,
+    "median_edge": 0.0011,
     "worst_edge": -0.0849,
     "passes_gate": false
    },
@@ -332,8 +332,8 @@
     "parameter_now": -0.05,
     "starts": 129,
     "share_beating": 0.031,
-    "median_edge": -0.0107,
-    "worst_edge": -0.0302,
+    "median_edge": -0.0108,
+    "worst_edge": -0.0307,
     "passes_gate": false
    },
    "_now": {
@@ -389,41 +389,41 @@
    "TREND_PAUSE": {
     "parameter_now": 0.05,
     "starts": 129,
-    "share_beating": 0.016,
-    "median_edge": -0.0099,
-    "worst_edge": -0.0293,
+    "share_beating": 0.008,
+    "median_edge": -0.0123,
+    "worst_edge": -0.0705,
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
-    "parameter_now": 1.3,
+    "parameter_now": 1.4,
     "starts": 129,
-    "share_beating": 0.643,
-    "median_edge": 0.0069,
-    "worst_edge": -0.0125,
-    "passes_gate": true
+    "share_beating": 0.535,
+    "median_edge": 0.0007,
+    "worst_edge": -0.0294,
+    "passes_gate": false
    },
    "WAIT_FOR_DIP": {
-    "parameter_now": 0.15,
+    "parameter_now": 0.2,
     "starts": 129,
-    "share_beating": 0.659,
-    "median_edge": 0.0133,
-    "worst_edge": -0.048,
+    "share_beating": 0.605,
+    "median_edge": 0.0053,
+    "worst_edge": -0.0881,
     "passes_gate": true
    },
    "MOMENTUM_PAUSE": {
     "parameter_now": -0.05,
     "starts": 129,
-    "share_beating": 0.016,
-    "median_edge": -0.0143,
-    "worst_edge": -0.0425,
+    "share_beating": 0.023,
+    "median_edge": -0.0088,
+    "worst_edge": -0.0785,
     "passes_gate": false
    },
    "_now": {
     "month": "2026-09",
-    "trend": 1.0042,
-    "stretch": 1.3329,
-    "dd": -0.0557,
-    "mom": 0.1353
+    "trend": 1.0051,
+    "stretch": 1.4821,
+    "dd": -0.0668,
+    "mom": 0.1644
    }
   }
  },
