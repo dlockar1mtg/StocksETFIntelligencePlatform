@@ -1,0 +1,72 @@
+name: ETF official expense ratios (SEC)
+
+on:
+  schedule:
+    - cron: "40 9 * * 0"      # weekly; the SEC publishes the risk/return data sets quarterly
+  pull_request:
+    paths:
+      - "foundation/market/sec_expense_ratios.py"
+      - "scripts/run_sec_expense_ratios.py"
+      - "config/sources/sec_expense_ratio_policy.json"
+      - ".github/workflows/etf-sec-expense-ratios.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: etf-sec-expense-ratios
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet numpy
+      - name: Tests
+        run: python -m unittest tests.market.test_sec_expense_ratios -v
+      - name: Restore downloaded quarterly archives
+        uses: actions/cache/restore@v4
+        with:
+          path: data/hosted_cache/sec_rr
+          key: sec-rr-v1-${{ github.run_id }}
+          restore-keys: sec-rr-v1-
+      - name: Build the expense-ratio history
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python scripts/run_sec_expense_ratios.py
+          python - <<'PY'
+          import json
+          s = json.load(open("data/curated/hosted_etf/expense_ratio_summary.json"))
+          q = s["quarters"]
+          errors = {k: v for k, v in q.items() if str(v).startswith("ERROR")}
+          print(f"::notice title=SEC expense ratios::{s['funds_with_expense_ratio']} of {s['universe_funds']} funds have an official expense ratio ({s['funds_with_sec_class']} have an SEC class); {s['filings']} filings; quarters {len(q)}; errors {len(errors)}")
+          for k, v in list(errors.items())[:10]:
+              print(f"::warning title=SEC {k}::{v[:200]}")
+          PY
+      - name: Save downloaded archives
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/hosted_cache/sec_rr
+          key: sec-rr-v1-${{ github.run_id }}
+      - name: Commit the history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/curated/hosted_etf/expense_ratio_history.csv data/curated/hosted_etf/expense_ratio_summary.json
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "ETF official expense ratios $(date -u +%F)"
+          branch="${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}"
+          git pull --rebase origin "$branch"
+          git push origin "HEAD:$branch"

@@ -1,0 +1,39 @@
+{
+  "policy_id": "SEC_RISK_RETURN_EXPENSE_RATIOS_V1",
+  "phase": "4.3",
+  "policy_version": "1.0.0",
+  "objective": "Official, point-in-time expense ratios for the model universe from the SEC Mutual Fund Prospectus Risk/Return Summary data sets, matched by SEC class ID.",
+  "sources": {
+    "risk_return_dataset_url_template": "https://www.sec.gov/files/dera/data/mutual-fund-prospectus-risk/return-summary-data-sets/{year}q{quarter}_rr1.zip",
+    "class_ticker_map_url": "https://www.sec.gov/files/company_tickers_mf.json",
+    "source_tier": 1,
+    "source_class": "OFFICIAL_PRIMARY",
+    "first_quarter": "2011q1"
+  },
+  "tags": {
+    "net_expense_ratio": "NetExpensesOverAssets",
+    "gross_expense_ratio": "ExpensesOverAssets"
+  },
+  "matching": {
+    "key": "SEC class/contract ID from company_tickers_mf.json",
+    "ticker_only_identity_prohibited": true,
+    "unmatched_funds_preserved_as_unknown": true,
+    "not_covered": "Unit investment trusts (e.g. SPY, DIA), grantor trusts (e.g. GLD, IBIT), commodity pools and ETNs do not file risk/return summaries; their cost stays UNKNOWN, never imputed."
+  },
+  "point_in_time": "a fund's expense ratio at a date is the one in its latest filing filed on or before that date",
+  "sec_fair_access": {
+    "user_agent_environment_variable": "SEC_USER_AGENT",
+    "fallback_user_agent": "StocksETFIntelligencePlatform research (github.com/dlockar1mtg/StocksETFIntelligencePlatform)",
+    "minimum_seconds_between_requests": 0.5,
+    "timeout_seconds": 120,
+    "retry_attempts": 3
+  },
+  "authority": {
+    "official_cost_collection": true,
+    "cost_factor_research": true,
+    "taxonomy_certification": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}
