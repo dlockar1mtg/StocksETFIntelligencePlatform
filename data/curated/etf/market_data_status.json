@@ -1,0 +1,666 @@
+{
+  "status_version": "1.0.0",
+  "policy_id": "ETF_MONITORED_FUNDS_V1",
+  "generated_at_utc": "2026-10-06T21:39:03+00:00",
+  "expected_session": "2026-10-06",
+  "funds": [
+    {
+      "security_id": "SEC-US-VOO",
+      "ticker": "VOO",
+      "name": "Vanguard S&P 500 ETF",
+      "role": "BROAD_CORE",
+      "usage": "HELD",
+      "index": "S&P 500",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:VOO:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "7c172980c0ae424638c4a16026f288374c1ba4037f352ba9a2af98b1d19849e9",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 5.9e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 8.4e-05,
+          "cumulative_gap_3y": 0.000222
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2010-09-09",
+        "sessions": 4043,
+        "last_close": 716.2,
+        "last_tr_index": 940.326551,
+        "distributions_trailing_12m": 7.428,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/VOO.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-SCHD",
+      "ticker": "SCHD",
+      "name": "Schwab U.S. Dividend Equity ETF",
+      "role": "DIVIDEND_QUALITY",
+      "usage": "HELD",
+      "index": "Dow Jones U.S. Dividend 100",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:SCHD:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "fb1f2c9e7913472d1f8afe162cdd903a8252b3d691653d62864bd427099f9f70",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 0.000145,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 0.000159,
+          "cumulative_gap_3y": 6.4e-05
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2011-10-20",
+        "sessions": 3761,
+        "last_close": 32.85,
+        "last_tr_index": 634.701759,
+        "distributions_trailing_12m": 1.055,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/SCHD.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-QQQM",
+      "ticker": "QQQM",
+      "name": "Invesco NASDAQ 100 ETF",
+      "role": "GROWTH",
+      "usage": "HELD",
+      "index": "Nasdaq-100",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:QQQM:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "13c5632740badcdd173dddc5acec1ab3c53f61ed25de4128574f13b66e5cb64c",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 3.4e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 6.4e-05,
+          "cumulative_gap_3y": 0.000303
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2020-10-13",
+        "sessions": 1502,
+        "last_close": 312.76,
+        "last_tr_index": 268.009685,
+        "distributions_trailing_12m": 1.316,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/QQQM.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-QQQ",
+      "ticker": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "role": "GROWTH",
+      "usage": "HELD",
+      "index": "Nasdaq-100",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:QQQ:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "6d683d797f605324397681adfb0c44c1cd80c83ab69a2807f95a0b64e245a7cb",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 3.3e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 5.9e-05,
+          "cumulative_gap_3y": 0.000268
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "1999-03-10",
+        "sessions": 6937,
+        "last_close": 759.66,
+        "last_tr_index": 1767.38673,
+        "distributions_trailing_12m": 3.091,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/QQQ.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-IWM",
+      "ticker": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "role": "SMALL_CAP",
+      "usage": "HELD",
+      "index": "Russell 2000",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:IWM:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "b6dead1ae25ac6337bce2afc06ab9ea4e8bd7257f5a27caa42efeb181c5904bb",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 7.2e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 5e-06,
+          "cumulative_gap_3y": 0.000207
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2000-05-26",
+        "sessions": 6629,
+        "last_close": 281.34,
+        "last_tr_index": 866.356953,
+        "distributions_trailing_12m": 2.729,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/IWM.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-DIA",
+      "ticker": "DIA",
+      "name": "SPDR Dow Jones Industrial Average ETF Trust",
+      "role": "LARGE_CAP_BLUE_CHIP",
+      "usage": "HELD",
+      "index": "Dow Jones Industrial Average",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:DIA:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "11ff6f3b3e64e94e039dbef2b585d25680420141f597b7bed52646c09714b1e0",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 3.6e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 1.5e-05,
+          "cumulative_gap_3y": 4.3e-05
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "1998-01-20",
+        "sessions": 7223,
+        "last_close": 514.56,
+        "last_tr_index": 1187.036897,
+        "distributions_trailing_12m": 7.226,
+        "distribution_count_trailing_12m": 12,
+        "series_path": "prices/DIA.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-EDOW",
+      "ticker": "EDOW",
+      "name": "First Trust Dow 30 Equal Weight ETF",
+      "role": "LARGE_CAP_BLUE_CHIP",
+      "usage": "HELD",
+      "index": "Dow Jones Industrial Average Equal Weight",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:EDOW:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "598b8e2428ad8601694c37863e01236af806db4930986ab0b7e87e290159f3c1",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 2.9e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 5.2e-05,
+          "cumulative_gap_3y": 2e-05
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 9e-06,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2017-08-09",
+        "sessions": 2302,
+        "last_close": 44.84,
+        "last_tr_index": 264.799267,
+        "distributions_trailing_12m": 0.565,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/EDOW.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-IYY",
+      "ticker": "IYY",
+      "name": "iShares Dow Jones U.S. ETF",
+      "role": "BROAD_CORE",
+      "usage": "HELD",
+      "index": "Dow Jones U.S. Index",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:IYY:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "c7cd1f643651076c56656cc76da83b606337019bb370bd5f7468ae6ba993596b",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 6.1e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 2.4e-05,
+          "cumulative_gap_3y": 0.000111
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2000-06-16",
+        "sessions": 6615,
+        "last_close": 189.6,
+        "last_tr_index": 849.111355,
+        "distributions_trailing_12m": 1.62,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/IYY.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-SPY",
+      "ticker": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "role": "BROAD_CORE",
+      "usage": "RESEARCH_PROXY",
+      "index": "S&P 500",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:SPY:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "e079022fd08ed6404e55f1f2d42945fa5ef2e6870ad9c2ec35ecd0fc936efe16",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 4e-05,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 1.9e-05,
+          "cumulative_gap_3y": 5e-05
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "1993-01-29",
+        "sessions": 8479,
+        "last_close": 779.09,
+        "last_tr_index": 3241.336966,
+        "distributions_trailing_12m": 7.583,
+        "distribution_count_trailing_12m": 4,
+        "series_path": "prices/SPY.csv"
+      }
+    },
+    {
+      "security_id": "SEC-US-BIL",
+      "ticker": "BIL",
+      "name": "SPDR Bloomberg 1-3 Month T-Bill ETF",
+      "role": "CASH_PROXY",
+      "usage": "RESEARCH_PROXY",
+      "index": "Bloomberg 1-3 Month U.S. Treasury Bill",
+      "domain": "adjusted_price",
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": [
+        "raw_price",
+        "adjusted_price",
+        "distribution",
+        "corporate_action"
+      ],
+      "source_record_id": "YAHOO_CHART_V8:BIL:2026-10-06",
+      "observed_at_utc": "2026-10-06T21:00:00+00:00",
+      "retrieved_at_utc": "2026-10-06T21:39:03+00:00",
+      "as_of_date": "2026-10-06",
+      "content_sha256": "f40a1f91b9c280ff33b3187742713bd8d3f1efb324b1bf4819bc2b1150f87751",
+      "quality_status": "PROVISIONAL",
+      "freshness_state": "CURRENT",
+      "accepted_this_run": true,
+      "failures": [],
+      "limitations": [
+        "Tier 4 public source: provisional, not certified."
+      ],
+      "checks": {
+        "reconciliation": {
+          "status": "PASS",
+          "sessions": 756,
+          "max_daily_return_gap": 2e-06,
+          "daily_gaps_over_tolerance": 0,
+          "daily_gaps_over_error_threshold": 0,
+          "cumulative_gap_1y": 7e-06,
+          "cumulative_gap_3y": 3.7e-05
+        },
+        "implausible_moves": [],
+        "cross_check": {
+          "status": "PASS",
+          "compared": 5,
+          "max_close_gap": 0.0,
+          "through": "2026-10-05",
+          "primary_sessions_after": 1,
+          "provider_id": "NASDAQ_QUOTE_HISTORICAL"
+        },
+        "revisions": {
+          "changed": 0,
+          "ok": true,
+          "first_capture": true
+        }
+      },
+      "payload": {
+        "first_date": "2007-05-30",
+        "sessions": 4870,
+        "last_close": 91.45,
+        "last_tr_index": 130.709077,
+        "distributions_trailing_12m": 3.353,
+        "distribution_count_trailing_12m": 12,
+        "series_path": "prices/BIL.csv"
+      }
+    }
+  ],
+  "summary": {
+    "PASS": 0,
+    "PROVISIONAL": 10,
+    "QUARANTINED": 0,
+    "BLOCKED": 0
+  },
+  "certified_market_monitoring_authorized": false,
+  "automatic_execution_authorized": false
+}
