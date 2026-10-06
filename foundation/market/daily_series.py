@@ -83,7 +83,7 @@ def parse_yahoo_chart(payload: dict, ticker: str, *, now_utc: datetime | None = 
     by_day: dict[str, Bar] = {}
     for i, stamp in enumerate(stamps):
         close = closes[i] if i < len(closes) else None
-        if close is None or close <= 0:
+        if close is None or round(float(close), 4) <= 0:
             continue
         day = _ny_day(stamp)
         if day > today or (day == today and not settled):
@@ -175,9 +175,21 @@ def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
 
 
 def implausible_moves(bars: list[Bar], threshold: float) -> list[str]:
-    """Sessions whose total-return move exceeds the threshold (likely bad prints)."""
-    return [cur.day for prev, cur in zip(bars, bars[1:])
-            if abs((cur.close + cur.dividend) / prev.close - 1) > threshold]
+    """Sessions that look like bad prints: a move beyond the threshold that the next session undoes.
+
+    Genuine crashes and rallies (leveraged funds on 2025-04-09, silver on 2026-01-30) are large but
+    are not reversed the next day, so they stay; a spike that snaps back is a data error.
+    """
+    out = []
+    for i in range(1, len(bars) - 1):
+        prev, cur, nxt = bars[i - 1], bars[i], bars[i + 1]
+        r1 = (cur.close + cur.dividend) / prev.close - 1
+        if abs(r1) <= threshold:
+            continue
+        r2 = (nxt.close + nxt.dividend) / cur.close - 1
+        if abs((1 + r1) * (1 + r2) - 1) < 0.3 * abs(r1):
+            out.append(cur.day)
+    return out
 
 
 def cross_check(bars: list[Bar], other: dict[str, float], sessions: int, tolerance: float) -> dict:

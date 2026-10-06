@@ -1,0 +1,127 @@
+{
+  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
+  "phase": "4.2",
+  "policy_version": "1.0.0",
+  "registered_on": "2026-10-06",
+  "registered_before_results": true,
+  "owner_authorization": {
+    "authorized_by": "Devon Lockard",
+    "authorized_on": "2026-10-06",
+    "decision": "Provisional ranking now: group funds with provisional evidence, clearly labelled provisional; build and test ranking and buy calls now; finish the SEC taxonomy alongside and swap it in as it completes.",
+    "scope": "Ranking, provisional recommendations and the UIP package for the certified Phase 3 model universe only. Does not certify taxonomy, does not authorize individual stocks, allocation or execution."
+  },
+  "taxonomy": {
+    "method": "RETURNS_BASED_STYLE_ANALYSIS",
+    "module": "foundation/market/provisional_peer_groups.py",
+    "fund_name_keyword_classification": false,
+    "authoritative_taxonomy": false,
+    "replaced_by": "certified SEC taxonomy, fund by fund, as it is certified",
+    "point_in_time": "classification at each month uses only the trailing 36 months of returns",
+    "minimum_peer_group_size": 5,
+    "no_call_groups": [
+      "INSUFFICIENT_HISTORY",
+      "SPECIALIZED_LEVERAGED",
+      "SPECIALIZED_INVERSE",
+      "IDIOSYNCRATIC"
+    ]
+  },
+  "factors": {
+    "candidates": [
+      "mom_12_1",
+      "mom_6",
+      "trend_200",
+      "stretch_60m",
+      "vol_1y",
+      "maxdd_3y",
+      "dd_now",
+      "yield_12m"
+    ],
+    "definitions": {
+      "mom_12_1": "total return from 12 months to 1 month before the month-end",
+      "mom_6": "total return over the last 6 months",
+      "trend_200": "close divided by its 200-session average",
+      "stretch_60m": "total-return index divided by its average over the last 60 month-ends",
+      "vol_1y": "annualized volatility of daily total returns over the last 252 sessions",
+      "maxdd_3y": "worst peak-to-trough fall in total return over the last 756 sessions",
+      "dd_now": "total-return index against its running peak",
+      "yield_12m": "distributions over the last 252 sessions divided by the close",
+      "log_adv_63": "log of the 63-session median dollar volume"
+    },
+    "selection": "a factor enters the composite, with the sign of its mean training IC, only when |t| >= 2.0 on yearly blocks and at least 5 training years exist",
+    "composite": "mean of signed within-group percentile ranks of the selected factors"
+  },
+  "targets": {
+    "primary": "forward 12-month total return minus the peer-group median",
+    "strategic": "forward 36-month annualized total return minus the peer-group median",
+    "minimum_group_members_with_target": 5
+  },
+  "walk_forward": {
+    "first_test_year": 2012,
+    "training": "all month-ends whose target window ended before the first day of the test year",
+    "evaluation": "each month-end: quintiles of the composite within each peer group; yearly means of top, bottom and median-relative excess returns"
+  },
+  "gate": {
+    "horizon_12m": {
+      "min_test_years": 8,
+      "min_top_quintile_mean_excess": 0.01,
+      "min_share_of_years_top_beats_median": 0.6,
+      "min_share_of_years_top_beats_bottom": 0.65
+    },
+    "horizon_36m": {
+      "min_test_years": 5,
+      "min_top_quintile_mean_excess_annualized": 0.005,
+      "min_share_of_years_top_beats_median": 0.6
+    },
+    "family_condition": "calls are enabled for a group family (US equity, international equity, bonds, other) only when the 12-month gate passes overall and that family's own top-quintile mean excess is positive in at least 55% of test years"
+  },
+  "calls": {
+    "bands_percentile": {
+      "BUY": 80,
+      "ACCUMULATE": 60,
+      "HOLD": 20
+    },
+    "below_hold": "AVOID",
+    "hysteresis": "a fund keeps BUY while its percentile stays at or above 70, and keeps AVOID while it stays at or below 30, so adjacent rank changes alone do not flip calls",
+    "requires": [
+      "quality PROVISIONAL or PASS",
+      "freshness CURRENT or AGING",
+      "peer group of at least 5",
+      "group family enabled by the gate"
+    ],
+    "otherwise": "RANKED_NO_CALL",
+    "labels_provisional": true
+  },
+  "timing": {
+    "rules": [
+      "TREND_PAUSE",
+      "STRETCH_PAUSE",
+      "WAIT_FOR_DIP",
+      "MOMENTUM_PAUSE"
+    ],
+    "baseline": "monthly buying of the family's equal-weight index",
+    "gate": "a rule may change the when-to-buy reading for a family only if it beats monthly buying in at least 60% of 36-month out-of-sample starts with a median edge of at least +0.5%"
+  },
+  "authority": {
+    "ranking": true,
+    "provisional_recommendations": true,
+    "uip_export": true,
+    "certified_recommendations": false,
+    "portfolio_allocation": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false,
+    "individual_stock_production": false
+  },
+  "known_limitations": [
+    "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
+    "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate.",
+    "Free tier-4 market data; no expense ratios or holdings for the full universe yet."
+  ],
+  "amendments": [
+    {
+      "on": "2026-10-06",
+      "after_results": true,
+      "change": "log_adv_63 excluded from the composite",
+      "reason": "The model universe admits only funds with at least $1M median daily dollar volume today, so a fund that was thinly traded in the past is in the universe only if it grew: past illiquidity selects past winners. Its negative IC (t -2.9) is a survivorship artifact, not a usable signal. Recorded after seeing results; it does not change the gate."
+    }
+  ]
+}

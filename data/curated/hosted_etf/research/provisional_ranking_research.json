@@ -1,0 +1,391 @@
+{
+ "policy_id": "ETF_PROVISIONAL_RANKING_V1",
+ "generated_at_utc": "2026-10-06T22:38:33+00:00",
+ "panel_rows": 182859,
+ "funds": 1077,
+ "walk_forward": {
+  "12m": {
+   "results": {},
+   "factor_ic_full_sample": {
+    "mom_12_1": {
+     "mean_ic": 0.0044,
+     "t_yearly": 0.15,
+     "years": 23
+    },
+    "mom_6": {
+     "mean_ic": 0.0247,
+     "t_yearly": 0.81,
+     "years": 23
+    },
+    "trend_200": {
+     "mean_ic": 0.0336,
+     "t_yearly": 1.02,
+     "years": 23
+    },
+    "stretch_60m": {
+     "mean_ic": -0.0238,
+     "t_yearly": -0.44,
+     "years": 22
+    },
+    "vol_1y": {
+     "mean_ic": 0.059,
+     "t_yearly": 1.63,
+     "years": 23
+    },
+    "maxdd_3y": {
+     "mean_ic": -0.052,
+     "t_yearly": -1.4,
+     "years": 23
+    },
+    "dd_now": {
+     "mean_ic": 0.0217,
+     "t_yearly": 0.74,
+     "years": 23
+    },
+    "yield_12m": {
+     "mean_ic": -0.0036,
+     "t_yearly": -0.12,
+     "years": 23
+    }
+   },
+   "selections_by_test_year": {
+    "2012": {},
+    "2013": {},
+    "2014": {},
+    "2015": {},
+    "2016": {},
+    "2017": {},
+    "2018": {},
+    "2019": {},
+    "2020": {},
+    "2021": {},
+    "2022": {},
+    "2023": {},
+    "2024": {},
+    "2025": {},
+    "2026": {}
+   }
+  },
+  "36m": {
+   "results": {
+    "ALL": {
+     "test_years": 3,
+     "first_year": "2021",
+     "last_year": "2023",
+     "top_quintile_mean_excess": 0.0019,
+     "bottom_quintile_mean_excess": -0.0036,
+     "share_years_top_beats_median": 0.333,
+     "share_years_top_beats_bottom": 0.667,
+     "by_year": {
+      "2021": {
+       "top": -0.0136,
+       "bottom": 0.0003
+      },
+      "2022": {
+       "top": -0.0006,
+       "bottom": -0.0037
+      },
+      "2023": {
+       "top": 0.02,
+       "bottom": -0.0073
+      }
+     }
+    },
+    "BONDS": {
+     "test_years": 3,
+     "first_year": "2021",
+     "last_year": "2023",
+     "top_quintile_mean_excess": -0.0029,
+     "bottom_quintile_mean_excess": -0.0041,
+     "share_years_top_beats_median": 0.333,
+     "share_years_top_beats_bottom": 0.667,
+     "by_year": {
+      "2021": {
+       "top": -0.0105,
+       "bottom": 0.0122
+      },
+      "2022": {
+       "top": -0.0004,
+       "bottom": -0.0119
+      },
+      "2023": {
+       "top": 0.0023,
+       "bottom": -0.0126
+      }
+     }
+    },
+    "INTL_EQUITY": {
+     "test_years": 3,
+     "first_year": "2021",
+     "last_year": "2023",
+     "top_quintile_mean_excess": 0.0022,
+     "bottom_quintile_mean_excess": 0.0048,
+     "share_years_top_beats_median": 0.333,
+     "share_years_top_beats_bottom": 0.333,
+     "by_year": {
+      "2021": {
+       "top": -0.0101,
+       "bottom": 0.024
+      },
+      "2022": {
+       "top": -0.0082,
+       "bottom": 0.0005
+      },
+      "2023": {
+       "top": 0.0249,
+       "bottom": -0.0102
+      }
+     }
+    },
+    "OTHER": {
+     "test_years": 3,
+     "first_year": "2021",
+     "last_year": "2023",
+     "top_quintile_mean_excess": 0.009,
+     "bottom_quintile_mean_excess": -0.0221,
+     "share_years_top_beats_median": 0.667,
+     "share_years_top_beats_bottom": 1.0,
+     "by_year": {
+      "2021": {
+       "top": 0.0115,
+       "bottom": -0.0388
+      },
+      "2022": {
+       "top": -0.0022,
+       "bottom": -0.0218
+      },
+      "2023": {
+       "top": 0.0178,
+       "bottom": -0.0056
+      }
+     }
+    },
+    "US_EQUITY": {
+     "test_years": 3,
+     "first_year": "2021",
+     "last_year": "2023",
+     "top_quintile_mean_excess": 0.0042,
+     "bottom_quintile_mean_excess": -0.0023,
+     "share_years_top_beats_median": 0.667,
+     "share_years_top_beats_bottom": 0.333,
+     "by_year": {
+      "2021": {
+       "top": -0.0173,
+       "bottom": -0.0056
+      },
+      "2022": {
+       "top": 0.0005,
+       "bottom": 0.0029
+      },
+      "2023": {
+       "top": 0.0294,
+       "bottom": -0.0042
+      }
+     }
+    }
+   },
+   "factor_ic_full_sample": {
+    "mom_12_1": {
+     "mean_ic": 0.0334,
+     "t_yearly": 1.07,
+     "years": 21
+    },
+    "mom_6": {
+     "mean_ic": 0.0432,
+     "t_yearly": 1.13,
+     "years": 21
+    },
+    "trend_200": {
+     "mean_ic": 0.0542,
+     "t_yearly": 1.37,
+     "years": 21
+    },
+    "stretch_60m": {
+     "mean_ic": 0.0552,
+     "t_yearly": 1.53,
+     "years": 20
+    },
+    "vol_1y": {
+     "mean_ic": 0.0262,
+     "t_yearly": 0.92,
+     "years": 21
+    },
+    "maxdd_3y": {
+     "mean_ic": -0.0104,
+     "t_yearly": -0.4,
+     "years": 21
+    },
+    "dd_now": {
+     "mean_ic": 0.0379,
+     "t_yearly": 1.29,
+     "years": 21
+    },
+    "yield_12m": {
+     "mean_ic": -0.0433,
+     "t_yearly": -1.13,
+     "years": 21
+    }
+   },
+   "selections_by_test_year": {
+    "2012": {},
+    "2013": {},
+    "2014": {},
+    "2015": {},
+    "2016": {},
+    "2017": {},
+    "2018": {},
+    "2019": {},
+    "2020": {},
+    "2021": {
+     "stretch_60m": 1
+    },
+    "2022": {
+     "stretch_60m": 1
+    },
+    "2023": {
+     "stretch_60m": 1
+    },
+    "2024": {},
+    "2025": {},
+    "2026": {}
+   }
+  }
+ },
+ "gate": {
+  "pass_12m": false,
+  "pass_36m": false,
+  "families_enabled": {
+   "US_EQUITY": false,
+   "INTL_EQUITY": false,
+   "BONDS": false,
+   "OTHER": false
+  }
+ },
+ "timing": {
+  "US_EQUITY": {
+   "TREND_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.0,
+    "median_edge": -0.0065,
+    "worst_edge": -0.0139,
+    "passes_gate": false
+   },
+   "STRETCH_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.295,
+    "median_edge": 0.0,
+    "worst_edge": -0.0473,
+    "passes_gate": false
+   },
+   "WAIT_FOR_DIP": {
+    "starts": 129,
+    "share_beating": 0.186,
+    "median_edge": -0.0333,
+    "worst_edge": -0.097,
+    "passes_gate": false
+   },
+   "MOMENTUM_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.008,
+    "median_edge": -0.0095,
+    "worst_edge": -0.0228,
+    "passes_gate": false
+   }
+  },
+  "INTL_EQUITY": {
+   "TREND_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.023,
+    "median_edge": -0.0102,
+    "worst_edge": -0.0222,
+    "passes_gate": false
+   },
+   "STRETCH_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.589,
+    "median_edge": 0.0011,
+    "worst_edge": -0.0233,
+    "passes_gate": false
+   },
+   "WAIT_FOR_DIP": {
+    "starts": 129,
+    "share_beating": 0.488,
+    "median_edge": -0.0023,
+    "worst_edge": -0.0849,
+    "passes_gate": false
+   },
+   "MOMENTUM_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.031,
+    "median_edge": -0.0107,
+    "worst_edge": -0.0302,
+    "passes_gate": false
+   }
+  },
+  "BONDS": {
+   "TREND_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.008,
+    "median_edge": 0.0,
+    "worst_edge": -0.003,
+    "passes_gate": false
+   },
+   "STRETCH_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.0,
+    "median_edge": 0.0,
+    "worst_edge": 0.0,
+    "passes_gate": false
+   },
+   "WAIT_FOR_DIP": {
+    "starts": 129,
+    "share_beating": 0.38,
+    "median_edge": -0.0059,
+    "worst_edge": -0.0373,
+    "passes_gate": false
+   },
+   "MOMENTUM_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.054,
+    "median_edge": 0.0,
+    "worst_edge": -0.0042,
+    "passes_gate": false
+   }
+  },
+  "OTHER": {
+   "TREND_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.016,
+    "median_edge": -0.0099,
+    "worst_edge": -0.0293,
+    "passes_gate": false
+   },
+   "STRETCH_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.643,
+    "median_edge": 0.0069,
+    "worst_edge": -0.0125,
+    "passes_gate": true
+   },
+   "WAIT_FOR_DIP": {
+    "starts": 129,
+    "share_beating": 0.659,
+    "median_edge": 0.0133,
+    "worst_edge": -0.048,
+    "passes_gate": true
+   },
+   "MOMENTUM_PAUSE": {
+    "starts": 129,
+    "share_beating": 0.016,
+    "median_edge": -0.0143,
+    "worst_edge": -0.0425,
+    "passes_gate": false
+   }
+  }
+ },
+ "known_limitations": [
+  "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
+  "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate.",
+  "Free tier-4 market data; no expense ratios or holdings for the full universe yet."
+ ]
+}

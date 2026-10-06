@@ -151,3 +151,9 @@ class ClientTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class BadPrintTests(unittest.TestCase):
+    def test_only_spikes_that_snap_back_are_bad_prints(self):
+        bars = [S.Bar(f"2026-01-{d:02d}", c, None, 1) for d, c in zip(range(5, 11), [100, 100, 140, 100, 70, 72])]
+        self.assertEqual(S.implausible_moves(bars, 0.25), ["2026-01-07"])   # +40% then back; the -30% crash stays
