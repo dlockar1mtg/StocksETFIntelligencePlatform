@@ -1,0 +1,107 @@
+name: ETF hosted market data
+
+on:
+  schedule:
+    - cron: "20 22 * * 1-5"   # daily after the US close
+    - cron: "20 1 * * 2-6"    # backups: skipped unless no run did the work in the last 12 hours
+    - cron: "20 4 * * 2-6"
+    - cron: "20 14 * * 6"     # Saturday: full-history refresh of every fund (policy full_refresh_weekday)
+  pull_request:
+    paths:
+      - "foundation/market/hosted_market_data.py"
+      - "foundation/market/daily_series.py"
+      - "foundation/infrastructure/yahoo_chart_daily.py"
+      - "scripts/run_hosted_etf_market_data.py"
+      - "config/market/hosted_market_data_policy.json"
+      - ".github/workflows/etf-hosted-market-data.yml"
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Refetch full history for every fund"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: etf-hosted-market-data
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: read
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ] || [ "$SCHEDULE" = "20 14 * * 6" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          wf="${GITHUB_WORKFLOW_REF%@*}"; wf="${wf##*/}"
+          since="$(date -u -d '12 hours ago' +%Y-%m-%dT%H:%M:%SZ)"
+          ids="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$wf/runs?per_page=50" \
+            --jq ".workflow_runs[] | select(.conclusion == \"success\") | select(.id != $GITHUB_RUN_ID) | select(.event == \"schedule\" or .event == \"workflow_dispatch\") | select(.run_started_at >= \"$since\") | .id")"
+          for id in $ids; do
+            worked="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/jobs" --jq '[.jobs[] | select(.name != "gate" and .conclusion == "success")] | length')"
+            if [ "$worked" -gt 0 ]; then echo "Run $id already collected since $since."; echo "run=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          done
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+  collect:
+    needs: gate
+    if: ${{ !cancelled() && needs.gate.outputs.run != 'false' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet numpy
+      - name: Tests
+        run: python -m unittest tests.market.test_hosted_market_data -v
+      - name: Restore the cached daily series
+        uses: actions/cache/restore@v4
+        with:
+          path: data/hosted_cache/etf_daily
+          key: etf-daily-v1-${{ github.run_id }}
+          restore-keys: etf-daily-v1-
+      - name: Update every fund and write month-end features
+        run: |
+          flag=""
+          if [ "${{ inputs.full }}" = "true" ]; then flag="--full"; fi
+          python scripts/run_hosted_etf_market_data.py $flag
+          python - <<'PY'
+          import json
+          s = json.load(open("data/curated/hosted_etf/market_data_status.json"))
+          bad = [f for f in s["funds"] if f["failures"]]
+          print(f"::notice title=ETF hosted data::{s['fund_count']} funds, mode {s['mode']}, quality {s['quality_summary']}, freshness {s['freshness_summary']}, feature rows {s['feature_rows']}")
+          for f in bad[:40]:
+              print(f"::warning title=ETF {f['symbol']}::{f['quality_status']} {'; '.join(f['failures'])[:300]}")
+          PY
+      - name: Save the daily series
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/hosted_cache/etf_daily
+          key: etf-daily-v1-${{ github.run_id }}
+      - name: Commit features and status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/curated/hosted_etf
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "ETF hosted market data $(date -u +%F)"
+          git pull --rebase origin "${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}"
+          git push origin "HEAD:${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}"

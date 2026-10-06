@@ -24,3 +24,6 @@ exports/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Hosted daily series live in the GitHub Actions cache, not Git
+data/hosted_cache/
