@@ -1,0 +1,108 @@
+name: ETF market data
+
+on:
+  schedule:
+    - cron: "20 22 * * 1-5"   # daily after the US close (17:20/18:20 New York)
+    - cron: "20 1 * * 2-6"    # backups: skipped unless no run did the work in the last 12 hours (see the gate job)
+    - cron: "20 4 * * 2-6"
+    - cron: "20 11 * * 2-6"
+  pull_request:
+    paths:
+      - "foundation/market_data/**"
+      - "scripts/collect_etf_market_data.py"
+      - "config/market/monitored_funds.json"
+      - ".github/workflows/etf-market-data.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: etf-market-data-${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # GitHub often starts scheduled runs late or skips them, so there are backup times. A scheduled
+    # run goes ahead only if no run of this workflow did its work successfully in the last 12 hours.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: read
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          wf="${GITHUB_WORKFLOW_REF%@*}"; wf="${wf##*/}"
+          since="$(date -u -d '12 hours ago' +%Y-%m-%dT%H:%M:%SZ)"
+          ids="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$wf/runs?per_page=50" \
+            --jq ".workflow_runs[] | select(.head_branch == \"main\" and .conclusion == \"success\") | select(.id != $GITHUB_RUN_ID) | select(.event == \"schedule\" or .event == \"workflow_dispatch\") | select(.run_started_at >= \"$since\") | .id")"
+          for id in $ids; do
+            worked="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/jobs" --jq '[.jobs[] | select(.name != "gate" and .conclusion == "success")] | length')"
+            if [ "$worked" -gt 0 ]; then
+              echo "Run $id already collected since $since, so this backup run stops here."
+              echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+          done
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+  collect:
+    needs: gate
+    if: ${{ !cancelled() && needs.gate.outputs.run != 'false' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Tests
+        run: python -m unittest discover -s tests -t . -p "test_*.py"
+      - name: Collect, reconcile and cross-check (pull requests write to a scratch folder only)
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            python scripts/collect_etf_market_data.py --output "$RUNNER_TEMP/etf-check"
+            cp "$RUNNER_TEMP/etf-check/market_data_status.json" market_data_status.json
+          else
+            python scripts/collect_etf_market_data.py
+            cp data/curated/etf/market_data_status.json market_data_status.json
+          fi
+          python - <<'PY'
+          import json
+          s = json.load(open("market_data_status.json"))
+          lines = ["| Fund | Quality | Freshness | As of | Close | Reconciliation | Cross-check | Issues |", "|---|---|---|---|---|---|---|---|"]
+          for f in s["funds"]:
+              c = f["checks"]
+              rec = (c.get("reconciliation") or {})
+              cc = (c.get("cross_check") or {})
+              lines.append(f"| {f['ticker']} | {f['quality_status']} | {f['freshness_state']} | {f['as_of_date']} | {f['payload']['last_close']} | "
+                           f"{rec.get('status', '-')} (3y gap {rec.get('cumulative_gap_3y')}) | {cc.get('status', '-')} | {'; '.join(f['failures']) or '-'} |")
+          open(__import__("os").environ["GITHUB_STEP_SUMMARY"], "a").write("\n".join(lines) + "\n")
+          PY
+      - name: Keep the status and any quarantined series as evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etf-market-data-${{ github.run_id }}
+          path: |
+            market_data_status.json
+            data/quarantine/etf/
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Commit the curated series
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/curated/etf
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "ETF market data $(date -u +%F)"
+          git pull --rebase origin main
+          git push
