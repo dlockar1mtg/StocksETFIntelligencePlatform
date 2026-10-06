@@ -97,6 +97,11 @@ class SeriesTests(unittest.TestCase):
         self.assertEqual(S.freshness_state("2026-09-28", "2026-10-06", HOLIDAYS, rules), "STALE")
         self.assertEqual(S.last_session(datetime(2026, 11, 27, 12, tzinfo=timezone.utc), HOLIDAYS), "2026-11-25")
 
+    def test_nasdaq_parser(self):
+        rows = {"data": {"tradesTable": {"rows": [{"date": "10/06/2026", "close": "$716.20"}, {"date": "bad", "close": "x"}]}}}
+        self.assertEqual(S.parse_nasdaq_historical(rows), {"2026-10-06": 716.2})
+        self.assertEqual(S.parse_nasdaq_historical({"data": None}), {})
+
     def test_split_explains_revised_history(self):
         old = S.parse_yahoo_chart(payload(cut="2026-08-25"), "VOO", now_utc=NOW)
         S.reconstruct_total_return(old.bars)
@@ -114,7 +119,7 @@ class CollectorTests(unittest.TestCase):
         provider = {**CONFIG["providers"][0], "best_quality": "PROVISIONAL"}
         return C.process_fund(fund, provider, CONFIG["reconciliation"], CONFIG["freshness"], HOLIDAYS, NOW,
                               store, store, store / "quarantine", yahoo=lambda t, n: chart,
-                              stooq=lambda s: stooq or {})
+                              stooq=lambda f: ("STOOQ_DAILY_CSV", stooq) if stooq else ("", {}))
 
     def test_accepted_fund_is_a_valid_provisional_observation(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -126,6 +131,15 @@ class CollectorTests(unittest.TestCase):
             validate_observation(CONTROL, record, now=NOW)
             self.assertTrue((Path(tmp) / "prices" / "VOO.csv").exists())
             self.assertIn("single-source", " ".join(record["limitations"]))
+
+    def test_cross_check_disagreement_quarantines(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            chart = payload()
+            closes = {d: c for d, c in zip(sessions("2026-10-06", 900), chart["chart"]["result"][0]["indicators"]["quote"][0]["close"])}
+            ok = self.run_fund(Path(tmp), chart, stooq=closes)
+            self.assertEqual(ok["checks"]["cross_check"]["status"], "PASS")
+            bad = self.run_fund(Path(tmp), chart, stooq={d: c * 1.03 for d, c in closes.items()})
+            self.assertEqual(bad["quality_status"], "QUARANTINED")
 
     def test_failed_reconciliation_quarantines_and_keeps_stored_series(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -147,7 +161,7 @@ class CollectorTests(unittest.TestCase):
             def boom(t, n):
                 raise RuntimeError("connect rejected")
             record = C.process_fund(fund, provider, CONFIG["reconciliation"], CONFIG["freshness"], HOLIDAYS, NOW,
-                                    Path(tmp), Path(tmp), Path(tmp) / "q", yahoo=boom, stooq=lambda s: {})
+                                    Path(tmp), Path(tmp), Path(tmp) / "q", yahoo=boom, stooq=lambda f: ("", {}))
             self.assertEqual(record["quality_status"], "BLOCKED")
             self.assertEqual(record["freshness_state"], "UNKNOWN")
 

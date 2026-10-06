@@ -112,6 +112,24 @@ def parse_stooq_csv(text: str) -> dict[str, float]:
     return out
 
 
+def parse_nasdaq_historical(payload: dict) -> dict[str, float]:
+    """Nasdaq quote-historical JSON -> {date: close}. Empty if unusable."""
+    try:
+        rows = payload["data"]["tradesTable"]["rows"] or []
+    except (KeyError, TypeError):
+        return {}
+    out: dict[str, float] = {}
+    for row in rows:
+        try:
+            month, day, year = str(row["date"]).split("/")
+            close = float(str(row["close"]).replace("$", "").replace(",", ""))
+        except (KeyError, ValueError):
+            continue
+        if close > 0:
+            out[f"{year}-{month}-{day}"] = close
+    return out
+
+
 def reconstruct_total_return(bars: list[Bar], base: float = 100.0) -> None:
     """Fill tr_index: distributions reinvested at the ex-date close (closes are split-adjusted)."""
     level = base

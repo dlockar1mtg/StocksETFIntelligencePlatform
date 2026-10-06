@@ -18,7 +18,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,15 +59,29 @@ def fetch_yahoo(ticker: str, now: datetime) -> dict:
     raise RuntimeError("; ".join(errors))
 
 
-def fetch_stooq(symbol: str) -> dict[str, float]:
+def fetch_cross_check(fund: dict, now: datetime | None = None) -> tuple[str, dict[str, float]]:
+    """Independent closes: Stooq first, then Nasdaq. Returns (provider_id, closes); empty if neither answers."""
     try:
-        return S.parse_stooq_csv(http_get(f"https://stooq.com/q/d/l/?s={symbol}&i=d", attempts=2).decode("utf-8", "replace"))
+        closes = S.parse_stooq_csv(http_get(f"https://stooq.com/q/d/l/?s={fund['stooq_symbol']}&i=d", attempts=2).decode("utf-8", "replace"))
+        if closes:
+            return "STOOQ_DAILY_CSV", closes
     except Exception:  # noqa: BLE001 - the cross-check is optional; absence is recorded as a limitation
-        return {}
+        pass
+    now = now or datetime.now(timezone.utc)
+    start = (now - timedelta(days=21)).date().isoformat()
+    url = (f"https://api.nasdaq.com/api/quote/{fund['ticker']}/historical?assetclass=etf"
+           f"&fromdate={start}&todate={now.date().isoformat()}&limit=30")
+    try:
+        closes = S.parse_nasdaq_historical(json.loads(http_get(url, attempts=2)))
+        if closes:
+            return "NASDAQ_QUOTE_HISTORICAL", closes
+    except Exception:  # noqa: BLE001
+        pass
+    return "", {}
 
 
 def process_fund(fund: dict, provider: dict, rules: dict, fresh_rules: dict, holidays: set[str], now: datetime,
-                 store: Path, output: Path, quarantine: Path, *, yahoo=fetch_yahoo, stooq=fetch_stooq) -> dict:
+                 store: Path, output: Path, quarantine: Path, *, yahoo=fetch_yahoo, stooq=fetch_cross_check) -> dict:
     ticker = fund["ticker"]
     path, out_path = store / "prices" / f"{ticker}.csv", output / "prices" / f"{ticker}.csv"
     stored_text = path.read_text(encoding="utf-8") if path.exists() else ""
@@ -91,8 +105,9 @@ def process_fund(fund: dict, provider: dict, rules: dict, fresh_rules: dict, hol
         checks["implausible_moves"] = jumps
         if jumps:
             failures.append(f"implausible daily moves on {', '.join(jumps[:5])}")
-        checks["cross_check"] = S.cross_check(parsed.bars, stooq(fund["stooq_symbol"]),
-                                              int(rules["cross_check_sessions"]), float(rules["cross_check_tolerance"]))
+        source, other = stooq(fund)
+        checks["cross_check"] = {**S.cross_check(parsed.bars, other, int(rules["cross_check_sessions"]),
+                                                 float(rules["cross_check_tolerance"])), "provider_id": source or None}
         if checks["cross_check"]["status"] == "FAIL":
             failures.append("latest closes disagree with the independent cross-check source")
         elif checks["cross_check"]["status"] == "UNAVAILABLE":

@@ -25,6 +25,15 @@
       "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
       "supported_domains": ["raw_price"],
       "notes": "Independent daily closes used only to cross-check the latest primary closes."
+    },
+    {
+      "provider_id": "NASDAQ_QUOTE_HISTORICAL",
+      "provider_version": "1",
+      "role": "CROSS_CHECK",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": ["raw_price"],
+      "notes": "Fallback independent cross-check when Stooq does not answer."
     }
   ],
   "best_quality_state_for_tier": {"1": "PASS", "2": "PASS", "3": "PROVISIONAL", "4": "PROVISIONAL", "5": "PROVISIONAL"},
