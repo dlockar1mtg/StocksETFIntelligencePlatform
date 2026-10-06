@@ -85,6 +85,14 @@ jobs:
               lines.append(f"| {f['ticker']} | {f['quality_status']} | {f['freshness_state']} | {f['as_of_date']} | {f['payload']['last_close']} | "
                            f"{rec.get('status', '-')} (3y gap {rec.get('cumulative_gap_3y')}) | {cc.get('status', '-')} | {'; '.join(f['failures']) or '-'} |")
           open(__import__("os").environ["GITHUB_STEP_SUMMARY"], "a").write("\n".join(lines) + "\n")
+          for f in s["funds"]:                      # one notice per fund, readable from the checks API
+              rec = f["checks"].get("reconciliation") or {}
+              cc = f["checks"].get("cross_check") or {}
+              print(f"::notice title=ETF {f['ticker']}::{f['quality_status']} {f['freshness_state']} as of {f['as_of_date']} "
+                    f"close {f['payload']['last_close']} sessions {f['payload']['sessions']} from {f['payload']['first_date']} "
+                    f"rec {rec.get('status')} gap1y {rec.get('cumulative_gap_1y')} gap3y {rec.get('cumulative_gap_3y')} maxday {rec.get('max_daily_return_gap')} "
+                    f"xcheck {cc.get('status')} {cc.get('max_close_gap')} div12m {f['payload']['distributions_trailing_12m']} "
+                    f"issues {'; '.join(f['failures']) or 'none'}")
           PY
       - name: Keep the status and any quarantined series as evidence
         if: always()
