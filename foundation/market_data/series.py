@@ -15,7 +15,9 @@ from datetime import date, datetime, time, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 NEW_YORK = ZoneInfo("America/New_York")
-CSV_FIELDS = ("date", "close", "adj_close", "volume", "dividend", "split", "tr_index")
+# The provider's adjusted close is used to reconcile each run but not stored: every new distribution
+# rewrites all earlier adjusted values, while closes and the reconstructed index only ever append.
+CSV_FIELDS = ("date", "close", "volume", "dividend", "split", "tr_index")
 
 
 class SeriesError(ValueError):
@@ -220,7 +222,7 @@ def to_csv(bars: list[Bar]) -> str:
     writer = csv.writer(buffer, lineterminator="\n")
     writer.writerow(CSV_FIELDS)
     for b in bars:
-        writer.writerow([b.day, f"{b.close:.4f}", "" if b.adj_close is None else f"{b.adj_close:.6f}",
+        writer.writerow([b.day, f"{b.close:.4f}",
                          "" if b.volume is None else b.volume, f"{b.dividend:g}", f"{b.split:g}", f"{b.tr_index:.6f}"])
     return buffer.getvalue()
 
