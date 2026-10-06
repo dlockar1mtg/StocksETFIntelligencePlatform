@@ -42,6 +42,8 @@ class ParsedSeries:
     bars: list[Bar]
     dividends: dict[str, float] = field(default_factory=dict)
     splits: dict[str, float] = field(default_factory=dict)
+    name: str = ""
+    instrument_type: str = ""
 
 
 def _ny_day(timestamp: int | float) -> str:
@@ -95,7 +97,8 @@ def parse_yahoo_chart(payload: dict, ticker: str, *, now_utc: datetime | None = 
     bars = [by_day[d] for d in sorted(by_day)]
     if not bars:
         raise SeriesError(f"{ticker}: no settled daily bars")
-    return ParsedSeries(ticker.upper(), currency, bars, dividends, splits)
+    name = str(meta.get("longName") or meta.get("shortName") or "")[:120]
+    return ParsedSeries(ticker.upper(), currency, bars, dividends, splits, name, str(meta.get("instrumentType") or ""))
 
 
 def parse_stooq_csv(text: str) -> dict[str, float]:

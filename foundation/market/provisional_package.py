@@ -150,7 +150,7 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
         fam = R.family_of(g["group"]) if g["group"] not in NO_CALL_GROUPS and st["usage"] == "MODEL" else None
         f = features.get(sym)
         adv = float(f["adv_63"][-1]) if f is not None and len(f["adv_63"]) and f["adv_63"][-1] == f["adv_63"][-1] else None
-        rec = {"security_id": st["security_id"], "symbol": sym, "usage": st["usage"],
+        rec = {"security_id": st["security_id"], "symbol": sym, "name": st.get("name") or sym, "usage": st["usage"],
                "quality_status": st["quality_status"], "freshness_state": st["freshness_state"], "source_tier": 4,
                "peer_group": g["group"], "group_family": fam, "group_evidence": {k: g.get(k) for k in ("nearest_reference", "correlation", "beta_spy", "months", "flags")},
                "liquidity": _r(adv, 0), "expense_ratio": expense_ratio(sym) if expense_ratio else None,

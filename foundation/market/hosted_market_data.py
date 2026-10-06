@@ -62,10 +62,12 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
     failures: list[str] = []
     checks: dict = {}
     bars: list[S.Bar] | None = None
+    meta = {"name": "", "instrument_type": ""}
     try:
         if mode == "INCREMENTAL":
             start = datetime.fromisoformat(last).replace(tzinfo=timezone.utc) - timedelta(days=int(inc["overlap_days"]))
             parsed = S.parse_yahoo_chart(fetch(symbol, start), symbol, now_utc=now)
+            meta = {"name": parsed.name, "instrument_type": parsed.instrument_type}
             known_splits = {r["date"] for r in stored if float(r["split"] or 1) != 1}
             if inc["full_refresh_when_new_split"] and any(d not in known_splits for d in parsed.splits):
                 mode = "FULL"
@@ -82,6 +84,7 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
                 bars = base + fresh
         if mode == "FULL":
             parsed = S.parse_yahoo_chart(fetch(symbol, None), symbol, now_utc=now)
+            meta = {"name": parsed.name, "instrument_type": parsed.instrument_type}
             S.reconstruct_total_return(parsed.bars)
             checks["reconciliation"] = S.reconcile_with_provider(parsed.bars, rules)
             since = parsed.bars[-(int(rules["window_sessions"]) + 1)].day if len(parsed.bars) > int(rules["window_sessions"]) else parsed.bars[0].day
@@ -113,6 +116,7 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
     as_of = final[-1].day if final else None
     return {
         "security_id": fund["security_id"], "symbol": symbol, "usage": fund["usage"], "mode": mode,
+        "name": meta["name"], "instrument_type": meta["instrument_type"],
         "quality_status": quality, "accepted_this_run": accepted,
         "freshness_state": S.freshness_state(as_of, S.last_session(now, holidays), holidays, policy["freshness"]) if as_of else "UNKNOWN",
         "as_of_date": as_of, "first_date": final[0].day if final else None, "sessions": len(final),
