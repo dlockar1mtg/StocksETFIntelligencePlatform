@@ -40,7 +40,7 @@ def get(url: str, policy: dict) -> bytes:
         except urllib.error.HTTPError as exc:
             if exc.code == 404:
                 raise FileNotFoundError(url) from exc
-            last = exc
+            last = f"HTTP {exc.code}"
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
             last = exc
         time.sleep(3 * (attempt + 1))
@@ -97,4 +97,10 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except SystemExit:
+        raise
+    except Exception as exc:  # noqa: BLE001 - surface the reason in the run's annotations
+        print(f"::error title=SEC expense ratios::{type(exc).__name__}: {str(exc)[:400]}")
+        raise
