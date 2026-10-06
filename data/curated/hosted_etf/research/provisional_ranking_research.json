@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-06T22:38:33+00:00",
+ "generated_at_utc": "2026-10-06T22:47:41+00:00",
  "panel_rows": 182859,
  "funds": 1077,
  "walk_forward": {
@@ -264,6 +264,7 @@
  "timing": {
   "US_EQUITY": {
    "TREND_PAUSE": {
+    "parameter_now": 0.05,
     "starts": 129,
     "share_beating": 0.0,
     "median_edge": -0.0065,
@@ -271,6 +272,7 @@
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
+    "parameter_now": 1.5,
     "starts": 129,
     "share_beating": 0.295,
     "median_edge": 0.0,
@@ -278,6 +280,7 @@
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
+    "parameter_now": 0.2,
     "starts": 129,
     "share_beating": 0.186,
     "median_edge": -0.0333,
@@ -285,15 +288,24 @@
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
+    "parameter_now": 0.0,
     "starts": 129,
     "share_beating": 0.008,
     "median_edge": -0.0095,
     "worst_edge": -0.0228,
     "passes_gate": false
+   },
+   "_now": {
+    "month": "2026-09",
+    "trend": 1.0436,
+    "stretch": 1.4144,
+    "dd": -0.0246,
+    "mom": 0.1613
    }
   },
   "INTL_EQUITY": {
    "TREND_PAUSE": {
+    "parameter_now": 0.02,
     "starts": 129,
     "share_beating": 0.023,
     "median_edge": -0.0102,
@@ -301,6 +313,7 @@
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
+    "parameter_now": 1.4,
     "starts": 129,
     "share_beating": 0.589,
     "median_edge": 0.0011,
@@ -308,6 +321,7 @@
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
+    "parameter_now": 0.2,
     "starts": 129,
     "share_beating": 0.488,
     "median_edge": -0.0023,
@@ -315,15 +329,24 @@
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
+    "parameter_now": -0.05,
     "starts": 129,
     "share_beating": 0.031,
     "median_edge": -0.0107,
     "worst_edge": -0.0302,
     "passes_gate": false
+   },
+   "_now": {
+    "month": "2026-09",
+    "trend": 1.0264,
+    "stretch": 1.4207,
+    "dd": -0.0293,
+    "mom": 0.1755
    }
   },
   "BONDS": {
    "TREND_PAUSE": {
+    "parameter_now": 0.02,
     "starts": 129,
     "share_beating": 0.008,
     "median_edge": 0.0,
@@ -331,6 +354,7 @@
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
+    "parameter_now": 1.3,
     "starts": 129,
     "share_beating": 0.0,
     "median_edge": 0.0,
@@ -338,6 +362,7 @@
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
+    "parameter_now": 0.1,
     "starts": 129,
     "share_beating": 0.38,
     "median_edge": -0.0059,
@@ -345,15 +370,24 @@
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
+    "parameter_now": -0.05,
     "starts": 129,
     "share_beating": 0.054,
     "median_edge": 0.0,
     "worst_edge": -0.0042,
     "passes_gate": false
+   },
+   "_now": {
+    "month": "2026-09",
+    "trend": 0.9777,
+    "stretch": 1.0633,
+    "dd": -0.0339,
+    "mom": -0.0091
    }
   },
   "OTHER": {
    "TREND_PAUSE": {
+    "parameter_now": 0.05,
     "starts": 129,
     "share_beating": 0.016,
     "median_edge": -0.0099,
@@ -361,6 +395,7 @@
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
+    "parameter_now": 1.3,
     "starts": 129,
     "share_beating": 0.643,
     "median_edge": 0.0069,
@@ -368,6 +403,7 @@
     "passes_gate": true
    },
    "WAIT_FOR_DIP": {
+    "parameter_now": 0.15,
     "starts": 129,
     "share_beating": 0.659,
     "median_edge": 0.0133,
@@ -375,11 +411,19 @@
     "passes_gate": true
    },
    "MOMENTUM_PAUSE": {
+    "parameter_now": -0.05,
     "starts": 129,
     "share_beating": 0.016,
     "median_edge": -0.0143,
     "worst_edge": -0.0425,
     "passes_gate": false
+   },
+   "_now": {
+    "month": "2026-09",
+    "trend": 1.0042,
+    "stretch": 1.3329,
+    "dd": -0.0557,
+    "mom": 0.1353
    }
   }
  },

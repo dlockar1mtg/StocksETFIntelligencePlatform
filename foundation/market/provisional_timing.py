@@ -103,8 +103,31 @@ def timing_study(funds: dict, model: list[str], groups_by_year: dict, policy: di
                 best = max(grid, key=lambda p: mean(edges[(rule, p, j)] for j in done))
                 oos.append(edges[(rule, best, k)])
             passes = bool(oos) and sum(e > 0 for e in oos) / len(oos) >= 0.6 and median(oos) >= 0.005
-            fam_out[rule] = {"starts": len(oos), "share_beating": round(sum(e > 0 for e in oos) / len(oos), 3) if oos else None,
+            done_all = [j for j in starts]
+            chosen_now = max(grid, key=lambda p: mean(edges[(rule, p, j)] for j in done_all)) if done_all else None
+            fam_out[rule] = {"parameter_now": chosen_now, "starts": len(oos), "share_beating": round(sum(e > 0 for e in oos) / len(oos), 3) if oos else None,
                              "median_edge": round(median(oos), 4) if oos else None, "worst_edge": round(min(oos), 4) if oos else None,
                              "passes_gate": passes}
-        out[fam] = fam_out
+        now = _signals(series, len(series) - 1) if series else {}
+        out[fam] = {**fam_out, "_now": {"month": series[-1][0] if series else None,
+                                        **{k: (None if v is None else round(v, 4)) for k, v in now.items()}}}
     return out
+
+
+def reading(family_result: dict) -> dict:
+    """When-to-buy reading for a family: a passing rule's current verdict, else steady buying."""
+    now = family_result.get("_now") or {}
+    for rule in ("WAIT_FOR_DIP", "STRETCH_PAUSE", "TREND_PAUSE", "MOMENTUM_PAUSE"):
+        r = family_result.get(rule) or {}
+        if not r.get("passes_gate"):
+            continue
+        p = r["parameter_now"]
+        signal = {"trend": now.get("trend"), "stretch": now.get("stretch"), "dd": now.get("dd"), "mom": now.get("mom")}
+        if any(v is None for v in signal.values()):
+            continue
+        wait = _pause(rule, p, signal)
+        return {"rule": rule, "parameter": p, "verdict": "WAIT" if wait else "BUY_NOW", "as_of_month": now.get("month"),
+                "drawdown": now.get("dd"), "stretch": now.get("stretch"),
+                "evidence": {"share_beating": r["share_beating"], "median_edge": r["median_edge"], "starts": r["starts"]}}
+    return {"rule": None, "verdict": "STEADY_BUYING", "as_of_month": now.get("month"),
+            "evidence": "No timing rule beat plain monthly buying for this family out of sample."}

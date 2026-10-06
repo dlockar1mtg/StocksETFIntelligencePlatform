@@ -13,6 +13,11 @@ on:
       - "foundation/infrastructure/yahoo_chart_daily.py"
       - "scripts/run_hosted_etf_market_data.py"
       - "config/market/hosted_market_data_policy.json"
+      - "config/market/provisional_ranking_policy.json"
+      - "foundation/market/provisional_*.py"
+      - "foundation/market/uip_package.py"
+      - "scripts/research_provisional_ranking.py"
+      - "scripts/build_provisional_etf_package.py"
       - ".github/workflows/etf-hosted-market-data.yml"
   workflow_dispatch:
     inputs:
@@ -70,7 +75,7 @@ jobs:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
-        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking -v
+        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package -v
       - name: Restore the cached daily series
         uses: actions/cache/restore@v4
         with:
@@ -90,6 +95,35 @@ jobs:
           for f in bad[:40]:
               print(f"::warning title=ETF {f['symbol']}::{f['quality_status']} {'; '.join(f['failures'])[:300]}")
           PY
+      - name: Ranking research, timing evidence and the provisional UIP package
+        run: |
+          python scripts/research_provisional_ranking.py > research.log && tail -6 research.log
+          python scripts/build_provisional_etf_package.py --output etf-package | tee package.log
+          python - <<'PY'
+          import json
+          m = json.load(open("etf-package/manifest.json"))
+          print(f"::notice title=ETF package::{m['package_id']} {m['validation_status']} {m['certification_status']} | {open('package.log').read().strip()[-300:]}")
+          r = json.load(open("etf-package/research.json"))
+          print(f"::notice title=ETF ranking gate::{json.dumps(r['gate'])}")
+          for fam, rules in r["timing"].items():
+              passing = [k for k, v in rules.items() if k != "_now" and v.get("passes_gate")]
+              print(f"::notice title=ETF timing {fam}::passing rules {passing or 'none'}")
+          PY
+      - name: Publish the package for the UIP
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: etf-production-${{ github.run_id }}
+          path: etf-package/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Keep the package from this check
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: etf-package-check-${{ github.run_id }}
+          path: etf-package/
+          retention-days: 7
       - name: Save the daily series
         if: always()
         uses: actions/cache/save@v4

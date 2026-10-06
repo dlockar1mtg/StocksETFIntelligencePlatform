@@ -44,7 +44,7 @@ def main() -> int:
         print(h, "IC", {k: (v["mean_ic"], v["t_yearly"]) for k, v in wf[h]["factor_ic_full_sample"].items()})
     print("gate", verdict)
     for fam, rules in timing.items():
-        print("timing", fam, {k: (v["share_beating"], v["median_edge"], v["passes_gate"]) for k, v in rules.items()})
+        print("timing", fam, {k: (v["share_beating"], v["median_edge"], v["passes_gate"]) for k, v in rules.items() if k != "_now"}, T.reading(rules))
     return 0
 
 
