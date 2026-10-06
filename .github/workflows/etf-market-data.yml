@@ -11,6 +11,9 @@ on:
       - "foundation/market_data/**"
       - "scripts/collect_etf_market_data.py"
       - "config/market/monitored_funds.json"
+      - "config/market/etf_v1_model.json"
+      - "scripts/research_etf_v1.py"
+      - "scripts/build_etf_package.py"
       - ".github/workflows/etf-market-data.yml"
   workflow_dispatch:
 
@@ -68,12 +71,14 @@ jobs:
       - name: Collect, reconcile and cross-check (pull requests write to a scratch folder only)
         run: |
           if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
-            python scripts/collect_etf_market_data.py --output "$RUNNER_TEMP/etf-check"
-            cp "$RUNNER_TEMP/etf-check/market_data_status.json" market_data_status.json
+            data="$RUNNER_TEMP/etf-check"
+            python scripts/collect_etf_market_data.py --output "$data"
           else
+            data=data/curated/etf
             python scripts/collect_etf_market_data.py
-            cp data/curated/etf/market_data_status.json market_data_status.json
           fi
+          echo "ETF_DATA=$data" >> "$GITHUB_ENV"
+          cp "$data/market_data_status.json" market_data_status.json
           python - <<'PY'
           import json
           s = json.load(open("market_data_status.json"))
@@ -94,6 +99,34 @@ jobs:
                     f"xcheck {cc.get('status')} {cc.get('max_close_gap')} div12m {f['payload']['distributions_trailing_12m']} "
                     f"issues {'; '.join(f['failures']) or 'none'}")
           PY
+      - name: Research (walk-forward evidence) and the governed UIP package
+        run: |
+          python scripts/research_etf_v1.py --data "$ETF_DATA"
+          python scripts/build_etf_package.py --data "$ETF_DATA" --output etf-package
+          python - <<'PY'
+          import json
+          m = json.load(open("etf-package/manifest.json"))
+          f = json.load(open("etf-package/funds.json"))
+          print(f"::notice title=ETF package::{m['package_id']} {m['validation_status']} {m['certification_status']} limitations: {'; '.join(f['limitations']) or 'none'}")
+          for r in f["funds"]:
+              z = (r.get("stretch_context") or {}).get("zone")
+              print(f"::notice title=ETF call {r['ticker']}::{r['call']} {r.get('redirect_to') or ''} close {r.get('close')} 3y {r.get('annualized_3y')} stretch {z}")
+          PY
+      - name: Publish the package for the UIP
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: etf-production-${{ github.run_id }}
+          path: etf-package/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Keep the package from this check
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: etf-package-check-${{ github.run_id }}
+          path: etf-package/
+          retention-days: 7
       - name: Keep the status and any quarantined series as evidence
         if: always()
         uses: actions/upload-artifact@v4
