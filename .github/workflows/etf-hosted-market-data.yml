@@ -76,7 +76,7 @@ jobs:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
-        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios -v
+        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection -v
       - name: Restore the cached daily series
         uses: actions/cache/restore@v4
         with:
@@ -99,6 +99,7 @@ jobs:
       - name: Ranking research, timing evidence and the provisional UIP package
         run: |
           python scripts/research_provisional_ranking.py > research.log && tail -6 research.log
+          python scripts/research_provisional_projection.py > projection.log && tail -3 projection.log
           python scripts/build_provisional_etf_package.py --output etf-package | tee package.log
           python - <<'PY'
           import json
@@ -106,6 +107,8 @@ jobs:
           print(f"::notice title=ETF package::{m['package_id']} {m['validation_status']} {m['certification_status']} | {open('package.log').read().strip()[-300:]}")
           r = json.load(open("etf-package/research.json"))
           print(f"::notice title=ETF ranking gate::{json.dumps(r['gate'])}")
+          pt = r.get("projection_test") or {}
+          print(f"::notice title=ETF 3-year projections::band coverage {pt.get('overall', {}).get('inside_10_90')} over {pt.get('observations')} fund-years; families {json.dumps(pt.get('family_status'))}")
           for fam, rules in r["timing"].items():
               passing = [k for k, v in rules.items() if k != "_now" and v.get("passes_gate")]
               print(f"::notice title=ETF timing {fam}::passing rules {passing or 'none'}")

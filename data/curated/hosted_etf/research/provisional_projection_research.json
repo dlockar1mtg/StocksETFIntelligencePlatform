@@ -1,0 +1,330 @@
+{
+ "policy_id": "ETF_PROVISIONAL_3Y_PROJECTION_V1",
+ "test_starts": [
+  2005,
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022
+ ],
+ "observations": 7870,
+ "overall": {
+  "n": 7870,
+  "inside_10_90": 0.827,
+  "below_10": 0.072,
+  "above_90": 0.101,
+  "center_median_abs_error": 0.0549,
+  "own_history_median_abs_error": 0.0617
+ },
+ "families": {
+  "BONDS": {
+   "n": 1264,
+   "inside_10_90": 0.679,
+   "below_10": 0.184,
+   "above_90": 0.138,
+   "center_median_abs_error": 0.0243,
+   "own_history_median_abs_error": 0.0323
+  },
+  "INTL_EQUITY": {
+   "n": 1644,
+   "inside_10_90": 0.956,
+   "below_10": 0.034,
+   "above_90": 0.01,
+   "center_median_abs_error": 0.0621,
+   "own_history_median_abs_error": 0.0653
+  },
+  "OTHER": {
+   "n": 243,
+   "inside_10_90": 0.877,
+   "below_10": 0.049,
+   "above_90": 0.074,
+   "center_median_abs_error": 0.0707,
+   "own_history_median_abs_error": 0.0617
+  },
+  "US_EQUITY": {
+   "n": 4719,
+   "inside_10_90": 0.82,
+   "below_10": 0.056,
+   "above_90": 0.124,
+   "center_median_abs_error": 0.0686,
+   "own_history_median_abs_error": 0.0714
+  }
+ },
+ "by_start_year": {
+  "2005": {
+   "n": 68,
+   "inside_10_90": 0.353,
+   "below_10": 0.647,
+   "above_90": 0.0,
+   "center_median_abs_error": 0.154,
+   "own_history_median_abs_error": 0.0943
+  },
+  "2006": {
+   "n": 100,
+   "inside_10_90": 0.52,
+   "below_10": 0.48,
+   "above_90": 0.0,
+   "center_median_abs_error": 0.1337,
+   "own_history_median_abs_error": 0.1084
+  },
+  "2007": {
+   "n": 113,
+   "inside_10_90": 0.239,
+   "below_10": 0.761,
+   "above_90": 0.0,
+   "center_median_abs_error": 0.1625,
+   "own_history_median_abs_error": 0.0729
+  },
+  "2008": {
+   "n": 175,
+   "inside_10_90": 0.777,
+   "below_10": 0.017,
+   "above_90": 0.206,
+   "center_median_abs_error": 0.0955,
+   "own_history_median_abs_error": 0.1302
+  },
+  "2009": {
+   "n": 288,
+   "inside_10_90": 0.774,
+   "below_10": 0.003,
+   "above_90": 0.222,
+   "center_median_abs_error": 0.0878,
+   "own_history_median_abs_error": 0.083
+  },
+  "2010": {
+   "n": 311,
+   "inside_10_90": 0.823,
+   "below_10": 0.006,
+   "above_90": 0.17,
+   "center_median_abs_error": 0.1067,
+   "own_history_median_abs_error": 0.1068
+  },
+  "2011": {
+   "n": 341,
+   "inside_10_90": 0.657,
+   "below_10": 0.009,
+   "above_90": 0.334,
+   "center_median_abs_error": 0.122,
+   "own_history_median_abs_error": 0.1585
+  },
+  "2012": {
+   "n": 389,
+   "inside_10_90": 0.841,
+   "below_10": 0.062,
+   "above_90": 0.098,
+   "center_median_abs_error": 0.0697,
+   "own_history_median_abs_error": 0.0845
+  },
+  "2013": {
+   "n": 414,
+   "inside_10_90": 0.971,
+   "below_10": 0.014,
+   "above_90": 0.014,
+   "center_median_abs_error": 0.0323,
+   "own_history_median_abs_error": 0.0303
+  },
+  "2014": {
+   "n": 429,
+   "inside_10_90": 0.998,
+   "below_10": 0.002,
+   "above_90": 0.0,
+   "center_median_abs_error": 0.0186,
+   "own_history_median_abs_error": 0.0345
+  },
+  "2015": {
+   "n": 469,
+   "inside_10_90": 0.989,
+   "below_10": 0.006,
+   "above_90": 0.004,
+   "center_median_abs_error": 0.0239,
+   "own_history_median_abs_error": 0.0284
+  },
+  "2016": {
+   "n": 509,
+   "inside_10_90": 0.931,
+   "below_10": 0.004,
+   "above_90": 0.065,
+   "center_median_abs_error": 0.028,
+   "own_history_median_abs_error": 0.0581
+  },
+  "2017": {
+   "n": 537,
+   "inside_10_90": 0.825,
+   "below_10": 0.017,
+   "above_90": 0.158,
+   "center_median_abs_error": 0.0418,
+   "own_history_median_abs_error": 0.034
+  },
+  "2018": {
+   "n": 596,
+   "inside_10_90": 0.78,
+   "below_10": 0.005,
+   "above_90": 0.215,
+   "center_median_abs_error": 0.0542,
+   "own_history_median_abs_error": 0.0781
+  },
+  "2019": {
+   "n": 664,
+   "inside_10_90": 0.819,
+   "below_10": 0.164,
+   "above_90": 0.017,
+   "center_median_abs_error": 0.0723,
+   "own_history_median_abs_error": 0.0613
+  },
+  "2020": {
+   "n": 787,
+   "inside_10_90": 0.828,
+   "below_10": 0.132,
+   "above_90": 0.039,
+   "center_median_abs_error": 0.038,
+   "own_history_median_abs_error": 0.0529
+  },
+  "2021": {
+   "n": 821,
+   "inside_10_90": 0.828,
+   "below_10": 0.14,
+   "above_90": 0.032,
+   "center_median_abs_error": 0.0763,
+   "own_history_median_abs_error": 0.0757
+  },
+  "2022": {
+   "n": 859,
+   "inside_10_90": 0.804,
+   "below_10": 0.002,
+   "above_90": 0.193,
+   "center_median_abs_error": 0.0553,
+   "own_history_median_abs_error": 0.0648
+  }
+ },
+ "rules_chosen_by_start_year": {
+  "2005": {},
+  "2006": {
+   "US_EQUITY": "CASH_PLUS_BETA"
+  },
+  "2007": {
+   "US_EQUITY": "CASH_PLUS_BETA",
+   "INTL_EQUITY": "CASH_PLUS_BETA"
+  },
+  "2008": {
+   "US_EQUITY": "CASH_PLUS_BETA",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "CASH_PLUS_BETA"
+  },
+  "2009": {
+   "US_EQUITY": "CASH_PLUS_BETA",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "CASH_PLUS_BETA"
+  },
+  "2010": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "CASH_PLUS_BETA",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2011": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "CASH_PLUS_BETA",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2012": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2013": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2014": {
+   "US_EQUITY": "REFERENCE_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "REFERENCE_HISTORY"
+  },
+  "2015": {
+   "US_EQUITY": "REFERENCE_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "OWN_HISTORY"
+  },
+  "2016": {
+   "US_EQUITY": "REFERENCE_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "OWN_HISTORY"
+  },
+  "2017": {
+   "US_EQUITY": "REFERENCE_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "OWN_HISTORY"
+  },
+  "2018": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "OWN_HISTORY"
+  },
+  "2019": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "REFERENCE_HISTORY"
+  },
+  "2020": {
+   "US_EQUITY": "REFERENCE_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2021": {
+   "US_EQUITY": "OWN_HISTORY",
+   "INTL_EQUITY": "CASH_PLUS_BETA",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "CASH_PLUS_BETA"
+  },
+  "2022": {
+   "US_EQUITY": "CASH_PLUS_BETA",
+   "INTL_EQUITY": "REFERENCE_HISTORY",
+   "BONDS": "BOND_YIELD",
+   "OTHER": "CASH_PLUS_BETA"
+  }
+ },
+ "rules_now": {
+  "US_EQUITY": "CASH_PLUS_BETA",
+  "INTL_EQUITY": "REFERENCE_HISTORY",
+  "BONDS": "CASH_PLUS_BETA",
+  "OTHER": "OWN_HISTORY"
+ },
+ "passes": false,
+ "family_status": {
+  "BONDS": "TESTED",
+  "INTL_EQUITY": "TOO_CAUTIOUS",
+  "OTHER": "TESTED",
+  "US_EQUITY": "TESTED"
+ },
+ "generated_at_utc": "2026-10-07T20:48:27+00:00",
+ "known_limitations": [
+  "Survivorship: the model universe is funds alive today, so the test omits funds that closed.",
+  "Reference histories start between 1993 and 2018; the longest is SPY's.",
+  "Distribution yield is a stand-in for a bond fund's yield to maturity, which the free data does not carry.",
+  "Free tier-4 market data."
+ ]
+}

@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
 
 from foundation.market import hosted_market_data as H  # noqa: E402
 from foundation.market import provisional_package as P  # noqa: E402
+from foundation.market import provisional_projection as PJ  # noqa: E402
 from foundation.market import provisional_ranking as R  # noqa: E402
 from foundation.market import sec_expense_ratios as X  # noqa: E402
 from foundation.market import uip_package as U  # noqa: E402
@@ -51,9 +52,12 @@ def main(argv: list[str] | None = None) -> int:
     history = X.load_history(history_path) if history_path.exists() else {}
     today = datetime.now(timezone.utc).date().isoformat()
     expense = (lambda s: X.ratio_on(history, s, today)) if history else None
+    projection_path = DATA / "research" / "provisional_projection_research.json"
+    projection = load(projection_path) if projection_path.exists() else None
+    projector = PJ.Projector(features, (lambda s, d: X.ratio_on(history, s, d)) if history else None) if projection else None
     records, groups = P.build_records(status=status, features=features, research=research,
                                       cached_bars=lambda s: H.read_cached_bars(cache, s) if cache.exists() else [],
-                                      expense_ratio=expense)
+                                      expense_ratio=expense, projector=projector, projection=projection)
     validation, limitations = U.package_validation(records, market["universe"]["required_seed_symbols"])
     as_of = max((r.get("as_of_date") or "" for r in records), default=today) or today
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -63,7 +67,15 @@ def main(argv: list[str] | None = None) -> int:
                     "factor_ic_12m": research["walk_forward"]["12m"]["factor_ic_full_sample"],
                     "factor_ic_36m": research["walk_forward"]["36m"]["factor_ic_full_sample"],
                     "timing": research["timing"], "cost_test": research.get("cost_test"), "known_limitations": research["known_limitations"],
-                    "amendments": ranking.get("amendments", []), "owner_authorization": ranking["owner_authorization"]}
+                    "amendments": ranking.get("amendments", []), "owner_authorization": ranking["owner_authorization"],
+                    "projection_test": None if not projection else {
+                        "policy_id": projection["policy_id"], "generated_at_utc": projection.get("generated_at_utc"),
+                        "observations": projection["observations"], "test_starts": projection["test_starts"],
+                        "overall": projection["overall"], "families": projection["families"],
+                        "family_status": projection.get("family_status"), "rules_now": projection["rules_now"],
+                        "passes_registered_test": projection["passes"],
+                        "by_start_year": {str(y): {"n": c.get("n"), "inside_10_90": c.get("inside_10_90")} for y, c in projection["by_start_year"].items()},
+                        "amendments": load(ROOT / "config" / "market" / "provisional_projection_policy.json").get("amendments", [])}}
     funds_doc = {"package_format": U.PACKAGE_FORMAT, "as_of_date": as_of, "generated_at_utc": generated,
                  "fund_count": len(records), "limitations": limitations, "funds": records, "automatic_execution_authorized": False}
     status_doc = {k: status[k] for k in ("policy_id", "generated_at_utc", "mode", "fund_count", "quality_summary", "freshness_summary")}

@@ -33,9 +33,9 @@
       "median absolute error of the center, chosen rule against OWN_HISTORY"
     ],
     "pass_marks": {
-      "band_coverage_overall_min": 0.70,
-      "band_coverage_overall_max": 0.90,
-      "band_coverage_family_min": 0.60,
+      "band_coverage_overall_min": 0.7,
+      "band_coverage_overall_max": 0.9,
+      "band_coverage_family_min": 0.6,
       "band_coverage_family_max": 0.95,
       "family_min_observations": 200
     },
@@ -55,5 +55,32 @@
     "Reference histories start between 1993 and 2018; the longest is SPY's.",
     "Distribution yield is a stand-in for a bond fund's yield to maturity, which the free data does not carry.",
     "Free tier-4 market data."
-  ]
+  ],
+  "amendments": [
+    {
+      "on": "2026-10-07",
+      "after_results": true,
+      "authorized_by": "Devon Lockard",
+      "change": "Each family is judged on its own band instead of one family failing the whole test. A family whose 10th-90th band held between 60% and 95% of outcomes (with at least 200 observations) is TESTED; above 95% it is TOO_CAUTIOUS; below 60% it is TOO_NARROW. Ranges always show with their family's status and measured coverage; growth is compared only among funds in TESTED families.",
+      "reason": "The registered test failed only because international equity bands were too wide (95.6% of outcomes inside against a 95% ceiling), the cautious direction; overall coverage was 82.7% inside the 70-90% mark. Recorded as a change made after seeing results."
+    }
+  ],
+  "results_2026_10_07": {
+    "observations": 7870,
+    "overall_inside_10_90": 0.827,
+    "families": {
+      "US_EQUITY": 0.82,
+      "INTL_EQUITY": 0.956,
+      "BONDS": 0.679,
+      "OTHER": 0.877
+    },
+    "center_median_abs_error": 0.0549,
+    "own_history_median_abs_error": 0.0617,
+    "passes_registered_test": false
+  },
+  "family_status_marks": {
+    "tested_min": 0.6,
+    "tested_max": 0.95,
+    "min_observations": 200
+  }
 }
