@@ -19,6 +19,7 @@ from foundation.market import provisional_timing as T
 
 NO_CALL_GROUPS = ("INSUFFICIENT_HISTORY", "SPECIALIZED_LEVERAGED", "SPECIALIZED_INVERSE", "IDIOSYNCRATIC")
 CLUSTER_CORRELATION, CLUSTER_MONTHS = 0.995, 36
+CALL_BANDS = {"BUY": 80, "ACCUMULATE": 60, "HOLD": 20}               # provisional_ranking_policy.json calls.bands_percentile
 
 
 def _r(x, places=4):
@@ -181,6 +182,17 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
             for s in cluster:
                 by_symbol[s]["cluster"] = {"members": cluster, "best": best.get("symbol"), "basis": best.get("basis")}
     ranking_enabled = bool(gate.get("pass_12m"))
+    cost_calls = bool((research.get("cost_test") or {}).get("calls_enabled"))
+    cost_pct: dict[str, float] = {}
+    if cost_calls:
+        for members in by_group.values():
+            priced = [m for m in members if m.get("expense_ratio") is not None]
+            if len(priced) < 5:
+                continue
+            ranks = R._rank([-m["expense_ratio"] for m in priced])          # cheaper ranks higher
+            top = max(ranks) or 1.0
+            for m, rk in zip(priced, ranks):
+                cost_pct[m["symbol"]] = round(100 * rk / top, 1)
     for r in records:
         fam = r.get("group_family")
         r["when_to_buy"] = group_docs.get(r["peer_group"], {}).get("when_to_buy")
@@ -195,6 +207,13 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
             r["ranking_call"] = "NOT_RANKED_OUTSIDE_MODEL"
         elif r["peer_group"] in NO_CALL_GROUPS:
             r["ranking_call"] = "NO_CALL_SPECIALIZED_OR_UNGROUPED"
+        elif cost_calls and r["symbol"] in cost_pct:
+            r["cost_percentile_in_group"] = cost_pct[r["symbol"]]
+            r["ranking_call"] = R.assign_call(cost_pct[r["symbol"]], None, CALL_BANDS)
+            r["ranking_basis"] = "COST_WITHIN_PEER_GROUP_36M"
+        elif cost_calls:
+            r["ranking_call"] = "RANKED_NO_CALL"
+            r["ranking_basis"] = "NO_OFFICIAL_EXPENSE_RATIO_OR_TOO_FEW_PRICED_PEERS"
         elif not ranking_enabled or not (gate.get("families_enabled") or {}).get(fam):
             r["ranking_call"] = "NO_VALIDATED_RANKING_EDGE"
         else:

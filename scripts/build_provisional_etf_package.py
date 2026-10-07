@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
                     "ranking_36m": research["walk_forward"]["36m"]["results"].get("ALL"),
                     "factor_ic_12m": research["walk_forward"]["12m"]["factor_ic_full_sample"],
                     "factor_ic_36m": research["walk_forward"]["36m"]["factor_ic_full_sample"],
-                    "timing": research["timing"], "known_limitations": research["known_limitations"],
+                    "timing": research["timing"], "cost_test": research.get("cost_test"), "known_limitations": research["known_limitations"],
                     "amendments": ranking.get("amendments", []), "owner_authorization": ranking["owner_authorization"]}
     funds_doc = {"package_format": U.PACKAGE_FORMAT, "as_of_date": as_of, "generated_at_utc": generated,
                  "fund_count": len(records), "limitations": limitations, "funds": records, "automatic_execution_authorized": False}

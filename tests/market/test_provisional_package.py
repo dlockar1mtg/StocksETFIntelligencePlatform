@@ -73,5 +73,26 @@ class PackageTests(unittest.TestCase):
         self.assertEqual(U.package_validation(records, ["VOO"])[0], "FAIL")
 
 
+class CostTests(unittest.TestCase):
+    def test_cost_test_sign_is_fixed_and_calls_follow_the_36m_amendment(self):
+        from foundation.market import provisional_cost_test as C
+        policy = json.loads((ROOT / "config" / "market" / "provisional_ranking_policy.json").read_text(encoding="utf-8"))
+        self.assertTrue(policy["cost_test"]["registered_before_results"])
+        self.assertEqual(policy["cost_test"]["calls_horizon"], "36m")
+        self.assertTrue(any(a.get("authorized_by") and "36-month" in a["change"] for a in policy["amendments"]))
+        panel = []
+        for y in range(2012, 2024):
+            for g in ("A", "B"):
+                for i in range(10):
+                    cost = 0.001 * (i + 1)
+                    panel.append({"month": f"{y}-06", "group": g, "symbol": f"{g}{i}", "neg_cost": -cost,
+                                  "fwd12_excess": 0.0, "fwd36_excess": 0.01 - cost + 0.0025 * ((y * 3 + i * 5) % 4)})
+        res = C.cost_test(panel, policy)
+        self.assertGreater(res["36m"]["mean_ic"], 0.3)
+        self.assertTrue(C.calls_enabled(res, policy))
+        unrelated = [{**r, "fwd36_excess": 0.001 * ((int(r["symbol"][1:]) * 7 + int(r["month"][:4])) % 5)} for r in panel]
+        self.assertFalse(C.calls_enabled(C.cost_test(unrelated, policy), policy))
+
+
 if __name__ == "__main__":
     unittest.main()

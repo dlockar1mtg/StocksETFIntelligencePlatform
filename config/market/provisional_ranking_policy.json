@@ -122,6 +122,13 @@
       "after_results": true,
       "change": "log_adv_63 excluded from the composite",
       "reason": "The model universe admits only funds with at least $1M median daily dollar volume today, so a fund that was thinly traded in the past is in the universe only if it grew: past illiquidity selects past winners. Its negative IC (t -2.9) is a survivorship artifact, not a usable signal. Recorded after seeing results; it does not change the gate."
+    },
+    {
+      "on": "2026-10-07",
+      "after_results": true,
+      "authorized_by": "Devon Lockard",
+      "change": "Cost-based ranking calls are enabled on the 36-month cost evidence (the charter's primary strategic horizon) instead of the registered 12-month gate, which the cost test did not pass.",
+      "reason": "At 36 months a lower official expense ratio ranked peer-relative returns with t = 5.1 on yearly blocks, and the cheapest fifth of each peer group beat the most expensive fifth in 11 of 12 test years (most expensive fifth -1.37% a year against peers). Recorded as a change made after seeing results; the calls are labelled provisional and the evidence is published with them."
     }
   ],
   "cost_test": {
@@ -138,6 +145,30 @@
       "min_share_years_cheapest_beats_median": 0.6
     },
     "if_passes": "ranking calls use each fund's cost percentile within its peer group with the policy bands (cheapest 20% BUY, next 20% ACCUMULATE, middle HOLD, most expensive 20% AVOID); funds without an official expense ratio get RANKED_NO_CALL",
-    "if_fails": "cost is shown as a reading only and ranking calls stay NO_VALIDATED_RANKING_EDGE"
+    "if_fails": "cost is shown as a reading only and ranking calls stay NO_VALIDATED_RANKING_EDGE",
+    "results_2026_10_07": {
+      "12m": {
+        "mean_ic": 0.034,
+        "t_yearly": 1.68,
+        "cheapest_quintile_mean_excess": 0.004,
+        "most_expensive_quintile_mean_excess": 0.0066,
+        "share_years_cheapest_beats_median": 0.714,
+        "passes_registered_gate": false
+      },
+      "36m": {
+        "mean_ic": 0.077,
+        "t_yearly": 5.11,
+        "cheapest_quintile_mean_excess_annualized": 0.003,
+        "most_expensive_quintile_mean_excess_annualized": -0.0137,
+        "share_years_cheapest_beats_median": 0.917,
+        "share_years_cheapest_beats_most_expensive": 0.917
+      }
+    },
+    "calls_horizon": "36m",
+    "calls_gate_36m": {
+      "min_test_years": 8,
+      "min_t_yearly": 2.0,
+      "min_share_years_cheapest_beats_most_expensive": 0.75
+    }
   }
 }

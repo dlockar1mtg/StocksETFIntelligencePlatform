@@ -13,7 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from foundation.market import provisional_cost_test as C  # noqa: E402
 from foundation.market import provisional_ranking as R  # noqa: E402
+from foundation.market import sec_expense_ratios as X  # noqa: E402
 from foundation.market import provisional_timing as T  # noqa: E402
 
 POLICY = ROOT / "config" / "market" / "provisional_ranking_policy.json"
@@ -31,8 +33,14 @@ def main() -> int:
     wf = R.walk_forward(panel, policy)
     verdict = R.gate(wf, policy)
     timing = T.timing_study(funds, model, groups, policy)
+    history_path = DATA / "expense_ratio_history.csv"
+    cost = None
+    if history_path.exists():
+        C.attach_cost(panel, X.load_history(history_path))
+        cost = C.cost_test(panel, policy)
+        cost["calls_enabled"] = C.calls_enabled(cost, policy)
     report = {"policy_id": policy["policy_id"], "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
-              "panel_rows": len(panel), "funds": len(model), "walk_forward": wf, "gate": verdict, "timing": timing,
+              "panel_rows": len(panel), "funds": len(model), "walk_forward": wf, "gate": verdict, "timing": timing, "cost_test": cost,
               "known_limitations": policy["known_limitations"]}
     out = DATA / "research" / "provisional_ranking_research.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -43,6 +51,8 @@ def main() -> int:
                                               "share_years_top_beats_median", "share_years_top_beats_bottom")})
         print(h, "IC", {k: (v["mean_ic"], v["t_yearly"]) for k, v in wf[h]["factor_ic_full_sample"].items()})
     print("gate", verdict)
+    if cost:
+        print("cost", {h: {k: v for k, v in cost[h].items() if k != "by_year"} for h in ("12m", "36m")}, "calls", cost["calls_enabled"])
     for fam, rules in timing.items():
         print("timing", fam, {k: (v["share_beating"], v["median_edge"], v["passes_gate"]) for k, v in rules.items() if k != "_now"}, T.reading(rules))
     return 0
