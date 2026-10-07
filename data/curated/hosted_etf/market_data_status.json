@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-06T22:51:20+00:00",
+ "generated_at_utc": "2026-10-07T12:05:00+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
@@ -10,8 +10,8 @@
   "BLOCKED": 10
  },
  "freshness_summary": {
-  "CURRENT": 1073,
-  "AGING": 1,
+  "CURRENT": 1074,
+  "AGING": 0,
   "STALE": 0,
   "UNKNOWN": 10
  },
@@ -811,7 +811,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1.3e-05,
     "cumulative_gap_3y": null
    }
   },
@@ -832,7 +832,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 3e-06,
     "cumulative_gap_3y": null
    }
   },
@@ -10301,11 +10301,11 @@
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-05",
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-06",
    "first_date": "2004-07-13",
-   "sessions": 5594,
-   "close": 107.44,
+   "sessions": 5595,
+   "close": 108.09,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -12642,7 +12642,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1.4e-05,
     "cumulative_gap_3y": null
    }
   },
@@ -18885,7 +18885,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 2.4e-05,
     "cumulative_gap_3y": null
    }
   },
@@ -19632,7 +19632,7 @@
    "usage": "MODEL",
    "mode": "INCREMENTAL",
    "name": "Defiance Space and Connective Tech ETF",
-   "instrument_type": "EQUITY",
+   "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
    "freshness_state": "CURRENT",
