@@ -1,0 +1,27 @@
+{
+  "artifact_id": "SEC_HISTORICAL_SUBMISSION_SHARD_CAPTURE_EXECUTION_AUTHORIZATION_SUMMARY",
+  "authorization_complete": true,
+  "authorization_sha256": "5596c2baefc848d1ec9a4c957d1abaf0ba6e87814c90f5d6220bf43889efd973",
+  "authorized_shard_count": 12,
+  "authorized_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN"
+  ],
+  "automatic_execution_authorized": false,
+  "filing_document_capture_authorized": false,
+  "filing_header_capture_authorized": false,
+  "full_215_execution_authorized": false,
+  "governed_head": "c4464c9d78b88d6f599f3f2153038f054a05d492",
+  "manifest_sha256": "c15ebafd5fc16d9833a64295eb43fca8c348da0e01d61dfcbe1c2018db007f15",
+  "maximum_requests_per_second": 1,
+  "maximum_retry_attempts": 0,
+  "maximum_unique_sec_requests": 12,
+  "network_capture_authorized": true,
+  "network_requests_performed": 0,
+  "next_required_step": "EXECUTE_EXACT_12_HISTORICAL_SUBMISSION_SHARD_CAPTURE",
+  "phase": "3.6b.3r",
+  "request_timeout_seconds": 45,
+  "taxonomy_normalization_authorized": false
+}

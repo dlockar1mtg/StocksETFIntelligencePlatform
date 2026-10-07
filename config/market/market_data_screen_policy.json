@@ -1,0 +1,68 @@
+{
+  "phase": "2",
+  "subphase": "2B.1",
+  "policy_version": "1.0.0",
+  "name": "ETF Market Data Screening",
+  "objective": "Reduce the active structural universe through point-in-time market-data quality, history, continuity, staleness, liquidity, and corporate-action evidence before comparative analytics or forecasting.",
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "required_input_processing_state": "ACTIVE_STRUCTURAL_UNIVERSE",
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "preserve_input_universe": true,
+  "destructive_deletion_allowed": false,
+  "thresholds": {
+    "minimum_full_history_observations": 252,
+    "minimum_provisional_history_observations": 63,
+    "minimum_expected_session_coverage_ratio": 0.95,
+    "maximum_latest_observation_age_calendar_days": 7,
+    "minimum_median_daily_dollar_volume_usd": 100000,
+    "maximum_zero_volume_session_ratio": 0.05
+  },
+  "required_evidence": [
+    "security_id",
+    "symbol",
+    "observation_start_date",
+    "observation_end_date",
+    "price_observation_count",
+    "expected_trading_session_count",
+    "expected_session_coverage_ratio",
+    "latest_observation_age_calendar_days",
+    "adjusted_price_available",
+    "median_daily_dollar_volume_usd",
+    "zero_volume_session_ratio",
+    "corporate_action_conflict_state",
+    "source_lineage"
+  ],
+  "screen_states": [
+    "MARKET_DATA_ELIGIBLE",
+    "MARKET_DATA_PROVISIONAL",
+    "RESEARCH_ONLY",
+    "QUARANTINED",
+    "BLOCKED"
+  ],
+  "decision_rules": {
+    "missing_required_evidence_fails_closed": true,
+    "future_dated_observations_are_blocked": true,
+    "critical_corporate_action_conflicts_are_quarantined": true,
+    "missing_adjusted_price_is_research_only": true,
+    "stale_market_data_is_research_only": true,
+    "insufficient_history_is_provisional_or_research_only": true,
+    "poor_session_coverage_is_research_only": true,
+    "low_liquidity_requires_both_dollar_volume_and_zero_volume_evidence": true,
+    "missing_values_are_not_imputed": true,
+    "seed_symbols_must_be_present_but_do_not_bypass_evidence_gates": true
+  },
+  "authority": {
+    "market_data_collection": true,
+    "market_data_screening": true,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}

@@ -1,0 +1,50 @@
+{
+  "authority": {
+    "allocation_authorized": false,
+    "automatic_execution_authorized": false,
+    "benchmark_assignment_authorized": false,
+    "forecasting_authorized": false,
+    "ranking_authorized": false,
+    "recommendations_authorized": false,
+    "risk_model_authorized": false,
+    "taxonomy_development_authorized": true,
+    "taxonomy_normalization_authorized": true,
+    "taxonomy_source_acquisition_authorized": true,
+    "uip_database_write_authorized": false
+  },
+  "certification_id": "PHASE_3_ETF_MODEL_TAXONOMY_SCOPE_CERTIFICATION",
+  "certification_state": "CERTIFIED",
+  "critical_failures": [],
+  "decision_ledger_sha256": "0c609393ec111ff5fd9b39a0f6c4a9b4e9a42a0ca239e56d16da50f6a11f4d58",
+  "generated_at_utc": "2026-08-06T14:39:44.593339+00:00",
+  "normalized_pilot_model_count": 3,
+  "operating_date": "2026-08-06",
+  "operating_timezone": "America/Chicago",
+  "priority_batch_model_count": 215,
+  "priority_batch_original_count": 347,
+  "priority_batch_reference_only_count": 132,
+  "reference_population_count": 3462,
+  "required_seeds": [
+    "QQQM",
+    "SCHD",
+    "VOO"
+  ],
+  "required_seeds_present": true,
+  "route_pilot_model_count": 4,
+  "route_pilot_original_count": 5,
+  "route_pilot_reference_only_count": 1,
+  "source_hashes": {
+    "authoritative_taxonomy_sha256": "bf13221f0348d3184897c3b07700a54d8b6200e91793f8e441177f55bec8aaa2",
+    "model_decision_ledger_sha256": "f6cf2c96c677bf3f0694fcb28e78978494f2a2cd0a9158dc964e155c75780cf9",
+    "model_universe_sha256": "2025de62ede44919a749b1b64493a561882d27f8186a8c4486a509fda8d6c29c",
+    "normalized_pilot_sha256": "e1baf6678d0c21d1b9c68a2e1470896f6d55cd658be52848d522dbaf023944b0",
+    "policy_sha256": "6f2f60d08529464def63631d886b0e1345815504e07492ef7bc34706111dde3f",
+    "priority_batch_sha256": "ceaa954202f3a0235f2e81c894b1012079c0468ab9f31811a300e538b5caa02a",
+    "production_taxonomy_evidence_sha256": "ab57f87086020880f73fd5ea4be69ce9bac0d04bbec12c57d4710d8d84ecbcb3",
+    "route_pilot_execution_sha256": "f932b795df3c3fb9011e231ada2118e2f952d0edbb70f23bc1535427b7935364",
+    "route_pilot_sha256": "7f35274f198ff7bb60146c78b743c93b96d20a5187708136f2210853aeeda3b1"
+  },
+  "taxonomy_blocked_reference_count": 2385,
+  "taxonomy_scope_count": 1077,
+  "taxonomy_scope_sha256": "7162829559c1f5fb62f05441e84faefe8783d826a7f473a74457c1e8ccb75290"
+}

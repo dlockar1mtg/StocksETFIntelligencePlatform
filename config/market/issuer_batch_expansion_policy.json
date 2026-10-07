@@ -1,0 +1,50 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3c",
+  "required_full_population": 3462,
+  "completed_pilot_count": 3,
+  "remaining_population": 3459,
+  "batch_states": [
+    "BATCH_READY",
+    "ISSUER_EVIDENCE_REQUIRED",
+    "CONFLICTED",
+    "QUARANTINED",
+    "PILOT_COMPLETE"
+  ],
+  "priority_order": [
+    "ETF_COUNT_DESC",
+    "ISSUER_KEY_ASC"
+  ],
+  "controls": {
+    "full_population_preserved": true,
+    "completed_pilot_records_preserved": true,
+    "stable_security_id_required": true,
+    "issuer_key_must_be_evidence_backed": true,
+    "ticker_only_issuer_inference_prohibited": true,
+    "fund_name_issuer_inference_prohibited": true,
+    "missing_issuer_identity_preserved": true,
+    "conflicted_issuer_identity_preserved": true,
+    "batch_priority_is_coverage_based": true,
+    "no_arbitrary_batch_target": true,
+    "no_taxonomy_dimensions_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "issuer_batch_planning": true,
+    "coverage_prioritization": true,
+    "issuer_identity_inference": false,
+    "authoritative_source_capture": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

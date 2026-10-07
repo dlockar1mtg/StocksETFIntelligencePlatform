@@ -1,0 +1,74 @@
+{
+  "phase": "3.6b.3i",
+  "policy_version": "1.0.0",
+  "required_pilot_record_count": 5,
+  "required_request_count": 10,
+  "selected_priority_rank": 1,
+  "selected_issuer_key": "SEC-CIK-0001100663",
+  "selected_issuer_name": "iSHARES TRUST",
+  "required_input_state": "DISCOVERY_PENDING",
+  "result_states": [
+    "PRODUCT_SPECIFIC_RESOLVED",
+    "GENERIC_LANDING_PAGE",
+    "DISCOVERY_UNRESOLVED",
+    "DISCOVERY_CONFLICTED",
+    "DISCOVERY_QUARANTINED"
+  ],
+  "allowed_route_types": [
+    "SEC_SERIES_CLASS_FILING_DISCOVERY",
+    "ISHARES_SYMBOL_PRODUCT_DISCOVERY"
+  ],
+  "official_domains": [
+    "sec.gov",
+    "ishares.com",
+    "blackrock.com"
+  ],
+  "execution": {
+    "maximum_requests_per_second": 1,
+    "maximum_retry_attempts": 2,
+    "request_timeout_seconds": 45,
+    "checkpoint_after_each_request": true,
+    "user_agent_required": true,
+    "sec_search_template": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik}&type=497&dateb=&owner=exclude&count=100&series={series_id}&class={class_contract_id}",
+    "ishares_search_template": "https://www.ishares.com/us/search?search={symbol}"
+  },
+  "controls": {
+    "exact_pilot_population_required": true,
+    "exact_request_count_required": true,
+    "stable_security_id_required": true,
+    "confirmed_sec_identity_markers_required": true,
+    "https_required": true,
+    "official_domain_allowlist_required": true,
+    "redirect_chain_preserved": true,
+    "raw_response_preserved": true,
+    "payload_sha256_required": true,
+    "retrieval_timestamp_required": true,
+    "http_status_required": true,
+    "generic_landing_page_not_product_evidence": true,
+    "symbol_or_series_identity_marker_required_for_resolution": true,
+    "failed_requests_preserved": true,
+    "resume_safe_checkpoint_required": true,
+    "full_batch_capture_not_authorized": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "route_discovery_pilot_execution": true,
+    "route_discovery_pilot_result_analysis": true,
+    "priority_batch_source_capture": false,
+    "authoritative_source_capture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

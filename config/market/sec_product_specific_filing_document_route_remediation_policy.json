@@ -1,0 +1,62 @@
+{
+  "phase": "3.6b.3o",
+  "policy_version": "1.0.0",
+  "required_input_phase": "3.6b.3n",
+  "required_record_count": 347,
+  "required_review_ledger_sha256": "1e983a66274b873125dd024eceaac56b4232f981efd4dcdeeace1e4f572d8702",
+  "required_failed_review_state": "GENERIC_SHARED_PAYLOAD",
+  "required_failed_record_count": 347,
+  "pilot_symbols": ["AAXJ", "IAI", "IHI", "IYZ", "XVV"],
+  "route": {
+    "route_type": "SEC_SUBMISSIONS_TO_FILING_INDEX_TO_PRIMARY_DOCUMENT",
+    "submissions_template": "https://data.sec.gov/submissions/CIK{cik10}.json",
+    "filing_index_template": "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dashes}/{accession_no}-index.html",
+    "archive_document_template": "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession_no_dashes}/{primary_document}",
+    "allowed_forms": ["497", "497K", "497J", "485APOS", "485BPOS"],
+    "maximum_recent_filings_scanned": 200,
+    "maximum_candidate_documents_per_security": 5
+  },
+  "execution": {
+    "maximum_requests_per_second": 1,
+    "maximum_retry_attempts": 2,
+    "request_timeout_seconds": 45,
+    "declared_sec_user_agent_required": true,
+    "immutable_raw_storage": true,
+    "pilot_only": true
+  },
+  "controls": {
+    "failed_generic_payloads_preserved": true,
+    "five_security_pilot_required": true,
+    "submissions_payload_preserved": true,
+    "filing_index_or_primary_document_preserved": true,
+    "accession_number_required": true,
+    "primary_document_required": true,
+    "expected_cik_evaluated": true,
+    "expected_series_id_evaluated": true,
+    "expected_class_contract_id_evaluated": true,
+    "expected_symbol_evaluated": true,
+    "http_200_is_insufficient": true,
+    "product_specific_identity_required": true,
+    "full_347_recapture_blocked": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "route_remediation_review": true,
+    "five_security_remediation_pilot": true,
+    "remediated_route_reliability_certification": false,
+    "full_priority_batch_recapture": false,
+    "capture_ledger_certification": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

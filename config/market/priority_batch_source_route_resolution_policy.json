@@ -1,0 +1,58 @@
+{
+  "phase": "3.6b.3g",
+  "policy_version": "1.0.0",
+  "required_manifest_count": 347,
+  "selected_priority_rank": 1,
+  "selected_issuer_key": "SEC-CIK-0001100663",
+  "selected_issuer_name": "iSHARES TRUST",
+  "route_states": [
+    "ROUTE_CANDIDATE_READY",
+    "ROUTE_RESOLVED",
+    "ROUTE_UNRESOLVED",
+    "ROUTE_CONFLICTED",
+    "ROUTE_QUARANTINED"
+  ],
+  "allowed_source_tiers": [
+    "SEC_FILING",
+    "ISSUER_PRODUCT_PAGE",
+    "ISSUER_PROSPECTUS",
+    "INDEX_PROVIDER_METHODOLOGY"
+  ],
+  "official_domains": [
+    "sec.gov",
+    "ishares.com",
+    "blackrock.com"
+  ],
+  "controls": {
+    "full_priority_batch_preserved": true,
+    "stable_security_id_required": true,
+    "confirmed_sec_series_and_class_identity_required": true,
+    "official_domain_allowlist_required": true,
+    "https_required": true,
+    "security_identity_markers_required": true,
+    "route_candidates_are_not_captured_evidence": true,
+    "source_capture_not_executed": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "failed_records_preserved": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "priority_batch_source_route_resolution": true,
+    "priority_batch_route_coverage_analysis": true,
+    "priority_batch_source_capture": false,
+    "authoritative_source_capture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

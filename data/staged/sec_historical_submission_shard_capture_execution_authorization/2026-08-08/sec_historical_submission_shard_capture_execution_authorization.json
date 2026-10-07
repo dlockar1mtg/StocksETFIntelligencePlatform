@@ -1,0 +1,56 @@
+{
+  "artifact_id": "SEC_HISTORICAL_SUBMISSION_SHARD_CAPTURE_EXECUTION_AUTHORIZATION",
+  "authority": {
+    "automatic_execution": false,
+    "expanded_recent_filing_scan": false,
+    "filing_document_capture": false,
+    "filing_header_capture": false,
+    "full_215_execution": false,
+    "network_capture": true,
+    "portfolio_allocation": false,
+    "production_taxonomy_classification": false,
+    "ranking": false,
+    "recommendations": false,
+    "taxonomy_normalization": false,
+    "uip_database_write": false
+  },
+  "authorization_complete": true,
+  "authorized_shard_count": 12,
+  "authorized_symbols": [
+    "AAXJ",
+    "ACWI",
+    "IBTJ",
+    "IWN"
+  ],
+  "automatic_execution_authorized": false,
+  "critical_failures": [],
+  "execution_contract": {
+    "cache_identical_requests": true,
+    "immutable_raw_storage": true,
+    "maximum_requests_per_second": 1,
+    "maximum_retry_attempts": 0,
+    "maximum_unique_sec_requests": 12,
+    "request_timeout_seconds": 45
+  },
+  "filing_document_capture_authorized": false,
+  "filing_header_capture_authorized": false,
+  "full_215_execution_authorized": false,
+  "governed_head": "c4464c9d78b88d6f599f3f2153038f054a05d492",
+  "manifest_sha256": "c15ebafd5fc16d9833a64295eb43fca8c348da0e01d61dfcbe1c2018db007f15",
+  "network_capture_authorized": true,
+  "network_requests_performed": 0,
+  "next_required_step": "EXECUTE_EXACT_12_HISTORICAL_SUBMISSION_SHARD_CAPTURE",
+  "operating_date": "2026-08-08",
+  "operating_timezone": "America/Chicago",
+  "phase": "3.6b.3r",
+  "scope_controls": {
+    "exact_manifest_urls_only": true,
+    "expanded_recent_scan": false,
+    "filing_document_capture": false,
+    "filing_header_capture": false,
+    "full_215_execution": false,
+    "historical_submission_shards_only": true,
+    "taxonomy_normalization": false
+  },
+  "taxonomy_normalization_authorized": false
+}

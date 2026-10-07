@@ -1,0 +1,65 @@
+{
+  "policy_version": "1.2.0",
+  "phase": "3.6b.3",
+  "required_record_count": 1077,
+  "acquisition_states": [
+    "PENDING",
+    "AUTHORITY_CAPTURED",
+    "UNRESOLVED",
+    "CONFLICTED",
+    "QUARANTINED"
+  ],
+  "authoritative_source_tiers": [
+    "ISSUER_PROSPECTUS",
+    "SEC_FILING",
+    "INDEX_PROVIDER_METHODOLOGY",
+    "ISSUER_PRODUCT_PAGE"
+  ],
+  "required_manifest_fields": [
+    "security_id",
+    "symbol",
+    "acquisition_state",
+    "issuer_key",
+    "source_tier",
+    "source_id",
+    "source_record_id",
+    "source_url",
+    "content_sha256",
+    "captured_at_utc",
+    "acquisition_reasons"
+  ],
+  "controls": {
+    "all_input_records_preserved": true,
+    "stable_security_id_required": true,
+    "issuer_first_batching_preferred": true,
+    "issuer_identity_must_be_evidence_backed": true,
+    "ticker_only_issuer_inference_prohibited": true,
+    "fund_name_keyword_taxonomy_classification_prohibited": true,
+    "secondary_evidence_may_prioritize_but_not_classify": true,
+    "authoritative_content_hash_required": true,
+    "source_url_required_for_captured_authority": true,
+    "classification_dimensions_not_assigned_in_acquisition_phase": true,
+    "conflicts_preserved": true,
+    "unresolved_records_preserved": true,
+    "no_destructive_deletion": true,
+    "resume_safe_manifest_required": true
+  },
+  "authority": {
+    "authoritative_registry_acquisition_planning": true,
+    "authoritative_evidence_manifest_build": true,
+    "authoritative_source_capture": true,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}

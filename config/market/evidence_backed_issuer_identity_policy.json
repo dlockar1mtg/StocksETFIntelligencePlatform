@@ -1,0 +1,38 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3d",
+  "required_full_population": 3462,
+  "completed_pilot_count": 3,
+  "identity_states": ["ISSUER_CONFIRMED", "ISSUER_UNRESOLVED", "ISSUER_CONFLICTED", "ISSUER_QUARANTINED", "PILOT_COMPLETE"],
+  "authoritative_source_tiers": ["SEC_REGISTRANT_IDENTITY", "SEC_SERIES_CLASS_IDENTITY", "ISSUER_PROSPECTUS", "ISSUER_PRODUCT_PAGE"],
+  "controls": {
+    "full_population_preserved": true,
+    "stable_security_id_required": true,
+    "sec_identity_must_be_previously_confirmed": true,
+    "issuer_name_and_cik_required_for_confirmation": true,
+    "ticker_only_issuer_inference_prohibited": true,
+    "fund_name_issuer_inference_prohibited": true,
+    "conflicts_preserved": true,
+    "unresolved_records_preserved": true,
+    "no_taxonomy_dimensions_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "issuer_identity_acquisition": true,
+    "issuer_identity_coverage_analysis": true,
+    "issuer_batch_planning": false,
+    "authoritative_source_capture": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "phase": "2",
+  "subphase": "2B.5",
+  "policy_version": "1.0.0",
+  "name": "Market Data Foundation Final Certification",
+  "operating_date": "2026-08-03",
+  "required_total_records": 4419,
+  "required_state_counts": {
+    "MARKET_DATA_ELIGIBLE": 3462,
+    "MARKET_DATA_PROVISIONAL": 442,
+    "RESEARCH_ONLY": 515,
+    "QUARANTINED": 0,
+    "BLOCKED": 0
+  },
+  "phase_3_candidate_states": ["MARKET_DATA_ELIGIBLE"],
+  "phase_3_candidate_record_count": 3462,
+  "excluded_from_phase_3_states": [
+    "MARKET_DATA_PROVISIONAL",
+    "RESEARCH_ONLY",
+    "QUARANTINED",
+    "BLOCKED"
+  ],
+  "provisional_records_preserved": true,
+  "provisional_records_advance_to_phase_3": false,
+  "destructive_deletion_allowed": false,
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "required_seed_state": "MARKET_DATA_ELIGIBLE",
+  "required_reason_counts": {
+    "FULL_MARKET_DATA_SCREEN_PASSED": 3462,
+    "LIMITED_HISTORY_PROVISIONAL": 442,
+    "INSUFFICIENT_HISTORY": 145,
+    "INSUFFICIENT_LIQUIDITY_EVIDENCE": 313,
+    "INSUFFICIENT_SESSION_COVERAGE": 57
+  },
+  "authority": {
+    "phase_3_candidate_publication": true,
+    "full_history_collection": false,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}

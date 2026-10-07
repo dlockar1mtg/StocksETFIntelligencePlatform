@@ -1,0 +1,28 @@
+{
+  "phase": "2B.3",
+  "policy_version": "1.0.0",
+  "input_state": "ACTIVE_STRUCTURAL_UNIVERSE",
+  "expected_input_record_count": 4419,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "selection_principle": "EVIDENCE_DETERMINES_SIZE",
+  "target_universe_size": null,
+  "preserve_all_input_records": true,
+  "destructive_deletion_allowed": false,
+  "progress_interval_records": 100,
+  "retryable_statuses": ["PROVIDER_ERROR"],
+  "terminal_statuses": ["COLLECTED", "NOT_FOUND", "SYMBOL_MISMATCH", "PROVIDER_ERROR", "INVALID_SYMBOL"],
+  "completion_requires_unique_security_ids": true,
+  "completion_requires_all_input_records": true,
+  "checkpoint_required": true,
+  "completion_attestation_required": true,
+  "authority": {
+    "full_history_collection": false,
+    "analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false
+  }
+}

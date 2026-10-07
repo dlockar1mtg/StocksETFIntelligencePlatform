@@ -1,0 +1,65 @@
+{
+  "phase": "3",
+  "subphase": "3.4",
+  "policy_version": "1.1.0",
+  "name": "Historical Evidence Certification and Analytics Eligibility",
+  "objective": "Certify all 3462 Phase 3 ETFs and assign non-destructive eligibility using the universal UIP horizon contract.",
+  "required_record_count": 3462,
+  "required_collection_status": "COLLECTED",
+  "required_provider_id": "YAHOO_FINANCE_CHART",
+  "required_provider_data_granularity": "1d",
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "uip_horizon_contract": ["30d", "90d", "180d", "1y", "3y", "5y"],
+  "horizon_minimum_observations": {
+    "30d": 21,
+    "90d": 63,
+    "180d": 126,
+    "1y": 252,
+    "3y": 756,
+    "5y": 1260
+  },
+  "horizon_semantics": {
+    "30d": {"calendar_horizon_days": 30, "required_trading_observations": 21},
+    "90d": {"calendar_horizon_days": 90, "required_trading_observations": 63},
+    "180d": {"calendar_horizon_days": 180, "required_trading_observations": 126},
+    "1y": {"calendar_horizon_days": 365, "required_trading_observations": 252},
+    "3y": {"calendar_horizon_days": 1095, "required_trading_observations": 756},
+    "5y": {"calendar_horizon_days": 1826, "required_trading_observations": 1260}
+  },
+  "legacy_horizon_aliases": {"1m": "30d", "3m": "90d"},
+  "evidence_controls": {
+    "raw_payload_required": true,
+    "payload_sha256_reconciliation_required": true,
+    "provider_symbol_match_required": true,
+    "daily_granularity_required": true,
+    "chronological_order_required": true,
+    "duplicate_observation_dates_block": true,
+    "future_observation_dates_block": true,
+    "latest_observation_max_age_days": 7,
+    "adjusted_price_coverage_required": true,
+    "null_adjusted_prices_block": true,
+    "corporate_action_event_shapes_required": true,
+    "missing_evidence_must_not_be_imputed": true
+  },
+  "record_states": ["EVIDENCE_CERTIFIED", "HORIZON_LIMITED", "QUARANTINED", "BLOCKED"],
+  "preservation": {
+    "all_input_records_preserved": true,
+    "shorter_history_records_not_deleted": true,
+    "eligibility_assigned_per_horizon": true,
+    "arbitrary_target_size_prohibited": true
+  },
+  "authority": {
+    "historical_evidence_certification": true,
+    "analytics_eligibility_assignment": true,
+    "return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}

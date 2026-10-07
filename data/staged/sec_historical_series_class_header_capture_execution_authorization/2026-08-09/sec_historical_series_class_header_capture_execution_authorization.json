@@ -1,0 +1,39 @@
+﻿{
+    "artifact_id":  "SEC_HISTORICAL_SERIES_CLASS_HEADER_CAPTURE_EXECUTION_AUTHORIZATION",
+    "phase":  "3.6b.3s",
+    "operating_date":  "2026-08-09",
+    "route_type":  "EXACT_HISTORICAL_ACCESSION_FILING_INDEX_PILOT",
+    "executable_commit_sha":  "21db89cab46211da11c9a4873faf9fa4c16a8988",
+    "manifest_sha256":  "1bba533b1c7bb59ac0dadf74bef49f23070d09961123e1a8cb3d4f6cbedf1ec0",
+    "target_symbols":  [
+                           "IWN",
+                           "ACWI",
+                           "AAXJ",
+                           "IBTJ"
+                       ],
+    "target_count":  4,
+    "accession_count":  8,
+    "network_capture_authorized":  true,
+    "historical_filing_index_capture_authorized":  true,
+    "historical_filing_document_capture_authorized":  false,
+    "additional_accession_discovery_authorized":  false,
+    "expanded_pilot_authorized":  false,
+    "full_215_execution_authorized":  false,
+    "taxonomy_normalization_authorized":  false,
+    "production_taxonomy_classification_authorized":  false,
+    "ranking_authorized":  false,
+    "forecasting_authorized":  false,
+    "recommendations_authorized":  false,
+    "portfolio_allocation_authorized":  false,
+    "automatic_execution_authorized":  false,
+    "uip_database_write_authorized":  false,
+    "execution_contract":  {
+                               "maximum_unique_sec_requests":  8,
+                               "maximum_requests_per_second":  1,
+                               "maximum_retry_attempts":  0,
+                               "request_timeout_seconds":  45
+                           },
+    "authorized_action":  "CAPTURE_EXACT_8_HISTORICAL_FILING_INDEX_JSON_PAYLOADS",
+    "required_stop_after_capture":  "OFFLINE_HISTORICAL_INDEX_IDENTITY_REVIEW",
+    "authorization_scope_statement":  "This authorization permits only the eight exact filing-index URLs frozen in the bound Phase 3.6b.3s manifest. It does not authorize filing-document capture, accession expansion, model taxonomy normalization, production classification, ranking, forecasting, recommendations, portfolio allocation, execution, or UIP database writes."
+}

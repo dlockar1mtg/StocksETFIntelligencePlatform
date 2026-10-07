@@ -1,0 +1,43 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.1",
+  "required_record_count": 3462,
+  "required_seed_symbols": ["VOO", "SCHD", "QQQM"],
+  "source": {
+    "provider_id": "YAHOO_FINANCE_SEARCH",
+    "endpoint_template": "https://query1.finance.yahoo.com/v1/finance/search?q={symbol}&quotesCount=10&newsCount=0",
+    "source_tier": "SECONDARY_CLASSIFICATION_EVIDENCE",
+    "authoritative_taxonomy_source": false
+  },
+  "collection_states": ["COLLECTED", "NOT_FOUND", "PROVIDER_ERROR", "SYMBOL_MISMATCH"],
+  "required_evidence_fields": ["security_id", "symbol", "provider_symbol", "quote_type", "short_name", "long_name", "exchange", "provider_payload_sha256", "retrieved_at_utc"],
+  "controls": {
+    "all_input_records_preserved": true,
+    "stable_security_id_required": true,
+    "ticker_only_identity_prohibited": true,
+    "raw_payload_hash_required": true,
+    "provider_errors_preserved": true,
+    "symbol_mismatch_preserved": true,
+    "unknown_taxonomy_not_inferred": true,
+    "fund_name_keyword_classification_prohibited": true,
+    "secondary_evidence_does_not_certify_taxonomy": true,
+    "resume_safe_collection_required": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "taxonomy_evidence_collection": true,
+    "taxonomy_evidence_coverage_analysis": true,
+    "production_taxonomy_classification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true
+}

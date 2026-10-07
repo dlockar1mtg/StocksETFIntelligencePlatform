@@ -1,0 +1,19 @@
+{
+  "registry_version": "1.0.1",
+  "status": "CONTROL_BASELINE_REQUIRES_FULL_POPULATION",
+  "records": {},
+  "entry_requirements": {
+    "one_or_more_authoritative_records_per_security": true,
+    "allowed_source_tiers": [
+      "ISSUER_PROSPECTUS",
+      "SEC_FILING",
+      "INDEX_PROVIDER_METHODOLOGY",
+      "ISSUER_PRODUCT_PAGE"
+    ],
+    "source_content_sha256_required": true,
+    "placeholder_hashes_prohibited": true,
+    "all_taxonomy_dimensions_required": true,
+    "classification_timestamp_required": true
+  },
+  "note": "No production classification is pre-populated. Entries must be added from captured authoritative source evidence; secondary Yahoo evidence and ticker or name inference are insufficient."
+}

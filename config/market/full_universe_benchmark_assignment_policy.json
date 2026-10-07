@@ -1,0 +1,53 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b",
+  "required_record_count": 3462,
+  "required_assignment_states": [
+    "BENCHMARK_ASSIGNED",
+    "BENCHMARK_UNASSIGNED",
+    "BENCHMARK_UNSUPPORTED",
+    "BENCHMARK_CONFLICTED"
+  ],
+  "uip_horizon_contract": ["30d", "90d", "180d", "1y", "3y", "5y"],
+  "controls": {
+    "all_input_records_preserved": true,
+    "one_assignment_record_per_security": true,
+    "stable_security_id_required": true,
+    "taxonomy_lineage_required": true,
+    "return_lineage_required": true,
+    "assignment_reasons_required_for_nonassigned_states": true,
+    "unsupported_records_excluded_from_active_analytical_universe": true,
+    "conflicted_records_quarantined": true,
+    "unassigned_records_require_remediation": true,
+    "invalid_return_records_excluded_from_active_analytical_universe": true,
+    "no_destructive_deletion": true,
+    "no_silent_benchmark_imputation": true,
+    "no_arbitrary_target_universe_size": true,
+    "trim_is_processing_exclusion_only": true
+  },
+  "active_analytical_universe_rule": {
+    "required_assignment_state": "BENCHMARK_ASSIGNED",
+    "required_return_calculation_state": "CALCULATED",
+    "excluded_assignment_states": [
+      "BENCHMARK_UNASSIGNED",
+      "BENCHMARK_UNSUPPORTED",
+      "BENCHMARK_CONFLICTED"
+    ],
+    "excluded_return_states": ["CALCULATION_BLOCKED"]
+  },
+  "authority": {
+    "full_universe_benchmark_assignment": true,
+    "coverage_analysis": true,
+    "trimming_recommendation": true,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

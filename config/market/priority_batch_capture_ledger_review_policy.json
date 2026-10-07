@@ -1,0 +1,57 @@
+{
+  "phase": "3.6b.3n",
+  "policy_version": "1.0.0",
+  "required_record_count": 347,
+  "required_input_phase": "3.6b.3m",
+  "required_capture_ledger_sha256": "74ab09e42fb9df180b3d6aa6b90f0aa9f0a9eae6a8d6c09d4b8f1aa7a07d85c7",
+  "required_route_type": "SEC_SERIES_CLASS_FILING_DISCOVERY",
+  "review_states": [
+    "PRODUCT_SPECIFIC_EVIDENCE",
+    "GENERIC_SHARED_PAYLOAD",
+    "IDENTITY_MARKER_INCOMPLETE",
+    "RAW_EVIDENCE_MISSING",
+    "RAW_HASH_MISMATCH",
+    "REVIEW_QUARANTINED"
+  ],
+  "thresholds": {
+    "minimum_product_specific_rate_for_certification": 1.0,
+    "maximum_shared_payload_group_size_for_product_specific": 1,
+    "required_raw_hash_coverage": 1.0,
+    "required_identity_marker_coverage": 1.0
+  },
+  "controls": {
+    "all_347_records_preserved": true,
+    "raw_payload_bytes_inspected": true,
+    "raw_payload_hash_recomputed": true,
+    "unique_payload_hashes_counted": true,
+    "shared_payload_groups_preserved": true,
+    "expected_cik_evaluated": true,
+    "expected_series_id_evaluated": true,
+    "expected_class_contract_id_evaluated": true,
+    "expected_symbol_evaluated": true,
+    "http_200_is_insufficient": true,
+    "captured_state_is_insufficient": true,
+    "generic_payloads_cannot_be_certified": true,
+    "missing_or_mismatched_evidence_quarantined": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "capture_ledger_review": true,
+    "capture_ledger_certification": false,
+    "authoritative_source_capture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

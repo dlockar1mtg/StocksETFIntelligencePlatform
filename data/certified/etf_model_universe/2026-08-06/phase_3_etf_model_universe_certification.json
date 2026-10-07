@@ -1,0 +1,43 @@
+{
+  "authority": {
+    "allocation_authorized": false,
+    "automatic_execution_authorized": false,
+    "benchmark_assignment_authorized": false,
+    "forecasting_authorized": false,
+    "ranking_authorized": false,
+    "recommendations_authorized": false,
+    "risk_model_authorized": false,
+    "taxonomy_development_authorized": true,
+    "uip_database_write_authorized": false
+  },
+  "certification_id": "PHASE_3_ETF_MODEL_UNIVERSE_CERTIFICATION",
+  "certification_state": "CERTIFIED",
+  "critical_failures": [],
+  "decision_ledger_sha256": "751000b9f05e7e0ed40fa8d6c52d349be2a39d272d67443cbf5ac858a3e94c21",
+  "excluded_reference_population_count": 2385,
+  "exclusion_reason_counts": {
+    "five_year_eligible": 1594,
+    "minimum_liquidity_met": 1851,
+    "returns_calculated": 2
+  },
+  "generated_at_utc": "2026-08-06T12:09:59.531463+00:00",
+  "model_population_count": 1077,
+  "model_universe_sha256": "7d0843090ad049c43a0d984b021cd3c81c669effbb6ee5f337dca653187037d0",
+  "operating_date": "2026-08-06",
+  "operating_timezone": "America/Chicago",
+  "reference_population_count": 3462,
+  "required_model_population_count": 1077,
+  "required_seeds": [
+    "QQQM",
+    "SCHD",
+    "VOO"
+  ],
+  "required_seeds_present": true,
+  "source_hashes": {
+    "historical_certification_sha256": "3238276ef000b1f9da25d84d44a1a52cb2aac49c1fba50bafba3291693e65a8d",
+    "issuer_identity_sha256": "3184b40b3e439f44020ce6f5e1b497e455f67ee1ed8046b419ea21939ede2ae3",
+    "market_universe_sha256": "f2096f5e0ab355eb591d7ff8741f0a6cb1927d0e789b174060698ec1ab475af3",
+    "policy_sha256": "aa391ba12e83d657ba7965f1b9db557231cffd4aef0ed317bfc5770bcb4641be",
+    "total_returns_sha256": "9eb34c70c50839ad3c528708bbabb95c55a28d78b7f8ae70a80d9f04bf5efb54"
+  }
+}

@@ -1,0 +1,55 @@
+﻿{
+  "policy_id": "ETF_MODEL_TAXONOMY_SCOPE_POLICY_V1",
+  "phase": "PHASE_3_MODEL_TAXONOMY_SCOPE_RESET",
+  "operating_date": "2026-08-06",
+  "operating_timezone": "America/Chicago",
+  "governing_model_universe": {
+    "required_population_count": 1077,
+    "exclusive_taxonomy_development_population": true,
+    "required_seed_symbols": [
+      "VOO",
+      "SCHD",
+      "QQQM"
+    ]
+  },
+  "expected_intersections": {
+    "priority_batch_model_count": 215,
+    "priority_batch_reference_only_count": 132,
+    "route_pilot_model_count": 4,
+    "route_pilot_reference_only_count": 1,
+    "normalized_pilot_model_count": 3
+  },
+  "taxonomy_scope_authority": {
+    "included_model_records": {
+      "taxonomy_development_authorized": true,
+      "taxonomy_source_acquisition_authorized": true,
+      "taxonomy_normalization_authorized": true
+    },
+    "outside_model_records": {
+      "taxonomy_development_authorized": false,
+      "taxonomy_source_acquisition_authorized": false,
+      "taxonomy_normalization_authorized": false,
+      "reference_preservation_required": true,
+      "destructive_deletion_authorized": false
+    }
+  },
+  "downstream_authority": {
+    "benchmark_assignment_authorized": false,
+    "risk_model_authorized": false,
+    "ranking_authorized": false,
+    "forecasting_authorized": false,
+    "recommendations_authorized": false,
+    "allocation_authorized": false,
+    "automatic_execution_authorized": false,
+    "uip_database_write_authorized": false
+  },
+  "governance_controls": {
+    "deterministic_rebuild_required": true,
+    "source_hashes_required": true,
+    "full_reference_decision_ledger_required": true,
+    "silent_reentry_prohibited": true,
+    "silent_removal_prohibited": true,
+    "prior_evidence_preservation_required": true,
+    "unresolved_taxonomy_states_must_be_preserved": true
+  }
+}

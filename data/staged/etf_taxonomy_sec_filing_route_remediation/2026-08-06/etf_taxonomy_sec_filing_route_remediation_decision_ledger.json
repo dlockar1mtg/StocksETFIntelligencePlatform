@@ -1,0 +1,4124 @@
+{
+  "artifact_id": "ETF_TAXONOMY_SEC_FILING_ROUTE_REMEDIATION_DECISION_LEDGER",
+  "model_priority_count": 215,
+  "operating_date": "2026-08-06",
+  "records": [
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AAXJ",
+      "symbol": "AAXJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ACWI",
+      "symbol": "ACWI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ACWX",
+      "symbol": "ACWX"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AGG",
+      "symbol": "AGG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AGZ",
+      "symbol": "AGZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AIA",
+      "symbol": "AIA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AOA",
+      "symbol": "AOA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AOK",
+      "symbol": "AOK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AOM",
+      "symbol": "AOM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-AOR",
+      "symbol": "AOR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ARTY",
+      "symbol": "ARTY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-BGRN",
+      "symbol": "BGRN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-CMBS",
+      "symbol": "CMBS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-CMF",
+      "symbol": "CMF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-CNYA",
+      "symbol": "CNYA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-CRBN",
+      "symbol": "CRBN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-DGRO",
+      "symbol": "DGRO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-DIVB",
+      "symbol": "DIVB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-DMXF",
+      "symbol": "DMXF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-DSI",
+      "symbol": "DSI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-DVY",
+      "symbol": "DVY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EAGG",
+      "symbol": "EAGG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EFA",
+      "symbol": "EFA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EFAV",
+      "symbol": "EFAV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EFG",
+      "symbol": "EFG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EFV",
+      "symbol": "EFV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EIDO",
+      "symbol": "EIDO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EMB",
+      "symbol": "EMB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EPHE",
+      "symbol": "EPHE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EPOL",
+      "symbol": "EPOL"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EPU",
+      "symbol": "EPU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ESGD",
+      "symbol": "ESGD"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ESGU",
+      "symbol": "ESGU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ESML",
+      "symbol": "ESML"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EUFN",
+      "symbol": "EUFN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EUSB",
+      "symbol": "EUSB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EWJV",
+      "symbol": "EWJV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EWU",
+      "symbol": "EWU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EWZS",
+      "symbol": "EWZS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-EXI",
+      "symbol": "EXI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-FALN",
+      "symbol": "FALN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-FLOT",
+      "symbol": "FLOT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-FXI",
+      "symbol": "FXI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-GARP",
+      "symbol": "GARP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-GOVT",
+      "symbol": "GOVT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-GOVZ",
+      "symbol": "GOVZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-GVI",
+      "symbol": "GVI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HDV",
+      "symbol": "HDV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HEFA",
+      "symbol": "HEFA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HEWJ",
+      "symbol": "HEWJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HEZU",
+      "symbol": "HEZU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HYDB",
+      "symbol": "HYDB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-HYG",
+      "symbol": "HYG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IAGG",
+      "symbol": "IAGG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IAI",
+      "symbol": "IAI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IAK",
+      "symbol": "IAK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IAT",
+      "symbol": "IAT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBB",
+      "symbol": "IBB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDR",
+      "symbol": "IBDR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDS",
+      "symbol": "IBDS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDT",
+      "symbol": "IBDT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDU",
+      "symbol": "IBDU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDV",
+      "symbol": "IBDV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBDW",
+      "symbol": "IBDW"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBHF",
+      "symbol": "IBHF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBHG",
+      "symbol": "IBHG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBMO",
+      "symbol": "IBMO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBMP",
+      "symbol": "IBMP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBMQ",
+      "symbol": "IBMQ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBTG",
+      "symbol": "IBTG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBTH",
+      "symbol": "IBTH"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBTI",
+      "symbol": "IBTI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBTJ",
+      "symbol": "IBTJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IBTK",
+      "symbol": "IBTK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ICF",
+      "symbol": "ICF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ICLN",
+      "symbol": "ICLN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ICVT",
+      "symbol": "ICVT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IDEV",
+      "symbol": "IDEV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IDU",
+      "symbol": "IDU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IDV",
+      "symbol": "IDV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEF",
+      "symbol": "IEF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEFA",
+      "symbol": "IEFA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEI",
+      "symbol": "IEI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEO",
+      "symbol": "IEO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEUR",
+      "symbol": "IEUR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEV",
+      "symbol": "IEV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IEZ",
+      "symbol": "IEZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IFRA",
+      "symbol": "IFRA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGE",
+      "symbol": "IGE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGEB",
+      "symbol": "IGEB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGF",
+      "symbol": "IGF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGIB",
+      "symbol": "IGIB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGLB",
+      "symbol": "IGLB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGM",
+      "symbol": "IGM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGOV",
+      "symbol": "IGOV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGRO",
+      "symbol": "IGRO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGSB",
+      "symbol": "IGSB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IGV",
+      "symbol": "IGV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IHAK",
+      "symbol": "IHAK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IHE",
+      "symbol": "IHE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IHF",
+      "symbol": "IHF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IHI",
+      "symbol": "IHI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJH",
+      "symbol": "IJH"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJJ",
+      "symbol": "IJJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJK",
+      "symbol": "IJK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJR",
+      "symbol": "IJR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJS",
+      "symbol": "IJS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IJT",
+      "symbol": "IJT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ILCB",
+      "symbol": "ILCB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ILCG",
+      "symbol": "ILCG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ILCV",
+      "symbol": "ILCV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ILF",
+      "symbol": "ILF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ILTB",
+      "symbol": "ILTB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IMCB",
+      "symbol": "IMCB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IMCG",
+      "symbol": "IMCG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IMCV",
+      "symbol": "IMCV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IMTM",
+      "symbol": "IMTM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-INDA",
+      "symbol": "INDA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-INDY",
+      "symbol": "INDY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-INTF",
+      "symbol": "INTF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IOO",
+      "symbol": "IOO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IPAC",
+      "symbol": "IPAC"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IQLT",
+      "symbol": "IQLT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ISCF",
+      "symbol": "ISCF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ISCG",
+      "symbol": "ISCG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ISHG",
+      "symbol": "ISHG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ISTB",
+      "symbol": "ISTB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ITA",
+      "symbol": "ITA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ITB",
+      "symbol": "ITB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-ITOT",
+      "symbol": "ITOT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IUSB",
+      "symbol": "IUSB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IUSG",
+      "symbol": "IUSG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IUSV",
+      "symbol": "IUSV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IVE",
+      "symbol": "IVE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IVLU",
+      "symbol": "IVLU"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IVV",
+      "symbol": "IVV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IVW",
+      "symbol": "IVW"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWB",
+      "symbol": "IWB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWC",
+      "symbol": "IWC"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWD",
+      "symbol": "IWD"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWF",
+      "symbol": "IWF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWL",
+      "symbol": "IWL"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWM",
+      "symbol": "IWM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWN",
+      "symbol": "IWN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWO",
+      "symbol": "IWO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWP",
+      "symbol": "IWP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWR",
+      "symbol": "IWR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWS",
+      "symbol": "IWS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWV",
+      "symbol": "IWV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWX",
+      "symbol": "IWX"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IWY",
+      "symbol": "IWY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXC",
+      "symbol": "IXC"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXG",
+      "symbol": "IXG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXJ",
+      "symbol": "IXJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXN",
+      "symbol": "IXN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXP",
+      "symbol": "IXP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IXUS",
+      "symbol": "IXUS"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYC",
+      "symbol": "IYC"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYE",
+      "symbol": "IYE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYF",
+      "symbol": "IYF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYG",
+      "symbol": "IYG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYH",
+      "symbol": "IYH"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYJ",
+      "symbol": "IYJ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYK",
+      "symbol": "IYK"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYM",
+      "symbol": "IYM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYR",
+      "symbol": "IYR"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYT",
+      "symbol": "IYT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYW",
+      "symbol": "IYW"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYY",
+      "symbol": "IYY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-IYZ",
+      "symbol": "IYZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-JXI",
+      "symbol": "JXI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-KSA",
+      "symbol": "KSA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-KXI",
+      "symbol": "KXI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-LQD",
+      "symbol": "LQD"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-LRGF",
+      "symbol": "LRGF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-MBB",
+      "symbol": "MBB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-MCHI",
+      "symbol": "MCHI"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-MTUM",
+      "symbol": "MTUM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-MUB",
+      "symbol": "MUB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-NYF",
+      "symbol": "NYF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-OEF",
+      "symbol": "OEF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-PFF",
+      "symbol": "PFF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-QLTA",
+      "symbol": "QLTA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-QUAL",
+      "symbol": "QUAL"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-REET",
+      "symbol": "REET"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-REM",
+      "symbol": "REM"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-REZ",
+      "symbol": "REZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SCZ",
+      "symbol": "SCZ"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SGOV",
+      "symbol": "SGOV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SHV",
+      "symbol": "SHV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SHY",
+      "symbol": "SHY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SHYG",
+      "symbol": "SHYG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SLQD",
+      "symbol": "SLQD"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SMIN",
+      "symbol": "SMIN"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SMLF",
+      "symbol": "SMLF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SMMD",
+      "symbol": "SMMD"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SOXX",
+      "symbol": "SOXX"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-STIP",
+      "symbol": "STIP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SUB",
+      "symbol": "SUB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SUSA",
+      "symbol": "SUSA"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SUSB",
+      "symbol": "SUSB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SUSC",
+      "symbol": "SUSC"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SUSL",
+      "symbol": "SUSL"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-SYSB",
+      "symbol": "SYSB"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-TFLO",
+      "symbol": "TFLO"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-TIP",
+      "symbol": "TIP"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-TLH",
+      "symbol": "TLH"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-TLT",
+      "symbol": "TLT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-UAE",
+      "symbol": "UAE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-USHY",
+      "symbol": "USHY"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-USIG",
+      "symbol": "USIG"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-USMV",
+      "symbol": "USMV"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-USRT",
+      "symbol": "USRT"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-USXF",
+      "symbol": "USXF"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "inside_model_priority_scope": true,
+      "reference_only_blocked": false,
+      "remediation_queue": "FILING_ROUTE_DISCOVERY_REQUIRED",
+      "security_id": "US-ETF-VLUE",
+      "symbol": "VLUE"
+    },
+    {
+      "authority": {
+        "allocation_authorized": false,
+        "automatic_execution_authorized": false,
+        "benchmark_assignment_authorized": false,
+        "forecasting_authorized": false,
+        "network_capture_authorized": false,
+        "ranking_authorized": false,
+        "recommendations_authorized": false,
+        "taxonomy_classification_authorized": false,
+        "taxonomy_normalization_authorized": false,
+        "uip_database_write_authorized": false
+      },
+      "candidate_product_specific_filing_url": "https://www.sec.gov/Archives/edgar/data/1100663/000119312526330968/d55058d497.htm",
+      "inside_model_priority_scope": false,
+      "reference_only_blocked": true,
+      "remediation_queue": "REFERENCE_ONLY_BLOCKED",
+      "sec_class_contract_id": null,
+      "sec_series_id": "S000069532",
+      "security_id": "US-ETF-XVV",
+      "symbol": "XVV"
+    }
+  ],
+  "reference_only_blocked_count": 1,
+  "source_hashes": {
+    "active_structural_universe_sha256": "64ddd22eb1d28a992a96122f13b4336e4d5c516dac66e7b6e40f50077fbc6de3",
+    "capture_execution_sha256": "74ab09e42fb9df180b3d6aa6b90f0aa9f0a9eae6a8d6c09d4b8f1aa7a07d85c7",
+    "capture_review_sha256": "ceaa954202f3a0235f2e81c894b1012079c0468ab9f31811a300e538b5caa02a",
+    "policy_sha256": "73f450b76a15807d4c33b2bc2d5eabe73ad11ea8a5723199d5c28d37eec1dec9",
+    "product_remediation_sha256": "973c6292c0d29efb832a70d2382efa1ffe1a3f94349139d0db80092f0ed30d6f",
+    "series_resolution_sha256": "ecf4781cbbefe364f16b7a1d7e165fddd2e23fb6100b213c1590cbe53ef9bca8",
+    "taxonomy_scope_sha256": "5c7899c32480af113b173afba7750ffd4a5e6b88cfd20744a353a39accd2e87a"
+  }
+}

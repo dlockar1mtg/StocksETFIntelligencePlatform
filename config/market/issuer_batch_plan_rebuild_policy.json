@@ -1,0 +1,37 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3e",
+  "required_full_population": 3462,
+  "completed_pilot_count": 3,
+  "eligible_identity_states": ["ISSUER_CONFIRMED", "PILOT_COMPLETE"],
+  "batch_states": ["BATCH_READY", "PILOT_COMPLETE", "ISSUER_UNRESOLVED", "ISSUER_CONFLICTED", "ISSUER_QUARANTINED"],
+  "controls": {
+    "full_population_preserved": true,
+    "stable_security_id_required": true,
+    "completed_pilot_records_preserved": true,
+    "confirmed_issuer_identity_required_for_batch": true,
+    "batch_priority_is_coverage_based": true,
+    "deterministic_tie_break_required": true,
+    "source_capture_not_executed": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "failed_records_preserved": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "issuer_batch_plan_rebuild": true,
+    "coverage_prioritization": true,
+    "authoritative_source_capture": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "phase": "3.6b.3f",
+  "policy_version": "1.0.0",
+  "required_full_population": 3462,
+  "selected_priority_rank": 1,
+  "selected_issuer_key": "SEC-CIK-0001100663",
+  "selected_issuer_name": "iSHARES TRUST",
+  "selected_security_count": 347,
+  "allowed_source_tiers": [
+    "SEC_FILING",
+    "ISSUER_PRODUCT_PAGE",
+    "INDEX_PROVIDER_METHODOLOGY"
+  ],
+  "acquisition_states": [
+    "PENDING",
+    "SOURCE_CAPTURED",
+    "UNRESOLVED",
+    "CONFLICTED",
+    "QUARANTINED"
+  ],
+  "controls": {
+    "exactly_one_priority_batch_authorized": true,
+    "priority_rank_one_required": true,
+    "issuer_key_and_count_must_match_batch_plan": true,
+    "stable_security_id_required": true,
+    "source_route_must_be_authoritative": true,
+    "https_required": true,
+    "raw_payload_preserved": true,
+    "payload_sha256_required": true,
+    "retrieval_timestamp_required": true,
+    "resume_safe_checkpoint_required": true,
+    "rate_limit_required": true,
+    "failed_records_preserved": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "no_destructive_deletion": true
+  },
+  "execution": {
+    "maximum_requests_per_second": 2,
+    "maximum_retry_attempts": 3,
+    "retryable_states": ["UNRESOLVED"],
+    "checkpoint_after_each_record": true
+  },
+  "authority": {
+    "priority_batch_manifest_build": true,
+    "priority_batch_source_capture": false,
+    "authoritative_source_capture": false,
+    "taxonomy_evidence_normalization": false,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  }
+}

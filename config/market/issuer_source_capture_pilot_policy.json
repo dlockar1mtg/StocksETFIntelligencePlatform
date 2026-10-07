@@ -1,0 +1,38 @@
+{
+  "policy_version": "1.0.0",
+  "phase": "3.6b.3a",
+  "pilot_symbols": ["VOO", "SCHD", "QQQM"],
+  "required_record_count": 3,
+  "capture_states": ["AUTHORITY_CAPTURED", "UNRESOLVED", "CONFLICTED", "QUARANTINED"],
+  "allowed_source_tiers": ["ISSUER_PRODUCT_PAGE", "ISSUER_PROSPECTUS"],
+  "controls": {
+    "official_issuer_domain_required": true,
+    "stable_security_id_required": true,
+    "source_url_required": true,
+    "content_sha256_required": true,
+    "retrieval_timestamp_required": true,
+    "symbol_presence_required": true,
+    "issuer_identity_required": true,
+    "raw_content_preserved_locally": true,
+    "taxonomy_dimensions_not_assigned": true,
+    "failed_capture_preserved": true,
+    "no_destructive_deletion": true
+  },
+  "authority": {
+    "authoritative_source_capture": true,
+    "pilot_manifest_update": true,
+    "production_taxonomy_classification": false,
+    "production_taxonomy_certification": false,
+    "benchmark_qualified_universe_publication": false,
+    "relative_return_calculation": false,
+    "risk_analytics": false,
+    "forecasting": false,
+    "ranking": false,
+    "recommendations": false,
+    "portfolio_allocation": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "minimum_cumulative_tests": 462
+}
