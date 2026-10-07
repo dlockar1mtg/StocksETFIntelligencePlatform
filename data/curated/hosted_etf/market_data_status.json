@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-07T12:31:31+00:00",
+ "generated_at_utc": "2026-10-07T12:44:44+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
@@ -2789,8 +2789,8 @@
    ],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.004129,
-    "cumulative_gap_3y": 0.005085
+    "max_daily_return_gap": 0.00413,
+    "cumulative_gap_3y": 0.005084
    }
   },
   {
@@ -12665,8 +12665,8 @@
    ],
    "reconciliation": {
     "status": "FAIL",
-    "max_daily_return_gap": 0.00079,
-    "cumulative_gap_3y": 0.010492
+    "max_daily_return_gap": 0.000791,
+    "cumulative_gap_3y": 0.010494
    }
   },
   {
@@ -17607,7 +17607,7 @@
    "reconciliation": {
     "status": "FAIL",
     "max_daily_return_gap": 0.000357,
-    "cumulative_gap_3y": 0.00751
+    "cumulative_gap_3y": 0.007509
    }
   },
   {
