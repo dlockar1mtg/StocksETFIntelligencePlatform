@@ -21,6 +21,8 @@ NO_PROJECTION = ("INSUFFICIENT_HISTORY", "SPECIALIZED_LEVERAGED", "SPECIALIZED_I
 STYLE_REFERENCE = {"US_EQUITY_LARGE_GROWTH": "VUG", "US_EQUITY_LARGE_VALUE": "VTV"}
 CENTERS = ("CASH_PLUS_BETA", "REFERENCE_HISTORY", "OWN_HISTORY", "BOND_YIELD")
 HORIZON = 36
+MAX_BETA = 2.0          # amendment 2 (after results): beyond this a fund is not a scaled copy of its reference
+MAX_VOL_SCALE = 2.5
 PATHS = 2000
 SEED = 20261007
 
@@ -62,6 +64,7 @@ class Projector:
         self.seed = seed
         self._lr: dict[tuple[str, str], dict[str, float]] = {}
         self._spread: dict[tuple[str, str], tuple[np.ndarray, float, float]] = {}
+        self.excluded: dict[str, str] = {}
 
     def lr(self, symbol: str, end_month: str) -> dict[str, float]:
         key = (symbol, end_month)
@@ -114,6 +117,10 @@ class Projector:
         x = np.array([refr[m] for m in common])
         scale = float(y.std() / x.std()) if x.std() > 0 else 1.0
         beta = float(np.cov(y, x, ddof=0)[0, 1] / x.var()) if x.var() > 0 else 1.0
+        if beta > MAX_BETA or scale > MAX_VOL_SCALE or (group.get("beta_spy") or 0) > MAX_BETA:            # amendment 2: behaves like a leveraged or poorly matched fund
+            self.excluded[symbol] = "MOVES_FAR_MORE_THAN_ITS_REFERENCE"
+            return None
+        self.excluded.pop(symbol, None)
         date = f"{end_month}-28"
         fee, ref_fee = self.expense(symbol, date), self.expense(ref, date)
         gap = (fee - ref_fee) if fee is not None and ref_fee is not None else 0.0

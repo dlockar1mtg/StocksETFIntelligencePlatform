@@ -53,6 +53,14 @@ class ProjectionTests(unittest.TestCase):
             self.assertIsNone(pj.project("LEV", {"group": g, "nearest_reference": "SPY"}, self.ms[-1]))
         self.assertIsNone(pj.project("TRK", self.group, self.ms[40]))           # reference under 60 months
 
+    def test_funds_that_move_far_more_than_their_reference_get_no_projection(self):
+        pj = P.Projector(self.features)
+        self.assertIsNone(pj.project("LEV", self.group, self.ms[-1]))           # a 3x fund the classifier missed
+        self.assertEqual(pj.excluded["LEV"], "MOVES_FAR_MORE_THAN_ITS_REFERENCE")
+        self.assertIsNone(pj.project("TRK", {**self.group, "beta_spy": 2.3}, self.ms[-1]))
+        self.assertIsNotNone(pj.project("TRK", {**self.group, "beta_spy": 1.0}, self.ms[-1]))
+        self.assertNotIn("TRK", pj.excluded)
+
     def test_a_higher_fee_lowers_the_center_by_the_fee_gap(self):
         cheap = P.Projector(self.features, lambda s, d: 0.0003).project("TRK", self.group, self.ms[-1])
         dear = P.Projector(self.features, lambda s, d: 0.0103 if s == "TRK" else 0.0003).project("TRK", self.group, self.ms[-1])

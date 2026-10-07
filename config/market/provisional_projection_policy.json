@@ -63,6 +63,13 @@
       "authorized_by": "Devon Lockard",
       "change": "Each family is judged on its own band instead of one family failing the whole test. A family whose 10th-90th band held between 60% and 95% of outcomes (with at least 200 observations) is TESTED; above 95% it is TOO_CAUTIOUS; below 60% it is TOO_NARROW. Ranges always show with their family's status and measured coverage; growth is compared only among funds in TESTED families.",
       "reason": "The registered test failed only because international equity bands were too wide (95.6% of outcomes inside against a 95% ceiling), the cautious direction; overall coverage was 82.7% inside the 70-90% mark. Recorded as a change made after seeing results."
+    },
+    {
+      "on": "2026-10-07",
+      "after_results": true,
+      "authorized_by": "Devon Lockard",
+      "change": "No projection for a fund whose beta to its reference or to the S&P 500 exceeds 2.0, or whose volatility exceeds 2.5 times its reference's, over the trailing 36 months (reason MOVES_FAR_MORE_THAN_ITS_REFERENCE). The test was re-run with this guard.",
+      "reason": "Reviewing the live package showed leveraged funds the returns-based classifier had not flagged (for example 3x sector funds in US large cap, with typical projections above 40% a year) and poorly matched funds (international bonds placed with short Treasuries at beta 4.9). The registered scope already excluded leveraged funds; the guard enforces that intent by behaviour rather than by name. A 2x Nasdaq fund measured only 1.5 against the technology reference, so the S&P 500 beta is checked too."
     }
   ],
   "results_2026_10_07": {
@@ -82,5 +89,25 @@
     "tested_min": 0.6,
     "tested_max": 0.95,
     "min_observations": 200
-  }
+  },
+  "results_2026_10_07_with_guard": {
+    "observations": 7754,
+    "overall_inside_10_90": 0.828,
+    "families": {
+      "US_EQUITY": 0.821,
+      "INTL_EQUITY": 0.958,
+      "BONDS": 0.674,
+      "OTHER": 0.876
+    },
+    "center_median_abs_error": 0.0541,
+    "own_history_median_abs_error": 0.061,
+    "passes_registered_test": false,
+    "family_status": {
+      "US_EQUITY": "TESTED",
+      "INTL_EQUITY": "TOO_CAUTIOUS",
+      "BONDS": "TESTED",
+      "OTHER": "TESTED"
+    }
+  },
+  "display_rule": "Growth is compared between peer groups (what a fund holds), never as a ranking of single funds: within a group a higher projection mostly reflects higher beta, and the ranking trials found volatility and beta did not pick winners within a group."
 }

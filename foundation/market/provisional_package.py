@@ -172,6 +172,8 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
                 proj["family_band_coverage"] = fam_cov.get(fam_p)
                 proj["projected_as_group"] = pg.get("group")
             rec["projection_3y"] = proj
+            if proj is None and getattr(projector, "excluded", {}).get(sym):
+                rec["projection_3y_excluded"] = projector.excluded[sym]
         rec.setdefault("as_of_date", st.get("as_of_date"))
         rec.setdefault("close", st.get("close"))
         records.append(rec)
