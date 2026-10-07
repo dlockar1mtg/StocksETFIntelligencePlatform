@@ -54,6 +54,8 @@ class ProductionSECCaptureLaunchTests(
 ):
     @classmethod
     def setUpClass(cls):
+        if not CONTRACT_PATH.exists():  # gitignored local artifact (artifacts/), present only on the governed local run
+            raise unittest.SkipTest(f"local governed artifact not present: {CONTRACT_PATH.name}")
         cls.contract = load_json(
             CONTRACT_PATH
         )
