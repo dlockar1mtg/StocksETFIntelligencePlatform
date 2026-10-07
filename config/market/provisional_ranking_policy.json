@@ -123,5 +123,21 @@
       "change": "log_adv_63 excluded from the composite",
       "reason": "The model universe admits only funds with at least $1M median daily dollar volume today, so a fund that was thinly traded in the past is in the universe only if it grew: past illiquidity selects past winners. Its negative IC (t -2.9) is a survivorship artifact, not a usable signal. Recorded after seeing results; it does not change the gate."
     }
-  ]
+  ],
+  "cost_test": {
+    "registered_on": "2026-10-07",
+    "registered_before_results": true,
+    "factor": "official net expense ratio (gross when net is missing) from the latest SEC risk/return filing on or before each month-end",
+    "sign": "fixed in advance: lower cost is better; no sign or weight is fitted to the data",
+    "test_years_from": 2012,
+    "gate": {
+      "min_test_years": 8,
+      "min_mean_ic_12m": 0.0,
+      "min_t_yearly_12m": 2.0,
+      "min_cheapest_quintile_mean_excess_12m": 0.0025,
+      "min_share_years_cheapest_beats_median": 0.6
+    },
+    "if_passes": "ranking calls use each fund's cost percentile within its peer group with the policy bands (cheapest 20% BUY, next 20% ACCUMULATE, middle HOLD, most expensive 20% AVOID); funds without an official expense ratio get RANKED_NO_CALL",
+    "if_fails": "cost is shown as a reading only and ranking calls stay NO_VALIDATED_RANKING_EDGE"
+  }
 }
