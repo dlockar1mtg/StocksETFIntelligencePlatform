@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-07T12:30:17+00:00",
+ "generated_at_utc": "2026-10-07T12:43:39+00:00",
  "panel_rows": 187882,
  "funds": 1077,
  "walk_forward": {
@@ -426,6 +426,162 @@
     "mom": 0.1644
    }
   }
+ },
+ "cost_test": {
+  "12m": {
+   "test_years": 14,
+   "mean_ic": 0.0333,
+   "t_yearly": 1.66,
+   "cheapest_quintile_mean_excess": 0.0039,
+   "most_expensive_quintile_mean_excess": 0.0063,
+   "share_years_cheapest_beats_median": 0.714,
+   "share_years_cheapest_beats_most_expensive": 0.429,
+   "by_year": {
+    "2012": {
+     "ic": 0.007,
+     "cheapest": 0.0036,
+     "most_expensive": 0.004
+    },
+    "2013": {
+     "ic": 0.095,
+     "cheapest": 0.0104,
+     "most_expensive": 0.0297
+    },
+    "2014": {
+     "ic": 0.081,
+     "cheapest": 0.0045,
+     "most_expensive": -0.0132
+    },
+    "2015": {
+     "ic": 0.096,
+     "cheapest": 0.0066,
+     "most_expensive": -0.01
+    },
+    "2016": {
+     "ic": -0.014,
+     "cheapest": 0.0026,
+     "most_expensive": -0.0047
+    },
+    "2017": {
+     "ic": 0.043,
+     "cheapest": 0.0018,
+     "most_expensive": -0.0108
+    },
+    "2018": {
+     "ic": 0.086,
+     "cheapest": -0.0028,
+     "most_expensive": -0.0011
+    },
+    "2019": {
+     "ic": 0.168,
+     "cheapest": 0.0077,
+     "most_expensive": -0.0375
+    },
+    "2020": {
+     "ic": -0.034,
+     "cheapest": 0.015,
+     "most_expensive": 0.0312
+    },
+    "2021": {
+     "ic": 0.049,
+     "cheapest": 0.0071,
+     "most_expensive": -0.036
+    },
+    "2022": {
+     "ic": -0.057,
+     "cheapest": -0.0028,
+     "most_expensive": 0.026
+    },
+    "2023": {
+     "ic": 0.093,
+     "cheapest": -0.0008,
+     "most_expensive": 0.0051
+    },
+    "2024": {
+     "ic": -0.074,
+     "cheapest": 0.0018,
+     "most_expensive": 0.0528
+    },
+    "2025": {
+     "ic": -0.074,
+     "cheapest": -0.0004,
+     "most_expensive": 0.0522
+    }
+   }
+  },
+  "36m": {
+   "test_years": 12,
+   "mean_ic": 0.0764,
+   "t_yearly": 5.13,
+   "cheapest_quintile_mean_excess": 0.0031,
+   "most_expensive_quintile_mean_excess": -0.0138,
+   "share_years_cheapest_beats_median": 0.917,
+   "share_years_cheapest_beats_most_expensive": 0.917,
+   "by_year": {
+    "2012": {
+     "ic": 0.05,
+     "cheapest": 0.0035,
+     "most_expensive": -0.0005
+    },
+    "2013": {
+     "ic": 0.116,
+     "cheapest": 0.0083,
+     "most_expensive": -0.0043
+    },
+    "2014": {
+     "ic": 0.049,
+     "cheapest": 0.0027,
+     "most_expensive": -0.0145
+    },
+    "2015": {
+     "ic": 0.097,
+     "cheapest": 0.0035,
+     "most_expensive": -0.0261
+    },
+    "2016": {
+     "ic": 0.096,
+     "cheapest": 0.0014,
+     "most_expensive": -0.0177
+    },
+    "2017": {
+     "ic": 0.142,
+     "cheapest": 0.0047,
+     "most_expensive": -0.0376
+    },
+    "2018": {
+     "ic": 0.105,
+     "cheapest": 0.0034,
+     "most_expensive": -0.0177
+    },
+    "2019": {
+     "ic": 0.159,
+     "cheapest": 0.006,
+     "most_expensive": -0.0232
+    },
+    "2020": {
+     "ic": 0.057,
+     "cheapest": 0.0028,
+     "most_expensive": -0.0115
+    },
+    "2021": {
+     "ic": 0.033,
+     "cheapest": 0.0017,
+     "most_expensive": -0.0189
+    },
+    "2022": {
+     "ic": -0.021,
+     "cheapest": -0.0012,
+     "most_expensive": 0.0069
+    },
+    "2023": {
+     "ic": 0.035,
+     "cheapest": 0.0002,
+     "most_expensive": -0.0004
+    }
+   }
+  },
+  "passes_gate": false,
+  "calls_enabled": true
  },
  "known_limitations": [
   "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
