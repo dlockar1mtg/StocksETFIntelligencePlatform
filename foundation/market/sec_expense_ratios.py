@@ -9,8 +9,11 @@ from __future__ import annotations
 
 import csv
 import io
+import sys
 import zipfile
 from collections import defaultdict
+
+csv.field_size_limit(min(sys.maxsize, 2**31 - 1))  # some rr1 text fields exceed the 128 KB default
 
 HISTORY_FIELDS = ("class_id", "series_id", "cik", "symbol", "security_id", "filed", "adsh", "form",
                   "net_expense_ratio", "gross_expense_ratio", "source_quarter")
