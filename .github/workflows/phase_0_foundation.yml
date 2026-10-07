@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install test dependencies
-        run: pip install --quiet pytest
+        run: pip install --quiet pytest numpy scipy
       - name: Validate environment
         run: python scripts/validate_environment.py
       - name: Run all regression tests
