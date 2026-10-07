@@ -1,0 +1,59 @@
+{
+  "policy_id": "ETF_PROVISIONAL_3Y_PROJECTION_V1",
+  "phase": "4.5",
+  "policy_version": "1.0.0",
+  "registered_on": "2026-10-07",
+  "registered_before_results": true,
+  "owner_request": {
+    "requested_by": "Devon Lockard",
+    "requested_on": "2026-10-07",
+    "request": "Projected growth for each fund over 3 years, the horizon of the house goal, so the Guild can show what each fund could be worth and which exposures grow most."
+  },
+  "horizon_months": 36,
+  "what_is_projected": "the fund's annualized total return over the next 36 months, as a range (10th, 50th, 90th percentile) and the chance of ending below where it started",
+  "applies_to": "model-universe funds in a peer group with a reference fund; no projection for INSUFFICIENT_HISTORY, SPECIALIZED_LEVERAGED, SPECIALIZED_INVERSE or IDIOSYNCRATIC (leveraged and inverse funds decay with the path, and ungrouped funds have no long reference history)",
+  "reference": "the fund's nearest reference fund from its point-in-time peer classification; US large growth and value funds use VUG and VTV",
+  "cash": "BIL total return and trailing 12-month distribution yield; SHY before BIL has 12 months of history",
+  "center_candidates": {
+    "CASH_PLUS_BETA": "today's cash yield + the fund's beta to its reference x the reference's annualized excess return over cash across all of its history up to the month-end - (fund fee - reference fee)",
+    "REFERENCE_HISTORY": "the reference's annualized total return across all of its history up to the month-end - (fund fee - reference fee)",
+    "OWN_HISTORY": "the fund's own annualized total return over its last 120 months (at least 60 required)",
+    "BOND_YIELD": "bond families only: the fund's trailing 12-month distribution yield"
+  },
+  "center_selection": "walk-forward by family: for each test start, the candidate with the lowest median absolute error (projected center against realized 36-month annualized return) over earlier starts whose 36 months had fully ended; with fewer than 3 such earlier starts the default is used",
+  "default_center": "CASH_PLUS_BETA",
+  "fee_source": "official SEC expense ratio on or before the month-end; zero gap when either fee is missing",
+  "spread": "the reference's monthly log returns across all of its history up to the month-end, de-meaned, scaled by the ratio of the fund's to the reference's monthly volatility over the trailing 36 months, and resampled in 12-month blocks into 36-month paths (2,000 paths, fixed seed); the percentiles are the center plus the resampled spread",
+  "test": {
+    "starts": "every December month-end from 2005 to the last one whose 36 months have ended",
+    "observations": "every model-universe fund with a projection at that start and a realized 36-month return",
+    "measures": [
+      "share of realized returns inside the 10th-90th percentile band (overall, by family, by start year)",
+      "share below the 10th and above the 90th percentile",
+      "median absolute error of the center, chosen rule against OWN_HISTORY"
+    ],
+    "pass_marks": {
+      "band_coverage_overall_min": 0.70,
+      "band_coverage_overall_max": 0.90,
+      "band_coverage_family_min": 0.60,
+      "band_coverage_family_max": 0.95,
+      "family_min_observations": 200
+    },
+    "clustering_note": "funds starting in the same year share one market path, so coverage is also reported by start year; a pass means the bands were honest on average, not in every year"
+  },
+  "if_passes": "the Guild shows each fund's 3-year range labelled tested, with the measured coverage",
+  "if_fails": "the Guild still shows the ranges but labels them not calibrated, with the measured coverage, and makes no growth ranking from them",
+  "what_it_is_not": "not a pick of next year's winners within a peer group (the ranking trials found no price signal that does that); the projection's differences between funds come from exposure, beta, volatility and fee",
+  "authority": {
+    "provisional_projection": true,
+    "certified_projection": false,
+    "portfolio_allocation": false,
+    "automatic_execution": false
+  },
+  "known_limitations": [
+    "Survivorship: the model universe is funds alive today, so the test omits funds that closed.",
+    "Reference histories start between 1993 and 2018; the longest is SPY's.",
+    "Distribution yield is a stand-in for a bond fund's yield to maturity, which the free data does not carry.",
+    "Free tier-4 market data."
+  ]
+}
