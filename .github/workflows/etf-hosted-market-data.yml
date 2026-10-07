@@ -15,6 +15,7 @@ on:
       - "config/market/hosted_market_data_policy.json"
       - "config/market/provisional_ranking_policy.json"
       - "foundation/market/provisional_*.py"
+      - "foundation/market/sec_expense_ratios.py"
       - "foundation/market/uip_package.py"
       - "scripts/research_provisional_ranking.py"
       - "scripts/build_provisional_etf_package.py"
@@ -75,7 +76,7 @@ jobs:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
-        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package -v
+        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios -v
       - name: Restore the cached daily series
         uses: actions/cache/restore@v4
         with:
