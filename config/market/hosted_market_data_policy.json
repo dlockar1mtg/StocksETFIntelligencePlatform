@@ -1,0 +1,145 @@
+{
+  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
+  "phase": "4.1",
+  "policy_version": "1.0.0",
+  "objective": "Keep daily total-return evidence current for the certified Phase 3 model universe in GitHub Actions, so ranking research and the UIP package run on governed, reconciled data without a local machine.",
+  "universe": {
+    "model_universe_path": "data/certified/etf_model_universe/2026-08-06/phase_3_etf_model_universe.json",
+    "required_model_population_count": 1077,
+    "required_seed_symbols": [
+      "VOO",
+      "SCHD",
+      "QQQM"
+    ],
+    "style_reference_funds": [
+      "SPY",
+      "IWM",
+      "IJH",
+      "VUG",
+      "VTV",
+      "EFA",
+      "EEM",
+      "AGG",
+      "TLT",
+      "IEF",
+      "SHY",
+      "BIL",
+      "LQD",
+      "HYG",
+      "TIP",
+      "MUB",
+      "GLD",
+      "SLV",
+      "DBC",
+      "USO",
+      "VNQ",
+      "XLK",
+      "XLF",
+      "XLE",
+      "XLV",
+      "XLI",
+      "XLY",
+      "XLP",
+      "XLU",
+      "XLB",
+      "XLRE",
+      "XLC"
+    ],
+    "held_outside_model_universe": [
+      "DIA",
+      "EDOW"
+    ],
+    "held_outside_note": "Held by Devon but outside the certified model universe (DIA not in the 1,077; EDOW below the $1M median dollar-volume gate). Priced for the portfolio only; never ranked."
+  },
+  "provider": {
+    "provider_id": "YAHOO_FINANCE_CHART",
+    "endpoint_template": "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+    "fallback_host": "query2.finance.yahoo.com",
+    "source_tier": 4,
+    "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+    "minimum_seconds_between_requests": 0.6,
+    "retry_attempts": 3,
+    "timeout_seconds": 30
+  },
+  "incremental": {
+    "overlap_days": 12,
+    "full_refresh_weekday": 5,
+    "full_refresh_when_new_split": true,
+    "full_refresh_when_stale_days": 30
+  },
+  "reconciliation": {
+    "window_sessions": 756,
+    "daily_return_tolerance": 0.0005,
+    "daily_return_error_threshold": 0.02,
+    "cumulative_tolerance_1y": 0.0025,
+    "cumulative_tolerance_3y": 0.0075,
+    "revision_tolerance": 0.0005,
+    "implausible_daily_move": 0.25
+  },
+  "freshness": {
+    "current_max_sessions_behind": 0,
+    "aging_max_sessions_behind": 2
+  },
+  "storage": {
+    "daily_cache_dir": "data/hosted_cache/etf_daily",
+    "month_end_features_path": "data/curated/hosted_etf/month_end_features.csv",
+    "status_path": "data/curated/hosted_etf/market_data_status.json",
+    "daily_series_in_git": false,
+    "daily_series_location": "GitHub Actions cache; rebuilt from the provider in full if the cache is lost"
+  },
+  "best_quality_state_for_tier": {
+    "1": "PASS",
+    "2": "PASS",
+    "3": "PROVISIONAL",
+    "4": "PROVISIONAL",
+    "5": "PROVISIONAL"
+  },
+  "authority": {
+    "hosted_collection": true,
+    "total_return_reconstruction": true,
+    "month_end_feature_calculation": true,
+    "ranking": false,
+    "recommendations": false,
+    "uip_export": false,
+    "automatic_execution": false,
+    "direct_uip_database_writes": false
+  },
+  "fail_closed": true,
+  "nyse_holidays": {
+    "source": "NYSE holiday calendar (nyse.com/markets/hours-calendars)",
+    "source_tier": 1,
+    "dates": [
+      "2025-01-01",
+      "2025-01-09",
+      "2025-01-20",
+      "2025-02-17",
+      "2025-04-18",
+      "2025-05-26",
+      "2025-06-19",
+      "2025-07-04",
+      "2025-09-01",
+      "2025-11-27",
+      "2025-12-25",
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-11-26",
+      "2026-12-25",
+      "2027-01-01",
+      "2027-01-18",
+      "2027-02-15",
+      "2027-03-26",
+      "2027-05-31",
+      "2027-06-18",
+      "2027-07-05",
+      "2027-09-06",
+      "2027-11-25",
+      "2027-12-24"
+    ]
+  }
+}
