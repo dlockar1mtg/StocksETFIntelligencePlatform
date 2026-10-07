@@ -33,6 +33,8 @@ POLICY_PATH = (
 class AuthoritativeTaxonomyCaptureRunnerTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        if not PLAN_PATH.exists():  # gitignored local artifact (artifacts/), present only on the governed local run
+            raise unittest.SkipTest(f"local governed artifact not present: {PLAN_PATH.name}")
         cls.plan = json.loads(
             PLAN_PATH.read_text(
                 encoding="utf-8-sig"

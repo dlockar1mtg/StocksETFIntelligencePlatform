@@ -84,6 +84,8 @@ class HistoricalMetadataCaptureTests(
     def setUpClass(
         cls,
     ):
+        if not PLAN_PATH.exists():  # gitignored local artifact (artifacts/), present only on the governed local run
+            raise unittest.SkipTest(f"local governed artifact not present: {PLAN_PATH.name}")
         cls.plan = load_json(
             PLAN_PATH
         )
