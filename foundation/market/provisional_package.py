@@ -136,12 +136,18 @@ def pick_best(members: list[dict]) -> dict:
     return {"symbol": top["symbol"], "basis": "HIGHEST_3Y_RETURN_NET_OF_COSTS"}
 
 
-def build_records(*, status: dict, features: dict, research: dict, cached_bars, expense_ratio=None) -> tuple[list[dict], dict]:
+def build_records(*, status: dict, features: dict, research: dict, cached_bars, expense_ratio=None,
+                  projector=None, projection: dict | None = None) -> tuple[list[dict], dict]:
     funds = [f for f in status["funds"] if f["usage"] in ("MODEL", "HELD_OUTSIDE_MODEL")]
     returns = {s: G.monthly_returns(dict(zip(f["months"], f["tr"]))) for s, f in features.items()}
     end_month = max((m for f in features.values() for m in f["months"]), default="")
     model = [f["symbol"] for f in funds if f["usage"] == "MODEL"]
     groups = G.classify_all(returns, model, end_month)
+    held = [f["symbol"] for f in funds if f["usage"] != "MODEL"]
+    held_groups = G.classify_all(returns, held, end_month) if projector is not None else {}
+    rules = (projection or {}).get("rules_now") or {}
+    fam_status = (projection or {}).get("family_status") or {}
+    fam_cov = {k: v.get("inside_10_90") for k, v in ((projection or {}).get("families") or {}).items()}
     timing = research.get("timing") or {}
     gate = research.get("gate") or {}
     records = []
@@ -157,6 +163,17 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
                "liquidity": _r(adv, 0), "expense_ratio": expense_ratio(sym) if expense_ratio else None,
                **(readings_from_daily(cached_bars(sym)) or readings_from_monthly(f)),
                "history_monthly": [{"month": m, "close": float(c)} for m, c in zip(f["months"][-36:], f["close"][-36:])] if f else []}
+        if projector is not None:
+            pg = g if st["usage"] == "MODEL" else held_groups.get(sym) or {}
+            proj = projector.project(sym, pg, end_month, rules.get(R.family_of(pg.get("group", "")))) if pg.get("group") else None
+            if proj is not None:
+                fam_p = proj["family"]
+                proj["status"] = fam_status.get(fam_p, "UNTESTED")
+                proj["family_band_coverage"] = fam_cov.get(fam_p)
+                proj["projected_as_group"] = pg.get("group")
+            rec["projection_3y"] = proj
+            if proj is None and getattr(projector, "excluded", {}).get(sym):
+                rec["projection_3y_excluded"] = projector.excluded[sym]
         rec.setdefault("as_of_date", st.get("as_of_date"))
         rec.setdefault("close", st.get("close"))
         records.append(rec)
@@ -177,6 +194,11 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
                             "median_return_1y": _r(median([m["return_1y"] for m in members if m.get("return_1y") is not None] or [math.nan])),
                             "median_annualized_3y": _r(median([m["annualized_3y"] for m in members if m.get("annualized_3y") is not None] or [math.nan])),
                             "when_to_buy": T.reading(timing.get(fam) or {}) if timing.get(fam) else None}
+        projected = [m["projection_3y"] for m in members if m.get("projection_3y")]
+        if projected:
+            group_docs[name]["projection_3y"] = {
+                "funds": len(projected), "status": projected[0]["status"],
+                **{k: _r(median([p[k] for p in projected])) for k in ("p10", "p50", "p90", "chance_of_loss")}}
         for cluster in clusters([m["symbol"] for m in members], returns, end_month, cached_bars):
             best = pick_best([by_symbol[s] for s in cluster])
             for s in cluster:
