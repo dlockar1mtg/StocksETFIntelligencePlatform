@@ -20,6 +20,14 @@ NEW_YORK = ZoneInfo("America/New_York")
 CSV_FIELDS = ("date", "close", "volume", "dividend", "split", "tr_index")
 
 
+SIGNIFICANT_DIGITS = 12   # amendment 2026-10-08: a fixed 6 decimals left decayed inverse/leveraged indexes with 1-3 digits
+
+
+def sig(x: float) -> float:
+    """Round to significant digits, so a total-return index keeps its precision however far it falls."""
+    return float(f"{x:.{SIGNIFICANT_DIGITS}g}")
+
+
 class SeriesError(ValueError):
     """Raised when a provider payload cannot be turned into a governed series."""
 
@@ -141,7 +149,7 @@ def reconstruct_total_return(bars: list[Bar], base: float = 100.0) -> None:
     for i, bar in enumerate(bars):
         if i:
             level *= (bar.close + bar.dividend) / bars[i - 1].close
-        bar.tr_index = round(level, 6)
+        bar.tr_index = sig(level)
 
 
 def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
@@ -152,19 +160,23 @@ def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
         return {"status": "FAIL", "reason": "provider adjusted close missing in the reconciliation window",
                 "sessions": len(window) - 1}
     worst, breaches, errors = 0.0, 0, 0
+    gaps = []
     for prev, cur in zip(window, window[1:]):
         ours = cur.tr_index / prev.tr_index - 1
         theirs = cur.adj_close / prev.adj_close - 1
         gap = abs(ours - theirs)
+        gaps.append((gap, cur))
         worst = max(worst, gap)
         breaches += gap > float(rules["daily_return_tolerance"])
         errors += gap > float(rules["daily_return_error_threshold"])
 
     def cumulative(n: int) -> float | None:
+        # amendment 2026-10-08: relative gap. The absolute gap between growth ratios scaled with how much
+        # a fund had grown, so a fund that tripled failed on the same 0.25% discrepancy a flat fund passed.
         if len(window) <= n:
             return None
         a, b = window[-n - 1], window[-1]
-        return abs((b.tr_index / a.tr_index) - (b.adj_close / a.adj_close))
+        return abs((b.tr_index / a.tr_index) / (b.adj_close / a.adj_close) - 1)
 
     gap_1y, gap_3y = cumulative(252), cumulative(756)
     ok = (errors == 0
@@ -174,7 +186,9 @@ def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
             "max_daily_return_gap": round(worst, 6), "daily_gaps_over_tolerance": breaches,
             "daily_gaps_over_error_threshold": errors,
             "cumulative_gap_1y": None if gap_1y is None else round(gap_1y, 6),
-            "cumulative_gap_3y": None if gap_3y is None else round(gap_3y, 6)}
+            "cumulative_gap_3y": None if gap_3y is None else round(gap_3y, 6),
+            "worst_days": [{"day": b.day, "gap": round(g, 6), "dividend": b.dividend, "split": b.split, "close": b.close}
+                           for g, b in sorted(gaps, key=lambda t: -t[0])[:3]]}
 
 
 def implausible_moves(bars: list[Bar], threshold: float) -> list[str]:
@@ -193,6 +207,31 @@ def implausible_moves(bars: list[Bar], threshold: float) -> list[str]:
         if abs((1 + r1) * (1 + r2) - 1) < 0.3 * abs(r1):
             out.append(cur.day)
     return out
+
+
+def drop_print_errors(bars: list[Bar], threshold: float, start: int = 0) -> list[str]:
+    """Remove isolated bad prints (amendment 2026-10-08) instead of blocking the whole fund.
+
+    A session flagged by implausible_moves is a close that the next session undoes. Removing it
+    loses one day's close but no return: the move from the session before to the session after is
+    carried intact, and a distribution on the removed day moves to the next session. If the bars
+    carry a total-return index it is re-chained from the removal. Split days are never removed.
+    Returns the removed days.
+    """
+    removed: list[str] = []
+    while True:
+        flagged = [d for d in implausible_moves(bars[start:], threshold)]
+        flagged = [d for d in flagged if not any(b.day == d and b.split != 1 for b in bars)]
+        if not flagged:
+            return removed
+        k = next(i for i, b in enumerate(bars) if b.day == flagged[0])
+        bad, nxt = bars[k], bars[k + 1]
+        nxt.dividend = round(nxt.dividend + bad.dividend, 6)
+        del bars[k]
+        removed.append(bad.day)
+        if bars[k - 1].tr_index:
+            for j in range(k, len(bars)):
+                bars[j].tr_index = sig(bars[j - 1].tr_index * (bars[j].close + bars[j].dividend) / bars[j - 1].close)
 
 
 def cross_check(bars: list[Bar], other: dict[str, float], sessions: int, tolerance: float) -> dict:
@@ -238,7 +277,7 @@ def to_csv(bars: list[Bar]) -> str:
     writer.writerow(CSV_FIELDS)
     for b in bars:
         writer.writerow([b.day, f"{b.close:.4f}",
-                         "" if b.volume is None else b.volume, f"{b.dividend:g}", f"{b.split:g}", f"{b.tr_index:.6f}"])
+                         "" if b.volume is None else b.volume, f"{b.dividend:g}", f"{b.split:g}", f"{b.tr_index:.{SIGNIFICANT_DIGITS}g}"])
     return buffer.getvalue()
 
 

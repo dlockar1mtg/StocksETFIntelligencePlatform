@@ -141,5 +141,19 @@
       "2027-11-25",
       "2027-12-24"
     ]
-  }
+  },
+  "amendments": [
+    {
+      "date": "2026-10-08",
+      "requested_by": "Devon Lockard",
+      "request": "include all 1,079 selected funds; disregard blockers where the data can be governed honestly",
+      "changes": [
+        "Precision: the total-return index is stored to 12 significant digits instead of 6 decimals. Decayed inverse and leveraged funds (SSG, SQQQ, SOXS, TECS, JDST, FAZ, KORU) had fallen below 0.001 from a base of 100, leaving 1-3 digits; the rounding alone produced the reconciliation gaps and SOXS's division by zero. A cached series stored at the old precision is rebuilt in full once.",
+        "Cumulative reconciliation gap is relative: |ours/theirs - 1| over 1 and 3 years. The absolute gap between growth ratios scaled with growth, so a fund that tripled failed on the same 0.25% discrepancy a flat fund passed. Tolerances unchanged.",
+        "Isolated bad prints are removed instead of blocking the fund: a session whose move beyond 25% the next session undoes (implausible_moves) loses its close; the move from the session before to the session after is carried intact and a distribution on that day moves to the next session. Removed days are listed per fund in print_errors_removed. Split days are never removed; anything still implausible after removal still blocks.",
+        "The reconciliation reports its three worst days when it fails, so a remaining block can be diagnosed from the run."
+      ],
+      "registered_before_results": true
+    }
+  ]
 }
