@@ -320,7 +320,7 @@
   "OTHER": "TESTED",
   "US_EQUITY": "TESTED"
  },
- "generated_at_utc": "2026-10-08T17:11:19+00:00",
+ "generated_at_utc": "2026-10-08T17:59:32+00:00",
  "known_limitations": [
   "Survivorship: the model universe is funds alive today, so the test omits funds that closed.",
   "Reference histories start between 1993 and 2018; the longest is SPY's.",

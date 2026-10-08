@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-08T16:58:54+00:00",
+ "generated_at_utc": "2026-10-08T17:46:50+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
@@ -3047,7 +3047,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9293,7 +9293,7 @@
    "symbol": "HEZU",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "iShares Currency Hedged MSCI Eurozone ETF",
+   "name": "iShares Currency Hedged MSCI Eu",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -9316,7 +9316,7 @@
    "symbol": "HFXI",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLIM FTSE International Equity Currency Neutral ETF",
+   "name": "NYLI FTSE International Equity Currency Neutral ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -13077,7 +13077,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13387,7 +13387,7 @@
    "symbol": "JOET",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "Virtus Terranova U.S. Quality Momentum ETF",
+   "name": "Virtus Terranova U.S. Quality M",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -13859,7 +13859,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14654,7 +14654,7 @@
    "symbol": "MMIN",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLIM MacKay Muni Insured ETF",
+   "name": "NYLI MacKay Muni Insured ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -14677,7 +14677,7 @@
    "symbol": "MMIT",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLIM MacKay Muni Intermediate ETF",
+   "name": "NYLI MacKay Muni Intermediate ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -16609,7 +16609,7 @@
    "symbol": "QAI",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLIM Hedge Multi-Strategy Tracker ETF",
+   "name": "NYLI Hedge Multi-Strategy Tracker ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -18555,7 +18555,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
