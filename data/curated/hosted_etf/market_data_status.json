@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-08T14:13:27+00:00",
+ "generated_at_utc": "2026-10-08T16:58:54+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
@@ -1424,7 +1424,7 @@
    "security_id": "US-ETF-BKCH",
    "symbol": "BKCH",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Global X Blockchain ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -1438,8 +1438,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -1677,7 +1677,7 @@
    "security_id": "US-ETF-BRZU",
    "symbol": "BRZU",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily MSCI Brazil Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -1691,8 +1691,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -3670,7 +3670,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -3854,7 +3854,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -3933,7 +3933,7 @@
    "security_id": "US-ETF-DXD",
    "symbol": "DXD",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "ProShares UltraShort Dow30",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -3947,8 +3947,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -4153,7 +4153,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4830,7 +4830,7 @@
    "security_id": "US-ETF-ERY",
    "symbol": "ERY",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Energy Bear 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -4844,8 +4844,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -8970,7 +8970,7 @@
    "security_id": "US-ETF-GUSH",
    "symbol": "GUSH",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily S&P Oil & Gas Exp. & Prod. Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -8984,8 +8984,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -9293,7 +9293,7 @@
    "symbol": "HEZU",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "iShares Currency Hedged MSCI Eu",
+   "name": "iShares Currency Hedged MSCI Eurozone ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -9316,7 +9316,7 @@
    "symbol": "HFXI",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLI FTSE International Equity Currency Neutral ETF",
+   "name": "NYLIM FTSE International Equity Currency Neutral ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -13064,7 +13064,7 @@
    "security_id": "US-ETF-JDST",
    "symbol": "JDST",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Junior Gold Miners Index Bear 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13078,8 +13078,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -13363,7 +13363,7 @@
    "security_id": "US-ETF-JNUG",
    "symbol": "JNUG",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Junior Gold Miners Index Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13377,8 +13377,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -13387,7 +13387,7 @@
    "symbol": "JOET",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "Virtus Terranova U.S. Quality M",
+   "name": "Virtus Terranova U.S. Quality Momentum ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -13846,7 +13846,7 @@
    "security_id": "US-ETF-KORU",
    "symbol": "KORU",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily South Korea Bull 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13859,9 +13859,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -13915,7 +13915,7 @@
    "security_id": "US-ETF-KSTR",
    "symbol": "KSTR",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "KraneShares China Technology & Semiconductor STAR 50 Index ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13929,10 +13929,12 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
-   "print_errors_removed": []
+   "print_errors_removed": [
+    "2024-10-07"
+   ]
   },
   {
    "security_id": "US-ETF-KWEB",
@@ -14652,7 +14654,7 @@
    "symbol": "MMIN",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLI MacKay Muni Insured ETF",
+   "name": "NYLIM MacKay Muni Insured ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -14675,7 +14677,7 @@
    "symbol": "MMIT",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLI MacKay Muni Intermediate ETF",
+   "name": "NYLIM MacKay Muni Intermediate ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -15134,7 +15136,7 @@
    "security_id": "US-ETF-NUGT",
    "symbol": "NUGT",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Gold Miners Index Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -15148,8 +15150,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -16607,7 +16609,7 @@
    "symbol": "QAI",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "NYLI Hedge Multi-Strategy Tracker ETF",
+   "name": "NYLIM Hedge Multi-Strategy Tracker ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -16974,7 +16976,7 @@
    "security_id": "US-ETF-QQQH",
    "symbol": "QQQH",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "NEOS Nasdaq-100 Hedged Equity Income ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -16987,11 +16989,13 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
-   "print_errors_removed": []
+   "print_errors_removed": [
+    "2024-06-03"
+   ]
   },
   {
    "security_id": "US-ETF-QQQJ",
@@ -19251,7 +19255,7 @@
    "security_id": "US-ETF-SOXL",
    "symbol": "SOXL",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Semiconductor Bull 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -19265,8 +19269,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -19297,7 +19301,7 @@
    "security_id": "US-ETF-SOXS",
    "symbol": "SOXS",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Semiconductor Bear 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -19311,10 +19315,12 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
-   "print_errors_removed": []
+   "print_errors_removed": [
+    "2026-06-05"
+   ]
   },
   {
    "security_id": "US-ETF-SOXX",
@@ -20884,7 +20890,7 @@
    "security_id": "US-ETF-TECS",
    "symbol": "TECS",
    "usage": "MODEL",
-   "mode": "INCREMENTAL",
+   "mode": "FULL",
    "name": "Direxion Daily Technology Bear 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -20898,8 +20904,8 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": null,
-    "cumulative_gap_3y": null
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -23726,7 +23732,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
