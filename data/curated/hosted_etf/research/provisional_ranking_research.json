@@ -1,15 +1,15 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-07T21:15:41+00:00",
- "panel_rows": 188296,
+ "generated_at_utc": "2026-10-08T00:36:19+00:00",
+ "panel_rows": 187882,
  "funds": 1077,
  "walk_forward": {
   "12m": {
    "results": {},
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": 0.0045,
-     "t_yearly": 0.15,
+     "mean_ic": 0.0049,
+     "t_yearly": 0.16,
      "years": 23
     },
     "mom_6": {
@@ -18,32 +18,32 @@
      "years": 23
     },
     "trend_200": {
-     "mean_ic": 0.034,
+     "mean_ic": 0.0342,
      "t_yearly": 1.04,
      "years": 23
     },
     "stretch_60m": {
-     "mean_ic": -0.0248,
-     "t_yearly": -0.46,
+     "mean_ic": -0.0244,
+     "t_yearly": -0.45,
      "years": 22
     },
     "vol_1y": {
-     "mean_ic": 0.0583,
-     "t_yearly": 1.61,
+     "mean_ic": 0.0579,
+     "t_yearly": 1.6,
      "years": 23
     },
     "maxdd_3y": {
-     "mean_ic": -0.0513,
-     "t_yearly": -1.38,
+     "mean_ic": -0.0509,
+     "t_yearly": -1.37,
      "years": 23
     },
     "dd_now": {
-     "mean_ic": 0.0219,
-     "t_yearly": 0.74,
+     "mean_ic": 0.0225,
+     "t_yearly": 0.77,
      "years": 23
     },
     "yield_12m": {
-     "mean_ic": -0.002,
+     "mean_ic": -0.0021,
      "t_yearly": -0.07,
      "years": 23
     }
@@ -72,22 +72,22 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": 0.0052,
-     "bottom_quintile_mean_excess": 0.001,
+     "top_quintile_mean_excess": 0.0055,
+     "bottom_quintile_mean_excess": -0.0014,
      "share_years_top_beats_median": 0.333,
      "share_years_top_beats_bottom": 0.667,
      "by_year": {
       "2021": {
-       "top": -0.0135,
-       "bottom": -0.0032
+       "top": -0.013,
+       "bottom": -0.0034
       },
       "2022": {
-       "top": -0.0002,
-       "bottom": -0.0021
+       "top": -0.0,
+       "bottom": -0.0001
       },
       "2023": {
-       "top": 0.0293,
-       "bottom": 0.0082
+       "top": 0.0296,
+       "bottom": -0.0008
       }
      }
     },
@@ -164,65 +164,65 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": 0.0101,
-     "bottom_quintile_mean_excess": 0.0081,
+     "top_quintile_mean_excess": 0.0107,
+     "bottom_quintile_mean_excess": 0.0038,
      "share_years_top_beats_median": 0.667,
      "share_years_top_beats_bottom": 0.333,
      "by_year": {
       "2021": {
-       "top": -0.0172,
-       "bottom": -0.0076
+       "top": -0.0164,
+       "bottom": -0.0079
       },
       "2022": {
-       "top": 0.0013,
-       "bottom": 0.0079
+       "top": 0.0015,
+       "bottom": 0.0117
       },
       "2023": {
-       "top": 0.0464,
-       "bottom": 0.024
+       "top": 0.0469,
+       "bottom": 0.0076
       }
      }
     }
    },
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": 0.0345,
+     "mean_ic": 0.0344,
      "t_yearly": 1.11,
      "years": 21
     },
     "mom_6": {
-     "mean_ic": 0.0443,
+     "mean_ic": 0.0441,
      "t_yearly": 1.15,
      "years": 21
     },
     "trend_200": {
-     "mean_ic": 0.0556,
+     "mean_ic": 0.0554,
      "t_yearly": 1.4,
      "years": 21
     },
     "stretch_60m": {
-     "mean_ic": 0.0568,
-     "t_yearly": 1.58,
+     "mean_ic": 0.0572,
+     "t_yearly": 1.6,
      "years": 20
     },
     "vol_1y": {
-     "mean_ic": 0.023,
-     "t_yearly": 0.82,
+     "mean_ic": 0.0223,
+     "t_yearly": 0.8,
      "years": 21
     },
     "maxdd_3y": {
-     "mean_ic": -0.0081,
-     "t_yearly": -0.32,
+     "mean_ic": -0.0072,
+     "t_yearly": -0.28,
      "years": 21
     },
     "dd_now": {
-     "mean_ic": 0.0409,
-     "t_yearly": 1.39,
+     "mean_ic": 0.0416,
+     "t_yearly": 1.41,
      "years": 21
     },
     "yield_12m": {
-     "mean_ic": -0.0417,
-     "t_yearly": -1.09,
+     "mean_ic": -0.0411,
+     "t_yearly": -1.08,
      "years": 21
     }
    },
@@ -267,8 +267,8 @@
     "parameter_now": 0.05,
     "starts": 129,
     "share_beating": 0.0,
-    "median_edge": -0.0064,
-    "worst_edge": -0.0134,
+    "median_edge": -0.0065,
+    "worst_edge": -0.0141,
     "passes_gate": false
    },
    "STRETCH_PAUSE": {
@@ -276,31 +276,31 @@
     "starts": 129,
     "share_beating": 0.31,
     "median_edge": 0.0,
-    "worst_edge": -0.0487,
+    "worst_edge": -0.048,
     "passes_gate": false
    },
    "WAIT_FOR_DIP": {
     "parameter_now": 0.2,
     "starts": 129,
-    "share_beating": 0.178,
-    "median_edge": -0.0339,
-    "worst_edge": -0.0987,
+    "share_beating": 0.171,
+    "median_edge": -0.0333,
+    "worst_edge": -0.0978,
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
     "parameter_now": 0.0,
     "starts": 129,
     "share_beating": 0.008,
-    "median_edge": -0.0092,
-    "worst_edge": -0.0216,
+    "median_edge": -0.0096,
+    "worst_edge": -0.023,
     "passes_gate": false
    },
    "_now": {
     "month": "2026-09",
-    "trend": 1.047,
-    "stretch": 1.4278,
-    "dd": -0.0236,
-    "mom": 0.1709
+    "trend": 1.0451,
+    "stretch": 1.4202,
+    "dd": -0.0244,
+    "mom": 0.1646
    }
   },
   "INTL_EQUITY": {
@@ -430,27 +430,27 @@
  "cost_test": {
   "12m": {
    "test_years": 14,
-   "mean_ic": 0.0307,
-   "t_yearly": 1.53,
-   "cheapest_quintile_mean_excess": 0.0038,
-   "most_expensive_quintile_mean_excess": 0.015,
+   "mean_ic": 0.0333,
+   "t_yearly": 1.66,
+   "cheapest_quintile_mean_excess": 0.0039,
+   "most_expensive_quintile_mean_excess": 0.0063,
    "share_years_cheapest_beats_median": 0.714,
    "share_years_cheapest_beats_most_expensive": 0.429,
    "by_year": {
     "2012": {
      "ic": 0.007,
      "cheapest": 0.0036,
-     "most_expensive": 0.0045
+     "most_expensive": 0.004
     },
     "2013": {
-     "ic": 0.09,
+     "ic": 0.095,
      "cheapest": 0.0104,
-     "most_expensive": 0.0357
+     "most_expensive": 0.0297
     },
     "2014": {
-     "ic": 0.077,
+     "ic": 0.081,
      "cheapest": 0.0045,
-     "most_expensive": -0.0106
+     "most_expensive": -0.0132
     },
     "2015": {
      "ic": 0.096,
@@ -458,80 +458,80 @@
      "most_expensive": -0.01
     },
     "2016": {
-     "ic": -0.015,
+     "ic": -0.014,
      "cheapest": 0.0026,
-     "most_expensive": -0.0025
+     "most_expensive": -0.0047
     },
     "2017": {
-     "ic": 0.036,
+     "ic": 0.043,
      "cheapest": 0.0018,
-     "most_expensive": -0.002
+     "most_expensive": -0.0108
     },
     "2018": {
-     "ic": 0.085,
+     "ic": 0.086,
      "cheapest": -0.0028,
-     "most_expensive": 0.0009
+     "most_expensive": -0.0011
     },
     "2019": {
-     "ic": 0.164,
-     "cheapest": 0.0076,
-     "most_expensive": -0.0362
+     "ic": 0.168,
+     "cheapest": 0.0077,
+     "most_expensive": -0.0375
     },
     "2020": {
-     "ic": -0.041,
-     "cheapest": 0.0149,
-     "most_expensive": 0.0526
+     "ic": -0.034,
+     "cheapest": 0.015,
+     "most_expensive": 0.0312
     },
     "2021": {
-     "ic": 0.055,
+     "ic": 0.049,
      "cheapest": 0.0071,
-     "most_expensive": -0.0422
+     "most_expensive": -0.036
     },
     "2022": {
-     "ic": -0.058,
+     "ic": -0.057,
      "cheapest": -0.0028,
-     "most_expensive": 0.0296
+     "most_expensive": 0.026
     },
     "2023": {
-     "ic": 0.087,
+     "ic": 0.093,
      "cheapest": -0.0008,
-     "most_expensive": 0.0201
+     "most_expensive": 0.0051
     },
     "2024": {
-     "ic": -0.073,
-     "cheapest": 0.0019,
-     "most_expensive": 0.0494
+     "ic": -0.074,
+     "cheapest": 0.0018,
+     "most_expensive": 0.0528
     },
     "2025": {
-     "ic": -0.081,
-     "cheapest": -0.001,
-     "most_expensive": 0.1209
+     "ic": -0.074,
+     "cheapest": -0.0004,
+     "most_expensive": 0.0522
     }
    }
   },
   "36m": {
    "test_years": 12,
-   "mean_ic": 0.0731,
-   "t_yearly": 5.01,
-   "cheapest_quintile_mean_excess": 0.003,
-   "most_expensive_quintile_mean_excess": -0.0112,
-   "share_years_cheapest_beats_median": 0.833,
-   "share_years_cheapest_beats_most_expensive": 0.833,
+   "mean_ic": 0.0764,
+   "t_yearly": 5.13,
+   "cheapest_quintile_mean_excess": 0.0031,
+   "most_expensive_quintile_mean_excess": -0.0138,
+   "share_years_cheapest_beats_median": 0.917,
+   "share_years_cheapest_beats_most_expensive": 0.917,
    "by_year": {
     "2012": {
-     "ic": 0.049,
+     "ic": 0.05,
      "cheapest": 0.0035,
-     "most_expensive": -0.0003
+     "most_expensive": -0.0005
     },
     "2013": {
-     "ic": 0.112,
+     "ic": 0.116,
      "cheapest": 0.0083,
-     "most_expensive": -0.0023
+     "most_expensive": -0.0043
     },
     "2014": {
-     "ic": 0.039,
-     "cheapest": 0.0025,
-     "most_expensive": -0.0076
+     "ic": 0.049,
+     "cheapest": 0.0027,
+     "most_expensive": -0.0145
     },
     "2015": {
      "ic": 0.097,
@@ -539,44 +539,44 @@
      "most_expensive": -0.0261
     },
     "2016": {
-     "ic": 0.095,
+     "ic": 0.096,
      "cheapest": 0.0014,
-     "most_expensive": -0.0167
+     "most_expensive": -0.0177
     },
     "2017": {
-     "ic": 0.132,
-     "cheapest": 0.0046,
-     "most_expensive": -0.0335
+     "ic": 0.142,
+     "cheapest": 0.0047,
+     "most_expensive": -0.0376
     },
     "2018": {
-     "ic": 0.096,
-     "cheapest": 0.0033,
-     "most_expensive": -0.0128
+     "ic": 0.105,
+     "cheapest": 0.0034,
+     "most_expensive": -0.0177
     },
     "2019": {
-     "ic": 0.158,
+     "ic": 0.159,
      "cheapest": 0.006,
-     "most_expensive": -0.0225
+     "most_expensive": -0.0232
     },
     "2020": {
-     "ic": 0.056,
-     "cheapest": 0.0029,
-     "most_expensive": -0.0119
+     "ic": 0.057,
+     "cheapest": 0.0028,
+     "most_expensive": -0.0115
     },
     "2021": {
-     "ic": 0.038,
-     "cheapest": 0.0019,
-     "most_expensive": -0.0204
+     "ic": 0.033,
+     "cheapest": 0.0017,
+     "most_expensive": -0.0189
     },
     "2022": {
-     "ic": -0.022,
+     "ic": -0.021,
      "cheapest": -0.0012,
-     "most_expensive": 0.0077
+     "most_expensive": 0.0069
     },
     "2023": {
-     "ic": 0.028,
-     "cheapest": -0.0001,
-     "most_expensive": 0.0119
+     "ic": 0.035,
+     "cheapest": 0.0002,
+     "most_expensive": -0.0004
     }
    }
   },
