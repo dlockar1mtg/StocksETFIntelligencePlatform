@@ -20,9 +20,9 @@
   2021,
   2022
  ],
- "observations": 7754,
+ "observations": 7755,
  "overall": {
-  "n": 7754,
+  "n": 7755,
   "inside_10_90": 0.828,
   "below_10": 0.072,
   "above_90": 0.101,
@@ -55,7 +55,7 @@
    "own_history_median_abs_error": 0.0542
   },
   "US_EQUITY": {
-   "n": 4669,
+   "n": 4670,
    "inside_10_90": 0.821,
    "below_10": 0.056,
    "above_90": 0.123,
@@ -201,11 +201,11 @@
    "own_history_median_abs_error": 0.0744
   },
   "2022": {
-   "n": 852,
-   "inside_10_90": 0.803,
+   "n": 853,
+   "inside_10_90": 0.802,
    "below_10": 0.001,
-   "above_90": 0.196,
-   "center_median_abs_error": 0.0557,
+   "above_90": 0.197,
+   "center_median_abs_error": 0.0558,
    "own_history_median_abs_error": 0.0643
   }
  },
@@ -320,7 +320,7 @@
   "OTHER": "TESTED",
   "US_EQUITY": "TESTED"
  },
- "generated_at_utc": "2026-10-08T00:37:03+00:00",
+ "generated_at_utc": "2026-10-08T14:00:00+00:00",
  "known_limitations": [
   "Survivorship: the model universe is funds alive today, so the test omits funds that closed.",
   "Reference histories start between 1993 and 2018; the longest is SPY's.",
