@@ -1,21 +1,21 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-08T13:47:34+00:00",
+ "generated_at_utc": "2026-10-08T14:13:27+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
   "PASS": 0,
-  "PROVISIONAL": 1065,
-  "QUARANTINED": 18,
-  "BLOCKED": 1
+  "PROVISIONAL": 1084,
+  "QUARANTINED": 0,
+  "BLOCKED": 0
  },
  "freshness_summary": {
-  "CURRENT": 1065,
-  "AGING": 18,
+  "CURRENT": 1084,
+  "AGING": 0,
   "STALE": 0,
-  "UNKNOWN": 1
+  "UNKNOWN": 0
  },
- "feature_rows": 195928,
+ "feature_rows": 196041,
  "funds": [
   {
    "security_id": "SEC-US-QQQM",
@@ -80,7 +80,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -126,7 +126,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -172,7 +172,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -287,7 +287,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -333,7 +333,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -471,7 +471,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -494,7 +494,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -517,7 +517,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -540,7 +540,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -563,7 +563,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -885,7 +885,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -908,7 +908,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1000,7 +1000,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1115,7 +1115,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1253,7 +1253,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1299,7 +1299,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1322,7 +1322,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1368,7 +1368,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1391,7 +1391,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1414,7 +1414,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1424,7 +1424,7 @@
    "security_id": "US-ETF-BKCH",
    "symbol": "BKCH",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Global X Blockchain ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -1437,9 +1437,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.002233,
-    "cumulative_gap_1y": 0.000444,
-    "cumulative_gap_3y": 0.003723
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -1552,7 +1552,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1575,7 +1575,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1598,7 +1598,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1621,7 +1621,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1644,7 +1644,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -1677,7 +1677,7 @@
    "security_id": "US-ETF-BRZU",
    "symbol": "BRZU",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily MSCI Brazil Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -1690,9 +1690,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.001388,
-    "cumulative_gap_1y": 0.000577,
-    "cumulative_gap_3y": 0.000224
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -1943,7 +1943,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2081,7 +2081,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2104,7 +2104,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2196,7 +2196,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2311,7 +2311,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2357,7 +2357,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2518,7 +2518,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2840,7 +2840,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2863,7 +2863,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000104,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -2886,7 +2886,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3037,44 +3037,19 @@
    "mode": "FULL",
    "name": "Direxion Daily Aerospace & Defense Bull 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "BLOCKED",
-   "accepted_this_run": false,
-   "freshness_state": "UNKNOWN",
-   "as_of_date": null,
-   "first_date": null,
-   "sessions": 0,
-   "close": null,
-   "failures": [
-    "total return does not reconcile with the provider's adjusted close"
-   ],
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
+   "first_date": "2017-05-03",
+   "sessions": 2370,
+   "close": 44.5,
+   "failures": [],
    "reconciliation": {
-    "status": "FAIL",
-    "max_daily_return_gap": 0.00413,
-    "cumulative_gap_1y": 0.002898,
-    "cumulative_gap_3y": 0.001269,
-    "worst_days": [
-     {
-      "day": "2024-12-12",
-      "gap": 0.00413,
-      "dividend": 3.574,
-      "split": 1.0,
-      "close": 28.99
-     },
-     {
-      "day": "2025-12-10",
-      "gap": 0.003002,
-      "dividend": 5.55,
-      "split": 1.0,
-      "close": 56.09
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.000125,
-      "dividend": 0.104,
-      "split": 1.0,
-      "close": 23.75
-     }
-    ]
+    "status": "PASS",
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": [
     "2024-06-03"
@@ -3097,7 +3072,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3166,7 +3141,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3189,7 +3164,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3212,7 +3187,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3304,7 +3279,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3373,7 +3348,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3419,7 +3394,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3442,7 +3417,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3488,7 +3463,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3534,7 +3509,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3557,7 +3532,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3593,44 +3568,19 @@
    "mode": "FULL",
    "name": "Direxion Daily S&P Oil & Gas Exp. & Prod. Bear 2X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2015-05-29",
-   "sessions": 2856,
-   "close": 33.96,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 2857,
+   "close": 34.16,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000548,
-    "cumulative_gap_1y": 0.000229,
-    "cumulative_gap_3y": 0.00114,
-    "worst_days": [
-     {
-      "day": "2024-03-19",
-      "gap": 0.000548,
-      "dividend": 1.77,
-      "split": 1.0,
-      "close": 91.9
-     },
-     {
-      "day": "2026-03-24",
-      "gap": 0.000375,
-      "dividend": 0.28,
-      "split": 1.0,
-      "close": 42.2
-     },
-     {
-      "day": "2025-09-23",
-      "gap": 0.000326,
-      "dividend": 0.6,
-      "split": 1.0,
-      "close": 84.4
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -3697,7 +3647,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3720,9 +3670,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000505,
-    "cumulative_gap_1y": 8.3e-05,
-    "cumulative_gap_3y": 8.8e-05
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -3812,7 +3762,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3835,7 +3785,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -3848,44 +3798,19 @@
    "mode": "FULL",
    "name": "ProShares UltraShort Energy ETF",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2007-02-01",
-   "sessions": 4951,
-   "close": 14.46,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4952,
+   "close": 14.61,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000604,
-    "cumulative_gap_1y": 0.000197,
-    "cumulative_gap_3y": 0.001077,
-    "worst_days": [
-     {
-      "day": "2024-09-25",
-      "gap": 0.000604,
-      "dividend": 0.604,
-      "split": 1.0,
-      "close": 40.8
-     },
-     {
-      "day": "2024-06-26",
-      "gap": 0.000414,
-      "dividend": 0.84,
-      "split": 1.0,
-      "close": 38.52
-     },
-     {
-      "day": "2023-12-20",
-      "gap": 0.000264,
-      "dividend": 0.66,
-      "split": 1.0,
-      "close": 45.8
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -3919,44 +3844,19 @@
    "mode": "FULL",
    "name": "Direxion Daily Gold Miners Index Bear 2X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2010-12-08",
-   "sessions": 3980,
-   "close": 39.54,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 3981,
+   "close": 42.04,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000599,
-    "cumulative_gap_1y": 0.000161,
-    "cumulative_gap_3y": 0.000244,
-    "worst_days": [
-     {
-      "day": "2024-09-24",
-      "gap": 0.000599,
-      "dividend": 5.9,
-      "split": 1.0,
-      "close": 495.0
-     },
-     {
-      "day": "2024-03-19",
-      "gap": 0.000599,
-      "dividend": 15.2,
-      "split": 1.0,
-      "close": 1109.0
-     },
-     {
-      "day": "2026-09-22",
-      "gap": 0.000565,
-      "dividend": 0.28,
-      "split": 1.0,
-      "close": 32.57
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -4033,7 +3933,7 @@
    "security_id": "US-ETF-DXD",
    "symbol": "DXD",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "ProShares UltraShort Dow30",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -4046,9 +3946,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000273,
-    "cumulative_gap_1y": 0.000116,
-    "cumulative_gap_3y": 0.000346
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -4069,7 +3969,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4115,7 +4015,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4138,7 +4038,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4230,7 +4130,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4243,44 +4143,19 @@
    "mode": "FULL",
    "name": "Direxion Daily MSCI Emerging Markets Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2008-12-30",
-   "sessions": 4469,
-   "close": 13.56,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4470,
+   "close": 14.1,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.002852,
-    "cumulative_gap_1y": 0.002499,
-    "cumulative_gap_3y": 0.000283,
-    "worst_days": [
-     {
-      "day": "2026-06-23",
-      "gap": 0.002852,
-      "dividend": 0.224,
-      "split": 1.0,
-      "close": 15.33
-     },
-     {
-      "day": "2024-09-24",
-      "gap": 0.001254,
-      "dividend": 1.06,
-      "split": 1.0,
-      "close": 75.1
-     },
-     {
-      "day": "2025-06-24",
-      "gap": 0.000829,
-      "dividend": 0.62,
-      "split": 1.0,
-      "close": 54.7
-     }
-    ]
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -4554,7 +4429,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4600,7 +4475,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4623,7 +4498,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.6e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4830,7 +4705,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -4955,7 +4830,7 @@
    "security_id": "US-ETF-ERY",
    "symbol": "ERY",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Energy Bear 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -4968,9 +4843,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.00036,
-    "cumulative_gap_1y": 0.000279,
-    "cumulative_gap_3y": 0.000981
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -5198,7 +5073,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -5865,7 +5740,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -5911,9 +5786,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000363,
-    "cumulative_gap_1y": 0.000228,
-    "cumulative_gap_3y": 7e-05
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -5957,7 +5832,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6049,7 +5924,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6164,7 +6039,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6670,7 +6545,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6716,7 +6591,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6831,7 +6706,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6900,7 +6775,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6946,7 +6821,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6969,7 +6844,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -6992,7 +6867,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7015,7 +6890,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7107,7 +6982,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7130,7 +7005,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7199,7 +7074,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7245,7 +7120,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7268,7 +7143,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7682,7 +7557,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -7728,7 +7603,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8004,7 +7879,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8510,7 +8385,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8533,7 +8408,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8648,7 +8523,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8786,7 +8661,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8809,7 +8684,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -8993,7 +8868,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9095,7 +8970,7 @@
    "security_id": "US-ETF-GUSH",
    "symbol": "GUSH",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily S&P Oil & Gas Exp. & Prod. Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -9108,9 +8983,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000291,
-    "cumulative_gap_1y": 0.000184,
-    "cumulative_gap_3y": 0.00069
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -9154,7 +9029,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9338,7 +9213,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9489,44 +9364,19 @@
    "mode": "FULL",
    "name": "Direxion Daily S&P 500 High Beta Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2019-11-07",
-   "sessions": 1736,
-   "close": 15.22,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 1737,
+   "close": 15.73,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.001095,
-    "cumulative_gap_1y": 0.000482,
-    "cumulative_gap_3y": 0.001156,
-    "worst_days": [
-     {
-      "day": "2026-06-23",
-      "gap": 0.001095,
-      "dividend": 0.15,
-      "split": 1.0,
-      "close": 19.34
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.000726,
-      "dividend": 3.33,
-      "split": 1.0,
-      "close": 272.3
-     },
-     {
-      "day": "2026-09-22",
-      "gap": 0.000507,
-      "dividend": 0.217,
-      "split": 1.0,
-      "close": 16.31
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -9570,7 +9420,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9616,7 +9466,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9639,7 +9489,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9662,7 +9512,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9685,7 +9535,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9708,7 +9558,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9731,7 +9581,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9754,7 +9604,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9777,7 +9627,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9800,7 +9650,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9846,7 +9696,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -9869,7 +9719,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10030,7 +9880,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10076,7 +9926,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10099,7 +9949,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10122,7 +9972,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10145,7 +9995,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10168,7 +10018,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10214,7 +10064,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10237,7 +10087,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10260,7 +10110,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10283,7 +10133,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10306,7 +10156,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10329,7 +10179,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10352,7 +10202,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10375,7 +10225,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10398,7 +10248,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10421,7 +10271,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10513,7 +10363,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10536,7 +10386,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10674,7 +10524,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10720,7 +10570,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10927,7 +10777,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10973,7 +10823,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -10996,7 +10846,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.6e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -11019,7 +10869,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -11134,7 +10984,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -11203,7 +11053,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -11548,7 +11398,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -11916,7 +11766,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -12031,7 +11881,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -12100,7 +11950,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -12169,7 +12019,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13181,7 +13031,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13204,7 +13054,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13214,7 +13064,7 @@
    "security_id": "US-ETF-JDST",
    "symbol": "JDST",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Junior Gold Miners Index Bear 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13227,9 +13077,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.001014,
-    "cumulative_gap_1y": 0.000168,
-    "cumulative_gap_3y": 0.000493
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -13273,7 +13123,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13411,7 +13261,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13457,7 +13307,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13480,7 +13330,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13503,7 +13353,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13513,7 +13363,7 @@
    "security_id": "US-ETF-JNUG",
    "symbol": "JNUG",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Junior Gold Miners Index Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -13526,9 +13376,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000531,
-    "cumulative_gap_1y": 0.000248,
-    "cumulative_gap_3y": 0.000119
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -13572,7 +13422,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13595,7 +13445,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13641,7 +13491,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13664,7 +13514,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13986,7 +13836,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -13996,7 +13846,7 @@
    "security_id": "US-ETF-KORU",
    "symbol": "KORU",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily South Korea Bull 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -14009,9 +13859,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.00079,
-    "cumulative_gap_1y": 0.000258,
-    "cumulative_gap_3y": 0.001634
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -14065,7 +13915,7 @@
    "security_id": "US-ETF-KSTR",
    "symbol": "KSTR",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "KraneShares China Technology & Semiconductor STAR 50 Index ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -14079,12 +13929,10 @@
    "reconciliation": {
     "status": "PASS",
     "max_daily_return_gap": 0.0,
-    "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
-   "print_errors_removed": [
-    "2024-10-07"
-   ]
+   "print_errors_removed": []
   },
   {
    "security_id": "US-ETF-KWEB",
@@ -14139,44 +13987,19 @@
    "mode": "FULL",
    "name": "Direxion Daily S&P Biotech Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2015-05-28",
-   "sessions": 2857,
-   "close": 7.97,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 2858,
+   "close": 8.08,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000667,
-    "cumulative_gap_1y": 0.000402,
-    "cumulative_gap_3y": 0.000945,
-    "worst_days": [
-     {
-      "day": "2026-09-22",
-      "gap": 0.000667,
-      "dividend": 0.071,
-      "split": 1.0,
-      "close": 6.56
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.000467,
-      "dividend": 0.85,
-      "split": 1.0,
-      "close": 114.5
-     },
-     {
-      "day": "2025-03-25",
-      "gap": 0.00044,
-      "dividend": 0.55,
-      "split": 1.0,
-      "close": 76.9
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -14220,7 +14043,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14381,7 +14204,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14404,7 +14227,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14519,7 +14342,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14611,7 +14434,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14749,7 +14572,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14772,7 +14595,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14841,7 +14664,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14864,7 +14687,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -14933,7 +14756,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000419,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15002,7 +14825,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15025,7 +14848,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15048,7 +14871,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15117,7 +14940,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15255,7 +15078,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15278,7 +15101,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15311,7 +15134,7 @@
    "security_id": "US-ETF-NUGT",
    "symbol": "NUGT",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Gold Miners Index Bull 2X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -15324,9 +15147,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000336,
-    "cumulative_gap_1y": 1.1e-05,
-    "cumulative_gap_3y": 0.00013
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -15416,7 +15239,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15485,7 +15308,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000507,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15600,7 +15423,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15876,7 +15699,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15922,7 +15745,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15945,7 +15768,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15968,7 +15791,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -15991,7 +15814,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16014,7 +15837,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16106,7 +15929,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16313,7 +16136,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16336,7 +16159,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16428,7 +16251,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16497,7 +16320,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16635,7 +16458,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16865,7 +16688,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.7e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -16924,44 +16747,19 @@
    "mode": "FULL",
    "name": "ProShares UltraShort QQQ",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2006-07-13",
-   "sessions": 5090,
-   "close": 12.52,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 5091,
+   "close": 12.58,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000587,
-    "cumulative_gap_1y": 0.00014,
-    "cumulative_gap_3y": 0.000327,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000587,
-      "dividend": 1.03,
-      "split": 1.0,
-      "close": 54.6
-     },
-     {
-      "day": "2025-03-26",
-      "gap": 0.00039,
-      "dividend": 0.369,
-      "split": 1.0,
-      "close": 35.71
-     },
-     {
-      "day": "2024-03-20",
-      "gap": 0.000375,
-      "dividend": 0.79,
-      "split": 1.0,
-      "close": 44.7
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -17051,7 +16849,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -17176,7 +16974,7 @@
    "security_id": "US-ETF-QQQH",
    "symbol": "QQQH",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "NEOS Nasdaq-100 Hedged Equity Income ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -17189,13 +16987,11 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000144,
-    "cumulative_gap_1y": 9.5e-05,
-    "cumulative_gap_3y": 0.000228
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
-   "print_errors_removed": [
-    "2024-06-03"
-   ]
+   "print_errors_removed": []
   },
   {
    "security_id": "US-ETF-QQQJ",
@@ -17375,7 +17171,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -17628,7 +17424,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -17743,7 +17539,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18341,7 +18137,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18364,7 +18160,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18433,7 +18229,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18456,7 +18252,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18479,7 +18275,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18502,7 +18298,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18594,7 +18390,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18686,7 +18482,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000142,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18722,44 +18518,19 @@
    "mode": "FULL",
    "name": "ProShares UltraPro Short Dow30",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2010-02-11",
-   "sessions": 4188,
-   "close": 25.21,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4189,
+   "close": 25.76,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000513,
-    "cumulative_gap_1y": 0.000207,
-    "cumulative_gap_3y": 0.000502,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000513,
-      "dividend": 1.012,
-      "split": 1.0,
-      "close": 76.8
-     },
-     {
-      "day": "2024-03-20",
-      "gap": 0.000444,
-      "dividend": 1.008,
-      "split": 1.0,
-      "close": 64.12
-     },
-     {
-      "day": "2024-09-25",
-      "gap": 0.000389,
-      "dividend": 0.932,
-      "split": 1.0,
-      "close": 53.68
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -18770,44 +18541,19 @@
    "mode": "FULL",
    "name": "ProShares UltraShort S&P500",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2006-07-13",
-   "sessions": 5090,
-   "close": 52.3,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 5091,
+   "close": 52.6,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000555,
-    "cumulative_gap_1y": 2e-05,
-    "cumulative_gap_3y": 0.00041,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000555,
-      "dividend": 2.92,
-      "split": 1.0,
-      "close": 153.65
-     },
-     {
-      "day": "2024-12-23",
-      "gap": 0.000285,
-      "dividend": 2.115,
-      "split": 1.0,
-      "close": 95.25
-     },
-     {
-      "day": "2025-03-26",
-      "gap": 0.000271,
-      "dividend": 1.165,
-      "split": 1.0,
-      "close": 103.75
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -18943,7 +18689,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -18989,7 +18735,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19012,7 +18758,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19035,7 +18781,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19058,7 +18804,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19081,7 +18827,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19104,7 +18850,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19173,7 +18919,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19196,7 +18942,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19242,7 +18988,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19472,7 +19218,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19505,7 +19251,7 @@
    "security_id": "US-ETF-SOXL",
    "symbol": "SOXL",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Semiconductor Bull 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -19518,9 +19264,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000357,
-    "cumulative_gap_1y": 4.4e-05,
-    "cumulative_gap_3y": 0.000848
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -19551,7 +19297,7 @@
    "security_id": "US-ETF-SOXS",
    "symbol": "SOXS",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Semiconductor Bear 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -19564,13 +19310,11 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.002746,
-    "cumulative_gap_1y": 0.000781,
-    "cumulative_gap_3y": 0.002654
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
-   "print_errors_removed": [
-    "2026-06-05"
-   ]
+   "print_errors_removed": []
   },
   {
    "security_id": "US-ETF-SOXX",
@@ -19612,7 +19356,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19635,7 +19379,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19865,7 +19609,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19888,7 +19632,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19911,7 +19655,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19934,7 +19678,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -19980,7 +19724,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20072,7 +19816,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20141,7 +19885,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20164,7 +19908,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20210,7 +19954,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20292,44 +20036,19 @@
    "mode": "FULL",
    "name": "Direxion Daily S&P 500 Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2008-11-19",
-   "sessions": 4496,
-   "close": 23.26,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4497,
+   "close": 23.45,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000386,
-    "cumulative_gap_1y": 0.000386,
-    "cumulative_gap_3y": 0.00067,
-    "worst_days": [
-     {
-      "day": "2026-06-23",
-      "gap": 0.000386,
-      "dividend": 0.239,
-      "split": 1.0,
-      "close": 27.84
-     },
-     {
-      "day": "2024-03-19",
-      "gap": 0.000243,
-      "dividend": 1.37,
-      "split": 1.0,
-      "close": 90.6
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.00024,
-      "dividend": 1.04,
-      "split": 1.0,
-      "close": 116.8
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20340,44 +20059,19 @@
    "mode": "FULL",
    "name": "ProShares UltraPro Short S&P500",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2009-06-25",
-   "sessions": 4347,
-   "close": 32.69,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4348,
+   "close": 32.95,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000897,
-    "cumulative_gap_1y": 4.8e-05,
-    "cumulative_gap_3y": 0.000491,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000897,
-      "dividend": 3.64,
-      "split": 1.0,
-      "close": 179.4
-     },
-     {
-      "day": "2024-03-20",
-      "gap": 0.000452,
-      "dividend": 2.54,
-      "split": 1.0,
-      "close": 130.8
-     },
-     {
-      "day": "2024-12-23",
-      "gap": 0.0004,
-      "dividend": 1.928,
-      "split": 1.0,
-      "close": 86.08
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20503,44 +20197,19 @@
    "mode": "FULL",
    "name": "ProShares UltraPro Short QQQ",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2010-02-11",
-   "sessions": 4188,
-   "close": 31.83,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4189,
+   "close": 32.07,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000923,
-    "cumulative_gap_1y": 0.000213,
-    "cumulative_gap_3y": 0.000417,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000923,
-      "dividend": 7.075,
-      "split": 1.0,
-      "close": 351.5
-     },
-     {
-      "day": "2025-03-26",
-      "gap": 0.000793,
-      "dividend": 2.41,
-      "split": 1.0,
-      "close": 174.3
-     },
-     {
-      "day": "2024-12-23",
-      "gap": 0.000757,
-      "dividend": 4.085,
-      "split": 1.0,
-      "close": 145.4
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20561,7 +20230,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 7e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20574,44 +20243,19 @@
    "mode": "FULL",
    "name": "ProShares UltraPro Short Russell2000",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2010-02-11",
-   "sessions": 4188,
-   "close": 25.83,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4189,
+   "close": 26.84,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000937,
-    "cumulative_gap_1y": 1.7e-05,
-    "cumulative_gap_3y": 0.00222,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000937,
-      "dividend": 1.948,
-      "split": 1.0,
-      "close": 129.24
-     },
-     {
-      "day": "2024-09-25",
-      "gap": 0.000821,
-      "dividend": 1.788,
-      "split": 1.0,
-      "close": 83.36
-     },
-     {
-      "day": "2024-03-20",
-      "gap": 0.000749,
-      "dividend": 1.496,
-      "split": 1.0,
-      "close": 108.6
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20645,44 +20289,19 @@
    "mode": "FULL",
    "name": "ProShares UltraShort Semiconductors",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2007-02-01",
-   "sessions": 4951,
-   "close": 9.68,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4952,
+   "close": 9.75,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.001366,
-    "cumulative_gap_1y": 0.000284,
-    "cumulative_gap_3y": 0.000104,
-    "worst_days": [
-     {
-      "day": "2024-12-23",
-      "gap": 0.001366,
-      "dividend": 1.88,
-      "split": 1.0,
-      "close": 100.52
-     },
-     {
-      "day": "2025-03-26",
-      "gap": 0.001165,
-      "dividend": 1.404,
-      "split": 1.0,
-      "close": 120.64
-     },
-     {
-      "day": "2023-12-20",
-      "gap": 0.00107,
-      "dividend": 8.3,
-      "split": 1.0,
-      "close": 546.0
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20818,7 +20437,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20864,7 +20483,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20887,7 +20506,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20933,7 +20552,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -20979,7 +20598,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21048,7 +20667,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21265,7 +20884,7 @@
    "security_id": "US-ETF-TECS",
    "symbol": "TECS",
    "usage": "MODEL",
-   "mode": "FULL",
+   "mode": "INCREMENTAL",
    "name": "Direxion Daily Technology Bear 3X Shares",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
@@ -21278,9 +20897,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.001035,
-    "cumulative_gap_1y": 0.000663,
-    "cumulative_gap_3y": 0.001286
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": null,
+    "cumulative_gap_3y": null
    },
    "print_errors_removed": []
   },
@@ -21301,7 +20920,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21439,7 +21058,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21462,7 +21081,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21485,7 +21104,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21600,7 +21219,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21705,44 +21324,19 @@
    "mode": "FULL",
    "name": "ProShares UltraShort Russell2000",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2007-01-25",
-   "sessions": 4956,
-   "close": 23.59,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4957,
+   "close": 24.22,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000759,
-    "cumulative_gap_1y": 4e-06,
-    "cumulative_gap_3y": 0.001622,
-    "worst_days": [
-     {
-      "day": "2023-12-20",
-      "gap": 0.000759,
-      "dividend": 1.17,
-      "split": 1.0,
-      "close": 60.85
-     },
-     {
-      "day": "2024-09-25",
-      "gap": 0.000436,
-      "dividend": 0.85,
-      "split": 1.0,
-      "close": 47.0
-     },
-     {
-      "day": "2024-03-20",
-      "gap": 0.000291,
-      "dividend": 0.43,
-      "split": 1.0,
-      "close": 54.8
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -21753,44 +21347,19 @@
    "mode": "FULL",
    "name": "Direxion Daily Small Cap Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2008-11-19",
-   "sessions": 4496,
-   "close": 45.85,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4497,
+   "close": 47.65,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000296,
-    "cumulative_gap_1y": 2.8e-05,
-    "cumulative_gap_3y": 0.000134,
-    "worst_days": [
-     {
-      "day": "2026-06-23",
-      "gap": 0.000296,
-      "dividend": 0.38,
-      "split": 1.0,
-      "close": 39.9
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.000267,
-      "dividend": 1.11,
-      "split": 1.0,
-      "close": 202.2
-     },
-     {
-      "day": "2025-03-25",
-      "gap": 0.000253,
-      "dividend": 2.38,
-      "split": 1.0,
-      "close": 150.9
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -21903,7 +21472,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -21915,7 +21484,7 @@
    "usage": "MODEL",
    "mode": "INCREMENTAL",
    "name": "Defiance Space and Connective Tech ETF",
-   "instrument_type": "EQUITY",
+   "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
    "freshness_state": "CURRENT",
@@ -21972,7 +21541,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22179,7 +21748,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22202,7 +21771,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22478,7 +22047,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22501,7 +22070,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 8e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22524,7 +22093,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22547,7 +22116,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22570,7 +22139,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22593,7 +22162,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22639,7 +22208,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22869,7 +22438,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22915,7 +22484,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -22938,7 +22507,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 6e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23007,7 +22576,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23053,7 +22622,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23191,7 +22760,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23329,7 +22898,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23467,7 +23036,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.6e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23697,7 +23266,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23720,7 +23289,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23766,7 +23335,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23789,7 +23358,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23812,7 +23381,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23904,7 +23473,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23927,7 +23496,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23950,7 +23519,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -23996,7 +23565,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 9e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -24147,44 +23716,19 @@
    "mode": "FULL",
    "name": "Direxion Daily Dow Jones Internet Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2019-11-07",
-   "sessions": 1736,
-   "close": 13.14,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 1737,
+   "close": 13.3,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.000812,
-    "cumulative_gap_1y": 0.000815,
-    "cumulative_gap_3y": 0.001352,
-    "worst_days": [
-     {
-      "day": "2023-12-21",
-      "gap": 0.000812,
-      "dividend": 1.7,
-      "split": 1.0,
-      "close": 83.5
-     },
-     {
-      "day": "2025-06-24",
-      "gap": 0.000493,
-      "dividend": 0.216,
-      "split": 1.0,
-      "close": 22.73
-     },
-     {
-      "day": "2026-09-22",
-      "gap": 0.000493,
-      "dividend": 0.188,
-      "split": 1.0,
-      "close": 13.58
-     }
-    ]
+    "max_daily_return_gap": 1e-06,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -24205,7 +23749,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.9e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -24228,7 +23772,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2.8e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -24251,7 +23795,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1.5e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -24619,7 +24163,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -25010,7 +24554,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 4.4e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -25138,44 +24682,19 @@
    "mode": "FULL",
    "name": "Direxion Daily FTSE China Bear 3X Shares",
    "instrument_type": "ETF",
-   "quality_status": "QUARANTINED",
-   "accepted_this_run": false,
-   "freshness_state": "AGING",
-   "as_of_date": "2026-10-06",
+   "quality_status": "PROVISIONAL",
+   "accepted_this_run": true,
+   "freshness_state": "CURRENT",
+   "as_of_date": "2026-10-07",
    "first_date": "2009-12-03",
-   "sessions": 4235,
-   "close": 32.67,
-   "failures": [
-    "provider changed or dropped stored closes without a split"
-   ],
+   "sessions": 4236,
+   "close": 33.68,
+   "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.003332,
-    "cumulative_gap_1y": 0.000266,
-    "cumulative_gap_3y": 0.005452,
-    "worst_days": [
-     {
-      "day": "2024-09-24",
-      "gap": 0.003332,
-      "dividend": 1.62,
-      "split": 1.0,
-      "close": 99.8
-     },
-     {
-      "day": "2023-12-21",
-      "gap": 0.000917,
-      "dividend": 2.8,
-      "split": 1.0,
-      "close": 268.8
-     },
-     {
-      "day": "2025-06-24",
-      "gap": 0.00067,
-      "dividend": 0.266,
-      "split": 1.0,
-      "close": 29.83
-     }
-    ]
+    "max_daily_return_gap": 0.0,
+    "cumulative_gap_1y": 0.0,
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -25219,7 +24738,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -25242,7 +24761,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 3.3e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },
@@ -25265,7 +24784,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 5.2e-05,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": null,
     "cumulative_gap_3y": null
    },

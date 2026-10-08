@@ -20,7 +20,7 @@
   2021,
   2022
  ],
- "observations": 1970,
+ "observations": 1973,
  "categories": {
   "IDIOSYNCRATIC": {
    "n": 1122,
@@ -33,14 +33,14 @@
    "median_center": 0.0297
   },
   "SPECIALIZED_LEVERAGED": {
-   "n": 355,
-   "funds": 62,
+   "n": 356,
+   "funds": 63,
    "inside_10_90": 0.761,
    "below_10": 0.163,
    "above_90": 0.076,
-   "center_median_abs_error": 0.1769,
+   "center_median_abs_error": 0.1774,
    "median_realized": 0.1114,
-   "median_center": 0.1367
+   "median_center": 0.1355
   },
   "SPECIALIZED_INVERSE": {
    "n": 376,
@@ -53,14 +53,14 @@
    "median_center": -0.3145
   },
   "MOVES_FAR_MORE_THAN_ITS_REFERENCE": {
-   "n": 117,
-   "funds": 51,
-   "inside_10_90": 0.59,
-   "below_10": 0.128,
-   "above_90": 0.282,
-   "center_median_abs_error": 0.2468,
-   "median_realized": 0.1057,
-   "median_center": -0.0328
+   "n": 119,
+   "funds": 52,
+   "inside_10_90": 0.588,
+   "below_10": 0.126,
+   "above_90": 0.286,
+   "center_median_abs_error": 0.2534,
+   "median_realized": 0.1131,
+   "median_center": -0.0344
   }
  },
  "category_status": {
@@ -221,35 +221,35 @@
    "median_center": 0.0152
   },
   "2020": {
-   "n": 158,
-   "funds": 158,
-   "inside_10_90": 0.582,
-   "below_10": 0.222,
-   "above_90": 0.196,
-   "center_median_abs_error": 0.1183,
-   "median_realized": -0.0118,
-   "median_center": 0.0129
+   "n": 159,
+   "funds": 159,
+   "inside_10_90": 0.585,
+   "below_10": 0.22,
+   "above_90": 0.195,
+   "center_median_abs_error": 0.1192,
+   "median_realized": -0.0116,
+   "median_center": 0.0125
   },
   "2021": {
-   "n": 174,
-   "funds": 174,
-   "inside_10_90": 0.523,
-   "below_10": 0.247,
-   "above_90": 0.23,
-   "center_median_abs_error": 0.1481,
-   "median_realized": -0.0027,
-   "median_center": 0.0194
+   "n": 175,
+   "funds": 175,
+   "inside_10_90": 0.526,
+   "below_10": 0.246,
+   "above_90": 0.229,
+   "center_median_abs_error": 0.1508,
+   "median_realized": -0.0012,
+   "median_center": 0.0191
   },
   "2022": {
-   "n": 179,
-   "funds": 179,
-   "inside_10_90": 0.704,
+   "n": 180,
+   "funds": 180,
+   "inside_10_90": 0.7,
    "below_10": 0.022,
-   "above_90": 0.274,
-   "center_median_abs_error": 0.0758,
-   "median_realized": 0.0643,
+   "above_90": 0.278,
+   "center_median_abs_error": 0.0764,
+   "median_realized": 0.0644,
    "median_center": 0.0122
   }
  },
- "generated_at_utc": "2026-10-08T14:00:29+00:00"
+ "generated_at_utc": "2026-10-08T14:27:27+00:00"
 }
