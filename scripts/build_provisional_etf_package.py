@@ -55,9 +55,11 @@ def main(argv: list[str] | None = None) -> int:
     projection_path = DATA / "research" / "provisional_projection_research.json"
     projection = load(projection_path) if projection_path.exists() else None
     projector = PJ.Projector(features, (lambda s, d: X.ratio_on(history, s, d)) if history else None) if projection else None
+    coverage_path = DATA / "research" / "provisional_full_coverage_research.json"
+    coverage = load(coverage_path) if coverage_path.exists() else None
     records, groups = P.build_records(status=status, features=features, research=research,
                                       cached_bars=lambda s: H.read_cached_bars(cache, s) if cache.exists() else [],
-                                      expense_ratio=expense, projector=projector, projection=projection)
+                                      expense_ratio=expense, projector=projector, projection=projection, full_coverage=coverage)
     validation, limitations = U.package_validation(records, market["universe"]["required_seed_symbols"])
     as_of = max((r.get("as_of_date") or "" for r in records), default=today) or today
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -75,7 +77,11 @@ def main(argv: list[str] | None = None) -> int:
                         "family_status": projection.get("family_status"), "rules_now": projection["rules_now"],
                         "passes_registered_test": projection["passes"],
                         "by_start_year": {str(y): {"n": c.get("n"), "inside_10_90": c.get("inside_10_90")} for y, c in projection["by_start_year"].items()},
-                        "amendments": load(ROOT / "config" / "market" / "provisional_projection_policy.json").get("amendments", [])}}
+                        "amendments": load(ROOT / "config" / "market" / "provisional_projection_policy.json").get("amendments", [])},
+                    "full_coverage_test": None if not coverage else {
+                        "policy_id": coverage["policy_id"], "generated_at_utc": coverage.get("generated_at_utc"),
+                        "observations": coverage["observations"], "test_starts": coverage["test_starts"],
+                        "categories": coverage["categories"], "category_status": coverage["category_status"]}}
     funds_doc = {"package_format": U.PACKAGE_FORMAT, "as_of_date": as_of, "generated_at_utc": generated,
                  "fund_count": len(records), "limitations": limitations, "funds": records, "automatic_execution_authorized": False}
     status_doc = {k: status[k] for k in ("policy_id", "generated_at_utc", "mode", "fund_count", "quality_summary", "freshness_summary")}
@@ -90,8 +96,12 @@ def main(argv: list[str] | None = None) -> int:
     for r in records:
         calls[r["ranking_call"]] = calls.get(r["ranking_call"], 0) + 1
     impl = sum(1 for r in records if r["implementation"]["call"] == "REDIRECT_NEW_MONEY")
+    coverage_counts = {"projection_3y": sum(1 for r in records if r.get("projection_3y")),
+                       "outlook_3y": sum(1 for r in records if r.get("outlook_3y")),
+                       "neither": sorted(r["symbol"] for r in records if not r.get("projection_3y") and not r.get("outlook_3y")),
+                       "loose_peer_reading": sum(1 for r in records if r.get("loose_peer_reading"))}
     print(json.dumps({"package_id": manifest["package_id"], "validation": validation, "funds": len(records), "groups": len(groups),
-                      "ranking_calls": calls, "redirects": impl, "limitations": limitations}))
+                      "ranking_calls": calls, "redirects": impl, "coverage": coverage_counts, "limitations": limitations}))
     return 0 if validation != "FAIL" else 1
 
 

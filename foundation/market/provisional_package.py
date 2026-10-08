@@ -13,6 +13,7 @@ from statistics import median
 
 import numpy as np
 
+from foundation.market import provisional_full_coverage as FC
 from foundation.market import provisional_peer_groups as G
 from foundation.market import provisional_ranking as R
 from foundation.market import provisional_timing as T
@@ -137,7 +138,7 @@ def pick_best(members: list[dict]) -> dict:
 
 
 def build_records(*, status: dict, features: dict, research: dict, cached_bars, expense_ratio=None,
-                  projector=None, projection: dict | None = None) -> tuple[list[dict], dict]:
+                  projector=None, projection: dict | None = None, full_coverage: dict | None = None) -> tuple[list[dict], dict]:
     funds = [f for f in status["funds"] if f["usage"] in ("MODEL", "HELD_OUTSIDE_MODEL")]
     returns = {s: G.monthly_returns(dict(zip(f["months"], f["tr"]))) for s, f in features.items()}
     end_month = max((m for f in features.values() for m in f["months"]), default="")
@@ -241,4 +242,7 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
         else:
             r["ranking_call"] = "RANKED"                       # filled by the ranking stage once a gate passes
         r["automatic_execution_authorized"] = False
+    if projector is not None:                                    # Phase 4.6: research for the funds 4.5 leaves out
+        FC.add_full_coverage(records, group_docs, features, end_month, full_coverage,
+                             timing_reading=lambda fam: T.reading(timing[fam]) if timing.get(fam) else None)
     return records, group_docs
