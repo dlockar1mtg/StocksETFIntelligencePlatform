@@ -92,7 +92,11 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
             S.reconstruct_total_return(parsed.bars)
             checks["reconciliation"] = S.reconcile_with_provider(parsed.bars, rules)
             since = parsed.bars[-(int(rules["window_sessions"]) + 1)].day if len(parsed.bars) > int(rules["window_sessions"]) else parsed.bars[0].day
-            checks["revisions"] = (S.revisions(stored, parsed.bars, parsed.splits, float(rules["revision_tolerance"]), since)
+            # amendment 2026-10-08: only splits the stored series does not already carry rescale its closes
+            # (applying every historical split quarantined 18 inverse funds on their first full refresh).
+            stored_splits = {r["date"] for r in stored if float(r["split"] or 1) != 1}
+            unseen = {d: r for d, r in parsed.splits.items() if d not in stored_splits}
+            checks["revisions"] = (S.revisions(stored, parsed.bars, unseen, float(rules["revision_tolerance"]), since)
                                    if stored else {"changed": 0, "ok": True, "first_capture": True})
             bars = parsed.bars
         if checks["reconciliation"]["status"] != "PASS":

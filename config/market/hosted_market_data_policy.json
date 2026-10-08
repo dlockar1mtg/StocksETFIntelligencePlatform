@@ -154,6 +154,15 @@
         "The reconciliation reports its three worst days when it fails, so a remaining block can be diagnosed from the run."
       ],
       "registered_before_results": true
+    },
+    {
+      "date": "2026-10-08",
+      "after_results": true,
+      "reason": "the first run with the 2026-10-08 changes (PR #15) fixed 9 of the 10 blocked funds and showed two more causes",
+      "changes": [
+        "Reconciliation compares like with like: the provider's ex-date return is close / (prior close - distribution), ours reinvests at the close, (close + distribution) / prior close. They differ only when a large distribution meets a large move (DFEN: 10-12% distributions on a 3x fund, 1-year gap 0.29%). The inputs (closes, distributions, splits) are now checked in the provider's convention; the stored index keeps the return standard.",
+        "A full refresh rescales stored closes only by splits the stored series does not already carry. Applying every historical split quarantined 18 inverse funds with recent reverse splits on their first full refresh (the Saturday refresh had the same flaw)."
+      ]
     }
   ]
 }

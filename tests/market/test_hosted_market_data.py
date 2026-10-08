@@ -156,9 +156,35 @@ class DataRepairTests(unittest.TestCase):
             self.assertEqual(record["mode"], "FULL")
 
     def test_cumulative_gap_is_relative_to_growth(self):
-        bars = [S.Bar(f"d{i:04d}", 1.0, 1.0 * 1.002 ** i, 1, 0.0, 1.0, 100 * 1.002 ** i * (1 + 0.002 * i / 900)) for i in range(900)]
+        # grows ~4.5x over the window; the provider differs by 0.2% in total, spread evenly
+        bars = [S.Bar(f"d{i:04d}", 10 * 1.002 ** i, 10 * 1.002 ** i * (1 - 0.002 * i / 900), 1, 0.0, 1.0) for i in range(900)]
+        S.reconstruct_total_return(bars)
         out = S.reconcile_with_provider(bars, POLICY["reconciliation"])
         self.assertLess(out["cumulative_gap_3y"], 0.0025)
+        a, b = bars[-757], bars[-1]
+        self.assertGreater(abs(b.tr_index / a.tr_index - b.adj_close / a.adj_close), 0.0025)   # the old absolute gap failed it
+
+    def test_large_distributions_reconcile_in_the_providers_convention(self):
+        closes = [30 * (1.03 if i % 2 else 0.98) ** (i % 5) for i in range(900)]
+        divs = {i: closes[i - 1] * 0.11 for i in (300, 600, 850)}           # DFEN-like 11% distributions
+        bars = [S.Bar(f"d{i:04d}", closes[i], None, 1, divs.get(i, 0.0), 1.0) for i in range(900)]
+        adj = closes[:]
+        for i in sorted(divs, reverse=True):
+            f = 1 - divs[i] / closes[i - 1]
+            for j in range(i):
+                adj[j] *= f
+        for b, a in zip(bars, adj):
+            b.adj_close = a
+        S.reconstruct_total_return(bars)
+        self.assertEqual(S.reconcile_with_provider(bars, POLICY["reconciliation"])["status"], "PASS")
+
+    def test_a_full_refresh_does_not_reapply_splits_the_cache_already_has(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = Path(tmp)
+            first = H.update_fund(self.fund, lambda s, start: chart(symbol="SOXS", n=900, split_on="2025-06-02"), POLICY, NOW, cache, full_refresh=True)
+            self.assertTrue(first["accepted_this_run"], first["failures"])
+            again = H.update_fund(self.fund, lambda s, start: chart(symbol="SOXS", n=900, split_on="2025-06-02"), POLICY, NOW, cache, full_refresh=True)
+            self.assertTrue(again["accepted_this_run"], again["failures"])
 
     def test_an_isolated_bad_print_is_removed_and_the_return_carried(self):
         payload = chart(n=900)

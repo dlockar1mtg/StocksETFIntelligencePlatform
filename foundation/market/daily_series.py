@@ -159,10 +159,23 @@ def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
     if len(usable) < 2 or len(usable) != len(window):
         return {"status": "FAIL", "reason": "provider adjusted close missing in the reconciliation window",
                 "sessions": len(window) - 1}
+    # amendment 2026-10-08: compare like with like. The provider adjusts for a distribution by scaling
+    # earlier prices by (1 - d / prior close), so its ex-date return is close / (prior close - d); ours
+    # reinvests at the close, (close + d) / prior close. Both come from the same closes and distributions,
+    # and they differ only when a large distribution meets a large move (DFEN: 10-12% distributions, 3x),
+    # so the inputs are checked in the provider's convention. The stored index keeps the return standard.
+    def provider_step(prev: Bar, cur: Bar) -> float:
+        if cur.dividend and prev.close > cur.dividend:
+            return cur.close / (prev.close - cur.dividend)
+        return (cur.close + cur.dividend) / prev.close
+
+    level = [1.0]
+    for prev, cur in zip(window, window[1:]):
+        level.append(level[-1] * provider_step(prev, cur))
     worst, breaches, errors = 0.0, 0, 0
     gaps = []
-    for prev, cur in zip(window, window[1:]):
-        ours = cur.tr_index / prev.tr_index - 1
+    for k, (prev, cur) in enumerate(zip(window, window[1:])):
+        ours = level[k + 1] / level[k] - 1
         theirs = cur.adj_close / prev.adj_close - 1
         gap = abs(ours - theirs)
         gaps.append((gap, cur))
@@ -176,7 +189,7 @@ def reconcile_with_provider(bars: list[Bar], rules: dict) -> dict:
         if len(window) <= n:
             return None
         a, b = window[-n - 1], window[-1]
-        return abs((b.tr_index / a.tr_index) / (b.adj_close / a.adj_close) - 1)
+        return abs((level[-1] / level[-n - 1]) / (b.adj_close / a.adj_close) - 1)
 
     gap_1y, gap_3y = cumulative(252), cumulative(756)
     ok = (errors == 0
