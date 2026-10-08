@@ -96,3 +96,16 @@ class CostTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PeakReadingTests(unittest.TestCase):
+    def test_a_fund_far_below_an_old_peak_reads_from_its_3_year_high_too(self):
+        from foundation.market import daily_series as S
+        from foundation.market.provisional_package import readings_from_daily
+        # 10 years of decay (100 -> ~0.2), then 3 years up 6x: NUGT's shape
+        levels = [100 * 0.9975 ** i for i in range(2500)] + [100 * 0.9975 ** 2499 * 1.0024 ** i for i in range(1, 800)]
+        bars = [S.Bar(f"d{i:05d}", v, None, 1000, 0.0, 1.0, v) for i, v in enumerate(levels)]
+        r = readings_from_daily(bars)
+        self.assertLess(r["drawdown_now"], -0.98)
+        self.assertEqual(r["peak_date"], "d00000")
+        self.assertGreater(r["drawdown_3y_high"], -0.01)

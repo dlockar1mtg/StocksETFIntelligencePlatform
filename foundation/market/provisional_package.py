@@ -47,7 +47,11 @@ def readings_from_daily(bars) -> dict:
             "return_1m": _r(ret(21)), "return_3m": _r(ret(63)), "return_1y": _r(ret(252)),
             "annualized_3y": _r(ann(756)), "annualized_5y": _r(ann(1260)),
             "volatility_1y": _r(float(logr.std() * math.sqrt(252))) if len(logr) > 60 else None,
-            "drawdown_now": _r(tr[-1] / tr.max() - 1), "max_drawdown_3y": _r(float((window / np.maximum.accumulate(window)).min() - 1)),
+            "drawdown_now": _r(tr[-1] / tr.max() - 1), "peak_date": bars[int(tr.argmax())].day,
+            # From the highest close of the last 3 years: an all-time peak can be 15 years old, and a
+            # decaying leveraged fund (NUGT, 2010) never returns to it.
+            "drawdown_3y_high": _r(tr[-1] / window.max() - 1),
+            "max_drawdown_3y": _r(float((window / np.maximum.accumulate(window)).min() - 1)),
             "trend_200": _r(close[-1] / close[-200:].mean()) if len(close) >= 200 else None,
             "yield_12m": _r(div[-252:].sum() / close[-1]) if len(close) >= 252 else None,
             "history_from": bars[0].day}
@@ -67,6 +71,7 @@ def readings_from_monthly(f: dict | None) -> dict:
             "annualized_3y": _r(None if r36 is None else (1 + r36) ** (1 / 3) - 1),
             "annualized_5y": _r(None if r60 is None else (1 + r60) ** (1 / 5) - 1),
             "volatility_1y": _r(f["vol_1y"][i]), "drawdown_now": _r(f["dd_now"][i]), "max_drawdown_3y": _r(f["maxdd_3y"][i]),
+            "drawdown_3y_high": _r(f["tr"][i] / float(np.max(f["tr"][max(0, i - 36):i + 1])) - 1),
             "trend_200": _r(f["trend_200"][i]), "yield_12m": _r(f["div_12m"][i] / f["close"][i] if f["close"][i] else None),
             "history_from": f["date"][0], "readings_basis": "MONTH_END"}
 

@@ -70,6 +70,12 @@
       "authorized_by": "Devon Lockard",
       "change": "No projection for a fund whose beta to its reference or to the S&P 500 exceeds 2.0, or whose volatility exceeds 2.5 times its reference's, over the trailing 36 months (reason MOVES_FAR_MORE_THAN_ITS_REFERENCE). The test was re-run with this guard.",
       "reason": "Reviewing the live package showed leveraged funds the returns-based classifier had not flagged (for example 3x sector funds in US large cap, with typical projections above 40% a year) and poorly matched funds (international bonds placed with short Treasuries at beta 4.9). The registered scope already excluded leveraged funds; the guard enforces that intent by behaviour rather than by name. A 2x Nasdaq fund measured only 1.5 against the technology reference, so the S&P 500 beta is checked too."
+    },
+    {
+      "date": "2026-10-08",
+      "after_results": true,
+      "approved_by": "Devon Lockard",
+      "change": "display_rule: the owner asked to sort and filter single funds by the typical 3-year figure on the Market Board. Allowed, with the caveat shown whenever that sort is on: within a peer group a higher figure mostly means a fund that swings more than its peers, which did not pay more in the trials, and own-history figures are weaker still. Ranking calls are unchanged (cost within peer group)."
     }
   ],
   "results_2026_10_07": {
