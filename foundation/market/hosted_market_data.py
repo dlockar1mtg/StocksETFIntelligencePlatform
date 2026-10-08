@@ -58,9 +58,13 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
     rules, inc = policy["reconciliation"], policy["incremental"]
     last = stored[-1]["date"] if stored else None
     stale = last is None or (now.date() - datetime.fromisoformat(last).date()).days > int(inc["full_refresh_when_stale_days"])
-    mode = "FULL" if (full_refresh or stale) else "INCREMENTAL"
+    # amendment 2026-10-08: a series stored at 6 decimals lost precision once its index fell below 1; rebuild it once.
+    coarse = any(0 < float(r["tr_index"]) < 1 and "e" not in r["tr_index"] and len(r["tr_index"].split(".")[-1]) <= 6 for r in stored)
+    mode = "FULL" if (full_refresh or stale or coarse) else "INCREMENTAL"
     failures: list[str] = []
     checks: dict = {}
+    removed: list[str] = []
+    jump = float(rules["implausible_daily_move"])
     bars: list[S.Bar] | None = None
     meta = {"name": "", "instrument_type": ""}
     try:
@@ -79,7 +83,7 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
                 prev = base[-1]
                 fresh = [b for b in parsed.bars if b.day > prev.day]
                 for b in fresh:
-                    b.tr_index = round(prev.tr_index * (b.close + b.dividend) / prev.close, 6)
+                    b.tr_index = S.sig(prev.tr_index * (b.close + b.dividend) / prev.close)
                     prev = b
                 bars = base + fresh
         if mode == "FULL":
@@ -88,15 +92,22 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
             S.reconstruct_total_return(parsed.bars)
             checks["reconciliation"] = S.reconcile_with_provider(parsed.bars, rules)
             since = parsed.bars[-(int(rules["window_sessions"]) + 1)].day if len(parsed.bars) > int(rules["window_sessions"]) else parsed.bars[0].day
-            checks["revisions"] = (S.revisions(stored, parsed.bars, parsed.splits, float(rules["revision_tolerance"]), since)
+            # amendment 2026-10-08: only splits the stored series does not already carry rescale its closes
+            # (applying every historical split quarantined 18 inverse funds on their first full refresh).
+            stored_splits = {r["date"] for r in stored if float(r["split"] or 1) != 1}
+            unseen = {d: r for d, r in parsed.splits.items() if d not in stored_splits}
+            checks["revisions"] = (S.revisions(stored, parsed.bars, unseen, float(rules["revision_tolerance"]), since)
                                    if stored else {"changed": 0, "ok": True, "first_capture": True})
             bars = parsed.bars
         if checks["reconciliation"]["status"] != "PASS":
             failures.append("total return does not reconcile with the provider's adjusted close")
         if not checks["revisions"]["ok"]:
             failures.append("provider changed or dropped stored closes without a split")
+        # A print on the last stored session can only be judged once the next session exists.
+        removed += S.drop_print_errors(bars, jump, start=max(0, len(bars) - int(rules["window_sessions"]) - 1))
+        checks["print_errors_removed"] = sorted(set(removed))
         recent = bars[-(int(rules["window_sessions"]) + 1):]
-        jumps = [d for d in S.implausible_moves(recent, float(rules["implausible_daily_move"])) if not any(b.day == d and b.split != 1 for b in recent)]
+        jumps = [d for d in S.implausible_moves(recent, jump) if not any(b.day == d and b.split != 1 for b in recent)]
         checks["implausible_moves"] = jumps[:10]
         if jumps:
             failures.append(f"implausible daily moves on {', '.join(jumps[:3])}")
@@ -121,7 +132,10 @@ def update_fund(fund: dict, fetch, policy: dict, now: datetime, cache_dir: Path,
         "freshness_state": S.freshness_state(as_of, S.last_session(now, holidays), holidays, policy["freshness"]) if as_of else "UNKNOWN",
         "as_of_date": as_of, "first_date": final[0].day if final else None, "sessions": len(final),
         "close": final[-1].close if final else None, "failures": failures,
-        "reconciliation": {k: v for k, v in (checks.get("reconciliation") or {}).items() if k in ("status", "cumulative_gap_3y", "max_daily_return_gap")},
+        "reconciliation": {k: v for k, v in (checks.get("reconciliation") or {}).items()
+                           if k in ("status", "cumulative_gap_1y", "cumulative_gap_3y", "max_daily_return_gap")
+                           or (k == "worst_days" and failures)},
+        "print_errors_removed": checks.get("print_errors_removed") or [],
     }
 
 
@@ -156,7 +170,7 @@ def month_end_features(fund: dict, bars: list[S.Bar]) -> list[dict]:
         adv = float(np.median(dollar[max(0, n - 63):n])) if n >= 21 else None
         d12 = float(csum_div[n] - csum_div[max(0, n - 252)])
         rows.append({"security_id": fund["security_id"], "symbol": fund["symbol"], "date": days[i],
-                     "close": f"{close[i]:.4f}", "tr_index": f"{tr[i]:.6f}",
+                     "close": f"{close[i]:.4f}", "tr_index": f"{tr[i]:.{S.SIGNIFICANT_DIGITS}g}",
                      "trend_200": "" if trend is None else f"{trend:.5f}", "vol_1y": "" if v is None else f"{v:.5f}",
                      "dd_now": f"{tr[i] / peak[i] - 1:.5f}", "maxdd_3y": f"{mdd:.5f}",
                      "adv_63": "" if adv is None else f"{adv:.0f}", "div_12m": f"{d12:.6f}", "sessions": n})

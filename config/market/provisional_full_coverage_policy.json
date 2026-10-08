@@ -1,0 +1,28 @@
+{
+  "policy_id": "ETF_PROVISIONAL_FULL_COVERAGE_V1",
+  "phase": "4.6",
+  "policy_version": "1.0.0",
+  "registered_on": "2026-10-08",
+  "registered_before_results": true,
+  "owner_request": {
+    "requested_by": "Devon Lockard",
+    "requested_on": "2026-10-08",
+    "request": "Include research on all 1,079 funds in the selected universe, not only the ones with a clean peer group."
+  },
+  "scope": "funds that Phase 4.5 gives no projection: IDIOSYNCRATIC (no close reference), SPECIALIZED_LEVERAGED, SPECIALIZED_INVERSE, and funds excluded as MOVES_FAR_MORE_THAN_ITS_REFERENCE; plus readings for funds without a ranking call",
+  "own_history_outlook": {
+    "rule": "the fund's own monthly log returns across all of its history up to the month-end (at least 36 months): center = their mean, spread = the de-meaned returns resampled in 12-month blocks into 36-month paths (2,000 paths, fixed seed). Leveraged and inverse funds' own history includes their decay, so no separate adjustment is made.",
+    "categories": ["IDIOSYNCRATIC", "SPECIALIZED_LEVERAGED", "SPECIALIZED_INVERSE", "MOVES_FAR_MORE_THAN_ITS_REFERENCE"],
+    "test": "the Phase 4.5 walk-forward: every December start from 2005 whose 36 months have ended, each fund in its category at that start; share of realized 36-month annualized returns inside the 10th-90th band, by category",
+    "status_marks": {"tested_min": 0.60, "tested_max": 0.95, "min_observations": 100},
+    "labels": "every own-history outlook is labelled OWN_HISTORY with its category's status and measured coverage; growth is never compared across funds on it"
+  },
+  "loose_peer_readings": {
+    "IDIOSYNCRATIC": "cost percentile among the funds of the peer group of its nearest reference fund, marked LOOSE_PEERS with the correlation; a reading, not a ranking call",
+    "SPECIALIZED_LEVERAGED": "cost percentile among the other leveraged funds; a reading, not a call",
+    "SPECIALIZED_INVERSE": "cost percentile among the other inverse funds; a reading, not a call",
+    "timing": "idiosyncratic funds show the timing reading of their nearest reference's family, marked loose; leveraged and inverse funds get none (their test families do not describe them)"
+  },
+  "unchanged": "BUY / ACCUMULATE / HOLD / AVOID calls stay limited to proper peer groups, where the 36-month cost evidence was measured",
+  "authority": {"provisional_research": true, "certified": false, "portfolio_allocation": false, "automatic_execution": false}
+}

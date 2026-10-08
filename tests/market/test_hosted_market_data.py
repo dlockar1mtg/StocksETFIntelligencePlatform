@@ -120,6 +120,105 @@ class UpdateTests(unittest.TestCase):
             self.assertEqual(record["quality_status"], "BLOCKED")
 
 
+class DataRepairTests(unittest.TestCase):
+    """Amendment 2026-10-08: the data-blocked funds (decayed inverse/leveraged, bad prints)."""
+    fund = {"security_id": "SEC-US-SOXS", "symbol": "SOXS", "usage": "MODEL"}
+
+    def decayed(self, n=900):
+        payload = chart(symbol="SOXS", n=n)
+        q = payload["chart"]["result"][0]["indicators"]
+        # loses ~1.5% a session; split-adjusted closes stay tradable, the index from 100 falls to ~1e-4
+        q["quote"][0]["close"] = [8e5 * 0.985 ** i for i in range(n)]
+        q["adjclose"][0]["adjclose"] = [8e5 * 0.985 ** i for i in range(n)]
+        payload["chart"]["result"][0]["events"] = {}
+        return payload
+
+    def test_a_decayed_index_keeps_its_precision(self):
+        parsed = S.parse_yahoo_chart(self.decayed(), "SOXS", now_utc=NOW)
+        S.reconstruct_total_return(parsed.bars)
+        self.assertLess(parsed.bars[-1].tr_index, 1e-3)
+        self.assertGreater(parsed.bars[-1].tr_index, 0)
+        r = parsed.bars[-1].tr_index / parsed.bars[-2].tr_index
+        self.assertAlmostEqual(r, 0.985, places=4)
+        back = S.read_csv(S.to_csv(parsed.bars))
+        self.assertAlmostEqual(float(back[-1]["tr_index"]) / float(back[-2]["tr_index"]), 0.985, places=4)
+        self.assertEqual(S.reconcile_with_provider(parsed.bars, POLICY["reconciliation"])["status"], "PASS")
+
+    def test_coarse_stored_series_is_rebuilt_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = Path(tmp)
+            rows = S.to_csv([S.Bar("2026-09-14", 1.0, None, 1, 0.0, 1.0, 0.000371)]).replace("0.000371", "0.000371")
+            (cache / "SOXS.csv").write_text(rows.replace("0.000371", "0.000371"))
+            text = (cache / "SOXS.csv").read_text().splitlines()
+            text[1] = "2026-09-14,1.0000,1,0,1,0.000371"
+            (cache / "SOXS.csv").write_text("\n".join(text) + "\n")
+            record = H.update_fund(self.fund, lambda s, start: self.decayed(), POLICY, NOW, cache)
+            self.assertEqual(record["mode"], "FULL")
+
+    def test_cumulative_gap_is_relative_to_growth(self):
+        # grows ~4.5x over the window; the provider differs by 0.2% in total, spread evenly
+        bars = [S.Bar(f"d{i:04d}", 10 * 1.002 ** i, 10 * 1.002 ** i * (1 - 0.002 * i / 900), 1, 0.0, 1.0) for i in range(900)]
+        S.reconstruct_total_return(bars)
+        out = S.reconcile_with_provider(bars, POLICY["reconciliation"])
+        self.assertLess(out["cumulative_gap_3y"], 0.0025)
+        a, b = bars[-757], bars[-1]
+        self.assertGreater(abs(b.tr_index / a.tr_index - b.adj_close / a.adj_close), 0.0025)   # the old absolute gap failed it
+
+    def test_large_distributions_reconcile_in_the_providers_convention(self):
+        closes = [30 * (1.03 if i % 2 else 0.98) ** (i % 5) for i in range(900)]
+        divs = {i: closes[i - 1] * 0.11 for i in (300, 600, 850)}           # DFEN-like 11% distributions
+        bars = [S.Bar(f"d{i:04d}", closes[i], None, 1, divs.get(i, 0.0), 1.0) for i in range(900)]
+        adj = closes[:]
+        for i in sorted(divs, reverse=True):
+            f = 1 - divs[i] / closes[i - 1]
+            for j in range(i):
+                adj[j] *= f
+        for b, a in zip(bars, adj):
+            b.adj_close = a
+        S.reconstruct_total_return(bars)
+        self.assertEqual(S.reconcile_with_provider(bars, POLICY["reconciliation"])["status"], "PASS")
+
+    def test_a_full_refresh_does_not_reapply_splits_the_cache_already_has(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = Path(tmp)
+            first = H.update_fund(self.fund, lambda s, start: chart(symbol="SOXS", n=900, split_on="2025-06-02"), POLICY, NOW, cache, full_refresh=True)
+            self.assertTrue(first["accepted_this_run"], first["failures"])
+            again = H.update_fund(self.fund, lambda s, start: chart(symbol="SOXS", n=900, split_on="2025-06-02"), POLICY, NOW, cache, full_refresh=True)
+            self.assertTrue(again["accepted_this_run"], again["failures"])
+
+    def test_an_isolated_bad_print_is_removed_and_the_return_carried(self):
+        payload = chart(n=900)
+        q = payload["chart"]["result"][0]["indicators"]
+        k = 800
+        before = q["quote"][0]["close"][k - 1], q["quote"][0]["close"][k + 1]
+        q["quote"][0]["close"][k] *= 1.6
+        q["adjclose"][0]["adjclose"][k] *= 1.6
+        days = sessions("2026-10-06", 900)
+        with tempfile.TemporaryDirectory() as tmp:
+            record = H.update_fund({"security_id": "SEC-US-VOO", "symbol": "VOO", "usage": "MODEL"},
+                                   lambda s, start: payload, POLICY, NOW, Path(tmp))
+            self.assertTrue(record["accepted_this_run"], record["failures"])
+            self.assertEqual(record["print_errors_removed"], [days[k]])
+            bars = H.read_cached_bars(Path(tmp), "VOO")
+            i = next(j for j, b in enumerate(bars) if b.day == days[k + 1])
+            self.assertEqual(bars[i - 1].day, days[k - 1])
+            self.assertAlmostEqual(bars[i].tr_index / bars[i - 1].tr_index, before[1] / before[0], places=6)
+
+    def test_a_real_crash_is_kept(self):
+        payload = chart(n=900)
+        payload["chart"]["result"][0]["events"] = {}
+        q = payload["chart"]["result"][0]["indicators"]
+        q["adjclose"][0]["adjclose"] = q["quote"][0]["close"][:]
+        for j in range(800, 900):
+            q["quote"][0]["close"][j] *= 0.6
+            q["adjclose"][0]["adjclose"][j] *= 0.6
+        with tempfile.TemporaryDirectory() as tmp:
+            record = H.update_fund({"security_id": "SEC-US-VOO", "symbol": "VOO", "usage": "MODEL"},
+                                   lambda s, start: payload, POLICY, NOW, Path(tmp))
+            self.assertTrue(record["accepted_this_run"], record["failures"])
+            self.assertEqual(record["print_errors_removed"], [])
+
+
 class FeatureTests(unittest.TestCase):
     def test_month_end_features_use_no_future_data(self):
         parsed = S.parse_yahoo_chart(chart(n=900), "VOO", now_utc=NOW)
