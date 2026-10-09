@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-09T07:29:01+00:00",
+ "generated_at_utc": "2026-10-09T19:47:24+00:00",
  "mode": "INCREMENTAL",
  "fund_count": 1084,
  "quality_summary": {
@@ -13385,7 +13385,7 @@
    "symbol": "JOET",
    "usage": "MODEL",
    "mode": "INCREMENTAL",
-   "name": "Virtus Terranova U.S. Quality M",
+   "name": "Virtus Terranova U.S. Quality Momentum ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -21482,7 +21482,7 @@
    "usage": "MODEL",
    "mode": "INCREMENTAL",
    "name": "Defiance Space and Connective Tech ETF",
-   "instrument_type": "ETF",
+   "instrument_type": "EQUITY",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
    "freshness_state": "CURRENT",
