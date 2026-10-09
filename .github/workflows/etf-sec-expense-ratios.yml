@@ -63,10 +63,14 @@ jobs:
       - name: Commit the history
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/curated/hosted_etf/expense_ratio_history.csv data/curated/hosted_etf/expense_ratio_summary.json
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "ETF official expense ratios $(date -u +%F)"
           branch="${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}"
+          if [ "${{ github.event_name }}" = "pull_request" ] && ! git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "::notice::Branch $branch no longer exists (merged or deleted during the run); nothing kept."
+            exit 0
+          fi
           git pull --rebase origin "$branch"
           git push origin "HEAD:$branch"
