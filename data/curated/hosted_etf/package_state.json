@@ -1,5 +1,5 @@
 {
-"package_id":"etf-2026-10-08-427918aadb4e",
+"package_id":"etf-2026-10-09-a23bcfeae9e0",
 "grouping_version":"2026-10-09.1",
 "funds":[
 {
@@ -1092,7 +1092,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"BSMR",
@@ -1709,7 +1709,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"DFAI",
@@ -2672,7 +2672,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"ENFR",
@@ -3026,7 +3026,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"EWH",
@@ -3067,7 +3067,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"EWJV",
@@ -3291,7 +3291,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"EYLD",
@@ -3457,7 +3457,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"AVOID"
 },
 {
 "symbol":"FCOM",
@@ -3509,7 +3509,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"FDEV",
@@ -4205,7 +4205,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"FMAT",
@@ -4404,7 +4404,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"FQAL",
@@ -4653,7 +4653,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"AVOID"
 },
 {
 "symbol":"FTXO",
@@ -4889,7 +4889,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"GBIL",
@@ -4956,7 +4956,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"GEM",
@@ -5194,7 +5194,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"GSY",
@@ -6277,7 +6277,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"IGEB",
@@ -7001,7 +7001,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"IUSB",
@@ -8898,7 +8898,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"BUY"
 },
 {
 "symbol":"OEF",
@@ -8963,7 +8963,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"ONEY",
@@ -9453,7 +9453,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"PRFZ",
@@ -9719,7 +9719,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"AVOID"
 },
 {
 "symbol":"QDF",
@@ -9892,7 +9892,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"RANKED_NO_CALL"
+"ranking_call":"ACCUMULATE"
 },
 {
 "symbol":"QQQE",
@@ -10242,7 +10242,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"RPG",
@@ -10333,7 +10333,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"AVOID"
 },
 {
 "symbol":"RSPS",
@@ -10346,7 +10346,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"AVOID"
 },
 {
 "symbol":"RSPT",
@@ -10712,7 +10712,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"BUY"
 },
 {
 "symbol":"SCHZ",
@@ -12017,7 +12017,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"TAIL",
@@ -13011,7 +13011,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"BUY"
 },
 {
 "symbol":"VEA",
@@ -13102,7 +13102,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"BUY"
 },
 {
 "symbol":"VGIT",
@@ -13812,7 +13812,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"BUY"
 },
 {
 "symbol":"WCLD",
@@ -14333,7 +14333,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"HOLD"
 },
 {
 "symbol":"XSVM",

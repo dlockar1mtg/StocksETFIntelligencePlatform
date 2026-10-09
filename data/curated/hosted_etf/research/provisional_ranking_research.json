@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-09T19:59:55+00:00",
+ "generated_at_utc": "2026-10-09T21:05:45+00:00",
  "panel_rows": 189353,
  "funds": 1077,
  "walk_forward": {
@@ -434,10 +434,10 @@
  "cost_test": {
   "12m": {
    "test_years": 14,
-   "mean_ic": 0.0183,
-   "t_yearly": 0.89,
+   "mean_ic": 0.0186,
+   "t_yearly": 0.92,
    "cheapest_quintile_mean_excess": 0.0029,
-   "most_expensive_quintile_mean_excess": -0.0007,
+   "most_expensive_quintile_mean_excess": -0.0011,
    "share_years_cheapest_beats_median": 0.714,
    "share_years_cheapest_beats_most_expensive": 0.643,
    "by_year": {
@@ -504,12 +504,12 @@
     "2024": {
      "ic": -0.025,
      "cheapest": 0.0059,
-     "most_expensive": 0.0036
+     "most_expensive": 0.0035
     },
     "2025": {
-     "ic": -0.106,
-     "cheapest": 0.0031,
-     "most_expensive": 0.0115
+     "ic": -0.102,
+     "cheapest": 0.0033,
+     "most_expensive": 0.0059
     }
    }
   },
