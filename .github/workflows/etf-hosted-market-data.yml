@@ -3,8 +3,7 @@ name: ETF hosted market data
 on:
   schedule:
     - cron: "20 22 * * 1-5"   # daily after the US close
-    - cron: "20 1 * * 2-6"    # backups: skipped when >= 90% of funds already have the last completed session
-    - cron: "20 4 * * 2-6"
+    - cron: "20 4 * * 2-6"    # backup: skipped when >= 90% of funds already have the last completed session (one backup: each gate bills a minute)
     - cron: "20 14 * * 6"     # Saturday: full-history refresh of every fund (policy full_refresh_weekday)
   pull_request:
     paths:
