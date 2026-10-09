@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 import sys
 import zipfile
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 csv.field_size_limit(min(sys.maxsize, 2**31 - 1))  # some rr1 text fields exceed the 128 KB default
 
+CLASS_ID = re.compile(r"C\d{9}")
 HISTORY_FIELDS = ("class_id", "series_id", "cik", "symbol", "security_id", "filed", "adsh", "form",
                   "net_expense_ratio", "gross_expense_ratio", "source_quarter")
 
@@ -39,24 +41,60 @@ def _tsv(archive: zipfile.ZipFile, name: str):
         yield from csv.DictReader(io.TextIOWrapper(raw, encoding="utf-8", errors="replace"), delimiter="\t")
 
 
-def parse_quarter(data: bytes, quarter: str, tags: dict[str, str], wanted_classes: set[str]) -> list[dict]:
-    """Expense-ratio rows for the wanted classes from one rr1 archive."""
+def _class_from_dims(otherdims: str) -> str | None:
+    """The SEC class ID when the only dimension on a fact is the share class (as in the open-end fund
+    taxonomy, where a class is a dimension member rather than the num.tsv `class` column); else None."""
+    dims = [d for d in re.split(r"[;|]", otherdims) if d.strip()]
+    if len(dims) != 1:
+        return None
+    found = CLASS_ID.findall(dims[0])
+    return found[0] if len(found) == 1 else None
+
+
+def parse_quarter(data: bytes, quarter: str, tags: dict[str, str], wanted_classes: set[str],
+                  diagnostics: dict | None = None) -> list[dict]:
+    """Expense-ratio rows for the wanted classes from one rr1 archive.
+
+    `diagnostics`, when given, is filled with counts that explain an empty result (how many expense-ratio
+    facts the archive had, how many lacked a class or carried other dimensions, which taxonomy versions).
+    """
     archive = zipfile.ZipFile(io.BytesIO(data))
     subs = {r["adsh"]: r for r in _tsv(archive, "sub.tsv")}
     by_tag = {v: k for k, v in tags.items()}
     found: dict[tuple[str, str], dict] = {}
+    d = Counter()
+    versions: Counter = Counter()
+    dims_seen: Counter = Counter()
     for r in _tsv(archive, "num.tsv"):
+        d["num_rows"] += 1
         tag = r.get("tag")
         if tag not in by_tag:
             continue
+        d["expense_facts"] += 1
+        versions[(r.get("version") or "").strip()] += 1
         cls = (r.get("class") or "").strip()
-        if cls not in wanted_classes or (r.get("otherdims") or "").strip():
+        dims = (r.get("otherdims") or "").strip()
+        if dims:
+            dims_seen[re.sub(r"C\d{9}", "C#########", dims)[:80]] += 1
+            if not cls and (from_dims := _class_from_dims(dims)):
+                cls, dims = from_dims, ""
+                d["class_from_dimension"] += 1
+        if not cls:
+            d["without_class"] += 1
+            continue
+        if dims:
+            d["with_other_dimensions"] += 1
+            continue
+        if cls not in wanted_classes:
+            d["class_not_in_universe"] += 1
             continue
         try:
             value = float(r["value"])
         except (TypeError, ValueError):
+            d["bad_value"] += 1
             continue
         if not 0 <= value < 0.2:                # an expense ratio above 20% a year is not a plausible fund fee
+            d["implausible_value"] += 1
             continue
         key = (cls, r["adsh"])
         row = found.setdefault(key, {"class_id": cls, "series_id": (r.get("series") or "").strip(), "adsh": r["adsh"],
@@ -64,6 +102,12 @@ def parse_quarter(data: bytes, quarter: str, tags: dict[str, str], wanted_classe
                                       "form": subs.get(r["adsh"], {}).get("form", ""), "source_quarter": quarter,
                                       "net_expense_ratio": "", "gross_expense_ratio": ""})
         row[by_tag[tag]] = f"{value:.6f}"
+    if diagnostics is not None:
+        diagnostics.update(d)
+        diagnostics["filings_in_archive"] = len(subs)
+        diagnostics["versions"] = dict(versions.most_common(5))
+        diagnostics["other_dimensions"] = dict(dims_seen.most_common(5))
+        diagnostics["filings_kept"] = len(found)
     return list(found.values())
 
 

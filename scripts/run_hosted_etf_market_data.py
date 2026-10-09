@@ -19,6 +19,20 @@ from foundation.infrastructure.yahoo_chart_daily import ChartClient  # noqa: E40
 from foundation.market import hosted_market_data as H  # noqa: E402
 
 POLICY = ROOT / "config" / "market" / "hosted_market_data_policy.json"
+# 2026-10-09 (system audit): a run used to fail only when every seed fund was blocked, so a run that
+# updated 60% of the universe looked like a success. Share of funds whose update was accepted this run:
+WARN_ACCEPTED_SHARE = 0.95      # below this: a GitHub warning
+FAIL_ACCEPTED_SHARE = 0.80      # below this: the run fails (features and status are written but not committed)
+
+
+def accepted_check(records: list[dict]) -> tuple[int, float, str]:
+    """(exit code, accepted share, message) for the share of funds accepted this run."""
+    share = sum(1 for r in records if r.get("accepted_this_run")) / len(records) if records else 0.0
+    if share < FAIL_ACCEPTED_SHARE:
+        return 1, share, f"::error title=ETF hosted data::only {share:.1%} of {len(records)} funds updated this run (minimum {FAIL_ACCEPTED_SHARE:.0%})"
+    if share < WARN_ACCEPTED_SHARE:
+        return 0, share, f"::warning title=ETF hosted data::only {share:.1%} of {len(records)} funds updated this run (expected {WARN_ACCEPTED_SHARE:.0%})"
+    return 0, share, ""
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -64,7 +78,10 @@ def main(argv: list[str] | None = None) -> int:
     if seeds and all(r["quality_status"] == "BLOCKED" for r in seeds):
         print("Every seed fund is blocked: failing the run.", file=sys.stderr)
         return 1
-    return 0
+    code, _, message = accepted_check(records) if not (args.only or args.limit) else (0, 1.0, "")
+    if message:
+        print(message, flush=True)
+    return code
 
 
 if __name__ == "__main__":

@@ -110,7 +110,11 @@ def parse_yahoo_chart(payload: dict, ticker: str, *, now_utc: datetime | None = 
 
 
 def parse_stooq_csv(text: str) -> dict[str, float]:
-    """Stooq daily CSV (Date,Open,High,Low,Close,Volume) -> {date: close}. Empty if unusable."""
+    """Stooq daily CSV (Date,Open,High,Low,Close,Volume) -> {date: close}. Empty if unusable.
+
+    Not wired into the hosted run (2026-10-09): there is no Stooq or Nasdaq fallback or cross-check today;
+    the only fallback is the second Yahoo host. Kept, with parse_nasdaq_historical and cross_check, for a
+    future second source."""
     reader = csv.DictReader(io.StringIO(text))
     if not reader.fieldnames or "Close" not in reader.fieldnames or "Date" not in reader.fieldnames:
         return {}

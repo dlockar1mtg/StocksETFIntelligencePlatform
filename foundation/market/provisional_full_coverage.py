@@ -152,6 +152,11 @@ def add_full_coverage(records: list[dict], group_docs: dict, features: dict, end
             doc = group_docs.get(loose) or {}
             fam = R.family_of(loose)
             reading = doc.get("when_to_buy") or (timing_reading(fam) if timing_reading else None)
+            # Amendment 2026-10-09: a timing rule's verdict (WAIT / BUY_NOW) speaks only for the groups its
+            # family index was built from. An idiosyncratic fund (FXI, LABD) merely nearest to a real-asset
+            # reference is not one of them, so it gets no rule verdict; steady buying is still shown loose.
+            if reading and reading.get("rule"):
+                reading = None
             if reading and not r.get("when_to_buy"):
                 r["when_to_buy"] = {**reading, "loose": True, "basis": f"NEAREST_REFERENCE_FAMILY_{fam}"}
         elif cat in ("SPECIALIZED_LEVERAGED", "SPECIALIZED_INVERSE"):

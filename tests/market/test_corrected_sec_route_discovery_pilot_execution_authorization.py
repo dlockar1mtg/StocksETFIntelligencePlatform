@@ -30,6 +30,12 @@ POLICY_PATH = (
     / "corrected_sec_route_discovery_pilot_execution_authorization_policy.json"
 )
 
+# artifacts/ is gitignored: like the other governed-artifact tests, skip when the manifest is absent.
+pytestmark = pytest.mark.skipif(
+    not MANIFEST_PATH.exists(),
+    reason=f"local governed artifact not present: {MANIFEST_PATH.name}",
+)
+
 GOVERNED_HEAD = (
     "9b1697b5776fa766939ef6e04e5d20162bc9052f"
 )

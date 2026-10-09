@@ -1,6 +1,9 @@
 """Phase 4.4: build the provisional ETF universe package for the UIP.
 
-Usage: python scripts/build_provisional_etf_package.py [--output exports/etf/package]
+Usage: python scripts/build_provisional_etf_package.py [--output exports/etf/package] [--previous funds.json]
+
+The previous package's calls and on-arrival group assignments (for the call hysteresis and stable
+groups) come from --previous, else from the state file this script saves beside the hosted data.
 """
 from __future__ import annotations
 
@@ -18,6 +21,7 @@ if str(ROOT) not in sys.path:
 
 from foundation.market import hosted_market_data as H  # noqa: E402
 from foundation.market import provisional_package as P  # noqa: E402
+from foundation.market import provisional_peer_groups as G  # noqa: E402
 from foundation.market import provisional_projection as PJ  # noqa: E402
 from foundation.market import provisional_ranking as R  # noqa: E402
 from foundation.market import sec_expense_ratios as X  # noqa: E402
@@ -27,6 +31,7 @@ DATA = ROOT / "data" / "curated" / "hosted_etf"
 SCHEMA = ROOT / "contracts" / "uip" / "package_manifest.schema.json"
 MARKET = ROOT / "config" / "market" / "hosted_market_data_policy.json"
 RANKING = ROOT / "config" / "market" / "provisional_ranking_policy.json"
+STATE = DATA / "package_state.json"
 
 
 def commit() -> str:
@@ -38,10 +43,26 @@ def commit() -> str:
         return "0000000"
 
 
+def sec_fee_limitations(summary: dict, newest_filing: str | None = None, recent: int = 4) -> list[str]:
+    """A limitation when published recent SEC quarters parsed no filings (the 2025q3-2026q2 gap)."""
+    q = summary.get("quarters") or {}
+    published = [k for k in sorted(q) if isinstance(q[k], int)]
+    empty = [k for k in published[-recent:] if q[k] == 0]
+    if not empty:
+        return []
+    return [f"Official SEC expense ratios are not updating: published quarters {', '.join(empty)} gave no filings, "
+            f"so fees are as of the latest filing parsed (newest {summary.get('newest_filing') or newest_filing or 'unknown'})."]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "exports" / "etf" / "package")
+    parser.add_argument("--previous", type=Path, help="a previous package's funds.json (default: the saved state)")
+    parser.add_argument("--state", type=Path, default=STATE, help="where the calls and groups are saved for the next run")
+    parser.add_argument("--no-state", action="store_true", help="neither read nor save the state (a clean build)")
     args = parser.parse_args(argv)
+    if args.no_state:
+        args.state = None
     load = lambda p: json.loads(p.read_text(encoding="utf-8"))  # noqa: E731
     market, ranking, schema = load(MARKET), load(RANKING), load(SCHEMA)
     status = load(DATA / "market_data_status.json")
@@ -57,13 +78,25 @@ def main(argv: list[str] | None = None) -> int:
     projector = PJ.Projector(features, (lambda s, d: X.ratio_on(history, s, d)) if history else None) if projection else None
     coverage_path = DATA / "research" / "provisional_full_coverage_research.json"
     coverage = load(coverage_path) if coverage_path.exists() else None
+    previous_path = args.previous or args.state
+    previous = P.previous_state(load(previous_path)) if previous_path and previous_path.exists() else {}
     records, groups = P.build_records(status=status, features=features, research=research,
                                       cached_bars=lambda s: H.read_cached_bars(cache, s) if cache.exists() else [],
-                                      expense_ratio=expense, projector=projector, projection=projection, full_coverage=coverage)
+                                      expense_ratio=expense, projector=projector, projection=projection, full_coverage=coverage,
+                                      previous=previous)
+    summary_path = DATA / "expense_ratio_summary.json"
+    newest = max((d for v in history.values() for d, _ in v), default=None)
+    validation_limits = sec_fee_limitations(load(summary_path), newest) if summary_path.exists() else []
     validation, limitations = U.package_validation(records, market["universe"]["required_seed_symbols"])
+    limitations = limitations + validation_limits
+    if validation_limits and validation == "PASS":
+        validation = "PASS_WITH_LIMITATIONS"
     as_of = max((r.get("as_of_date") or "" for r in records), default=today) or today
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    research_doc = {"policy_id": ranking["policy_id"], "generated_at_utc": research["generated_at_utc"], "gate": research["gate"],
+    research_doc = {"policy_id": ranking["policy_id"], "policy_version": ranking.get("policy_version"),
+                    "grouping": {"version": G.GROUPING_VERSION, "rules": G.RULES,
+                                 "live_classification": "each fund's group at the December before the package month (new funds on arrival)"},
+                    "generated_at_utc": research["generated_at_utc"], "gate": research["gate"],
                     "ranking_12m": research["walk_forward"]["12m"]["results"].get("ALL"),
                     "ranking_36m": research["walk_forward"]["36m"]["results"].get("ALL"),
                     "factor_ic_12m": research["walk_forward"]["12m"]["factor_ic_full_sample"],
@@ -82,7 +115,7 @@ def main(argv: list[str] | None = None) -> int:
                         "policy_id": coverage["policy_id"], "generated_at_utc": coverage.get("generated_at_utc"),
                         "observations": coverage["observations"], "test_starts": coverage["test_starts"],
                         "categories": coverage["categories"], "category_status": coverage["category_status"]}}
-    funds_doc = {"package_format": U.PACKAGE_FORMAT, "as_of_date": as_of, "generated_at_utc": generated,
+    funds_doc = {"package_format": U.PACKAGE_FORMAT, "grouping_version": G.GROUPING_VERSION, "as_of_date": as_of, "generated_at_utc": generated,
                  "fund_count": len(records), "limitations": limitations, "funds": records, "automatic_execution_authorized": False}
     status_doc = {k: status[k] for k in ("policy_id", "generated_at_utc", "mode", "fund_count", "quality_summary", "freshness_summary")}
     enc = lambda doc: (json.dumps(doc, indent=1, default=lambda o: o.item()) + "\n").encode("utf-8")  # noqa: E731
@@ -92,6 +125,12 @@ def main(argv: list[str] | None = None) -> int:
     manifest = U.write_package(args.output, files=files, validation=validation, commit=commit(), generated_at_utc=generated,
                                as_of=as_of, schema=schema, snapshot=files["market_data_status.json"][0])
     U.verify_package(args.output, schema)
+    if args.state:
+        args.state.parent.mkdir(parents=True, exist_ok=True)
+        state = {"package_id": manifest["package_id"], "grouping_version": G.GROUPING_VERSION,
+                 "funds": [{"symbol": r["symbol"], "peer_group": r["peer_group"], "group_evidence": r["group_evidence"],
+                            "ranking_call": r["ranking_call"]} for r in records]}
+        args.state.write_text(json.dumps(state, indent=0, separators=(",", ":")) + "\n", encoding="utf-8")
     calls = {}
     for r in records:
         calls[r["ranking_call"]] = calls.get(r["ranking_call"], 0) + 1
