@@ -35,5 +35,17 @@
     "automatic_execution": false,
     "direct_uip_database_writes": false
   },
-  "fail_closed": true
+  "fail_closed": true,
+  "amendments": [
+    {
+      "date": "2026-10-09",
+      "after_results": true,
+      "source": "system audit, 2026-10-09",
+      "changes": [
+        "A published quarter that parses to 0 class filings raises a GitHub warning with diagnostics (expense facts in the archive, facts without a class, facts with other dimensions, taxonomy versions), is downloaded again once in case the cached archive is stale, and is listed in expense_ratio_summary.json (empty_published_quarters, diagnostics, newest_filing). The package carries a limitation while recent quarters are empty.",
+        "A fact whose class column is empty but whose only dimension names one SEC class ID is read as that class (the open-end fund taxonomy places the share class in a dimension). Untested against live SEC data from this sandbox: the diagnostics of the next run show whether it applies."
+      ],
+      "finding": "Quarters 2025q3-2026q2 parsed 0 rows and 2025q2 has no filings after 2025-05-12 (other years have about 50 June filings). The stop falls mid-quarter, so it is not a URL pattern (that would be NOT_PUBLISHED) or a cache artifact (the archives were first downloaded on 2026-10-07). The likely cause is a change in how the filings are tagged from about May 2025, consistent with the SEC's move of risk/return data into the open-end fund (OEF) taxonomy, where the parser's filters (class column required, no other dimensions) drop every fact."
+    }
+  ]
 }

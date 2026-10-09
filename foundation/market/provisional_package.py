@@ -7,8 +7,10 @@ NO_VALIDATED_RANKING_EDGE unless the pre-registered ranking gate passes.
 """
 from __future__ import annotations
 
+import json
 import math
 from collections import defaultdict
+from pathlib import Path
 from statistics import median
 
 import numpy as np
@@ -20,7 +22,29 @@ from foundation.market import provisional_timing as T
 
 NO_CALL_GROUPS = ("INSUFFICIENT_HISTORY", "SPECIALIZED_LEVERAGED", "SPECIALIZED_INVERSE", "IDIOSYNCRATIC")
 CLUSTER_CORRELATION, CLUSTER_MONTHS = 0.995, 36
-CALL_BANDS = {"BUY": 80, "ACCUMULATE": 60, "HOLD": 20}               # provisional_ranking_policy.json calls.bands_percentile
+RANKING_POLICY = Path(__file__).resolve().parents[2] / "config" / "market" / "provisional_ranking_policy.json"
+CALL_BANDS = json.loads(RANKING_POLICY.read_text(encoding="utf-8"))["calls"]["bands_percentile"]
+CALLS = ("BUY", "ACCUMULATE", "HOLD", "AVOID")
+# The research's "other" family index is built from these groups only; a timing rule that passed for
+# that family speaks for them and for no other fund (amendment 2026-10-09).
+REAL_ASSET_GROUPS = ("PRECIOUS_METALS", "COMMODITIES", "REAL_ESTATE")
+
+
+def timing_applies(group: str) -> bool:
+    """Whether the family's when-to-buy reading speaks for a fund in this peer group."""
+    return group not in NO_CALL_GROUPS and (R.family_of(group) != "OTHER" or group in REAL_ASSET_GROUPS)
+
+
+def previous_state(funds_doc: dict | None) -> dict[str, dict]:
+    """{symbol: {ranking_call, group}} from a previous package's funds.json (or the saved state). Group
+    assignments carry over only from a package built with the same grouping rules; calls always do."""
+    out = {}
+    same_rules = (funds_doc or {}).get("grouping_version") == G.GROUPING_VERSION
+    for r in (funds_doc or {}).get("funds", []):
+        ev = r.get("group_evidence") or {}
+        out[r["symbol"]] = {"ranking_call": r.get("ranking_call"),
+                            "group": {"group": r.get("peer_group"), **ev} if same_rules else None}
+    return out
 
 
 def _r(x, places=4):
@@ -143,14 +167,19 @@ def pick_best(members: list[dict]) -> dict:
 
 
 def build_records(*, status: dict, features: dict, research: dict, cached_bars, expense_ratio=None,
-                  projector=None, projection: dict | None = None, full_coverage: dict | None = None) -> tuple[list[dict], dict]:
+                  projector=None, projection: dict | None = None, full_coverage: dict | None = None,
+                  previous: dict[str, dict] | None = None) -> tuple[list[dict], dict]:
+    """`previous` is previous_state() of the last published package: its calls feed the hysteresis and
+    its on-arrival group assignments are kept until the next December."""
+    previous = previous or {}
     funds = [f for f in status["funds"] if f["usage"] in ("MODEL", "HELD_OUTSIDE_MODEL")]
     returns = {s: G.monthly_returns(dict(zip(f["months"], f["tr"]))) for s, f in features.items()}
     end_month = max((m for f in features.values() for m in f["months"]), default="")
     model = [f["symbol"] for f in funds if f["usage"] == "MODEL"]
-    groups = G.classify_all(returns, model, end_month)
+    kept = {s: v["group"] for s, v in previous.items() if v.get("group")}
+    groups = G.live_groups(returns, model, end_month, kept)
     held = [f["symbol"] for f in funds if f["usage"] != "MODEL"]
-    held_groups = G.classify_all(returns, held, end_month) if projector is not None else {}
+    held_groups = G.live_groups(returns, held, end_month, kept) if projector is not None else {}
     rules = (projection or {}).get("rules_now") or {}
     fam_status = (projection or {}).get("family_status") or {}
     fam_cov = {k: v.get("inside_10_90") for k, v in ((projection or {}).get("families") or {}).items()}
@@ -165,7 +194,7 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
         adv = float(f["adv_63"][-1]) if f is not None and len(f["adv_63"]) and f["adv_63"][-1] == f["adv_63"][-1] else None
         rec = {"security_id": st["security_id"], "symbol": sym, "name": st.get("name") or sym, "usage": st["usage"],
                "quality_status": st["quality_status"], "freshness_state": st["freshness_state"], "source_tier": 4,
-               "peer_group": g["group"], "group_family": fam, "group_evidence": {k: g.get(k) for k in ("nearest_reference", "correlation", "beta_spy", "months", "flags")},
+               "peer_group": g["group"], "group_family": fam, "group_evidence": {k: g.get(k) for k in ("nearest_reference", "correlation", "beta_spy", "months", "flags", "classified_at")},
                "liquidity": _r(adv, 0), "expense_ratio": expense_ratio(sym) if expense_ratio else None,
                **(readings_from_daily(cached_bars(sym)) or readings_from_monthly(f)),
                "history_monthly": [{"month": m, "close": float(c)} for m, c in zip(f["months"][-36:], f["close"][-36:])] if f else []}
@@ -199,7 +228,7 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
         group_docs[name] = {"members": len(members), "family": fam,
                             "median_return_1y": _r(median([m["return_1y"] for m in members if m.get("return_1y") is not None] or [math.nan])),
                             "median_annualized_3y": _r(median([m["annualized_3y"] for m in members if m.get("annualized_3y") is not None] or [math.nan])),
-                            "when_to_buy": T.reading(timing.get(fam) or {}) if timing.get(fam) else None}
+                            "when_to_buy": T.reading(timing[fam]) if timing.get(fam) and timing_applies(name) else None}
         projected = [m["projection_3y"] for m in members if m.get("projection_3y")]
         if projected:
             group_docs[name]["projection_3y"] = {
@@ -237,7 +266,8 @@ def build_records(*, status: dict, features: dict, research: dict, cached_bars, 
             r["ranking_call"] = "NO_CALL_SPECIALIZED_OR_UNGROUPED"
         elif cost_calls and r["symbol"] in cost_pct:
             r["cost_percentile_in_group"] = cost_pct[r["symbol"]]
-            r["ranking_call"] = R.assign_call(cost_pct[r["symbol"]], None, CALL_BANDS)
+            before = (previous.get(r["symbol"]) or {}).get("ranking_call")
+            r["ranking_call"] = R.assign_call(cost_pct[r["symbol"]], before if before in CALLS else None, CALL_BANDS)
             r["ranking_basis"] = "COST_WITHIN_PEER_GROUP_36M"
         elif cost_calls:
             r["ranking_call"] = "RANKED_NO_CALL"

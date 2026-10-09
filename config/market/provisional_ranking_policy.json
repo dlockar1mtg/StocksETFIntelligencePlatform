@@ -1,7 +1,7 @@
 {
   "policy_id": "ETF_PROVISIONAL_RANKING_V1",
   "phase": "4.2",
-  "policy_version": "1.0.0",
+  "policy_version": "1.1.0",
   "registered_on": "2026-10-06",
   "registered_before_results": true,
   "owner_authorization": {
@@ -16,14 +16,15 @@
     "fund_name_keyword_classification": false,
     "authoritative_taxonomy": false,
     "replaced_by": "certified SEC taxonomy, fund by fund, as it is certified",
-    "point_in_time": "classification at each month uses only the trailing 36 months of returns",
+    "point_in_time": "research classifies at each December with the trailing 36 months of returns and keeps the group for the following year; the live package uses the same December classification (funds without enough history then are classified on arrival and keep that group until the next December)",
     "minimum_peer_group_size": 5,
     "no_call_groups": [
       "INSUFFICIENT_HISTORY",
       "SPECIALIZED_LEVERAGED",
       "SPECIALIZED_INVERSE",
       "IDIOSYNCRATIC"
-    ]
+    ],
+    "grouping_version": "2026-10-09.1"
   },
   "factors": {
     "candidates": [
@@ -113,8 +114,8 @@
   },
   "known_limitations": [
     "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
-    "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate.",
-    "Free tier-4 market data; no expense ratios or holdings for the full universe yet."
+    "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate. Short-term municipal funds (SHM, SUB, JMST) still land in high yield because no reference fund is a short-duration municipal fund, and a leveraged fund whose index has no unlevered ETF in the universe at 0.975 correlation (USD, 2x semiconductors) can still escape the leverage test.",
+    "Free tier-4 market data and no holdings data. Official expense ratios come from SEC risk/return filings; unit and grantor trusts and commodity pools file none (SPY, DIA, QQQ, GLD, SLV, DBC, USO), and the SEC data has added no filings since 2025-05-12 (quarters 2025q3-2026q2 parsed 0 rows; see expense_ratio_summary.json)."
   ],
   "amendments": [
     {
@@ -129,6 +130,20 @@
       "authorized_by": "Devon Lockard",
       "change": "Cost-based ranking calls are enabled on the 36-month cost evidence (the charter's primary strategic horizon) instead of the registered 12-month gate, which the cost test did not pass.",
       "reason": "At 36 months a lower official expense ratio ranked peer-relative returns with t = 5.1 on yearly blocks, and the cheapest fifth of each peer group beat the most expensive fifth in 11 of 12 test years (most expensive fifth -1.37% a year against peers). Recorded as a change made after seeing results; the calls are labelled provisional and the evidence is published with them."
+    },
+    {
+      "on": "2026-10-09",
+      "after_results": true,
+      "source": "system audit, 2026-10-09",
+      "change": "Peer-group rules (grouping version 2026-10-09.1). (1) Leverage and inverse exposure are read from the fund's beta on its near-identical twins in the universe (|r| >= 0.975): leveraged when it moves >= 1.6x a calmer twin (a twin that is a partial copy of the S&P 500, such as a 40/60 or buffer fund, does not count; funds under 10% volatility are never leveraged); bond funds are leveraged only at >= 1.6x the most volatile bond reference they track at >= 0.9; inverse when the beta to SPY is <= -0.5 and the twins agree (or, without twins, the correlation with SPY is <= -0.5), or as before when the fund mirrors a reference. (2) A fund that is SPY to >= 0.99 correlation is large blend. (3) A sector or real-estate group needs a style-analysis share >= 0.6 (the registered dominant_class_share, previously unused); otherwise the fund takes the nearest broad reference in its main asset class. (4) The live package classifies once per year at the prior December, as the research does, instead of every month.",
+      "reason": "The audit found 1x total-market funds (VTI, ITOT, SCHB) in large value, QQQ moving to the technology sector month to month, leveraged funds in normal groups because the leverage test also required correlation >= 0.9 with a broad reference (SOXL beta 7.9, correlation 0.85; QLD, KORU, NUGT, JNUG, DPST, NAIL, RETL, HIBL, WEBL), a 2028 Treasury ladder (IBTI) flagged leveraged because it moves 1.9x SHY, and low-volatility and dividend funds (ACWV, LVHD, SPHD, HDV) in real estate or materials through their low beta. A beta >= 1.6 to SPY or to the nearest reference alone, as first proposed, would also have flagged unlevered semiconductor, gold-miner, preferred and international-bond funds, so twins are used instead. Effects after rerunning the research on the same data: the 'other' family's WAIT_FOR_DIP rule no longer passes its gate (share of starts beating monthly buying 0.605 -> 0.504), so no fund gets a WAIT verdict; the 36-month cost evidence weakens but still enables cost calls (t 4.69 -> 3.27; cheapest fifth beats the most expensive fifth in 0.833 -> 0.917 of years). Recorded as a change made after seeing results; the gate thresholds are unchanged."
+    },
+    {
+      "on": "2026-10-09",
+      "after_results": true,
+      "source": "system audit, 2026-10-09",
+      "change": "Calls and readings in the package: (1) the call hysteresis registered in calls.hysteresis now runs, using the previous package's call (saved beside the hosted data), so a BUY at percentile 70-79 stays BUY; (2) call bands are read from calls.bands_percentile instead of a copy in code; (3) a family's timing-rule verdict is attached only to funds in the groups its family index is built from (for 'other': precious metals, commodities, real estate); idiosyncratic funds no longer inherit a rule verdict from the family of their nearest reference.",
+      "reason": "The hysteresis was registered but the package always passed no previous call, and 54 funds, including FXI, MCHI, EWS, LABD and YINN, were told to wait for a 20% dip because the blended 'other' family's rule was applied to them loosely."
     }
   ],
   "cost_test": {

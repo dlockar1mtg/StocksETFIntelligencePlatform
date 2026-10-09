@@ -25,6 +25,18 @@ MAX_BETA = 2.0          # amendment 2 (after results): beyond this a fund is not
 MAX_VOL_SCALE = 2.5
 PATHS = 2000
 SEED = 20261007
+# Amendment after results, 2026-10-09 (system audit): reference funds that are trusts or commodity pools
+# file no SEC risk/return summary, so their official expense ratio is missing and every fund projected on
+# them used to get a fee gap of 0. These issuer-published total expense ratios are used only when the SEC
+# history has no value for the reference; they are not in the repo's SEC data and should be re-checked
+# against the issuer pages when a prospectus changes.
+REFERENCE_TRUST_FEES = {
+    "SPY": 0.000945,   # State Street Global Advisors, SPDR S&P 500 ETF Trust prospectus: 0.0945%
+    "GLD": 0.0040,     # SPDR Gold Trust (World Gold Trust Services) sponsor fee: 0.40%
+    "SLV": 0.0050,     # BlackRock, iShares Silver Trust sponsor's fee: 0.50%
+    "DBC": 0.0085,     # Invesco DB Commodity Index Tracking Fund management fee: 0.85%
+    "USO": 0.0060,     # United States Commodity Funds, United States Oil Fund total expense ratio: 0.60%
+}
 
 
 def _months_between(a: str, b: str) -> int:
@@ -65,6 +77,11 @@ class Projector:
         self._lr: dict[tuple[str, str], dict[str, float]] = {}
         self._spread: dict[tuple[str, str], tuple[np.ndarray, float, float]] = {}
         self.excluded: dict[str, str] = {}
+
+    def fee(self, symbol: str, date: str) -> float | None:
+        """Official expense ratio at date; for a reference trust without SEC data, the issuer's published fee."""
+        value = self.expense(symbol, date)
+        return REFERENCE_TRUST_FEES.get(symbol) if value is None else value
 
     def lr(self, symbol: str, end_month: str) -> dict[str, float]:
         key = (symbol, end_month)
@@ -122,8 +139,9 @@ class Projector:
             return None
         self.excluded.pop(symbol, None)
         date = f"{end_month}-28"
-        fee, ref_fee = self.expense(symbol, date), self.expense(ref, date)
-        gap = (fee - ref_fee) if fee is not None and ref_fee is not None else 0.0
+        fee, ref_fee = self.fee(symbol, date), self.fee(ref, date)
+        known = fee is not None and ref_fee is not None
+        gap = (fee - ref_fee) if known else 0.0          # unknown: the center carries no fee adjustment
         cash_yield, cash_hist = self.cash(end_month)
         excess = [refr[m] - cash_hist[m] for m in refr if m in cash_hist]
         centers = {"REFERENCE_HISTORY": 12 * ref_mu - gap}
@@ -142,7 +160,8 @@ class Projector:
         q = np.percentile(total, [10, 25, 50, 75, 90])
         ann = np.expm1(q * 12 / HORIZON)
         return {"center_rule": rule, "centers": {k: round(math.expm1(v), 4) for k, v in centers.items()},
-                "reference": ref, "beta": round(beta, 3), "vol_scale": round(scale, 3), "fee_gap": round(gap, 5),
+                "reference": ref, "beta": round(beta, 3), "vol_scale": round(scale, 3), "fee_gap": round(gap, 5) if known else None,
+                "fee_gap_status": "KNOWN" if known else "UNKNOWN",
                 "p10": round(float(ann[0]), 4), "p25": round(float(ann[1]), 4), "p50": round(float(ann[2]), 4),
                 "p75": round(float(ann[3]), 4), "p90": round(float(ann[4]), 4),
                 "chance_of_loss": round(float(np.mean(total < 0)), 3),

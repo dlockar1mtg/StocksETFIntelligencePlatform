@@ -1,7 +1,7 @@
 {
   "policy_id": "ETF_PROVISIONAL_3Y_PROJECTION_V1",
   "phase": "4.5",
-  "policy_version": "1.0.0",
+  "policy_version": "1.1.0",
   "registered_on": "2026-10-07",
   "registered_before_results": true,
   "owner_request": {
@@ -76,6 +76,13 @@
       "after_results": true,
       "approved_by": "Devon Lockard",
       "change": "display_rule: the owner asked to sort and filter single funds by the typical 3-year figure on the Market Board. Allowed, with the caveat shown whenever that sort is on: within a peer group a higher figure mostly means a fund that swings more than its peers, which did not pay more in the trials, and own-history figures are weaker still. Ranking calls are unchanged (cost within peer group)."
+    },
+    {
+      "date": "2026-10-09",
+      "after_results": true,
+      "source": "system audit, 2026-10-09",
+      "change": "Fee gap: when a reference fund has no SEC expense ratio (trusts and commodity pools), the issuer-published fee in provisional_projection.REFERENCE_TRUST_FEES is used (SPY 0.0945%, GLD 0.40%, SLV 0.50%, DBC 0.85%, USO 0.60%); when either fee is still unknown the projection says fee_gap_status UNKNOWN and fee_gap null instead of a fee gap of 0.",
+      "reason": "Every fund projected on SPY, GLD, SLV, DBC or USO had its fee difference silently set to 0, so a 0.20% fund projected on SPY looked as cheap as SPY. Effect at the September 2026 projection: IYY's typical figure falls by 0.10% a year and VOO's rises by 0.06%; QQQ's own fee is unknown (it is a unit trust), so its projection carries no fee adjustment and says so."
     }
   ],
   "results_2026_10_07": {

@@ -3,7 +3,7 @@ name: ETF hosted market data
 on:
   schedule:
     - cron: "20 22 * * 1-5"   # daily after the US close
-    - cron: "20 1 * * 2-6"    # backups: skipped unless no run did the work in the last 12 hours
+    - cron: "20 1 * * 2-6"    # backups: skipped when >= 90% of funds already have the last completed session
     - cron: "20 4 * * 2-6"
     - cron: "20 14 * * 6"     # Saturday: full-history refresh of every fund (policy full_refresh_weekday)
   pull_request:
@@ -21,6 +21,7 @@ on:
       - "scripts/research_provisional_ranking.py"
       - "scripts/research_provisional_full_coverage.py"
       - "scripts/build_provisional_etf_package.py"
+      - "scripts/etf_backup_gate.py"
       - ".github/workflows/etf-hosted-market-data.yml"
   workflow_dispatch:
     inputs:
@@ -41,37 +42,35 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
-      actions: read
       contents: read
     outputs:
       run: ${{ steps.check.outputs.run }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+          sparse-checkout: |
+            foundation/__init__.py
+            foundation/market/daily_series.py
+            config/market/hosted_market_data_policy.json
+            scripts/etf_backup_gate.py
+          sparse-checkout-cone-mode: false
       - id: check
         env:
           GH_TOKEN: ${{ github.token }}
           SCHEDULE: ${{ github.event.schedule }}
+          BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         run: |
           set -euo pipefail
           if [ "$GITHUB_EVENT_NAME" != "schedule" ] || [ "$SCHEDULE" = "20 14 * * 6" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-          wf="${GITHUB_WORKFLOW_REF%@*}"; wf="${wf##*/}"
-          since="$(date -u -d '12 hours ago' +%Y-%m-%dT%H:%M:%SZ)"
-          ids="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$wf/runs?per_page=50" \
-            --jq ".workflow_runs[] | select(.conclusion == \"success\") | select(.id != $GITHUB_RUN_ID) | select(.event == \"schedule\" or .event == \"workflow_dispatch\") | select(.run_started_at >= \"$since\") | .id")"
-          for id in $ids; do
-            worked="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/jobs" --jq '[.jobs[] | select(.name != "gate" and .conclusion == "success")] | length')"
-            if [ "$worked" -gt 0 ]; then
-              # 2026-10-08: a run can finish while the provider still lacks the day's bar for most funds
-              # (the 2026-10-08 00:23 run left 1,026 of 1,084 a session behind). Then the backup runs anyway.
-              current="$(gh api "repos/$GITHUB_REPOSITORY/contents/data/curated/hosted_etf/market_data_status.json" --jq '.content' | base64 -d \
-                | python3 -c 'import json,sys; s=json.load(sys.stdin); f=s.get("freshness_summary") or {}; print(round(f.get("CURRENT",0)/max(s.get("fund_count",1),1),3))')" || current=0
-              if python3 -c "import sys; sys.exit(0 if float('$current') >= 0.9 else 1)"; then
-                echo "Run $id already collected since $since ($current of funds current)."; echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
-              fi
-              echo "::notice title=Backup run::run $id finished with only $current of funds current; collecting again"
-              break
-            fi
-          done
-          echo "run=true" >> "$GITHUB_OUTPUT"
+          # 2026-10-09 (system audit): skip only when >= 90% of funds in the committed status already have
+          # as_of_date == the last completed US session at run time (weekends and NYSE holidays), never on the
+          # stored CURRENT labels, which were computed when the status was written. The raw media type reads
+          # files over the contents API's 1 MB JSON limit.
+          gh api -H "Accept: application/vnd.github.raw" \
+            "repos/$GITHUB_REPOSITORY/contents/data/curated/hosted_etf/market_data_status.json?ref=$BRANCH" > status.json || echo '{}' > status.json
+          python3 scripts/etf_backup_gate.py status.json | tee gate.out
+          grep -E '^run=(true|false)$' gate.out | tail -1 >> "$GITHUB_OUTPUT"
 
   collect:
     needs: gate
@@ -79,6 +78,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     permissions:
+      actions: read
       contents: write
     steps:
       - uses: actions/checkout@v4
@@ -89,7 +89,7 @@ jobs:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
-        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection tests.market.test_provisional_full_coverage -v
+        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection tests.market.test_provisional_full_coverage tests.market.test_audit_fixes_2026_10 -v
       - name: Restore the cached daily series
         uses: actions/cache/restore@v4
         with:
@@ -109,12 +109,25 @@ jobs:
           for f in bad[:40]:
               print(f"::warning title=ETF {f['symbol']}::{f['quality_status']} {'; '.join(f['failures'])[:300]}")
           PY
+      - name: Previous published package (call hysteresis and kept group assignments)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -uo pipefail
+          id="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+            --jq '[.artifacts[] | select(.name | startswith("etf-production-")) | select(.expired | not)] | sort_by(.created_at) | last | .id // empty')" || id=""
+          if [ -n "$id" ] && gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$id/zip" > previous.zip && unzip -o -q previous.zip funds.json -d previous; then
+            echo "Previous package: artifact $id"
+          else
+            rm -rf previous; echo "No previous package artifact; the saved state (data/curated/hosted_etf/package_state.json) is used if present."
+          fi
       - name: Ranking research, timing evidence and the provisional UIP package
         run: |
           python scripts/research_provisional_ranking.py > research.log && tail -6 research.log
           python scripts/research_provisional_projection.py > projection.log && tail -3 projection.log
           python scripts/research_provisional_full_coverage.py > coverage.log && tail -2 coverage.log
-          python scripts/build_provisional_etf_package.py --output etf-package | tee package.log
+          prev=""; if [ -f previous/funds.json ]; then prev="--previous previous/funds.json"; fi
+          python scripts/build_provisional_etf_package.py --output etf-package $prev | tee package.log
           python - <<'PY'
           import json
           m = json.load(open("etf-package/manifest.json"))
