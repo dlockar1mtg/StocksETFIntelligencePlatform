@@ -1,6 +1,6 @@
 {
  "policy_id": "SEC_RISK_RETURN_EXPENSE_RATIOS_V1",
- "generated_at_utc": "2026-10-09T19:47:09+00:00",
+ "generated_at_utc": "2026-10-09T20:53:26+00:00",
  "universe_funds": 1084,
  "funds_with_sec_class": 1077,
  "funds_with_expense_ratio": 1077,
