@@ -9,7 +9,8 @@ are flagged from the measured beta on the fund's near-identical twins in the uni
 the most volatile bond reference it tracks). Groups are point-in-time: research classifies at each
 December with returns up to that December, and the live package uses the same December
 classification for the following year (`live_groups`). Rules amended after results on 2026-10-09
-(system audit); see config/market/provisional_ranking_policy.json.
+(system audit) and on 2026-10-10 (owner decision: SHM is the reference for a short-duration municipal
+group); see config/market/provisional_ranking_policy.json.
 """
 from __future__ import annotations
 
@@ -20,22 +21,22 @@ from pathlib import Path
 import numpy as np
 from scipy.optimize import nnls
 
-BROAD = ("SPY", "IWM", "EFA", "EEM", "SHY", "IEF", "TLT", "LQD", "HYG", "TIP", "MUB", "GLD", "DBC", "VNQ")
+BROAD = ("SPY", "IWM", "EFA", "EEM", "SHY", "IEF", "TLT", "LQD", "HYG", "TIP", "MUB", "SHM", "GLD", "DBC", "VNQ")
 CLASS_OF = {"SPY": "US_EQUITY", "IWM": "US_EQUITY", "EFA": "INTL_EQUITY", "EEM": "INTL_EQUITY", "SHY": "BONDS",
             "IEF": "BONDS", "TLT": "BONDS", "LQD": "BONDS", "HYG": "BONDS", "TIP": "BONDS", "MUB": "BONDS",
-            "GLD": "PRECIOUS_METALS", "DBC": "COMMODITIES", "VNQ": "REAL_ESTATE"}
+            "SHM": "BONDS", "GLD": "PRECIOUS_METALS", "DBC": "COMMODITIES", "VNQ": "REAL_ESTATE"}
 SECTORS = {"XLK": "TECHNOLOGY", "XLF": "FINANCIALS", "XLE": "ENERGY", "XLV": "HEALTH_CARE", "XLI": "INDUSTRIALS",
            "XLY": "CONSUMER_DISCRETIONARY", "XLP": "CONSUMER_STAPLES", "XLU": "UTILITIES", "XLB": "MATERIALS",
            "XLRE": "REAL_ESTATE_SECTOR", "XLC": "COMMUNICATION"}
 BOND_GROUP = {"SHY": "BOND_SHORT_TREASURY", "IEF": "BOND_INTERMEDIATE_TREASURY", "TLT": "BOND_LONG_TREASURY",
               "LQD": "BOND_INVESTMENT_GRADE_CORPORATE", "HYG": "BOND_HIGH_YIELD", "TIP": "BOND_INFLATION_PROTECTED",
-              "MUB": "BOND_MUNICIPAL"}
+              "MUB": "BOND_MUNICIPAL", "SHM": "BOND_SHORT_MUNICIPAL"}
 RULES = {"window_months": 36, "minimum_months": 24, "minimum_r2": 0.6, "minimum_correlation": 0.8, "defensive_beta": 0.6, "dominant_class_share": 0.6,
          "leverage_beta": 1.6, "leverage_correlation": 0.9, "inverse_correlation": -0.5, "sector_residual_correlation": 0.65,
          "small_cap_share": 0.5, "style_residual_correlation": 0.45, "sum_to_one_weight": 100.0,
          # amendment after results, 2026-10-09 (system audit): see config/market/provisional_ranking_policy.json
          "inverse_beta": -0.5, "twin_correlation": 0.975, "leverage_min_volatility": 0.10, "blend_spy_correlation": 0.99}
-GROUPING_VERSION = "2026-10-09.1"     # bumped whenever the grouping rules change; published in the package
+GROUPING_VERSION = "2026-10-10.1"     # bumped whenever the grouping rules change; published in the package
 
 
 def load_month_end_tr(path: Path) -> tuple[dict[str, dict[str, float]], dict[str, str]]:
@@ -89,7 +90,10 @@ REFERENCE_GROUP = {
     "EFA": "INTL_DEVELOPED_EQUITY", "EEM": "INTL_EMERGING_EQUITY",
     "SHY": "BOND_SHORT_TREASURY", "IEF": "BOND_INTERMEDIATE_TREASURY", "TLT": "BOND_LONG_TREASURY",
     "LQD": "BOND_INVESTMENT_GRADE_CORPORATE", "HYG": "BOND_HIGH_YIELD", "TIP": "BOND_INFLATION_PROTECTED",
-    "MUB": "BOND_MUNICIPAL", "BIL": "BOND_CASH_EQUIVALENT",
+    # SHM (short-term national munis, history from 2007): amendment after results, 2026-10-10 (owner decision).
+    # Without it short muni funds (SUB, JMST, term muni ladders) had no muni reference near their duration, and
+    # at the 2025 classification SHM, SUB and JMST correlated most with HYG (0.82-0.87), so they sat in high yield.
+    "MUB": "BOND_MUNICIPAL", "SHM": "BOND_SHORT_MUNICIPAL", "BIL": "BOND_CASH_EQUIVALENT",
     "GLD": "PRECIOUS_METALS", "SLV": "PRECIOUS_METALS", "DBC": "COMMODITIES", "USO": "COMMODITIES",
     "VNQ": "REAL_ESTATE", "XLRE": "REAL_ESTATE",
     **{k: f"US_SECTOR_{v}" for k, v in SECTORS.items() if k != "XLRE"},

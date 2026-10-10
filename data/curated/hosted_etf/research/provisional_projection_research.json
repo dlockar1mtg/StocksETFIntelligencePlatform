@@ -20,23 +20,23 @@
   2021,
   2022
  ],
- "observations": 7760,
+ "observations": 7775,
  "overall": {
-  "n": 7760,
-  "inside_10_90": 0.832,
+  "n": 7775,
+  "inside_10_90": 0.831,
   "below_10": 0.072,
   "above_90": 0.097,
-  "center_median_abs_error": 0.0532,
-  "own_history_median_abs_error": 0.061
+  "center_median_abs_error": 0.053,
+  "own_history_median_abs_error": 0.0609
  },
  "families": {
   "BONDS": {
-   "n": 1246,
-   "inside_10_90": 0.674,
-   "below_10": 0.185,
-   "above_90": 0.141,
-   "center_median_abs_error": 0.0238,
-   "own_history_median_abs_error": 0.0319
+   "n": 1261,
+   "inside_10_90": 0.672,
+   "below_10": 0.184,
+   "above_90": 0.144,
+   "center_median_abs_error": 0.0236,
+   "own_history_median_abs_error": 0.0317
   },
   "INTL_EQUITY": {
    "n": 1669,
@@ -121,90 +121,90 @@
    "own_history_median_abs_error": 0.1585
   },
   "2012": {
-   "n": 386,
-   "inside_10_90": 0.842,
+   "n": 388,
+   "inside_10_90": 0.843,
    "below_10": 0.057,
    "above_90": 0.101,
-   "center_median_abs_error": 0.0696,
-   "own_history_median_abs_error": 0.0844
+   "center_median_abs_error": 0.0695,
+   "own_history_median_abs_error": 0.0843
   },
   "2013": {
-   "n": 410,
+   "n": 411,
    "inside_10_90": 0.985,
    "below_10": 0.012,
    "above_90": 0.002,
-   "center_median_abs_error": 0.0293,
-   "own_history_median_abs_error": 0.0301
+   "center_median_abs_error": 0.0292,
+   "own_history_median_abs_error": 0.0299
   },
   "2014": {
-   "n": 422,
+   "n": 423,
    "inside_10_90": 0.998,
    "below_10": 0.002,
    "above_90": 0.0,
-   "center_median_abs_error": 0.0161,
-   "own_history_median_abs_error": 0.0345
+   "center_median_abs_error": 0.0159,
+   "own_history_median_abs_error": 0.0344
   },
   "2015": {
-   "n": 463,
+   "n": 464,
    "inside_10_90": 0.991,
    "below_10": 0.006,
    "above_90": 0.002,
    "center_median_abs_error": 0.0235,
-   "own_history_median_abs_error": 0.0279
+   "own_history_median_abs_error": 0.0278
   },
   "2016": {
-   "n": 500,
-   "inside_10_90": 0.93,
+   "n": 503,
+   "inside_10_90": 0.926,
    "below_10": 0.006,
-   "above_90": 0.064,
-   "center_median_abs_error": 0.0269,
-   "own_history_median_abs_error": 0.0566
+   "above_90": 0.068,
+   "center_median_abs_error": 0.0268,
+   "own_history_median_abs_error": 0.0565
   },
   "2017": {
-   "n": 525,
+   "n": 526,
    "inside_10_90": 0.821,
    "below_10": 0.017,
    "above_90": 0.162,
-   "center_median_abs_error": 0.041,
-   "own_history_median_abs_error": 0.0336
+   "center_median_abs_error": 0.0409,
+   "own_history_median_abs_error": 0.0334
   },
   "2018": {
-   "n": 591,
-   "inside_10_90": 0.778,
+   "n": 592,
+   "inside_10_90": 0.779,
    "below_10": 0.005,
-   "above_90": 0.217,
-   "center_median_abs_error": 0.0523,
-   "own_history_median_abs_error": 0.0776
+   "above_90": 0.216,
+   "center_median_abs_error": 0.0521,
+   "own_history_median_abs_error": 0.0775
   },
   "2019": {
-   "n": 659,
-   "inside_10_90": 0.824,
-   "below_10": 0.164,
+   "n": 661,
+   "inside_10_90": 0.821,
+   "below_10": 0.166,
    "above_90": 0.012,
-   "center_median_abs_error": 0.0719,
+   "center_median_abs_error": 0.0718,
    "own_history_median_abs_error": 0.0612
   },
   "2020": {
-   "n": 768,
-   "inside_10_90": 0.837,
+   "n": 769,
+   "inside_10_90": 0.836,
    "below_10": 0.133,
-   "above_90": 0.03,
+   "above_90": 0.031,
    "center_median_abs_error": 0.0362,
    "own_history_median_abs_error": 0.0511
   },
   "2021": {
-   "n": 799,
-   "inside_10_90": 0.835,
+   "n": 800,
+   "inside_10_90": 0.834,
    "below_10": 0.14,
-   "above_90": 0.025,
-   "center_median_abs_error": 0.0743,
+   "above_90": 0.026,
+   "center_median_abs_error": 0.0742,
    "own_history_median_abs_error": 0.0742
   },
   "2022": {
-   "n": 855,
-   "inside_10_90": 0.806,
+   "n": 856,
+   "inside_10_90": 0.805,
    "below_10": 0.001,
-   "above_90": 0.193,
+   "above_90": 0.194,
    "center_median_abs_error": 0.0532,
    "own_history_median_abs_error": 0.0642
   }
@@ -320,7 +320,7 @@
   "OTHER": "TESTED",
   "US_EQUITY": "TESTED"
  },
- "generated_at_utc": "2026-10-10T18:49:46+00:00",
+ "generated_at_utc": "2026-10-10T19:31:13+00:00",
  "known_limitations": [
   "Survivorship: the model universe is funds alive today, so the test omits funds that closed.",
   "Reference histories start between 1993 and 2018; the longest is SPY's.",

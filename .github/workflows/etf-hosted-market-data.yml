@@ -88,7 +88,7 @@ jobs:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
-        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection tests.market.test_provisional_full_coverage tests.market.test_audit_fixes_2026_10 -v
+        run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection tests.market.test_provisional_full_coverage tests.market.test_audit_fixes_2026_10 tests.market.test_short_muni_group_2026_10 -v
       - name: Restore the cached daily series
         uses: actions/cache/restore@v4
         with:
