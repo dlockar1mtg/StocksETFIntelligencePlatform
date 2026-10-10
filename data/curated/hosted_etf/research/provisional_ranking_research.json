@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-10T18:48:57+00:00",
+ "generated_at_utc": "2026-10-10T19:30:24+00:00",
  "panel_rows": 189353,
  "funds": 1077,
  "walk_forward": {
@@ -8,43 +8,43 @@
    "results": {},
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": -0.0034,
+     "mean_ic": -0.0033,
      "t_yearly": -0.11,
      "years": 23
     },
     "mom_6": {
-     "mean_ic": 0.0158,
+     "mean_ic": 0.0159,
      "t_yearly": 0.56,
      "years": 23
     },
     "trend_200": {
-     "mean_ic": 0.0268,
-     "t_yearly": 0.84,
+     "mean_ic": 0.0272,
+     "t_yearly": 0.86,
      "years": 23
     },
     "stretch_60m": {
-     "mean_ic": 0.0749,
-     "t_yearly": 1.38,
+     "mean_ic": 0.0753,
+     "t_yearly": 1.39,
      "years": 23
     },
     "vol_1y": {
-     "mean_ic": 0.0632,
-     "t_yearly": 1.72,
+     "mean_ic": 0.0622,
+     "t_yearly": 1.7,
      "years": 23
     },
     "maxdd_3y": {
-     "mean_ic": -0.0541,
-     "t_yearly": -1.42,
+     "mean_ic": -0.0532,
+     "t_yearly": -1.39,
      "years": 23
     },
     "dd_now": {
-     "mean_ic": 0.0152,
-     "t_yearly": 0.5,
+     "mean_ic": 0.0161,
+     "t_yearly": 0.53,
      "years": 23
     },
     "yield_12m": {
-     "mean_ic": -0.0015,
-     "t_yearly": -0.06,
+     "mean_ic": -0.0022,
+     "t_yearly": -0.08,
      "years": 23
     }
    },
@@ -79,14 +79,14 @@
      "by_year": {
       "2021": {
        "top": -0.0126,
-       "bottom": 0.003
+       "bottom": 0.0031
       },
       "2022": {
-       "top": 0.0007,
+       "top": 0.0009,
        "bottom": 0.0044
       },
       "2023": {
-       "top": 0.0208,
+       "top": 0.0209,
        "bottom": -0.0057
       }
      }
@@ -95,22 +95,22 @@
      "test_years": 3,
      "first_year": "2021",
      "last_year": "2023",
-     "top_quintile_mean_excess": -0.0029,
-     "bottom_quintile_mean_excess": -0.0041,
-     "share_years_top_beats_median": 0.333,
+     "top_quintile_mean_excess": -0.0027,
+     "bottom_quintile_mean_excess": -0.004,
+     "share_years_top_beats_median": 0.667,
      "share_years_top_beats_bottom": 0.667,
      "by_year": {
       "2021": {
        "top": -0.0105,
-       "bottom": 0.0122
+       "bottom": 0.0124
       },
       "2022": {
-       "top": -0.0004,
+       "top": 0.0,
        "bottom": -0.0119
       },
       "2023": {
-       "top": 0.0022,
-       "bottom": -0.0125
+       "top": 0.0023,
+       "bottom": -0.0127
       }
      }
     },
@@ -186,43 +186,43 @@
    },
    "factor_ic_full_sample": {
     "mom_12_1": {
-     "mean_ic": 0.0266,
-     "t_yearly": 0.86,
+     "mean_ic": 0.0267,
+     "t_yearly": 0.87,
      "years": 21
     },
     "mom_6": {
-     "mean_ic": 0.0388,
+     "mean_ic": 0.0389,
      "t_yearly": 1.03,
      "years": 21
     },
     "trend_200": {
-     "mean_ic": 0.0502,
-     "t_yearly": 1.29,
+     "mean_ic": 0.0506,
+     "t_yearly": 1.3,
      "years": 21
     },
     "stretch_60m": {
-     "mean_ic": 0.1007,
-     "t_yearly": 2.06,
+     "mean_ic": 0.1009,
+     "t_yearly": 2.07,
      "years": 21
     },
     "vol_1y": {
-     "mean_ic": 0.0354,
+     "mean_ic": 0.0351,
      "t_yearly": 1.21,
      "years": 21
     },
     "maxdd_3y": {
-     "mean_ic": -0.0221,
+     "mean_ic": -0.0219,
      "t_yearly": -0.88,
      "years": 21
     },
     "dd_now": {
-     "mean_ic": 0.0253,
-     "t_yearly": 0.85,
+     "mean_ic": 0.0255,
+     "t_yearly": 0.86,
      "years": 21
     },
     "yield_12m": {
-     "mean_ic": -0.0444,
-     "t_yearly": -1.21,
+     "mean_ic": -0.0447,
+     "t_yearly": -1.22,
      "years": 21
     }
    },
@@ -369,8 +369,8 @@
     "parameter_now": 0.1,
     "starts": 129,
     "share_beating": 0.38,
-    "median_edge": -0.0059,
-    "worst_edge": -0.0372,
+    "median_edge": -0.0057,
+    "worst_edge": -0.0369,
     "passes_gate": false
    },
    "MOMENTUM_PAUSE": {
@@ -383,10 +383,10 @@
    },
    "_now": {
     "month": "2026-09",
-    "trend": 0.9779,
-    "stretch": 1.0643,
-    "dd": -0.0336,
-    "mom": -0.0085
+    "trend": 0.978,
+    "stretch": 1.0644,
+    "dd": -0.0334,
+    "mom": -0.0084
    }
   },
   "OTHER": {
@@ -434,7 +434,7 @@
  "cost_test": {
   "12m": {
    "test_years": 14,
-   "mean_ic": 0.0186,
+   "mean_ic": 0.0191,
    "t_yearly": 0.92,
    "cheapest_quintile_mean_excess": 0.0029,
    "most_expensive_quintile_mean_excess": -0.0011,
@@ -472,14 +472,14 @@
      "most_expensive": 0.0042
     },
     "2018": {
-     "ic": 0.076,
-     "cheapest": -0.0039,
-     "most_expensive": -0.0161
+     "ic": 0.086,
+     "cheapest": -0.0031,
+     "most_expensive": -0.0162
     },
     "2019": {
-     "ic": 0.165,
-     "cheapest": 0.0047,
-     "most_expensive": -0.0141
+     "ic": 0.171,
+     "cheapest": 0.005,
+     "most_expensive": -0.0136
     },
     "2020": {
      "ic": -0.054,
@@ -487,37 +487,37 @@
      "most_expensive": 0.0372
     },
     "2021": {
-     "ic": 0.036,
-     "cheapest": 0.0039,
-     "most_expensive": -0.0184
+     "ic": 0.03,
+     "cheapest": 0.0033,
+     "most_expensive": -0.0183
     },
     "2022": {
-     "ic": -0.063,
+     "ic": -0.061,
      "cheapest": -0.0017,
-     "most_expensive": 0.0129
+     "most_expensive": 0.0128
     },
     "2023": {
-     "ic": 0.042,
+     "ic": 0.043,
      "cheapest": 0.0004,
-     "most_expensive": -0.0131
+     "most_expensive": -0.013
     },
     "2024": {
-     "ic": -0.025,
-     "cheapest": 0.0059,
-     "most_expensive": 0.0035
+     "ic": -0.036,
+     "cheapest": 0.0057,
+     "most_expensive": 0.0037
     },
     "2025": {
-     "ic": -0.102,
-     "cheapest": 0.0033,
-     "most_expensive": 0.0059
+     "ic": -0.097,
+     "cheapest": 0.0032,
+     "most_expensive": 0.0057
     }
    }
   },
   "36m": {
    "test_years": 12,
-   "mean_ic": 0.0657,
-   "t_yearly": 3.27,
-   "cheapest_quintile_mean_excess": 0.0021,
+   "mean_ic": 0.0655,
+   "t_yearly": 3.23,
+   "cheapest_quintile_mean_excess": 0.0022,
    "most_expensive_quintile_mean_excess": -0.0074,
    "share_years_cheapest_beats_median": 0.75,
    "share_years_cheapest_beats_most_expensive": 0.917,
@@ -548,37 +548,37 @@
      "most_expensive": -0.0158
     },
     "2017": {
-     "ic": 0.151,
+     "ic": 0.152,
      "cheapest": 0.0024,
      "most_expensive": -0.0259
     },
     "2018": {
-     "ic": 0.128,
-     "cheapest": 0.0019,
+     "ic": 0.136,
+     "cheapest": 0.0024,
      "most_expensive": -0.0081
     },
     "2019": {
-     "ic": 0.184,
+     "ic": 0.179,
      "cheapest": 0.0031,
      "most_expensive": -0.0142
     },
     "2020": {
-     "ic": 0.055,
+     "ic": 0.054,
      "cheapest": 0.0023,
      "most_expensive": -0.0062
     },
     "2021": {
-     "ic": 0.026,
-     "cheapest": 0.002,
+     "ic": 0.019,
+     "cheapest": 0.0018,
      "most_expensive": -0.0057
     },
     "2022": {
-     "ic": -0.033,
+     "ic": -0.034,
      "cheapest": -0.0003,
      "most_expensive": 0.0149
     },
     "2023": {
-     "ic": -0.047,
+     "ic": -0.046,
      "cheapest": -0.0,
      "most_expensive": -0.0004
     }
@@ -589,7 +589,7 @@
  },
  "known_limitations": [
   "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
-  "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate. Short-term municipal funds (SHM, SUB, JMST) still land in high yield because no reference fund is a short-duration municipal fund, and a leveraged fund whose index has no unlevered ETF in the universe at 0.975 correlation (USD, 2x semiconductors) can still escape the leverage test.",
+  "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate. A leveraged fund whose index has no unlevered ETF in the universe at 0.975 correlation (USD, 2x semiconductors) can still escape the leverage test.",
   "Free tier-4 market data and no holdings data. Official expense ratios come from SEC risk/return filings; unit and grantor trusts and commodity pools file none (SPY, DIA, QQQ, GLD, SLV, DBC, USO), and the SEC data has added no filings since 2025-05-12 (quarters 2025q3-2026q2 parsed 0 rows; see expense_ratio_summary.json)."
  ]
 }
