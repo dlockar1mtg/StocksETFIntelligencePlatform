@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-10T03:09:24+00:00",
+ "generated_at_utc": "2026-10-10T18:36:29+00:00",
  "mode": "FULL",
  "fund_count": 1084,
  "quality_summary": {
@@ -126,7 +126,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -287,7 +287,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -312,7 +312,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -333,7 +333,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -1322,7 +1322,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -1801,7 +1801,7 @@
    "as_of_date": "2026-10-09",
    "first_date": "2020-09-18",
    "sessions": 1522,
-   "close": 16.2134,
+   "close": 16.213,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -1830,7 +1830,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -1847,7 +1847,7 @@
    "as_of_date": "2026-10-09",
    "first_date": "2019-09-13",
    "sessions": 1778,
-   "close": 22.2206,
+   "close": 22.221,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -2104,7 +2104,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2173,7 +2173,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2357,7 +2357,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2656,7 +2656,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2840,7 +2840,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4084,7 +4084,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4751,7 +4751,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6706,7 +6706,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6890,7 +6890,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7005,7 +7005,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7143,7 +7143,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7902,7 +7902,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7925,7 +7925,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8178,7 +8178,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8749,7 +8749,7 @@
    "as_of_date": "2026-10-09",
    "first_date": "2010-12-08",
    "sessions": 3983,
-   "close": 138.859,
+   "close": 138.86,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -8776,7 +8776,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8914,7 +8914,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9512,7 +9512,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9738,7 +9738,7 @@
    "as_of_date": "2026-10-09",
    "first_date": "2020-01-22",
    "sessions": 1689,
-   "close": 20.7951,
+   "close": 20.795,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -10087,7 +10087,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10110,7 +10110,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10156,7 +10156,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10363,7 +10363,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10524,7 +10524,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10570,7 +10570,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10846,7 +10846,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10984,7 +10984,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -11078,7 +11078,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -11444,7 +11444,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -11559,7 +11559,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -11766,7 +11766,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -12893,7 +12893,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13123,7 +13123,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13330,7 +13330,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13353,7 +13353,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13387,7 +13387,7 @@
    "symbol": "JOET",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "Virtus Terranova U.S. Quality Momentum ETF",
+   "name": "Virtus Terranova U.S. Quality M",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -13514,7 +13514,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13537,7 +13537,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13652,7 +13652,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14689,7 +14689,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14942,7 +14942,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -15241,7 +15241,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -15425,7 +15425,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16000,7 +16000,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16046,7 +16046,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16138,7 +16138,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16207,7 +16207,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16575,7 +16575,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16598,7 +16598,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16736,7 +16736,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17083,7 +17083,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17934,7 +17934,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17957,9 +17957,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -18118,7 +18118,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18256,7 +18256,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18279,7 +18279,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18302,7 +18302,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18327,7 +18327,7 @@
     "status": "PASS",
     "max_daily_return_gap": 3e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 2e-06
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -18488,7 +18488,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -18578,7 +18578,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19222,7 +19222,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19776,7 +19776,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19914,7 +19914,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20374,7 +20374,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20420,7 +20420,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20489,7 +20489,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20514,7 +20514,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -20581,7 +20581,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20606,7 +20606,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -20719,7 +20719,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20949,7 +20949,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21041,7 +21041,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21066,7 +21066,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -21087,7 +21087,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21340,7 +21340,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21888,7 +21888,7 @@
    "as_of_date": "2026-10-09",
    "first_date": "2017-10-27",
    "sessions": 2249,
-   "close": 103.7162,
+   "close": 103.716,
    "failures": [],
    "reconciliation": {
     "status": "PASS",
@@ -21984,7 +21984,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -22122,7 +22122,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -22720,7 +22720,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23295,7 +23295,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23387,7 +23387,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23479,7 +23479,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 2e-06,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23778,7 +23778,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23847,7 +23847,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23870,7 +23870,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23985,7 +23985,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -24031,7 +24031,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -24698,7 +24698,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -24721,7 +24721,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
