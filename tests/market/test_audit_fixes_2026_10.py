@@ -31,6 +31,9 @@ RANKING_POLICY = json.loads((ROOT / "config" / "market" / "provisional_ranking_p
 HOLIDAYS = set(json.loads((ROOT / "config" / "market" / "hosted_market_data_policy.json").read_text(encoding="utf-8"))["nyse_holidays"]["dates"])
 
 
+LATER_REFERENCES = ("SHM",)                                     # 2026-10-10: short-duration municipal reference
+
+
 def months(n, start=2021):
     return [f"{start + i // 12:04d}-{i % 12 + 1:02d}" for i in range(n)]
 
@@ -45,8 +48,11 @@ class Universe:
         vol.update({"BIL": 0.0005, "SHY": 0.004, "IEF": 0.015, "TLT": 0.035, "TIP": 0.012, "MUB": 0.012, "LQD": 0.02, "HYG": 0.02})
         rates = self.rng.normal(0, 1, n)                         # one rate factor drives the Treasury ladder
         self.base = {}
+        # references added after 2026-10-09 draw from their own generator, so the series these tests were
+        # written on (and every later draw from self.rng) stay the same
+        later_rng = np.random.default_rng(seed + 1000)
         for r in G.REFERENCE_GROUP:
-            own = self.rng.normal(0, 1, n)
+            own = (later_rng if r in LATER_REFERENCES else self.rng).normal(0, 1, n)
             mix = 0.97 * rates + 0.24 * own if r in ("SHY", "IEF", "TLT") else own
             self.base[r] = 0.005 + vol[r] * mix
         # the S&P 500 and its style halves move together, as they do
@@ -152,12 +158,11 @@ class PeerGroupAuditTests(unittest.TestCase):
         self.assertTrue(end)
 
     def test_grouping_version_is_published(self):
-        self.assertTrue(G.GROUPING_VERSION.startswith("2026-10-09"))
+        # the 2026-10-09 rules are amended again on 2026-10-10 (short municipal group); see test_short_muni_group_2026_10.py
         self.assertEqual(RANKING_POLICY["taxonomy"]["grouping_version"], G.GROUPING_VERSION)
-        self.assertEqual(RANKING_POLICY["policy_version"], "1.1.0")
-        last = RANKING_POLICY["amendments"][-2]
-        self.assertTrue(last["after_results"])
-        self.assertEqual(last["on"], "2026-10-09")
+        audit = [a for a in RANKING_POLICY["amendments"] if a["on"] == "2026-10-09" and "2026-10-09.1" in a["change"]]
+        self.assertEqual(len(audit), 1)
+        self.assertTrue(audit[0]["after_results"])
 
 
 class ProjectionFeeTests(unittest.TestCase):

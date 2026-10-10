@@ -1,7 +1,7 @@
 {
   "policy_id": "ETF_PROVISIONAL_RANKING_V1",
   "phase": "4.2",
-  "policy_version": "1.1.0",
+  "policy_version": "1.2.0",
   "registered_on": "2026-10-06",
   "registered_before_results": true,
   "owner_authorization": {
@@ -24,7 +24,7 @@
       "SPECIALIZED_INVERSE",
       "IDIOSYNCRATIC"
     ],
-    "grouping_version": "2026-10-09.1"
+    "grouping_version": "2026-10-10.1"
   },
   "factors": {
     "candidates": [
@@ -114,7 +114,7 @@
   },
   "known_limitations": [
     "Survivorship: the model universe is funds alive today with five years of history, so funds that closed are absent from the backtest.",
-    "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate. Short-term municipal funds (SHM, SUB, JMST) still land in high yield because no reference fund is a short-duration municipal fund, and a leveraged fund whose index has no unlevered ETF in the universe at 0.975 correlation (USD, 2x semiconductors) can still escape the leverage test.",
+    "Provisional taxonomy: returns-based groups can mix strategies that the SEC taxonomy would separate. A leveraged fund whose index has no unlevered ETF in the universe at 0.975 correlation (USD, 2x semiconductors) can still escape the leverage test.",
     "Free tier-4 market data and no holdings data. Official expense ratios come from SEC risk/return filings; unit and grantor trusts and commodity pools file none (SPY, DIA, QQQ, GLD, SLV, DBC, USO), and the SEC data has added no filings since 2025-05-12 (quarters 2025q3-2026q2 parsed 0 rows; see expense_ratio_summary.json)."
   ],
   "amendments": [
@@ -144,6 +144,14 @@
       "source": "system audit, 2026-10-09",
       "change": "Calls and readings in the package: (1) the call hysteresis registered in calls.hysteresis now runs, using the previous package's call (saved beside the hosted data), so a BUY at percentile 70-79 stays BUY; (2) call bands are read from calls.bands_percentile instead of a copy in code; (3) a family's timing-rule verdict is attached only to funds in the groups its family index is built from (for 'other': precious metals, commodities, real estate); idiosyncratic funds no longer inherit a rule verdict from the family of their nearest reference.",
       "reason": "The hysteresis was registered but the package always passed no previous call, and 54 funds, including FXI, MCHI, EWS, LABD and YINN, were told to wait for a 20% dip because the blended 'other' family's rule was applied to them loosely."
+    },
+    {
+      "on": "2026-10-10",
+      "after_results": true,
+      "authorized_by": "Devon Lockard",
+      "source": "owner decision, 2026-10-10, on the open item left by the 2026-10-09 system audit",
+      "change": "Peer-group rules (grouping version 2026-10-10.1): SHM (short-term national municipal bonds, history from 2007-10) is added as a bond reference fund for a new group, BOND_SHORT_MUNICIPAL. Nothing else in the rules changes: a fund joins the group when SHM is its most correlated reference (at >= 0.8), exactly as for every other reference.",
+      "reason": "Short municipal funds had no reference near their duration: at the 2025-12 classification SHM, SUB and JMST correlated most with HYG (0.87, 0.82, 0.84) and sat in high yield, and the audit found the bond style shares too spread out for the dominant-share rule to fix it. Effects on the same data (classification at 2025-12): 10 funds move into BOND_SHORT_MUNICIPAL, all of them short-duration or term municipal funds: SHM, SUB, JMST, IBMP, IBMQ (from high yield), BSMQ, FSMB, SMMU (from municipal), IBMO (from investment-grade corporate) and MEAR (from idiosyncratic). No other fund changes group; MUST, HMOP and SHYD keep their groups. Group sizes: high yield 41 -> 36, municipal 25 -> 22, investment-grade corporate 47 -> 46, idiosyncratic 154 -> 153, short municipal 0 -> 10. In earlier Decembers the group has 1-4 members until 2022 (7 from 2023), so before then its members are outside the ranked peer groups (minimum size 5). Research rerun on the same data: the 12- and 36-month ranking gates still fail and no family is enabled; the 36-month cost evidence barely moves (t 3.27 -> 3.23; cheapest fifth beats the most expensive fifth in 0.917 of years, unchanged), so cost calls stay enabled; every timing verdict is unchanged. Cost calls with the previous package's calls carried for hysteresis: SHM BUY -> HOLD (cost percentile 72 among high yield -> 33 among short munis), SUB BUY -> BUY (95 -> 100), JMST BUY -> ACCUMULATE (78 -> 67). Recorded as a change made after seeing results; gate thresholds and call bands are unchanged."
     }
   ],
   "cost_test": {

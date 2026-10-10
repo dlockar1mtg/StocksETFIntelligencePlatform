@@ -28,6 +28,7 @@
       "HYG",
       "TIP",
       "MUB",
+      "SHM",
       "GLD",
       "SLV",
       "DBC",
@@ -172,6 +173,15 @@
         "Backup-run gate: a scheduled run is skipped only when at least 90% of funds in the committed status have as_of_date equal to the last completed US session at run time (weekends and the NYSE holidays above; 16:30 New York cut-off), computed by scripts/etf_backup_gate.py. It no longer trusts the stored CURRENT count, which was computed when the status was written and stays CURRENT after the next session closes. The status file is read with the raw media type, so it can grow past the contents API's 1 MB JSON limit.",
         "Partial failures: a run warns when fewer than 95% of funds were accepted this run and fails below 80% (WARN_ACCEPTED_SHARE, FAIL_ACCEPTED_SHARE in scripts/run_hosted_etf_market_data.py); it used to fail only when every seed fund was blocked.",
         "There is no Stooq or Nasdaq fallback or cross-check in the hosted run; the parsers in daily_series.py are unused. The only fallback is the second Yahoo host (provider.fallback_host)."
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "after_results": true,
+      "authorized_by": "Devon Lockard",
+      "source": "owner decision, 2026-10-10 (short-duration municipal peer group)",
+      "changes": [
+        "SHM is listed as a style reference fund: it is the reference for the BOND_SHORT_MUNICIPAL peer group (grouping version 2026-10-10.1; see config/market/provisional_ranking_policy.json). SHM is already in the model universe, so it is collected as before and no fund is added to the run."
       ]
     }
   ]
