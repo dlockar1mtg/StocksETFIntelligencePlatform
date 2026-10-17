@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_HOSTED_MARKET_DATA_V1",
- "generated_at_utc": "2026-10-17T08:37:00+00:00",
+ "generated_at_utc": "2026-10-17T17:10:46+00:00",
  "mode": "FULL",
  "fund_count": 1084,
  "quality_summary": {
@@ -172,7 +172,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -333,7 +333,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -471,7 +471,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -1414,7 +1414,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -1462,7 +1462,7 @@
     "status": "PASS",
     "max_daily_return_gap": 3e-06,
     "cumulative_gap_1y": 1e-06,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 2e-06
    },
    "print_errors_removed": []
   },
@@ -1577,7 +1577,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -1715,7 +1715,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -1828,9 +1828,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -2104,7 +2104,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2173,7 +2173,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -2357,7 +2357,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -3072,7 +3072,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -3532,7 +3532,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4015,7 +4015,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4130,7 +4130,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -4153,7 +4153,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -5834,7 +5834,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -5947,7 +5947,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6246,7 +6246,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6292,7 +6292,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6522,7 +6522,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6591,7 +6591,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6729,7 +6729,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6821,7 +6821,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -6890,7 +6890,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7074,7 +7074,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7143,7 +7143,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7212,7 +7212,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -7237,7 +7237,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -7764,7 +7764,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8270,7 +8270,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8799,7 +8799,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -8868,7 +8868,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9029,7 +9029,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9293,7 +9293,7 @@
    "symbol": "HEZU",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "iShares Currency Hedged MSCI Eu",
+   "name": "iShares Currency Hedged MSCI Eurozone ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -9316,7 +9316,7 @@
    "symbol": "HFXI",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "NYLI FTSE International Equity Currency Neutral ETF",
+   "name": "NYLIM FTSE International Equity Currency Neutral ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -9811,7 +9811,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -9926,7 +9926,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10087,7 +10087,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10133,7 +10133,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10570,7 +10570,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10639,7 +10639,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10823,7 +10823,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10846,7 +10846,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -10894,7 +10894,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 1e-06
+    "cumulative_gap_3y": 0.0
    },
    "print_errors_removed": []
   },
@@ -11444,7 +11444,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -11835,7 +11835,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -11950,9 +11950,9 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -12065,7 +12065,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -12410,7 +12410,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -12525,7 +12525,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -12985,7 +12985,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13031,7 +13031,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13307,7 +13307,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13422,7 +13422,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13652,7 +13652,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -13859,7 +13859,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14436,7 +14436,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14574,7 +14574,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14654,7 +14654,7 @@
    "symbol": "MMIN",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "NYLI MacKay Muni Insured ETF",
+   "name": "NYLIM MacKay Muni Insured ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -14677,7 +14677,7 @@
    "symbol": "MMIT",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "NYLI MacKay Muni Intermediate ETF",
+   "name": "NYLIM MacKay Muni Intermediate ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -14850,7 +14850,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14896,7 +14896,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -14942,7 +14942,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -15241,7 +15241,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -15356,7 +15356,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -15862,7 +15862,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16299,7 +16299,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16529,7 +16529,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16575,7 +16575,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -16609,7 +16609,7 @@
    "symbol": "QAI",
    "usage": "MODEL",
    "mode": "FULL",
-   "name": "NYLI Hedge Multi-Strategy Tracker ETF",
+   "name": "NYLIM Hedge Multi-Strategy Tracker ETF",
    "instrument_type": "ETF",
    "quality_status": "PROVISIONAL",
    "accepted_this_run": true,
@@ -16851,7 +16851,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17267,7 +17267,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17290,7 +17290,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17566,7 +17566,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17612,7 +17612,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17750,7 +17750,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -17957,7 +17957,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18143,7 +18143,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -18164,7 +18164,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -18256,7 +18256,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19291,7 +19291,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19385,7 +19385,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19661,7 +19661,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -19847,7 +19847,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -19960,7 +19960,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20190,7 +20190,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20305,7 +20305,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20397,7 +20397,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20443,7 +20443,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20673,7 +20673,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20719,7 +20719,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -20949,7 +20949,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21041,7 +21041,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21087,7 +21087,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21202,7 +21202,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21227,7 +21227,7 @@
     "status": "PASS",
     "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
-    "cumulative_gap_3y": 0.0
+    "cumulative_gap_3y": 1e-06
    },
    "print_errors_removed": []
   },
@@ -21432,7 +21432,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21524,7 +21524,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -21938,7 +21938,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -22720,7 +22720,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -22789,7 +22789,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23157,7 +23157,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23364,7 +23364,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23479,7 +23479,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 2e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 1e-06
    },
@@ -23502,7 +23502,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23525,7 +23525,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23548,7 +23548,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 0.0,
+    "max_daily_return_gap": 1e-06,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23778,7 +23778,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -23801,7 +23801,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
@@ -24215,7 +24215,7 @@
    "failures": [],
    "reconciliation": {
     "status": "PASS",
-    "max_daily_return_gap": 1e-06,
+    "max_daily_return_gap": 0.0,
     "cumulative_gap_1y": 0.0,
     "cumulative_gap_3y": 0.0
    },
