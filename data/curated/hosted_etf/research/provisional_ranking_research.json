@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-10-30T02:10:44+00:00",
+ "generated_at_utc": "2026-10-31T01:48:07+00:00",
  "panel_rows": 189089,
  "funds": 1077,
  "walk_forward": {
@@ -13,7 +13,7 @@
      "years": 23
     },
     "mom_6": {
-     "mean_ic": 0.0155,
+     "mean_ic": 0.0154,
      "t_yearly": 0.54,
      "years": 23
     },
@@ -301,10 +301,10 @@
    },
    "_now": {
     "month": "2026-09",
-    "trend": 1.0437,
+    "trend": 1.0438,
     "stretch": 1.4156,
     "dd": -0.0241,
-    "mom": 0.1611
+    "mom": 0.1612
    }
   },
   "INTL_EQUITY": {
@@ -345,7 +345,7 @@
     "trend": 1.0262,
     "stretch": 1.4199,
     "dd": -0.0295,
-    "mom": 0.1751
+    "mom": 0.1752
    }
   },
   "BONDS": {
@@ -383,8 +383,8 @@
    },
    "_now": {
     "month": "2026-09",
-    "trend": 0.978,
-    "stretch": 1.0644,
+    "trend": 0.9781,
+    "stretch": 1.0645,
     "dd": -0.0334,
     "mom": -0.0084
    }
@@ -424,10 +424,10 @@
    },
    "_now": {
     "month": "2026-09",
-    "trend": 1.0147,
-    "stretch": 1.417,
-    "dd": -0.054,
-    "mom": 0.1706
+    "trend": 1.0148,
+    "stretch": 1.4171,
+    "dd": -0.0539,
+    "mom": 0.1707
    }
   }
  },
