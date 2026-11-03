@@ -1,5 +1,5 @@
 {
-"package_id":"etf-2026-10-30-6deb7fe077a1",
+"package_id":"etf-2026-11-02-7f68312e009d",
 "grouping_version":"2026-10-10.1",
 "funds":[
 {
@@ -6578,7 +6578,7 @@
 "nearest_reference":null,
 "correlation":null,
 "beta_spy":null,
-"months":2,
+"months":3,
 "flags":null,
 "classified_at":"2025-12"
 },
