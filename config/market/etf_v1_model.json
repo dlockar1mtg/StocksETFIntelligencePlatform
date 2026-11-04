@@ -1,0 +1,47 @@
+{
+  "model_id": "ETF_V1",
+  "version": "1.0.0",
+  "registered_on": "2026-10-06",
+  "registered_before_results": true,
+  "purpose": "Monthly new-money guidance for Devon's held ETFs. A timing rule may change the guidance only if it passes the pre-registered walk-forward gate below against plain monthly buying.",
+  "primary_horizon_months": 36,
+  "secondary_horizon_months": 12,
+  "baseline": "MONTHLY_DCA",
+  "contribution_per_month": 100,
+  "cash_proxy": "BIL",
+  "cash_before_proxy": "NOT_SIMULATED",
+  "max_wait_months": 12,
+  "research_proxies": {"VOO": "SPY", "QQQM": "QQQ", "IYY": "IYY", "QQQ": "QQQ", "IWM": "IWM", "DIA": "DIA", "SCHD": "SCHD", "EDOW": "EDOW"},
+  "rule_families": {
+    "TREND_PAUSE": {"description": "Pause new money while the close is below its 200-session average by more than the band.", "grid": [0.0, 0.02, 0.05]},
+    "BUY_BELOW_TREND": {"description": "Pause new money while the close is above its 200-session average by more than the band.", "grid": [0.05, 0.10]},
+    "STRETCH_PAUSE": {"description": "Pause new money while the total-return index is above its five-year average by more than the multiple.", "grid": [1.3, 1.4, 1.5, 1.6]},
+    "WAIT_FOR_DIP": {"description": "Hold new money until the fund is this far below its peak.", "grid": [0.10, 0.15, 0.20]}
+  },
+  "walk_forward": {
+    "first_test_start": "2013-01",
+    "in_sample": "backtests whose 36-month window ended before the test start, pooled across funds",
+    "selection": "parameter with the highest mean in-sample edge"
+  },
+  "gate": {
+    "min_out_of_sample_starts": 60,
+    "min_share_of_starts_beating_baseline": 0.6,
+    "min_median_edge": 0.005,
+    "max_worst_edge": -0.05,
+    "must_hold_in_every_fund_tested": true
+  },
+  "structure": {
+    "same_index_correlation": 0.995,
+    "expense_ratios_as_of": "2026-10",
+    "expense_ratios": {
+      "VOO": 0.0003, "SCHD": 0.0006, "QQQM": 0.0015, "QQQ": 0.0018, "IWM": 0.0019,
+      "DIA": 0.0016, "EDOW": 0.0050, "IYY": 0.0020, "SPY": 0.000945, "BIL": 0.001356
+    },
+    "expense_ratio_sources": [
+      "Issuer fund pages; QQQ 0.18% after its 2025-12-22 conversion to an open-end ETF (etf.com, Invesco Wins Approval to Convert QQQ Into a Standard ETF)",
+      "EDOW 0.50% (stockanalysis.com/stocks/edow)",
+      "IYY 0.20% (etfdb.com/etf/IYY)"
+    ]
+  },
+  "automatic_execution_authorized": false
+}

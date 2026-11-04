@@ -1,0 +1,75 @@
+{
+  "policy_id": "ETF_MONITORED_FUNDS_V1",
+  "version": "1.0.0",
+  "purpose": "Daily market-data monitoring for the ETFs Devon holds, plus long-history research proxies. Separate from the certified seed universe (config/universe/initial_etf_universe.json), which is unchanged.",
+  "authorization": {
+    "authorized_by": "Devon",
+    "authorized_on": "2026-10-06",
+    "basis": "Request to bring Devon's held ETFs into the UIP; the charter reserves universe expansion to Devon."
+  },
+  "providers": [
+    {
+      "provider_id": "YAHOO_CHART_V8",
+      "provider_version": "v8",
+      "role": "PRIMARY",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": ["raw_price", "adjusted_price", "distribution", "corporate_action"],
+      "notes": "Unofficial public chart feed. Closes are split-adjusted; adjclose is split- and distribution-adjusted; dividend and split events included."
+    },
+    {
+      "provider_id": "STOOQ_DAILY_CSV",
+      "provider_version": "1",
+      "role": "CROSS_CHECK",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": ["raw_price"],
+      "notes": "Independent daily closes used only to cross-check the latest primary closes."
+    },
+    {
+      "provider_id": "NASDAQ_QUOTE_HISTORICAL",
+      "provider_version": "1",
+      "role": "CROSS_CHECK",
+      "source_tier": 4,
+      "license_class": "PUBLIC_PERSONAL_NONCOMMERCIAL",
+      "supported_domains": ["raw_price"],
+      "notes": "Fallback independent cross-check when Stooq does not answer."
+    }
+  ],
+  "best_quality_state_for_tier": {"1": "PASS", "2": "PASS", "3": "PROVISIONAL", "4": "PROVISIONAL", "5": "PROVISIONAL"},
+  "reconciliation": {
+    "window_sessions": 756,
+    "daily_return_tolerance": 0.0005,
+    "daily_return_error_threshold": 0.02,
+    "cumulative_tolerance_1y": 0.0025,
+    "cumulative_tolerance_3y": 0.0075,
+    "cross_check_sessions": 5,
+    "cross_check_tolerance": 0.005,
+    "revision_tolerance": 0.0005,
+    "implausible_daily_move": 0.25
+  },
+  "freshness": {"current_max_sessions_behind": 0, "aging_max_sessions_behind": 2},
+  "funds": [
+    {"security_id": "SEC-US-VOO", "ticker": "VOO", "stooq_symbol": "voo.us", "name": "Vanguard S&P 500 ETF", "issuer": "Vanguard", "role": "BROAD_CORE", "index": "S&P 500", "usage": "HELD"},
+    {"security_id": "SEC-US-SCHD", "ticker": "SCHD", "stooq_symbol": "schd.us", "name": "Schwab U.S. Dividend Equity ETF", "issuer": "Schwab", "role": "DIVIDEND_QUALITY", "index": "Dow Jones U.S. Dividend 100", "usage": "HELD"},
+    {"security_id": "SEC-US-QQQM", "ticker": "QQQM", "stooq_symbol": "qqqm.us", "name": "Invesco NASDAQ 100 ETF", "issuer": "Invesco", "role": "GROWTH", "index": "Nasdaq-100", "usage": "HELD"},
+    {"security_id": "SEC-US-QQQ", "ticker": "QQQ", "stooq_symbol": "qqq.us", "name": "Invesco QQQ Trust", "issuer": "Invesco", "role": "GROWTH", "index": "Nasdaq-100", "usage": "HELD"},
+    {"security_id": "SEC-US-IWM", "ticker": "IWM", "stooq_symbol": "iwm.us", "name": "iShares Russell 2000 ETF", "issuer": "iShares", "role": "SMALL_CAP", "index": "Russell 2000", "usage": "HELD"},
+    {"security_id": "SEC-US-DIA", "ticker": "DIA", "stooq_symbol": "dia.us", "name": "SPDR Dow Jones Industrial Average ETF Trust", "issuer": "State Street", "role": "LARGE_CAP_BLUE_CHIP", "index": "Dow Jones Industrial Average", "usage": "HELD"},
+    {"security_id": "SEC-US-EDOW", "ticker": "EDOW", "stooq_symbol": "edow.us", "name": "First Trust Dow 30 Equal Weight ETF", "issuer": "First Trust", "role": "LARGE_CAP_BLUE_CHIP", "index": "Dow Jones Industrial Average Equal Weight", "usage": "HELD"},
+    {"security_id": "SEC-US-IYY", "ticker": "IYY", "stooq_symbol": "iyy.us", "name": "iShares Dow Jones U.S. ETF", "issuer": "iShares", "role": "BROAD_CORE", "index": "Dow Jones U.S. Index", "usage": "HELD"},
+    {"security_id": "SEC-US-SPY", "ticker": "SPY", "stooq_symbol": "spy.us", "name": "SPDR S&P 500 ETF Trust", "issuer": "State Street", "role": "BROAD_CORE", "index": "S&P 500", "usage": "RESEARCH_PROXY"},
+    {"security_id": "SEC-US-BIL", "ticker": "BIL", "stooq_symbol": "bil.us", "name": "SPDR Bloomberg 1-3 Month T-Bill ETF", "issuer": "State Street", "role": "CASH_PROXY", "index": "Bloomberg 1-3 Month U.S. Treasury Bill", "usage": "RESEARCH_PROXY"}
+  ],
+  "nyse_holidays": {
+    "source": "NYSE holiday calendar (nyse.com/markets/hours-calendars)",
+    "source_tier": 1,
+    "dates": [
+      "2025-01-01", "2025-01-09", "2025-01-20", "2025-02-17", "2025-04-18", "2025-05-26", "2025-06-19", "2025-07-04", "2025-09-01", "2025-11-27", "2025-12-25",
+      "2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03", "2026-05-25", "2026-06-19", "2026-07-03", "2026-09-07", "2026-11-26", "2026-12-25",
+      "2027-01-01", "2027-01-18", "2027-02-15", "2027-03-26", "2027-05-31", "2027-06-18", "2027-07-05", "2027-09-06", "2027-11-25", "2027-12-24"
+    ]
+  },
+  "certified_market_monitoring_authorized": false,
+  "automatic_execution_authorized": false
+}
