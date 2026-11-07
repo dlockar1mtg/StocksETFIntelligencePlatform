@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-11-07T11:19:06+00:00",
+ "generated_at_utc": "2026-11-07T18:59:28+00:00",
  "panel_rows": 190166,
  "funds": 1077,
  "walk_forward": {
@@ -9,7 +9,7 @@
    "factor_ic_full_sample": {
     "mom_12_1": {
      "mean_ic": -0.0035,
-     "t_yearly": -0.11,
+     "t_yearly": -0.12,
      "years": 23
     },
     "mom_6": {
@@ -206,7 +206,7 @@
      "years": 21
     },
     "vol_1y": {
-     "mean_ic": 0.0367,
+     "mean_ic": 0.0366,
      "t_yearly": 1.25,
      "years": 21
     },
@@ -301,7 +301,7 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 1.0381,
+    "trend": 1.0382,
     "stretch": 1.414,
     "dd": -0.0161,
     "mom": 0.1566
@@ -342,10 +342,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 1.0007,
-    "stretch": 1.3862,
-    "dd": -0.0447,
-    "mom": 0.1393
+    "trend": 1.0008,
+    "stretch": 1.3863,
+    "dd": -0.0446,
+    "mom": 0.1394
    }
   },
   "BONDS": {
@@ -383,10 +383,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 0.9946,
-    "stretch": 1.0811,
-    "dd": -0.0172,
-    "mom": 0.0036
+    "trend": 0.9963,
+    "stretch": 1.0832,
+    "dd": -0.0153,
+    "mom": 0.0055
    }
   },
   "OTHER": {
@@ -424,18 +424,18 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 0.9904,
-    "stretch": 1.3852,
-    "dd": -0.0672,
-    "mom": 0.1726
+    "trend": 0.993,
+    "stretch": 1.3892,
+    "dd": -0.0645,
+    "mom": 0.1761
    }
   }
  },
  "cost_test": {
   "12m": {
    "test_years": 14,
-   "mean_ic": 0.0197,
-   "t_yearly": 0.96,
+   "mean_ic": 0.0199,
+   "t_yearly": 0.98,
    "cheapest_quintile_mean_excess": 0.0029,
    "most_expensive_quintile_mean_excess": -0.0012,
    "share_years_cheapest_beats_median": 0.714,
@@ -507,8 +507,8 @@
      "most_expensive": 0.0037
     },
     "2025": {
-     "ic": -0.088,
-     "cheapest": 0.0038,
+     "ic": -0.085,
+     "cheapest": 0.0039,
      "most_expensive": 0.0045
     }
    }
@@ -580,7 +580,7 @@
     "2023": {
      "ic": -0.047,
      "cheapest": 0.0,
-     "most_expensive": -0.0009
+     "most_expensive": -0.001
     }
    }
   },
