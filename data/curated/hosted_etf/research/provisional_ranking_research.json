@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-11-06T02:39:28+00:00",
+ "generated_at_utc": "2026-11-07T02:08:19+00:00",
  "panel_rows": 190166,
  "funds": 1077,
  "walk_forward": {
@@ -19,7 +19,7 @@
     },
     "trend_200": {
      "mean_ic": 0.0267,
-     "t_yearly": 0.84,
+     "t_yearly": 0.83,
      "years": 23
     },
     "stretch_60m": {
@@ -206,7 +206,7 @@
      "years": 21
     },
     "vol_1y": {
-     "mean_ic": 0.0366,
+     "mean_ic": 0.0367,
      "t_yearly": 1.25,
      "years": 21
     },
@@ -216,7 +216,7 @@
      "years": 21
     },
     "dd_now": {
-     "mean_ic": 0.0251,
+     "mean_ic": 0.025,
      "t_yearly": 0.84,
      "years": 21
     },
@@ -301,10 +301,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 1.0382,
-    "stretch": 1.4141,
+    "trend": 1.0381,
+    "stretch": 1.414,
     "dd": -0.0161,
-    "mom": 0.1567
+    "mom": 0.1566
    }
   },
   "INTL_EQUITY": {
@@ -342,10 +342,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 1.0008,
-    "stretch": 1.3863,
-    "dd": -0.0446,
-    "mom": 0.1394
+    "trend": 1.0007,
+    "stretch": 1.3862,
+    "dd": -0.0447,
+    "mom": 0.1393
    }
   },
   "BONDS": {
@@ -383,10 +383,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 0.9971,
-    "stretch": 1.0842,
-    "dd": -0.0144,
-    "mom": 0.0064
+    "trend": 0.9946,
+    "stretch": 1.0811,
+    "dd": -0.0172,
+    "mom": 0.0036
    }
   },
   "OTHER": {
@@ -424,19 +424,19 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 0.993,
-    "stretch": 1.3892,
-    "dd": -0.0645,
-    "mom": 0.1761
+    "trend": 0.9904,
+    "stretch": 1.3852,
+    "dd": -0.0672,
+    "mom": 0.1726
    }
   }
  },
  "cost_test": {
   "12m": {
    "test_years": 14,
-   "mean_ic": 0.0199,
-   "t_yearly": 0.98,
-   "cheapest_quintile_mean_excess": 0.003,
+   "mean_ic": 0.0197,
+   "t_yearly": 0.96,
+   "cheapest_quintile_mean_excess": 0.0029,
    "most_expensive_quintile_mean_excess": -0.0012,
    "share_years_cheapest_beats_median": 0.714,
    "share_years_cheapest_beats_most_expensive": 0.643,
@@ -507,8 +507,8 @@
      "most_expensive": 0.0037
     },
     "2025": {
-     "ic": -0.085,
-     "cheapest": 0.0039,
+     "ic": -0.088,
+     "cheapest": 0.0038,
      "most_expensive": 0.0045
     }
    }
@@ -516,7 +516,7 @@
   "36m": {
    "test_years": 12,
    "mean_ic": 0.0654,
-   "t_yearly": 3.23,
+   "t_yearly": 3.22,
    "cheapest_quintile_mean_excess": 0.0022,
    "most_expensive_quintile_mean_excess": -0.0075,
    "share_years_cheapest_beats_median": 0.833,
@@ -580,7 +580,7 @@
     "2023": {
      "ic": -0.047,
      "cheapest": 0.0,
-     "most_expensive": -0.001
+     "most_expensive": -0.0009
     }
    }
   },
