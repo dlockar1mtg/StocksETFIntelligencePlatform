@@ -1,6 +1,6 @@
 {
  "policy_id": "SEC_RISK_RETURN_EXPENSE_RATIOS_V1",
- "generated_at_utc": "2026-11-01T16:20:17+00:00",
+ "generated_at_utc": "2026-11-08T16:17:30+00:00",
  "universe_funds": 1084,
  "funds_with_sec_class": 1077,
  "funds_with_expense_ratio": 1077,
@@ -68,12 +68,35 @@
   "2025q4": 430,
   "2026q1": 287,
   "2026q2": 184,
-  "2026q3": "NOT_PUBLISHED",
+  "2026q3": 0,
   "2026q4": "NOT_PUBLISHED"
  },
  "newest_filing": "20260630",
- "empty_published_quarters": [],
- "diagnostics": {},
+ "empty_published_quarters": [
+  "2026q3"
+ ],
+ "diagnostics": {
+  "2026q3": {
+   "num_rows": 174205,
+   "expense_facts": 12204,
+   "with_other_dimensions": 12178,
+   "without_class": 26,
+   "filings_in_archive": 1283,
+   "versions": {
+    "oef/2026": 7008,
+    "oef/2025": 5183,
+    "oef/2024q3": 13
+   },
+   "other_dimensions": {
+    "Class=C#########;": 854,
+    "Class=C#########;DocumentInformationDocument=Djulycombopro_2793;LegalEntity=S000": 206,
+    "Class=C#########;DocumentInformationDocument=ClassAandClassC;LegalEntity=S000003": 173,
+    "Class=C#########;DocumentInformationDocument=InvestorACInstitutionalAndClassR;Le": 128,
+    "Class=C#########;DocumentInformationDocument=InvestmentTrustProspectus;LegalEnti": 115
+   },
+   "filings_kept": 0
+  }
+ },
  "without_expense_ratio": [
   "DBC",
   "DIA",
