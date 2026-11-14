@@ -1,6 +1,6 @@
 {
  "policy_id": "ETF_PROVISIONAL_RANKING_V1",
- "generated_at_utc": "2026-11-13T02:50:28+00:00",
+ "generated_at_utc": "2026-11-14T02:40:04+00:00",
  "panel_rows": 190166,
  "funds": 1077,
  "walk_forward": {
@@ -9,7 +9,7 @@
    "factor_ic_full_sample": {
     "mom_12_1": {
      "mean_ic": -0.0035,
-     "t_yearly": -0.12,
+     "t_yearly": -0.11,
      "years": 23
     },
     "mom_6": {
@@ -19,7 +19,7 @@
     },
     "trend_200": {
      "mean_ic": 0.0267,
-     "t_yearly": 0.83,
+     "t_yearly": 0.84,
      "years": 23
     },
     "stretch_60m": {
@@ -216,7 +216,7 @@
      "years": 21
     },
     "dd_now": {
-     "mean_ic": 0.025,
+     "mean_ic": 0.0251,
      "t_yearly": 0.84,
      "years": 21
     },
@@ -302,9 +302,9 @@
    "_now": {
     "month": "2026-10",
     "trend": 1.0382,
-    "stretch": 1.414,
+    "stretch": 1.4141,
     "dd": -0.0161,
-    "mom": 0.1566
+    "mom": 0.1567
    }
   },
   "INTL_EQUITY": {
@@ -383,10 +383,10 @@
    },
    "_now": {
     "month": "2026-10",
-    "trend": 0.9963,
-    "stretch": 1.0832,
-    "dd": -0.0153,
-    "mom": 0.0055
+    "trend": 0.9971,
+    "stretch": 1.0842,
+    "dd": -0.0144,
+    "mom": 0.0064
    }
   },
   "OTHER": {
@@ -436,7 +436,7 @@
    "test_years": 14,
    "mean_ic": 0.0199,
    "t_yearly": 0.98,
-   "cheapest_quintile_mean_excess": 0.0029,
+   "cheapest_quintile_mean_excess": 0.003,
    "most_expensive_quintile_mean_excess": -0.0012,
    "share_years_cheapest_beats_median": 0.714,
    "share_years_cheapest_beats_most_expensive": 0.643,
@@ -516,7 +516,7 @@
   "36m": {
    "test_years": 12,
    "mean_ic": 0.0654,
-   "t_yearly": 3.22,
+   "t_yearly": 3.23,
    "cheapest_quintile_mean_excess": 0.0022,
    "most_expensive_quintile_mean_excess": -0.0075,
    "share_years_cheapest_beats_median": 0.833,
