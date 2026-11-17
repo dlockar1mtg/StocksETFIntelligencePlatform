@@ -1,5 +1,5 @@
 {
-"package_id":"etf-2026-11-13-79fa741ec884",
+"package_id":"etf-2026-11-16-3360e67a7c39",
 "grouping_version":"2026-10-10.1",
 "funds":[
 {
@@ -13,7 +13,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHD",
@@ -26,7 +26,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOO",
@@ -39,7 +39,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AAXJ",
@@ -52,7 +52,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ABFL",
@@ -65,7 +65,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ACES",
@@ -93,7 +93,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ACWI",
@@ -106,7 +106,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ACWV",
@@ -119,7 +119,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ACWX",
@@ -132,7 +132,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AFLG",
@@ -145,7 +145,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AGG",
@@ -158,7 +158,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AGGY",
@@ -171,7 +171,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AGZ",
@@ -184,7 +184,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AIA",
@@ -197,7 +197,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AIQ",
@@ -210,7 +210,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AIRR",
@@ -223,7 +223,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AMLP",
@@ -266,7 +266,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AOA",
@@ -279,7 +279,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AOK",
@@ -292,7 +292,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AOM",
@@ -305,7 +305,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AOR",
@@ -318,7 +318,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARGT",
@@ -346,7 +346,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARKG",
@@ -359,7 +359,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARKK",
@@ -372,7 +372,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARKQ",
@@ -385,7 +385,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARKW",
@@ -398,7 +398,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ARKX",
@@ -426,7 +426,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ASHR",
@@ -454,7 +454,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVDE",
@@ -467,7 +467,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVDV",
@@ -480,7 +480,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVEM",
@@ -493,7 +493,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVIG",
@@ -506,7 +506,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVSF",
@@ -519,7 +519,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVUS",
@@ -532,7 +532,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"AVUV",
@@ -545,7 +545,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BAB",
@@ -558,7 +558,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBAG",
@@ -571,7 +571,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBAX",
@@ -584,7 +584,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBCA",
@@ -597,7 +597,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBEU",
@@ -610,7 +610,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBH",
@@ -638,7 +638,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBIN",
@@ -651,7 +651,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBJP",
@@ -664,7 +664,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BBUS",
@@ -677,7 +677,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BCD",
@@ -690,7 +690,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BCI",
@@ -703,7 +703,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BGRN",
@@ -716,7 +716,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BIBL",
@@ -729,7 +729,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BIL",
@@ -742,7 +742,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"RANKED_NO_CALL"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BILS",
@@ -785,7 +785,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BIZD",
@@ -813,7 +813,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BKCH",
@@ -841,7 +841,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BKLC",
@@ -854,7 +854,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BKLN",
@@ -882,7 +882,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BLV",
@@ -895,7 +895,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BND",
@@ -908,7 +908,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BNDW",
@@ -921,7 +921,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BNDX",
@@ -934,7 +934,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BOND",
@@ -947,7 +947,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BOTZ",
@@ -960,7 +960,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BRZU",
@@ -988,7 +988,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSCR",
@@ -1001,7 +1001,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSCS",
@@ -1014,7 +1014,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSCT",
@@ -1027,7 +1027,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSCU",
@@ -1040,7 +1040,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSJQ",
@@ -1053,7 +1053,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSJR",
@@ -1066,7 +1066,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSJS",
@@ -1079,7 +1079,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSMQ",
@@ -1092,7 +1092,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSMR",
@@ -1105,7 +1105,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BSV",
@@ -1118,7 +1118,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BTAL",
@@ -1146,7 +1146,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BUFR",
@@ -1159,7 +1159,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BUG",
@@ -1187,7 +1187,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BWX",
@@ -1200,7 +1200,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"BWZ",
@@ -1228,7 +1228,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CATH",
@@ -1241,7 +1241,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CDC",
@@ -1254,7 +1254,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CEMB",
@@ -1267,7 +1267,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CGW",
@@ -1280,7 +1280,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CHAU",
@@ -1323,7 +1323,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CMBS",
@@ -1336,7 +1336,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CMDY",
@@ -1349,7 +1349,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CMF",
@@ -1362,7 +1362,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CNXT",
@@ -1435,7 +1435,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"COPX",
@@ -1463,7 +1463,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"COWZ",
@@ -1476,7 +1476,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CQQQ",
@@ -1504,7 +1504,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CURE",
@@ -1532,7 +1532,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"CWEB",
@@ -1560,7 +1560,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DAPP",
@@ -1588,7 +1588,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DBEF",
@@ -1601,7 +1601,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DBEU",
@@ -1614,7 +1614,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DBMF",
@@ -1657,7 +1657,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DEM",
@@ -1670,7 +1670,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DES",
@@ -1683,7 +1683,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAC",
@@ -1696,7 +1696,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAE",
@@ -1709,7 +1709,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAI",
@@ -1722,7 +1722,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAS",
@@ -1735,7 +1735,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAT",
@@ -1748,7 +1748,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFAU",
@@ -1761,7 +1761,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DFEN",
@@ -1804,7 +1804,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DGRO",
@@ -1817,7 +1817,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DGRS",
@@ -1830,7 +1830,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DGRW",
@@ -1843,7 +1843,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DGS",
@@ -1856,7 +1856,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DGT",
@@ -1869,7 +1869,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DHS",
@@ -1882,7 +1882,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DIG",
@@ -1910,7 +1910,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DIVB",
@@ -1923,7 +1923,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DIVI",
@@ -1936,7 +1936,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DIVO",
@@ -1949,7 +1949,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DJD",
@@ -1962,7 +1962,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DLN",
@@ -1975,7 +1975,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DLS",
@@ -1988,7 +1988,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DMXF",
@@ -2001,7 +2001,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DNL",
@@ -2014,7 +2014,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DOG",
@@ -2042,7 +2042,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DON",
@@ -2055,7 +2055,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DPST",
@@ -2098,7 +2098,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DRN",
@@ -2126,7 +2126,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DRV",
@@ -2154,7 +2154,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DSTL",
@@ -2167,7 +2167,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DTCR",
@@ -2195,7 +2195,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DTH",
@@ -2208,7 +2208,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DUG",
@@ -2236,7 +2236,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DUST",
@@ -2264,7 +2264,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DVYE",
@@ -2277,7 +2277,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DWAS",
@@ -2290,7 +2290,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DXD",
@@ -2333,7 +2333,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EAGG",
@@ -2346,7 +2346,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EBND",
@@ -2359,7 +2359,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ECH",
@@ -2417,7 +2417,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EDZ",
@@ -2445,7 +2445,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EEM",
@@ -2458,7 +2458,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EEMA",
@@ -2471,7 +2471,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EEMV",
@@ -2484,7 +2484,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EFA",
@@ -2497,7 +2497,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EFAV",
@@ -2510,7 +2510,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EFG",
@@ -2523,7 +2523,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EFIV",
@@ -2536,7 +2536,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EFV",
@@ -2549,7 +2549,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EIDO",
@@ -2592,7 +2592,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EMGF",
@@ -2605,7 +2605,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EMHY",
@@ -2618,7 +2618,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EMLC",
@@ -2631,7 +2631,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EMLP",
@@ -2659,7 +2659,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EMXC",
@@ -2672,7 +2672,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ENFR",
@@ -2745,7 +2745,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EPS",
@@ -2758,7 +2758,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EPU",
@@ -2786,7 +2786,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EQL",
@@ -2799,7 +2799,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EQWL",
@@ -2812,7 +2812,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ERX",
@@ -2855,7 +2855,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ESGE",
@@ -2868,7 +2868,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ESGU",
@@ -2881,7 +2881,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ESGV",
@@ -2894,7 +2894,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ESML",
@@ -2907,7 +2907,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ESPO",
@@ -2920,7 +2920,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EUFN",
@@ -2933,7 +2933,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EURL",
@@ -2961,7 +2961,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EUSB",
@@ -2974,7 +2974,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWA",
@@ -2987,7 +2987,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWC",
@@ -3000,7 +3000,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWD",
@@ -3013,7 +3013,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWG",
@@ -3026,7 +3026,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWH",
@@ -3054,7 +3054,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWJ",
@@ -3067,7 +3067,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWJV",
@@ -3095,7 +3095,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWM",
@@ -3123,7 +3123,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWO",
@@ -3151,7 +3151,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWQ",
@@ -3164,7 +3164,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWS",
@@ -3192,7 +3192,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWU",
@@ -3205,7 +3205,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWW",
@@ -3233,7 +3233,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EWY",
@@ -3291,7 +3291,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EYLD",
@@ -3334,7 +3334,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"EZU",
@@ -3347,7 +3347,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FAD",
@@ -3360,7 +3360,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FALN",
@@ -3373,7 +3373,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FAS",
@@ -3416,7 +3416,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FBND",
@@ -3429,7 +3429,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FBT",
@@ -3457,7 +3457,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FCOM",
@@ -3470,7 +3470,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FCOR",
@@ -3483,7 +3483,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDD",
@@ -3496,7 +3496,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDEM",
@@ -3509,7 +3509,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDEV",
@@ -3522,7 +3522,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDG",
@@ -3535,7 +3535,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDHY",
@@ -3548,7 +3548,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDIS",
@@ -3561,7 +3561,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDL",
@@ -3574,7 +3574,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDLO",
@@ -3587,7 +3587,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDMO",
@@ -3600,7 +3600,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDN",
@@ -3613,7 +3613,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDT",
@@ -3626,7 +3626,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FDVV",
@@ -3639,7 +3639,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FEM",
@@ -3667,7 +3667,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FENY",
@@ -3680,7 +3680,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FEP",
@@ -3693,7 +3693,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FEX",
@@ -3706,7 +3706,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FEZ",
@@ -3719,7 +3719,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FFLC",
@@ -3732,7 +3732,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FFLG",
@@ -3745,7 +3745,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FFSM",
@@ -3758,7 +3758,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FFTY",
@@ -3771,7 +3771,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FGD",
@@ -3784,7 +3784,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FHLC",
@@ -3797,7 +3797,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIDI",
@@ -3810,7 +3810,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIDU",
@@ -3823,7 +3823,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIGB",
@@ -3836,7 +3836,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FINX",
@@ -3849,7 +3849,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FISR",
@@ -3862,7 +3862,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIVA",
@@ -3875,7 +3875,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIW",
@@ -3888,7 +3888,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FIXD",
@@ -3901,7 +3901,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FJAN",
@@ -3914,7 +3914,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLBL",
@@ -3957,7 +3957,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLCB",
@@ -3970,7 +3970,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLCH",
@@ -3998,7 +3998,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"RANKED_NO_CALL"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLGV",
@@ -4011,7 +4011,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLHY",
@@ -4024,7 +4024,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLIA",
@@ -4037,7 +4037,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLIN",
@@ -4065,7 +4065,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLKR",
@@ -4093,7 +4093,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLOT",
@@ -4121,7 +4121,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLQM",
@@ -4134,7 +4134,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLRN",
@@ -4177,7 +4177,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FLTR",
@@ -4205,7 +4205,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FMAT",
@@ -4218,7 +4218,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FMB",
@@ -4231,7 +4231,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FMHI",
@@ -4244,7 +4244,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNCL",
@@ -4257,7 +4257,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDA",
@@ -4270,7 +4270,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDB",
@@ -4283,7 +4283,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDC",
@@ -4296,7 +4296,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDE",
@@ -4309,7 +4309,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDF",
@@ -4322,7 +4322,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNDX",
@@ -4335,7 +4335,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNX",
@@ -4348,7 +4348,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FNY",
@@ -4361,7 +4361,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FPE",
@@ -4404,7 +4404,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FQAL",
@@ -4417,7 +4417,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FRDM",
@@ -4430,7 +4430,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FREL",
@@ -4443,7 +4443,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FSEC",
@@ -4456,7 +4456,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FSMB",
@@ -4469,7 +4469,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FSMD",
@@ -4482,7 +4482,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FSTA",
@@ -4495,7 +4495,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTA",
@@ -4508,7 +4508,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTC",
@@ -4521,7 +4521,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTCS",
@@ -4534,7 +4534,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTEC",
@@ -4547,7 +4547,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTGC",
@@ -4560,7 +4560,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTHI",
@@ -4573,7 +4573,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTLS",
@@ -4586,7 +4586,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTQI",
@@ -4599,7 +4599,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTSD",
@@ -4612,7 +4612,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTSL",
@@ -4640,7 +4640,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTXL",
@@ -4653,7 +4653,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FTXO",
@@ -4666,7 +4666,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FUTY",
@@ -4679,7 +4679,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FV",
@@ -4692,7 +4692,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FVAL",
@@ -4705,7 +4705,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FVD",
@@ -4718,7 +4718,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXD",
@@ -4731,7 +4731,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXH",
@@ -4744,7 +4744,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXI",
@@ -4772,7 +4772,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXN",
@@ -4785,7 +4785,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXO",
@@ -4798,7 +4798,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXR",
@@ -4811,7 +4811,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXU",
@@ -4824,7 +4824,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FXZ",
@@ -4837,7 +4837,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FYC",
@@ -4850,7 +4850,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FYLD",
@@ -4863,7 +4863,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"FYX",
@@ -4876,7 +4876,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GARP",
@@ -4889,7 +4889,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GBIL",
@@ -4917,7 +4917,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GCOW",
@@ -4930,7 +4930,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GDX",
@@ -4943,7 +4943,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GDXJ",
@@ -4956,7 +4956,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GEM",
@@ -4969,7 +4969,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GIGB",
@@ -4982,7 +4982,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GII",
@@ -4995,7 +4995,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GNR",
@@ -5008,7 +5008,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GOAU",
@@ -5021,7 +5021,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GOLY",
@@ -5034,7 +5034,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GOVI",
@@ -5047,7 +5047,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GOVT",
@@ -5060,7 +5060,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GOVZ",
@@ -5073,7 +5073,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GREK",
@@ -5101,7 +5101,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GRPM",
@@ -5114,7 +5114,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSEW",
@@ -5127,7 +5127,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSIE",
@@ -5140,7 +5140,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSLC",
@@ -5153,7 +5153,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSSC",
@@ -5166,7 +5166,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSST",
@@ -5194,7 +5194,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GSY",
@@ -5222,7 +5222,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GUNR",
@@ -5280,7 +5280,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GVIP",
@@ -5293,7 +5293,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GWX",
@@ -5306,7 +5306,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"GXC",
@@ -5334,7 +5334,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HDEF",
@@ -5347,7 +5347,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HDGE",
@@ -5375,7 +5375,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HEDJ",
@@ -5403,7 +5403,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HEGD",
@@ -5416,7 +5416,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HEWJ",
@@ -5444,7 +5444,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HFXI",
@@ -5457,7 +5457,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HIBL",
@@ -5500,7 +5500,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HMOP",
@@ -5513,7 +5513,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HNDL",
@@ -5526,7 +5526,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HTAB",
@@ -5539,7 +5539,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HTRB",
@@ -5552,7 +5552,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYD",
@@ -5565,7 +5565,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYDB",
@@ -5578,7 +5578,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYEM",
@@ -5591,7 +5591,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYG",
@@ -5604,7 +5604,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYGH",
@@ -5617,7 +5617,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYGV",
@@ -5630,7 +5630,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYLB",
@@ -5643,7 +5643,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYLS",
@@ -5656,7 +5656,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYMB",
@@ -5669,7 +5669,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYS",
@@ -5682,7 +5682,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"HYTR",
@@ -5695,7 +5695,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IAGG",
@@ -5708,7 +5708,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IAI",
@@ -5721,7 +5721,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IAK",
@@ -5749,7 +5749,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBB",
@@ -5777,7 +5777,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDR",
@@ -5790,7 +5790,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDS",
@@ -5803,7 +5803,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDT",
@@ -5816,7 +5816,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDU",
@@ -5829,7 +5829,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDV",
@@ -5842,7 +5842,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBDW",
@@ -5855,7 +5855,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBHF",
@@ -5868,7 +5868,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBHG",
@@ -5881,7 +5881,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBMO",
@@ -5894,7 +5894,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBMP",
@@ -5907,7 +5907,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBMQ",
@@ -5920,7 +5920,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBND",
@@ -5948,7 +5948,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBTH",
@@ -5961,7 +5961,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBTI",
@@ -5974,7 +5974,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBTJ",
@@ -5987,7 +5987,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IBTK",
@@ -6000,7 +6000,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ICF",
@@ -6013,7 +6013,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ICLN",
@@ -6041,7 +6041,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ICSH",
@@ -6069,7 +6069,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IDEV",
@@ -6082,7 +6082,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IDHQ",
@@ -6095,7 +6095,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IDMO",
@@ -6108,7 +6108,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IDU",
@@ -6121,7 +6121,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IDV",
@@ -6134,7 +6134,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEF",
@@ -6147,7 +6147,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEFA",
@@ -6160,7 +6160,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEI",
@@ -6173,7 +6173,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEMG",
@@ -6186,7 +6186,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEO",
@@ -6199,7 +6199,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IETC",
@@ -6212,7 +6212,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEUR",
@@ -6225,7 +6225,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEV",
@@ -6238,7 +6238,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IEZ",
@@ -6251,7 +6251,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IFRA",
@@ -6264,7 +6264,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGE",
@@ -6277,7 +6277,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGEB",
@@ -6290,7 +6290,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGF",
@@ -6303,7 +6303,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGIB",
@@ -6316,7 +6316,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGLB",
@@ -6329,7 +6329,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGLD",
@@ -6342,7 +6342,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGM",
@@ -6355,7 +6355,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGOV",
@@ -6368,7 +6368,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGPT",
@@ -6381,7 +6381,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGRO",
@@ -6394,7 +6394,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGSB",
@@ -6407,7 +6407,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IGV",
@@ -6420,7 +6420,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IHAK",
@@ -6448,7 +6448,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IHE",
@@ -6461,7 +6461,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IHF",
@@ -6504,7 +6504,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IJJ",
@@ -6517,7 +6517,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IJK",
@@ -6530,7 +6530,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IJR",
@@ -6543,7 +6543,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IJS",
@@ -6556,7 +6556,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IJT",
@@ -6569,7 +6569,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ILCB",
@@ -6595,7 +6595,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ILCV",
@@ -6608,7 +6608,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ILDR",
@@ -6621,7 +6621,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ILF",
@@ -6649,7 +6649,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IMCB",
@@ -6662,7 +6662,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IMCG",
@@ -6675,7 +6675,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IMCV",
@@ -6688,7 +6688,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IMTM",
@@ -6701,7 +6701,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"INCO",
@@ -6789,7 +6789,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IOO",
@@ -6802,7 +6802,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IPAC",
@@ -6815,7 +6815,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IPKW",
@@ -6828,7 +6828,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IPO",
@@ -6856,7 +6856,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IQDG",
@@ -6869,7 +6869,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IQLT",
@@ -6882,7 +6882,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ISCF",
@@ -6895,7 +6895,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ISCG",
@@ -6908,7 +6908,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ISHG",
@@ -6936,7 +6936,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ITA",
@@ -6949,7 +6949,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ITB",
@@ -6962,7 +6962,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ITM",
@@ -6975,7 +6975,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ITOT",
@@ -6988,7 +6988,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IUS",
@@ -7001,7 +7001,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IUSB",
@@ -7014,7 +7014,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IUSG",
@@ -7027,7 +7027,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IUSV",
@@ -7040,7 +7040,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVE",
@@ -7053,7 +7053,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVLU",
@@ -7066,7 +7066,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVOG",
@@ -7079,7 +7079,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVOL",
@@ -7107,7 +7107,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVOV",
@@ -7120,7 +7120,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVV",
@@ -7133,7 +7133,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IVW",
@@ -7146,7 +7146,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWB",
@@ -7159,7 +7159,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWC",
@@ -7172,7 +7172,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWD",
@@ -7185,7 +7185,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWF",
@@ -7198,7 +7198,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWL",
@@ -7211,7 +7211,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWM",
@@ -7224,7 +7224,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWN",
@@ -7237,7 +7237,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWO",
@@ -7250,7 +7250,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWP",
@@ -7263,7 +7263,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWR",
@@ -7276,7 +7276,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWS",
@@ -7289,7 +7289,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWV",
@@ -7302,7 +7302,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWX",
@@ -7315,7 +7315,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IWY",
@@ -7328,7 +7328,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXC",
@@ -7341,7 +7341,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXG",
@@ -7354,7 +7354,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXJ",
@@ -7367,7 +7367,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXN",
@@ -7380,7 +7380,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXP",
@@ -7393,7 +7393,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IXUS",
@@ -7406,7 +7406,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYC",
@@ -7419,7 +7419,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYE",
@@ -7432,7 +7432,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYF",
@@ -7445,7 +7445,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYG",
@@ -7458,7 +7458,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYH",
@@ -7471,7 +7471,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYJ",
@@ -7484,7 +7484,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYK",
@@ -7497,7 +7497,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYM",
@@ -7510,7 +7510,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYR",
@@ -7523,7 +7523,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYT",
@@ -7536,7 +7536,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYW",
@@ -7549,7 +7549,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYY",
@@ -7562,7 +7562,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"IYZ",
@@ -7605,7 +7605,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JDST",
@@ -7633,7 +7633,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JEPI",
@@ -7646,7 +7646,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JETS",
@@ -7674,7 +7674,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JHML",
@@ -7687,7 +7687,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JHMM",
@@ -7700,7 +7700,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JIG",
@@ -7713,7 +7713,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JMBS",
@@ -7726,7 +7726,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JMOM",
@@ -7739,7 +7739,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JMST",
@@ -7752,7 +7752,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JMUB",
@@ -7765,7 +7765,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JNK",
@@ -7778,7 +7778,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JNUG",
@@ -7806,7 +7806,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JPIB",
@@ -7819,7 +7819,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JPST",
@@ -7847,7 +7847,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JSCP",
@@ -7860,7 +7860,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JSMD",
@@ -7873,7 +7873,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JVAL",
@@ -7886,7 +7886,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"JXI",
@@ -7899,7 +7899,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KBA",
@@ -7927,7 +7927,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KBWB",
@@ -7940,7 +7940,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KBWD",
@@ -7953,7 +7953,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KBWP",
@@ -7981,7 +7981,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KCE",
@@ -7994,7 +7994,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KIE",
@@ -8007,7 +8007,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KMLM",
@@ -8035,7 +8035,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KOMP",
@@ -8048,7 +8048,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KORP",
@@ -8061,7 +8061,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KORU",
@@ -8089,7 +8089,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"KSA",
@@ -8147,7 +8147,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LABD",
@@ -8190,7 +8190,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LEMB",
@@ -8203,7 +8203,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LGH",
@@ -8216,7 +8216,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LGLV",
@@ -8229,7 +8229,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LGOV",
@@ -8242,7 +8242,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LIT",
@@ -8270,7 +8270,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LQD",
@@ -8283,7 +8283,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LQDH",
@@ -8311,7 +8311,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LTPZ",
@@ -8324,7 +8324,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LVHD",
@@ -8337,7 +8337,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"LVHI",
@@ -8365,7 +8365,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MCHI",
@@ -8393,7 +8393,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MDYV",
@@ -8406,7 +8406,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MEAR",
@@ -8419,7 +8419,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"METV",
@@ -8432,7 +8432,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MGC",
@@ -8445,7 +8445,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MGK",
@@ -8458,7 +8458,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MGV",
@@ -8471,7 +8471,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MIDU",
@@ -8559,7 +8559,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MMIT",
@@ -8572,7 +8572,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MOAT",
@@ -8585,7 +8585,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MOO",
@@ -8598,7 +8598,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MORT",
@@ -8611,7 +8611,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MSOS",
@@ -8639,7 +8639,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MUB",
@@ -8652,7 +8652,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MUNI",
@@ -8665,7 +8665,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"MUST",
@@ -8678,7 +8678,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NAIL",
@@ -8706,7 +8706,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NEAR",
@@ -8734,7 +8734,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NFRA",
@@ -8747,7 +8747,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NFTY",
@@ -8790,7 +8790,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NTSX",
@@ -8803,7 +8803,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NUBD",
@@ -8816,7 +8816,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NUDM",
@@ -8829,7 +8829,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NUGT",
@@ -8857,7 +8857,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NULV",
@@ -8870,7 +8870,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NUSC",
@@ -8883,7 +8883,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"NYF",
@@ -8896,7 +8896,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OEF",
@@ -8909,7 +8909,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OIH",
@@ -8922,7 +8922,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OILK",
@@ -8935,7 +8935,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OMFL",
@@ -8948,7 +8948,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ONEQ",
@@ -8961,7 +8961,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ONEY",
@@ -8974,7 +8974,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OPPJ",
@@ -9002,7 +9002,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OUSA",
@@ -9015,7 +9015,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"OUSM",
@@ -9028,7 +9028,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PAVE",
@@ -9041,7 +9041,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PBUS",
@@ -9054,7 +9054,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PBW",
@@ -9082,7 +9082,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PCY",
@@ -9095,7 +9095,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PDBC",
@@ -9108,7 +9108,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PDP",
@@ -9121,7 +9121,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PEJ",
@@ -9134,7 +9134,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PEY",
@@ -9147,7 +9147,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PFF",
@@ -9250,7 +9250,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PGF",
@@ -9293,7 +9293,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PHYL",
@@ -9306,7 +9306,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PICB",
@@ -9319,7 +9319,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PICK",
@@ -9332,7 +9332,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PID",
@@ -9345,7 +9345,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PIZ",
@@ -9358,7 +9358,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PKB",
@@ -9371,7 +9371,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PKW",
@@ -9384,7 +9384,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PNQI",
@@ -9397,7 +9397,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PPA",
@@ -9410,7 +9410,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PPH",
@@ -9423,7 +9423,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PREF",
@@ -9451,7 +9451,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PRFZ",
@@ -9464,7 +9464,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PRN",
@@ -9477,7 +9477,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PSC",
@@ -9490,7 +9490,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PSFF",
@@ -9503,7 +9503,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PSI",
@@ -9516,7 +9516,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PSK",
@@ -9544,7 +9544,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PSQ",
@@ -9572,7 +9572,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PTLC",
@@ -9585,7 +9585,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PTNQ",
@@ -9598,7 +9598,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PULS",
@@ -9626,7 +9626,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PWV",
@@ -9639,7 +9639,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PWZ",
@@ -9652,7 +9652,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PXF",
@@ -9665,7 +9665,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PXH",
@@ -9678,7 +9678,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"PZA",
@@ -9691,7 +9691,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QAI",
@@ -9704,7 +9704,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QCLN",
@@ -9717,7 +9717,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QDF",
@@ -9730,7 +9730,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QDPL",
@@ -9743,7 +9743,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QEFA",
@@ -9756,7 +9756,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QGRO",
@@ -9769,7 +9769,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QID",
@@ -9797,7 +9797,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QLC",
@@ -9810,7 +9810,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QLD",
@@ -9838,7 +9838,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QMOM",
@@ -9851,7 +9851,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQEW",
@@ -9864,7 +9864,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQH",
@@ -9877,7 +9877,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQQ",
@@ -9890,7 +9890,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQQE",
@@ -9903,7 +9903,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQQH",
@@ -9916,7 +9916,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QQQJ",
@@ -9929,7 +9929,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QTEC",
@@ -9942,7 +9942,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QTUM",
@@ -9970,7 +9970,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QUS",
@@ -9983,7 +9983,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"QYLD",
@@ -9996,7 +9996,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RAAX",
@@ -10039,7 +10039,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RDVY",
@@ -10052,7 +10052,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RECS",
@@ -10065,7 +10065,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"REET",
@@ -10078,7 +10078,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"REGL",
@@ -10091,7 +10091,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"REM",
@@ -10104,7 +10104,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"REMX",
@@ -10147,7 +10147,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RING",
@@ -10160,7 +10160,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RLY",
@@ -10173,7 +10173,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ROBO",
@@ -10186,7 +10186,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ROBT",
@@ -10199,7 +10199,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RODM",
@@ -10212,7 +10212,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ROM",
@@ -10240,7 +10240,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RPG",
@@ -10253,7 +10253,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RPV",
@@ -10266,7 +10266,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSP",
@@ -10279,7 +10279,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPD",
@@ -10292,7 +10292,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPG",
@@ -10305,7 +10305,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPH",
@@ -10318,7 +10318,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPN",
@@ -10331,7 +10331,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPS",
@@ -10344,7 +10344,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPT",
@@ -10357,7 +10357,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RSPU",
@@ -10370,7 +10370,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RTH",
@@ -10383,7 +10383,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RWJ",
@@ -10396,7 +10396,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RWK",
@@ -10409,7 +10409,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RWL",
@@ -10422,7 +10422,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RWM",
@@ -10450,7 +10450,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RWR",
@@ -10463,7 +10463,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"RYLD",
@@ -10476,7 +10476,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHA",
@@ -10489,7 +10489,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHB",
@@ -10502,7 +10502,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHC",
@@ -10515,7 +10515,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHE",
@@ -10528,7 +10528,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHF",
@@ -10541,7 +10541,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHG",
@@ -10554,7 +10554,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHH",
@@ -10567,7 +10567,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHI",
@@ -10580,7 +10580,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHJ",
@@ -10593,7 +10593,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHK",
@@ -10606,7 +10606,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHM",
@@ -10619,7 +10619,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHO",
@@ -10632,7 +10632,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHP",
@@ -10645,7 +10645,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHQ",
@@ -10658,7 +10658,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHR",
@@ -10671,7 +10671,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHV",
@@ -10684,7 +10684,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHX",
@@ -10697,7 +10697,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHY",
@@ -10710,7 +10710,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCHZ",
@@ -10723,7 +10723,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCJ",
@@ -10736,7 +10736,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SCZ",
@@ -10749,7 +10749,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SDCI",
@@ -10762,7 +10762,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SDIV",
@@ -10790,7 +10790,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SDOW",
@@ -10833,7 +10833,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SDY",
@@ -10846,7 +10846,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SECT",
@@ -10859,7 +10859,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SEIX",
@@ -10887,7 +10887,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SGOV",
@@ -10900,7 +10900,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"RANKED_NO_CALL"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SH",
@@ -10928,7 +10928,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SHV",
@@ -10941,7 +10941,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"RANKED_NO_CALL"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SHY",
@@ -10954,7 +10954,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SHYD",
@@ -10982,7 +10982,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SHYL",
@@ -10995,7 +10995,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SIL",
@@ -11038,7 +11038,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SKOR",
@@ -11051,7 +11051,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SKYY",
@@ -11064,7 +11064,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SLQD",
@@ -11077,7 +11077,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SLVP",
@@ -11090,7 +11090,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SLX",
@@ -11103,7 +11103,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SLYG",
@@ -11116,7 +11116,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SLYV",
@@ -11129,7 +11129,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SMDV",
@@ -11142,7 +11142,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SMH",
@@ -11155,7 +11155,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SMIN",
@@ -11183,7 +11183,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SMMD",
@@ -11196,7 +11196,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SMMU",
@@ -11209,7 +11209,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SNPE",
@@ -11222,7 +11222,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SOXL",
@@ -11250,7 +11250,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SOXS",
@@ -11278,7 +11278,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPAB",
@@ -11291,7 +11291,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPBO",
@@ -11304,7 +11304,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPDN",
@@ -11332,7 +11332,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPEM",
@@ -11345,7 +11345,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPEU",
@@ -11358,7 +11358,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPGM",
@@ -11371,7 +11371,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPGP",
@@ -11384,7 +11384,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPHB",
@@ -11397,7 +11397,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPHD",
@@ -11410,7 +11410,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPHQ",
@@ -11423,7 +11423,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPHY",
@@ -11436,7 +11436,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPIB",
@@ -11449,7 +11449,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPIP",
@@ -11462,7 +11462,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPLB",
@@ -11475,7 +11475,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPLV",
@@ -11488,7 +11488,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPMB",
@@ -11501,7 +11501,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPMD",
@@ -11514,7 +11514,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPMO",
@@ -11527,7 +11527,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPRE",
@@ -11540,7 +11540,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPSB",
@@ -11553,7 +11553,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPSK",
@@ -11566,7 +11566,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPSM",
@@ -11579,7 +11579,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPTI",
@@ -11592,7 +11592,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPTL",
@@ -11605,7 +11605,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPTM",
@@ -11618,7 +11618,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPTS",
@@ -11631,7 +11631,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPUS",
@@ -11644,7 +11644,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPUU",
@@ -11717,7 +11717,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPYG",
@@ -11730,7 +11730,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPYM",
@@ -11743,7 +11743,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPYV",
@@ -11756,7 +11756,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SPYX",
@@ -11769,7 +11769,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SQQQ",
@@ -11827,7 +11827,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SSG",
@@ -11870,7 +11870,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"STIP",
@@ -11883,7 +11883,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"STOT",
@@ -11896,7 +11896,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"STPZ",
@@ -11909,7 +11909,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SUB",
@@ -11922,7 +11922,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SUSA",
@@ -11935,7 +11935,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SUSB",
@@ -11948,7 +11948,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SUSC",
@@ -11961,7 +11961,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SUSL",
@@ -11974,7 +11974,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SVOL",
@@ -12002,7 +12002,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"SYSB",
@@ -12015,7 +12015,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TAIL",
@@ -12058,7 +12058,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TBF",
@@ -12116,7 +12116,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TDIV",
@@ -12129,7 +12129,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TDTF",
@@ -12142,7 +12142,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TDTT",
@@ -12155,7 +12155,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TDVG",
@@ -12168,7 +12168,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TECL",
@@ -12211,7 +12211,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TFLO",
@@ -12254,7 +12254,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TILT",
@@ -12267,7 +12267,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TIP",
@@ -12280,7 +12280,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TIPX",
@@ -12293,7 +12293,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TLH",
@@ -12306,7 +12306,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TLT",
@@ -12319,7 +12319,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TMF",
@@ -12347,7 +12347,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TMV",
@@ -12390,7 +12390,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TPYP",
@@ -12433,7 +12433,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"TUR",
@@ -12521,7 +12521,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"UDOW",
@@ -12564,7 +12564,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"UITB",
@@ -12577,7 +12577,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ULST",
@@ -12590,7 +12590,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"UPRO",
@@ -12633,7 +12633,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"URTY",
@@ -12661,7 +12661,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USDU",
@@ -12704,7 +12704,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USIG",
@@ -12717,7 +12717,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USMC",
@@ -12730,7 +12730,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USMV",
@@ -12743,7 +12743,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USPX",
@@ -12756,7 +12756,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USRT",
@@ -12769,7 +12769,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USTB",
@@ -12782,7 +12782,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USVM",
@@ -12795,7 +12795,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"USXF",
@@ -12808,7 +12808,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"UTES",
@@ -12821,7 +12821,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"UTSL",
@@ -12879,7 +12879,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VB",
@@ -12892,7 +12892,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VBK",
@@ -12905,7 +12905,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VBR",
@@ -12918,7 +12918,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VCEB",
@@ -12931,7 +12931,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VCIT",
@@ -12944,7 +12944,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VCLT",
@@ -12957,7 +12957,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VCR",
@@ -12970,7 +12970,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VCSH",
@@ -12983,7 +12983,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VDC",
@@ -12996,7 +12996,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VDE",
@@ -13009,7 +13009,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VEA",
@@ -13022,7 +13022,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VEU",
@@ -13035,7 +13035,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VFH",
@@ -13048,7 +13048,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VFMF",
@@ -13061,7 +13061,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VFMO",
@@ -13074,7 +13074,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VFMV",
@@ -13087,7 +13087,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VFVA",
@@ -13100,7 +13100,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VGIT",
@@ -13113,7 +13113,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VGK",
@@ -13126,7 +13126,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VGLT",
@@ -13139,7 +13139,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VGSH",
@@ -13152,7 +13152,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VGT",
@@ -13165,7 +13165,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VHT",
@@ -13178,7 +13178,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIG",
@@ -13191,7 +13191,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIGI",
@@ -13204,7 +13204,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIOG",
@@ -13217,7 +13217,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIOO",
@@ -13230,7 +13230,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIOV",
@@ -13243,7 +13243,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VIS",
@@ -13256,7 +13256,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VLU",
@@ -13269,7 +13269,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VLUE",
@@ -13282,7 +13282,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VMBS",
@@ -13295,7 +13295,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VNLA",
@@ -13338,7 +13338,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VNQI",
@@ -13351,7 +13351,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VO",
@@ -13364,7 +13364,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOE",
@@ -13377,7 +13377,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VONE",
@@ -13390,7 +13390,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VONG",
@@ -13403,7 +13403,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VONV",
@@ -13416,7 +13416,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOOG",
@@ -13429,7 +13429,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOOV",
@@ -13442,7 +13442,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOT",
@@ -13455,7 +13455,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOTE",
@@ -13468,7 +13468,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VOX",
@@ -13481,7 +13481,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VPL",
@@ -13494,7 +13494,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VPU",
@@ -13507,7 +13507,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VRIG",
@@ -13550,7 +13550,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VSS",
@@ -13563,7 +13563,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VT",
@@ -13576,7 +13576,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTC",
@@ -13589,7 +13589,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTEB",
@@ -13602,7 +13602,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTHR",
@@ -13615,7 +13615,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTI",
@@ -13628,7 +13628,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTIP",
@@ -13641,7 +13641,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTV",
@@ -13654,7 +13654,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTWG",
@@ -13667,7 +13667,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTWO",
@@ -13680,7 +13680,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VTWV",
@@ -13693,7 +13693,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VUG",
@@ -13706,7 +13706,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VUSB",
@@ -13719,7 +13719,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VV",
@@ -13732,7 +13732,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VWO",
@@ -13745,7 +13745,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VWOB",
@@ -13758,7 +13758,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VXF",
@@ -13771,7 +13771,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VXUS",
@@ -13784,7 +13784,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VYM",
@@ -13797,7 +13797,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"VYMI",
@@ -13810,7 +13810,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"WCLD",
@@ -13868,7 +13868,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"WTPI",
@@ -13881,7 +13881,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"WTV",
@@ -13894,7 +13894,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"WWJD",
@@ -13907,7 +13907,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XAR",
@@ -13920,7 +13920,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XBI",
@@ -13948,7 +13948,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XES",
@@ -13976,7 +13976,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLB",
@@ -13989,7 +13989,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLC",
@@ -14002,7 +14002,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLE",
@@ -14015,7 +14015,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLF",
@@ -14028,7 +14028,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLG",
@@ -14041,7 +14041,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLI",
@@ -14054,7 +14054,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLK",
@@ -14067,7 +14067,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLP",
@@ -14080,7 +14080,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLRE",
@@ -14093,7 +14093,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLSR",
@@ -14106,7 +14106,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLU",
@@ -14119,7 +14119,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLV",
@@ -14132,7 +14132,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XLY",
@@ -14145,7 +14145,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"BUY"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XME",
@@ -14173,7 +14173,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XMLV",
@@ -14186,7 +14186,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XMMO",
@@ -14199,7 +14199,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XMVM",
@@ -14212,7 +14212,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XNTK",
@@ -14225,7 +14225,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XOP",
@@ -14238,7 +14238,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XOVR",
@@ -14251,7 +14251,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XPH",
@@ -14279,7 +14279,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSD",
@@ -14292,7 +14292,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"ACCUMULATE"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSHQ",
@@ -14305,7 +14305,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSMO",
@@ -14318,7 +14318,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSOE",
@@ -14331,7 +14331,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSVM",
@@ -14344,7 +14344,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XSW",
@@ -14357,7 +14357,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XTL",
@@ -14385,7 +14385,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"XYLD",
@@ -14443,7 +14443,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"YYY",
@@ -14456,7 +14456,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"AVOID"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"ZROZ",
@@ -14469,7 +14469,7 @@
 "flags":[],
 "classified_at":"2025-12"
 },
-"ranking_call":"HOLD"
+"ranking_call":"NO_VALIDATED_RANKING_EDGE"
 },
 {
 "symbol":"DIA",
