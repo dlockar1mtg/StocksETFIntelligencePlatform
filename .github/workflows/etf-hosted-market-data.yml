@@ -36,6 +36,10 @@ concurrency:
   group: etf-hosted-market-data
   cancel-in-progress: false
 
+env:
+  # Install the exact versions in requirements-lock.txt (see that file); Dependabot proposes updates monthly.
+  PIP_CONSTRAINT: requirements-lock.txt
+
 jobs:
   gate:
     runs-on: ubuntu-24.04

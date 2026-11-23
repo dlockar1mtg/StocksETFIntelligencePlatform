@@ -1,0 +1,7 @@
+# Exact versions for this repo's Python 3.11 runs: the newest numpy and scipy for 3.11 as of 2026-11-22
+# (the same versions the Housing repo installs on 3.11).
+# Workflows apply this with PIP_CONSTRAINT, so a new release (like DuckDB 2.0 on Oct 21, 2026)
+# can't change production overnight. Dependabot proposes updates monthly in one grouped PR;
+# merge it when the tests on that PR pass.
+numpy==2.4.6
+scipy==1.17.1
