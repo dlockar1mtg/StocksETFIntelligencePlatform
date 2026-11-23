@@ -39,12 +39,14 @@ jobs:
       - name: Tests
         run: python -m unittest tests.market.test_sec_expense_ratios -v
       - name: Restore downloaded quarterly archives
+        if: github.actor != 'dependabot[bot]'   # Dependabot PRs get no secrets, and the SEC refuses requests without SEC_USER_AGENT
         uses: actions/cache/restore@v6
         with:
           path: data/hosted_cache/sec_rr
           key: sec-rr-v1-${{ github.run_id }}
           restore-keys: sec-rr-v1-
       - name: Build the expense-ratio history
+        if: github.actor != 'dependabot[bot]'   # Dependabot PRs get no secrets, and the SEC refuses requests without SEC_USER_AGENT
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: |
@@ -59,12 +61,13 @@ jobs:
               print(f"::warning title=SEC {k}::{v[:200]}")
           PY
       - name: Save downloaded archives
-        if: always()
+        if: always() && github.actor != 'dependabot[bot]'
         uses: actions/cache/save@v6
         with:
           path: data/hosted_cache/sec_rr
           key: sec-rr-v1-${{ github.run_id }}
       - name: Commit the history
+        if: github.actor != 'dependabot[bot]'   # Dependabot PRs get no secrets, and the SEC refuses requests without SEC_USER_AGENT
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
