@@ -29,17 +29,17 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - run: pip install --quiet numpy
       - name: Tests
         run: python -m unittest tests.market.test_sec_expense_ratios -v
       - name: Restore downloaded quarterly archives
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: data/hosted_cache/sec_rr
           key: sec-rr-v1-${{ github.run_id }}
@@ -60,7 +60,7 @@ jobs:
           PY
       - name: Save downloaded archives
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: data/hosted_cache/sec_rr
           key: sec-rr-v1-${{ github.run_id }}
