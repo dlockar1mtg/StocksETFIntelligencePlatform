@@ -49,7 +49,7 @@ jobs:
     outputs:
       run: ${{ steps.check.outputs.run }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
           sparse-checkout: |
@@ -84,17 +84,17 @@ jobs:
       actions: read
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - run: pip install --quiet numpy scipy
       - name: Tests
         run: python -m unittest tests.market.test_hosted_market_data tests.market.test_provisional_ranking tests.market.test_provisional_package tests.market.test_sec_expense_ratios tests.market.test_provisional_projection tests.market.test_provisional_full_coverage tests.market.test_audit_fixes_2026_10 tests.market.test_short_muni_group_2026_10 -v
       - name: Restore the cached daily series
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: data/hosted_cache/etf_daily
           key: etf-daily-v1-${{ github.run_id }}
@@ -149,7 +149,7 @@ jobs:
           PY
       - name: Publish the package for the UIP
         if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: etf-production-${{ github.run_id }}
           path: etf-package/
@@ -157,14 +157,14 @@ jobs:
           retention-days: 7
       - name: Keep the package from this check
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: etf-package-check-${{ github.run_id }}
           path: etf-package/
           retention-days: 7
       - name: Save the daily series
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: data/hosted_cache/etf_daily
           key: etf-daily-v1-${{ github.run_id }}
